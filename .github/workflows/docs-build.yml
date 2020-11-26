@@ -26,10 +26,17 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install mkdocs diagrams
-        run: pip install mkdocs-diagrams
+        run: |
+          python -m pip install --upgrade pip
+          pip install mkdocs-diagrams
 
-      - name: Install graphviz
-        run: sudo apt install graphviz
+#       - name: Install graphviz
+#         run: sudo apt install graphviz
+        
+      - name: Setup Graphviz
+        # You may pin to the exact commit or the version.
+        # uses: ts-graphviz/setup-graphviz@f1590cf4e989dd1429bff4fd6339e098050a1657
+        uses: ts-graphviz/setup-graphviz@v1
         
       - name: MkDocs Simple action
         # You may pin to the exact commit or the version.

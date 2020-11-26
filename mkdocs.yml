@@ -3,3 +3,6 @@ nav:
     - Home: index.md
     - About: about.md
 theme: readthedocs
+plugins:
+  - diagrams
+  - search

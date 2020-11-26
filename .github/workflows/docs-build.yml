@@ -48,10 +48,9 @@ jobs:
       - name: Prepare files
         run: |
           ls -A1 | grep -v site | grep -v .git | xargs rm -rf
-          cd site
-          cp -r . ../
-          cd ..
+          cp -r ./site/ .
           rm -rf site .github .gitignore
+          ls -la
       
       - name: Add & Commit to gh-pages
         # You may pin to the exact commit or the version.

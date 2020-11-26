@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8]
+        python-version: [3.9]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -31,23 +31,56 @@ jobs:
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
 
-      - name: Install mkdocs diagrams
-        run: |
-          python -m pip install --upgrade pip
-          pip install mkdocs-diagrams
-
-#       - name: Install graphviz
-#         run: sudo apt install graphviz
-        
       - name: Setup Graphviz
         # You may pin to the exact commit or the version.
         # uses: ts-graphviz/setup-graphviz@f1590cf4e989dd1429bff4fd6339e098050a1657
         uses: ts-graphviz/setup-graphviz@v1
+
+      - name: Install mkdocs diagrams
+        run: |
+          python -m pip install --upgrade pip
+          pip install mkdocs
+          pip install mkdocs-diagrams
+
+      - name: Mkdocs build
+        run: mkdocs build
+      
+      - name: Add & Commit to gh-pages
+        # You may pin to the exact commit or the version.
+        # uses: EndBug/add-and-commit@57c075ed5f8e31ea885906eaa0891f28131ae4dc
+        uses: EndBug/add-and-commit@v5.2.0
+        with:
+          # Arguments for the git add command
+#           add: # optional, default is .
+          # The name of the user that will be displayed as the author of the commit
+#           author_name: # optional
+          # The email of the user that will be displayed as the author of the commit
+#           author_email: # optional
+          # Name of the branch to use, if different from the one that triggered the workflow
+          branch: gh-pages # optional
+          # The directory where your repository is located. You should use actions/checkout first to set it up
+#           cwd: # optional, default is .
+          # The message for the commit
+#           message: # optional
+          # The flag used on the pull strategy
+#           pull_strategy: # optional, default is --no-rebase
+          # Whether to push the commit and, if any, its tags to the repo
+#           push: # optional
+          # Arguments for the git rm command
+#           remove: # optional
+          # Whether to use the --signoff option on git commit
+#           signoff: # optional
+          # Arguments for the git tag command (the tag name always needs to be the first word not preceded by a hyphen)
+#           tag: # optional
+    
+    
+#       - name: Install graphviz
+#         run: sudo apt install graphviz
         
-      - name: MkDocs Simple action
+#       - name: MkDocs Simple action
         # You may pin to the exact commit or the version.
         # uses: athackst/mkdocs-simple-plugin@d02154f9e00f61d3c87721b5bb9ebb7ae22a800a
-        uses: athackst/mkdocs-simple-plugin@v0.2.1
+#         uses: athackst/mkdocs-simple-plugin@v0.2.1
 #         with:
           # Set a target branch for deployment.
 #           publish_branch: # optional, default is gh-pages

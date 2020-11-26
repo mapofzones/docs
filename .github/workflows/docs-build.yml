@@ -45,9 +45,15 @@ jobs:
       - name: Mkdocs build
         run: mkdocs build
         
+      - name: Check files
+        run: ls -la
+      
       - uses: actions/checkout@v2
         with:
           ref: 'gh-pages'
+        
+      - name: Check files2
+        run: ls -la
         
       - name: Prepare files
         run: |

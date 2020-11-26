@@ -19,6 +19,12 @@ Map of Zones docs is a project documentation static site. Used static site gener
 * `mkdocs build` - Build the documentation site.
 * `mkdocs -h` - Print help message and exit.
 
+1) **Pages** - project documentation with Markdown. User guides: [mkdocs.org/user-guide](https://www.mkdocs.org/user-guide/writing-your-docs/)
+
+2) **Diagram as Code** - diagrams lets you draw the cloud system architecture in Python code. Examples: [diagrams.mingrammer.com](https://diagrams.mingrammer.com/docs/getting-started/examples)
+
+
+
 ## Deploy
 
 Just push your changes to github. On changes in the master branch, github actions will automatically prepare the build. If the build is successful, the new version of the static site will be deployed.

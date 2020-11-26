@@ -52,12 +52,12 @@ jobs:
           ls -la
           cd ..
       
-      - uses: actions/checkout@v2
-        with:
-          ref: 'gh-pages'
+#       - uses: actions/checkout@v2
+#         with:
+#           ref: 'gh-pages'
         
-      - name: Check files2
-        run: ls -la
+#       - name: Check files2
+#         run: ls -la
         
       - name: Prepare files
         run: |

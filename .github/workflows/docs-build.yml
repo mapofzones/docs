@@ -48,9 +48,9 @@ jobs:
       - name: Check files
         run: |
           ls -la
-          cd site
+          cd site/img
           ls -la
-          cd ..
+          cd ../..
       
       - uses: actions/checkout@v2
         with:

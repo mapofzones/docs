@@ -67,7 +67,7 @@ jobs:
           # Whether to push the commit and, if any, its tags to the repo
 #           push: # optional
           # Arguments for the git rm command
-          remove: "." # optional
+          remove: ". -r" # optional
           # Whether to use the --signoff option on git commit
 #           signoff: # optional
           # Arguments for the git tag command (the tag name always needs to be the first word not preceded by a hyphen)

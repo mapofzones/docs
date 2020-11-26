@@ -59,7 +59,7 @@ jobs:
           # Name of the branch to use, if different from the one that triggered the workflow
           branch: gh-pages # optional
           # The directory where your repository is located. You should use actions/checkout first to set it up
-#           cwd: # optional, default is .
+          cwd: './site' # optional, default is .
           # The message for the commit
 #           message: # optional
           # The flag used on the pull strategy
@@ -67,7 +67,7 @@ jobs:
           # Whether to push the commit and, if any, its tags to the repo
 #           push: # optional
           # Arguments for the git rm command
-#           remove: # optional
+          remove: "." # optional
           # Whether to use the --signoff option on git commit
 #           signoff: # optional
           # Arguments for the git tag command (the tag name always needs to be the first word not preceded by a hyphen)

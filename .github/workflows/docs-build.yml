@@ -46,7 +46,11 @@ jobs:
         run: mkdocs build
         
       - name: Check files
-        run: ls -la
+        run: |
+          ls -la
+          cd site
+          ls -la
+          cd ..
       
       - uses: actions/checkout@v2
         with:

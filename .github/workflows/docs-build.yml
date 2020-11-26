@@ -48,7 +48,9 @@ jobs:
       - name: Prepare files
         run: |
           ls -A1 | grep -v site | grep -v .git | xargs rm -rf
-          cp -r ./site/ .
+          cd site
+          cp -r . ../
+          cd ..
           rm -rf site .github .gitignore
           ls -la
       

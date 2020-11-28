@@ -1,4 +1,4 @@
-from diagrams import Cluster, Diagram
+from diagrams import Cluster, Diagram, Edge
 from diagrams.onprem.compute import Server
 from diagrams.onprem.database import PostgreSQL
 from diagrams.programming.framework import React

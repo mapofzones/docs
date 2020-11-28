@@ -2,6 +2,13 @@ site_name: Map of zones Docs
 nav:
     - Getting started: index.md
     - Architecture: architecture.md
+    - Front: front.md
+    - GraphQL: graphql.md
+    - Database: database.md
+    - Stats adaptor: adaptor.md
+    - Tx processor: processor.md
+    - Message broker: broker.md
+    - Watcher: watcher.md
     - About: about.md
 theme: readthedocs
 plugins:

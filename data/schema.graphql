@@ -1,0 +1,1573 @@
+schema {
+  query: query_root
+  subscription: subscription_root
+}
+
+# columns and relationships of "headers"
+type headers {
+  channels_cnt_all: Int!
+  channels_cnt_period: Int!
+  chart(
+    # JSON select path
+    path: String
+  ): jsonb!
+  timeframe: Int!
+  top_zone_pair(
+    # JSON select path
+    path: String
+  ): jsonb!
+  zones_cnt_all: Int!
+  zones_cnt_period: Int!
+}
+
+# aggregated selection of "headers"
+type headers_aggregate {
+  aggregate: headers_aggregate_fields
+  nodes: [headers!]!
+}
+
+# aggregate fields of "headers"
+type headers_aggregate_fields {
+  avg: headers_avg_fields
+  count(columns: [headers_select_column!], distinct: Boolean): Int
+  max: headers_max_fields
+  min: headers_min_fields
+  stddev: headers_stddev_fields
+  stddev_pop: headers_stddev_pop_fields
+  stddev_samp: headers_stddev_samp_fields
+  sum: headers_sum_fields
+  var_pop: headers_var_pop_fields
+  var_samp: headers_var_samp_fields
+  variance: headers_variance_fields
+}
+
+# order by aggregate values of table "headers"
+input headers_aggregate_order_by {
+  avg: headers_avg_order_by
+  count: order_by
+  max: headers_max_order_by
+  min: headers_min_order_by
+  stddev: headers_stddev_order_by
+  stddev_pop: headers_stddev_pop_order_by
+  stddev_samp: headers_stddev_samp_order_by
+  sum: headers_sum_order_by
+  var_pop: headers_var_pop_order_by
+  var_samp: headers_var_samp_order_by
+  variance: headers_variance_order_by
+}
+
+# aggregate avg on columns
+type headers_avg_fields {
+  channels_cnt_all: Float
+  channels_cnt_period: Float
+  timeframe: Float
+  zones_cnt_all: Float
+  zones_cnt_period: Float
+}
+
+# order by avg() on columns of table "headers"
+input headers_avg_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# Boolean expression to filter rows from the table "headers". All fields are combined with a logical 'AND'.
+input headers_bool_exp {
+  _and: [headers_bool_exp]
+  _not: headers_bool_exp
+  _or: [headers_bool_exp]
+  channels_cnt_all: Int_comparison_exp
+  channels_cnt_period: Int_comparison_exp
+  chart: jsonb_comparison_exp
+  timeframe: Int_comparison_exp
+  top_zone_pair: jsonb_comparison_exp
+  zones_cnt_all: Int_comparison_exp
+  zones_cnt_period: Int_comparison_exp
+}
+
+# aggregate max on columns
+type headers_max_fields {
+  channels_cnt_all: Int
+  channels_cnt_period: Int
+  timeframe: Int
+  zones_cnt_all: Int
+  zones_cnt_period: Int
+}
+
+# order by max() on columns of table "headers"
+input headers_max_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# aggregate min on columns
+type headers_min_fields {
+  channels_cnt_all: Int
+  channels_cnt_period: Int
+  timeframe: Int
+  zones_cnt_all: Int
+  zones_cnt_period: Int
+}
+
+# order by min() on columns of table "headers"
+input headers_min_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# ordering options when selecting data from "headers"
+input headers_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  chart: order_by
+  timeframe: order_by
+  top_zone_pair: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# primary key columns input for table: "headers"
+input headers_pk_columns_input {
+  timeframe: Int!
+}
+
+# select columns of table "headers"
+enum headers_select_column {
+  # column name
+  channels_cnt_all
+
+  # column name
+  channels_cnt_period
+
+  # column name
+  chart
+
+  # column name
+  timeframe
+
+  # column name
+  top_zone_pair
+
+  # column name
+  zones_cnt_all
+
+  # column name
+  zones_cnt_period
+}
+
+# aggregate stddev on columns
+type headers_stddev_fields {
+  channels_cnt_all: Float
+  channels_cnt_period: Float
+  timeframe: Float
+  zones_cnt_all: Float
+  zones_cnt_period: Float
+}
+
+# order by stddev() on columns of table "headers"
+input headers_stddev_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# aggregate stddev_pop on columns
+type headers_stddev_pop_fields {
+  channels_cnt_all: Float
+  channels_cnt_period: Float
+  timeframe: Float
+  zones_cnt_all: Float
+  zones_cnt_period: Float
+}
+
+# order by stddev_pop() on columns of table "headers"
+input headers_stddev_pop_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# aggregate stddev_samp on columns
+type headers_stddev_samp_fields {
+  channels_cnt_all: Float
+  channels_cnt_period: Float
+  timeframe: Float
+  zones_cnt_all: Float
+  zones_cnt_period: Float
+}
+
+# order by stddev_samp() on columns of table "headers"
+input headers_stddev_samp_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# aggregate sum on columns
+type headers_sum_fields {
+  channels_cnt_all: Int
+  channels_cnt_period: Int
+  timeframe: Int
+  zones_cnt_all: Int
+  zones_cnt_period: Int
+}
+
+# order by sum() on columns of table "headers"
+input headers_sum_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# aggregate var_pop on columns
+type headers_var_pop_fields {
+  channels_cnt_all: Float
+  channels_cnt_period: Float
+  timeframe: Float
+  zones_cnt_all: Float
+  zones_cnt_period: Float
+}
+
+# order by var_pop() on columns of table "headers"
+input headers_var_pop_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# aggregate var_samp on columns
+type headers_var_samp_fields {
+  channels_cnt_all: Float
+  channels_cnt_period: Float
+  timeframe: Float
+  zones_cnt_all: Float
+  zones_cnt_period: Float
+}
+
+# order by var_samp() on columns of table "headers"
+input headers_var_samp_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# aggregate variance on columns
+type headers_variance_fields {
+  channels_cnt_all: Float
+  channels_cnt_period: Float
+  timeframe: Float
+  zones_cnt_all: Float
+  zones_cnt_period: Float
+}
+
+# order by variance() on columns of table "headers"
+input headers_variance_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# expression to compare columns of type Int. All fields are combined with logical 'AND'.
+input Int_comparison_exp {
+  _eq: Int
+  _gt: Int
+  _gte: Int
+  _in: [Int!]
+  _is_null: Boolean
+  _lt: Int
+  _lte: Int
+  _neq: Int
+  _nin: [Int!]
+}
+
+scalar jsonb
+
+# expression to compare columns of type jsonb. All fields are combined with logical 'AND'.
+input jsonb_comparison_exp {
+  # is the column contained in the given json value
+  _contained_in: jsonb
+
+  # does the column contain the given json value at the top level
+  _contains: jsonb
+  _eq: jsonb
+  _gt: jsonb
+  _gte: jsonb
+
+  # does the string exist as a top-level key in the column
+  _has_key: String
+
+  # do all of these strings exist as top-level keys in the column
+  _has_keys_all: [String!]
+
+  # do any of these strings exist as top-level keys in the column
+  _has_keys_any: [String!]
+  _in: [jsonb!]
+  _is_null: Boolean
+  _lt: jsonb
+  _lte: jsonb
+  _neq: jsonb
+  _nin: [jsonb!]
+}
+
+scalar numeric
+
+# expression to compare columns of type numeric. All fields are combined with logical 'AND'.
+input numeric_comparison_exp {
+  _eq: numeric
+  _gt: numeric
+  _gte: numeric
+  _in: [numeric!]
+  _is_null: Boolean
+  _lt: numeric
+  _lte: numeric
+  _neq: numeric
+  _nin: [numeric!]
+}
+
+# column ordering options
+enum order_by {
+  # in the ascending order, nulls last
+  asc
+
+  # in the ascending order, nulls first
+  asc_nulls_first
+
+  # in the ascending order, nulls last
+  asc_nulls_last
+
+  # in the descending order, nulls first
+  desc
+
+  # in the descending order, nulls first
+  desc_nulls_first
+
+  # in the descending order, nulls last
+  desc_nulls_last
+}
+
+# query root
+type query_root {
+  # fetch data from the table: "headers"
+  headers(
+    # distinct select on columns
+    distinct_on: [headers_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [headers_order_by!]
+
+    # filter the rows returned
+    where: headers_bool_exp
+  ): [headers!]!
+
+  # fetch aggregated fields from the table: "headers"
+  headers_aggregate(
+    # distinct select on columns
+    distinct_on: [headers_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [headers_order_by!]
+
+    # filter the rows returned
+    where: headers_bool_exp
+  ): headers_aggregate!
+
+  # fetch data from the table: "headers" using primary key columns
+  headers_by_pk(timeframe: Int!): headers
+
+  # fetch data from the table: "zones_graphs"
+  zones_graphs(
+    # distinct select on columns
+    distinct_on: [zones_graphs_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_graphs_order_by!]
+
+    # filter the rows returned
+    where: zones_graphs_bool_exp
+  ): [zones_graphs!]!
+
+  # fetch aggregated fields from the table: "zones_graphs"
+  zones_graphs_aggregate(
+    # distinct select on columns
+    distinct_on: [zones_graphs_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_graphs_order_by!]
+
+    # filter the rows returned
+    where: zones_graphs_bool_exp
+  ): zones_graphs_aggregate!
+
+  # fetch data from the table: "zones_graphs" using primary key columns
+  zones_graphs_by_pk(source: String!, target: String!, timeframe: Int!): zones_graphs
+
+  # fetch data from the table: "zones_stats"
+  zones_stats(
+    # distinct select on columns
+    distinct_on: [zones_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_stats_order_by!]
+
+    # filter the rows returned
+    where: zones_stats_bool_exp
+  ): [zones_stats!]!
+
+  # fetch aggregated fields from the table: "zones_stats"
+  zones_stats_aggregate(
+    # distinct select on columns
+    distinct_on: [zones_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_stats_order_by!]
+
+    # filter the rows returned
+    where: zones_stats_bool_exp
+  ): zones_stats_aggregate!
+
+  # fetch data from the table: "zones_stats" using primary key columns
+  zones_stats_by_pk(timeframe: Int!, zone: String!): zones_stats
+}
+
+# expression to compare columns of type String. All fields are combined with logical 'AND'.
+input String_comparison_exp {
+  _eq: String
+  _gt: String
+  _gte: String
+  _ilike: String
+  _in: [String!]
+  _is_null: Boolean
+  _like: String
+  _lt: String
+  _lte: String
+  _neq: String
+  _nilike: String
+  _nin: [String!]
+  _nlike: String
+  _nsimilar: String
+  _similar: String
+}
+
+# subscription root
+type subscription_root {
+  # fetch data from the table: "headers"
+  headers(
+    # distinct select on columns
+    distinct_on: [headers_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [headers_order_by!]
+
+    # filter the rows returned
+    where: headers_bool_exp
+  ): [headers!]!
+
+  # fetch aggregated fields from the table: "headers"
+  headers_aggregate(
+    # distinct select on columns
+    distinct_on: [headers_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [headers_order_by!]
+
+    # filter the rows returned
+    where: headers_bool_exp
+  ): headers_aggregate!
+
+  # fetch data from the table: "headers" using primary key columns
+  headers_by_pk(timeframe: Int!): headers
+
+  # fetch data from the table: "zones_graphs"
+  zones_graphs(
+    # distinct select on columns
+    distinct_on: [zones_graphs_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_graphs_order_by!]
+
+    # filter the rows returned
+    where: zones_graphs_bool_exp
+  ): [zones_graphs!]!
+
+  # fetch aggregated fields from the table: "zones_graphs"
+  zones_graphs_aggregate(
+    # distinct select on columns
+    distinct_on: [zones_graphs_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_graphs_order_by!]
+
+    # filter the rows returned
+    where: zones_graphs_bool_exp
+  ): zones_graphs_aggregate!
+
+  # fetch data from the table: "zones_graphs" using primary key columns
+  zones_graphs_by_pk(source: String!, target: String!, timeframe: Int!): zones_graphs
+
+  # fetch data from the table: "zones_stats"
+  zones_stats(
+    # distinct select on columns
+    distinct_on: [zones_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_stats_order_by!]
+
+    # filter the rows returned
+    where: zones_stats_bool_exp
+  ): [zones_stats!]!
+
+  # fetch aggregated fields from the table: "zones_stats"
+  zones_stats_aggregate(
+    # distinct select on columns
+    distinct_on: [zones_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_stats_order_by!]
+
+    # filter the rows returned
+    where: zones_stats_bool_exp
+  ): zones_stats_aggregate!
+
+  # fetch data from the table: "zones_stats" using primary key columns
+  zones_stats_by_pk(timeframe: Int!, zone: String!): zones_stats
+}
+
+# columns and relationships of "zones_graphs"
+type zones_graphs {
+  source: String!
+  target: String!
+  timeframe: Int!
+}
+
+# aggregated selection of "zones_graphs"
+type zones_graphs_aggregate {
+  aggregate: zones_graphs_aggregate_fields
+  nodes: [zones_graphs!]!
+}
+
+# aggregate fields of "zones_graphs"
+type zones_graphs_aggregate_fields {
+  avg: zones_graphs_avg_fields
+  count(columns: [zones_graphs_select_column!], distinct: Boolean): Int
+  max: zones_graphs_max_fields
+  min: zones_graphs_min_fields
+  stddev: zones_graphs_stddev_fields
+  stddev_pop: zones_graphs_stddev_pop_fields
+  stddev_samp: zones_graphs_stddev_samp_fields
+  sum: zones_graphs_sum_fields
+  var_pop: zones_graphs_var_pop_fields
+  var_samp: zones_graphs_var_samp_fields
+  variance: zones_graphs_variance_fields
+}
+
+# order by aggregate values of table "zones_graphs"
+input zones_graphs_aggregate_order_by {
+  avg: zones_graphs_avg_order_by
+  count: order_by
+  max: zones_graphs_max_order_by
+  min: zones_graphs_min_order_by
+  stddev: zones_graphs_stddev_order_by
+  stddev_pop: zones_graphs_stddev_pop_order_by
+  stddev_samp: zones_graphs_stddev_samp_order_by
+  sum: zones_graphs_sum_order_by
+  var_pop: zones_graphs_var_pop_order_by
+  var_samp: zones_graphs_var_samp_order_by
+  variance: zones_graphs_variance_order_by
+}
+
+# aggregate avg on columns
+type zones_graphs_avg_fields {
+  timeframe: Float
+}
+
+# order by avg() on columns of table "zones_graphs"
+input zones_graphs_avg_order_by {
+  timeframe: order_by
+}
+
+# Boolean expression to filter rows from the table "zones_graphs". All fields are combined with a logical 'AND'.
+input zones_graphs_bool_exp {
+  _and: [zones_graphs_bool_exp]
+  _not: zones_graphs_bool_exp
+  _or: [zones_graphs_bool_exp]
+  source: String_comparison_exp
+  target: String_comparison_exp
+  timeframe: Int_comparison_exp
+}
+
+# aggregate max on columns
+type zones_graphs_max_fields {
+  source: String
+  target: String
+  timeframe: Int
+}
+
+# order by max() on columns of table "zones_graphs"
+input zones_graphs_max_order_by {
+  source: order_by
+  target: order_by
+  timeframe: order_by
+}
+
+# aggregate min on columns
+type zones_graphs_min_fields {
+  source: String
+  target: String
+  timeframe: Int
+}
+
+# order by min() on columns of table "zones_graphs"
+input zones_graphs_min_order_by {
+  source: order_by
+  target: order_by
+  timeframe: order_by
+}
+
+# ordering options when selecting data from "zones_graphs"
+input zones_graphs_order_by {
+  source: order_by
+  target: order_by
+  timeframe: order_by
+}
+
+# primary key columns input for table: "zones_graphs"
+input zones_graphs_pk_columns_input {
+  source: String!
+  target: String!
+  timeframe: Int!
+}
+
+# select columns of table "zones_graphs"
+enum zones_graphs_select_column {
+  # column name
+  source
+
+  # column name
+  target
+
+  # column name
+  timeframe
+}
+
+# aggregate stddev on columns
+type zones_graphs_stddev_fields {
+  timeframe: Float
+}
+
+# order by stddev() on columns of table "zones_graphs"
+input zones_graphs_stddev_order_by {
+  timeframe: order_by
+}
+
+# aggregate stddev_pop on columns
+type zones_graphs_stddev_pop_fields {
+  timeframe: Float
+}
+
+# order by stddev_pop() on columns of table "zones_graphs"
+input zones_graphs_stddev_pop_order_by {
+  timeframe: order_by
+}
+
+# aggregate stddev_samp on columns
+type zones_graphs_stddev_samp_fields {
+  timeframe: Float
+}
+
+# order by stddev_samp() on columns of table "zones_graphs"
+input zones_graphs_stddev_samp_order_by {
+  timeframe: order_by
+}
+
+# aggregate sum on columns
+type zones_graphs_sum_fields {
+  timeframe: Int
+}
+
+# order by sum() on columns of table "zones_graphs"
+input zones_graphs_sum_order_by {
+  timeframe: order_by
+}
+
+# aggregate var_pop on columns
+type zones_graphs_var_pop_fields {
+  timeframe: Float
+}
+
+# order by var_pop() on columns of table "zones_graphs"
+input zones_graphs_var_pop_order_by {
+  timeframe: order_by
+}
+
+# aggregate var_samp on columns
+type zones_graphs_var_samp_fields {
+  timeframe: Float
+}
+
+# order by var_samp() on columns of table "zones_graphs"
+input zones_graphs_var_samp_order_by {
+  timeframe: order_by
+}
+
+# aggregate variance on columns
+type zones_graphs_variance_fields {
+  timeframe: Float
+}
+
+# order by variance() on columns of table "zones_graphs"
+input zones_graphs_variance_order_by {
+  timeframe: order_by
+}
+
+# columns and relationships of "zones_stats"
+type zones_stats {
+  channels_num: Int!
+  chart(
+    # JSON select path
+    path: String
+  ): jsonb!
+  ibc_percent: Int!
+  ibc_tx_in: Int!
+  ibc_tx_in_diff: Int!
+  ibc_tx_in_rating: Int!
+  ibc_tx_in_rating_diff: Int!
+  ibc_tx_in_weight: numeric!
+  ibc_tx_out: Int!
+  ibc_tx_out_diff: Int!
+  ibc_tx_out_rating: Int!
+  ibc_tx_out_rating_diff: Int!
+  ibc_tx_out_weight: numeric!
+  timeframe: Int!
+  total_ibc_txs: Int!
+  total_ibc_txs_diff: Int!
+  total_ibc_txs_rating: Int!
+  total_ibc_txs_rating_diff: Int!
+  total_ibc_txs_weight: numeric!
+  total_txs: Int!
+  total_txs_diff: Int!
+  total_txs_rating: Int!
+  total_txs_rating_diff: Int!
+  total_txs_weight: numeric!
+  zone: String!
+}
+
+# aggregated selection of "zones_stats"
+type zones_stats_aggregate {
+  aggregate: zones_stats_aggregate_fields
+  nodes: [zones_stats!]!
+}
+
+# aggregate fields of "zones_stats"
+type zones_stats_aggregate_fields {
+  avg: zones_stats_avg_fields
+  count(columns: [zones_stats_select_column!], distinct: Boolean): Int
+  max: zones_stats_max_fields
+  min: zones_stats_min_fields
+  stddev: zones_stats_stddev_fields
+  stddev_pop: zones_stats_stddev_pop_fields
+  stddev_samp: zones_stats_stddev_samp_fields
+  sum: zones_stats_sum_fields
+  var_pop: zones_stats_var_pop_fields
+  var_samp: zones_stats_var_samp_fields
+  variance: zones_stats_variance_fields
+}
+
+# order by aggregate values of table "zones_stats"
+input zones_stats_aggregate_order_by {
+  avg: zones_stats_avg_order_by
+  count: order_by
+  max: zones_stats_max_order_by
+  min: zones_stats_min_order_by
+  stddev: zones_stats_stddev_order_by
+  stddev_pop: zones_stats_stddev_pop_order_by
+  stddev_samp: zones_stats_stddev_samp_order_by
+  sum: zones_stats_sum_order_by
+  var_pop: zones_stats_var_pop_order_by
+  var_samp: zones_stats_var_samp_order_by
+  variance: zones_stats_variance_order_by
+}
+
+# aggregate avg on columns
+type zones_stats_avg_fields {
+  channels_num: Float
+  ibc_percent: Float
+  ibc_tx_in: Float
+  ibc_tx_in_diff: Float
+  ibc_tx_in_rating: Float
+  ibc_tx_in_rating_diff: Float
+  ibc_tx_in_weight: Float
+  ibc_tx_out: Float
+  ibc_tx_out_diff: Float
+  ibc_tx_out_rating: Float
+  ibc_tx_out_rating_diff: Float
+  ibc_tx_out_weight: Float
+  timeframe: Float
+  total_ibc_txs: Float
+  total_ibc_txs_diff: Float
+  total_ibc_txs_rating: Float
+  total_ibc_txs_rating_diff: Float
+  total_ibc_txs_weight: Float
+  total_txs: Float
+  total_txs_diff: Float
+  total_txs_rating: Float
+  total_txs_rating_diff: Float
+  total_txs_weight: Float
+}
+
+# order by avg() on columns of table "zones_stats"
+input zones_stats_avg_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# Boolean expression to filter rows from the table "zones_stats". All fields are combined with a logical 'AND'.
+input zones_stats_bool_exp {
+  _and: [zones_stats_bool_exp]
+  _not: zones_stats_bool_exp
+  _or: [zones_stats_bool_exp]
+  channels_num: Int_comparison_exp
+  chart: jsonb_comparison_exp
+  ibc_percent: Int_comparison_exp
+  ibc_tx_in: Int_comparison_exp
+  ibc_tx_in_diff: Int_comparison_exp
+  ibc_tx_in_rating: Int_comparison_exp
+  ibc_tx_in_rating_diff: Int_comparison_exp
+  ibc_tx_in_weight: numeric_comparison_exp
+  ibc_tx_out: Int_comparison_exp
+  ibc_tx_out_diff: Int_comparison_exp
+  ibc_tx_out_rating: Int_comparison_exp
+  ibc_tx_out_rating_diff: Int_comparison_exp
+  ibc_tx_out_weight: numeric_comparison_exp
+  timeframe: Int_comparison_exp
+  total_ibc_txs: Int_comparison_exp
+  total_ibc_txs_diff: Int_comparison_exp
+  total_ibc_txs_rating: Int_comparison_exp
+  total_ibc_txs_rating_diff: Int_comparison_exp
+  total_ibc_txs_weight: numeric_comparison_exp
+  total_txs: Int_comparison_exp
+  total_txs_diff: Int_comparison_exp
+  total_txs_rating: Int_comparison_exp
+  total_txs_rating_diff: Int_comparison_exp
+  total_txs_weight: numeric_comparison_exp
+  zone: String_comparison_exp
+}
+
+# aggregate max on columns
+type zones_stats_max_fields {
+  channels_num: Int
+  ibc_percent: Int
+  ibc_tx_in: Int
+  ibc_tx_in_diff: Int
+  ibc_tx_in_rating: Int
+  ibc_tx_in_rating_diff: Int
+  ibc_tx_in_weight: numeric
+  ibc_tx_out: Int
+  ibc_tx_out_diff: Int
+  ibc_tx_out_rating: Int
+  ibc_tx_out_rating_diff: Int
+  ibc_tx_out_weight: numeric
+  timeframe: Int
+  total_ibc_txs: Int
+  total_ibc_txs_diff: Int
+  total_ibc_txs_rating: Int
+  total_ibc_txs_rating_diff: Int
+  total_ibc_txs_weight: numeric
+  total_txs: Int
+  total_txs_diff: Int
+  total_txs_rating: Int
+  total_txs_rating_diff: Int
+  total_txs_weight: numeric
+  zone: String
+}
+
+# order by max() on columns of table "zones_stats"
+input zones_stats_max_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+  zone: order_by
+}
+
+# aggregate min on columns
+type zones_stats_min_fields {
+  channels_num: Int
+  ibc_percent: Int
+  ibc_tx_in: Int
+  ibc_tx_in_diff: Int
+  ibc_tx_in_rating: Int
+  ibc_tx_in_rating_diff: Int
+  ibc_tx_in_weight: numeric
+  ibc_tx_out: Int
+  ibc_tx_out_diff: Int
+  ibc_tx_out_rating: Int
+  ibc_tx_out_rating_diff: Int
+  ibc_tx_out_weight: numeric
+  timeframe: Int
+  total_ibc_txs: Int
+  total_ibc_txs_diff: Int
+  total_ibc_txs_rating: Int
+  total_ibc_txs_rating_diff: Int
+  total_ibc_txs_weight: numeric
+  total_txs: Int
+  total_txs_diff: Int
+  total_txs_rating: Int
+  total_txs_rating_diff: Int
+  total_txs_weight: numeric
+  zone: String
+}
+
+# order by min() on columns of table "zones_stats"
+input zones_stats_min_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+  zone: order_by
+}
+
+# ordering options when selecting data from "zones_stats"
+input zones_stats_order_by {
+  channels_num: order_by
+  chart: order_by
+  ibc_percent: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+  zone: order_by
+}
+
+# primary key columns input for table: "zones_stats"
+input zones_stats_pk_columns_input {
+  timeframe: Int!
+  zone: String!
+}
+
+# select columns of table "zones_stats"
+enum zones_stats_select_column {
+  # column name
+  channels_num
+
+  # column name
+  chart
+
+  # column name
+  ibc_percent
+
+  # column name
+  ibc_tx_in
+
+  # column name
+  ibc_tx_in_diff
+
+  # column name
+  ibc_tx_in_rating
+
+  # column name
+  ibc_tx_in_rating_diff
+
+  # column name
+  ibc_tx_in_weight
+
+  # column name
+  ibc_tx_out
+
+  # column name
+  ibc_tx_out_diff
+
+  # column name
+  ibc_tx_out_rating
+
+  # column name
+  ibc_tx_out_rating_diff
+
+  # column name
+  ibc_tx_out_weight
+
+  # column name
+  timeframe
+
+  # column name
+  total_ibc_txs
+
+  # column name
+  total_ibc_txs_diff
+
+  # column name
+  total_ibc_txs_rating
+
+  # column name
+  total_ibc_txs_rating_diff
+
+  # column name
+  total_ibc_txs_weight
+
+  # column name
+  total_txs
+
+  # column name
+  total_txs_diff
+
+  # column name
+  total_txs_rating
+
+  # column name
+  total_txs_rating_diff
+
+  # column name
+  total_txs_weight
+
+  # column name
+  zone
+}
+
+# aggregate stddev on columns
+type zones_stats_stddev_fields {
+  channels_num: Float
+  ibc_percent: Float
+  ibc_tx_in: Float
+  ibc_tx_in_diff: Float
+  ibc_tx_in_rating: Float
+  ibc_tx_in_rating_diff: Float
+  ibc_tx_in_weight: Float
+  ibc_tx_out: Float
+  ibc_tx_out_diff: Float
+  ibc_tx_out_rating: Float
+  ibc_tx_out_rating_diff: Float
+  ibc_tx_out_weight: Float
+  timeframe: Float
+  total_ibc_txs: Float
+  total_ibc_txs_diff: Float
+  total_ibc_txs_rating: Float
+  total_ibc_txs_rating_diff: Float
+  total_ibc_txs_weight: Float
+  total_txs: Float
+  total_txs_diff: Float
+  total_txs_rating: Float
+  total_txs_rating_diff: Float
+  total_txs_weight: Float
+}
+
+# order by stddev() on columns of table "zones_stats"
+input zones_stats_stddev_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# aggregate stddev_pop on columns
+type zones_stats_stddev_pop_fields {
+  channels_num: Float
+  ibc_percent: Float
+  ibc_tx_in: Float
+  ibc_tx_in_diff: Float
+  ibc_tx_in_rating: Float
+  ibc_tx_in_rating_diff: Float
+  ibc_tx_in_weight: Float
+  ibc_tx_out: Float
+  ibc_tx_out_diff: Float
+  ibc_tx_out_rating: Float
+  ibc_tx_out_rating_diff: Float
+  ibc_tx_out_weight: Float
+  timeframe: Float
+  total_ibc_txs: Float
+  total_ibc_txs_diff: Float
+  total_ibc_txs_rating: Float
+  total_ibc_txs_rating_diff: Float
+  total_ibc_txs_weight: Float
+  total_txs: Float
+  total_txs_diff: Float
+  total_txs_rating: Float
+  total_txs_rating_diff: Float
+  total_txs_weight: Float
+}
+
+# order by stddev_pop() on columns of table "zones_stats"
+input zones_stats_stddev_pop_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# aggregate stddev_samp on columns
+type zones_stats_stddev_samp_fields {
+  channels_num: Float
+  ibc_percent: Float
+  ibc_tx_in: Float
+  ibc_tx_in_diff: Float
+  ibc_tx_in_rating: Float
+  ibc_tx_in_rating_diff: Float
+  ibc_tx_in_weight: Float
+  ibc_tx_out: Float
+  ibc_tx_out_diff: Float
+  ibc_tx_out_rating: Float
+  ibc_tx_out_rating_diff: Float
+  ibc_tx_out_weight: Float
+  timeframe: Float
+  total_ibc_txs: Float
+  total_ibc_txs_diff: Float
+  total_ibc_txs_rating: Float
+  total_ibc_txs_rating_diff: Float
+  total_ibc_txs_weight: Float
+  total_txs: Float
+  total_txs_diff: Float
+  total_txs_rating: Float
+  total_txs_rating_diff: Float
+  total_txs_weight: Float
+}
+
+# order by stddev_samp() on columns of table "zones_stats"
+input zones_stats_stddev_samp_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# aggregate sum on columns
+type zones_stats_sum_fields {
+  channels_num: Int
+  ibc_percent: Int
+  ibc_tx_in: Int
+  ibc_tx_in_diff: Int
+  ibc_tx_in_rating: Int
+  ibc_tx_in_rating_diff: Int
+  ibc_tx_in_weight: numeric
+  ibc_tx_out: Int
+  ibc_tx_out_diff: Int
+  ibc_tx_out_rating: Int
+  ibc_tx_out_rating_diff: Int
+  ibc_tx_out_weight: numeric
+  timeframe: Int
+  total_ibc_txs: Int
+  total_ibc_txs_diff: Int
+  total_ibc_txs_rating: Int
+  total_ibc_txs_rating_diff: Int
+  total_ibc_txs_weight: numeric
+  total_txs: Int
+  total_txs_diff: Int
+  total_txs_rating: Int
+  total_txs_rating_diff: Int
+  total_txs_weight: numeric
+}
+
+# order by sum() on columns of table "zones_stats"
+input zones_stats_sum_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# aggregate var_pop on columns
+type zones_stats_var_pop_fields {
+  channels_num: Float
+  ibc_percent: Float
+  ibc_tx_in: Float
+  ibc_tx_in_diff: Float
+  ibc_tx_in_rating: Float
+  ibc_tx_in_rating_diff: Float
+  ibc_tx_in_weight: Float
+  ibc_tx_out: Float
+  ibc_tx_out_diff: Float
+  ibc_tx_out_rating: Float
+  ibc_tx_out_rating_diff: Float
+  ibc_tx_out_weight: Float
+  timeframe: Float
+  total_ibc_txs: Float
+  total_ibc_txs_diff: Float
+  total_ibc_txs_rating: Float
+  total_ibc_txs_rating_diff: Float
+  total_ibc_txs_weight: Float
+  total_txs: Float
+  total_txs_diff: Float
+  total_txs_rating: Float
+  total_txs_rating_diff: Float
+  total_txs_weight: Float
+}
+
+# order by var_pop() on columns of table "zones_stats"
+input zones_stats_var_pop_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# aggregate var_samp on columns
+type zones_stats_var_samp_fields {
+  channels_num: Float
+  ibc_percent: Float
+  ibc_tx_in: Float
+  ibc_tx_in_diff: Float
+  ibc_tx_in_rating: Float
+  ibc_tx_in_rating_diff: Float
+  ibc_tx_in_weight: Float
+  ibc_tx_out: Float
+  ibc_tx_out_diff: Float
+  ibc_tx_out_rating: Float
+  ibc_tx_out_rating_diff: Float
+  ibc_tx_out_weight: Float
+  timeframe: Float
+  total_ibc_txs: Float
+  total_ibc_txs_diff: Float
+  total_ibc_txs_rating: Float
+  total_ibc_txs_rating_diff: Float
+  total_ibc_txs_weight: Float
+  total_txs: Float
+  total_txs_diff: Float
+  total_txs_rating: Float
+  total_txs_rating_diff: Float
+  total_txs_weight: Float
+}
+
+# order by var_samp() on columns of table "zones_stats"
+input zones_stats_var_samp_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# aggregate variance on columns
+type zones_stats_variance_fields {
+  channels_num: Float
+  ibc_percent: Float
+  ibc_tx_in: Float
+  ibc_tx_in_diff: Float
+  ibc_tx_in_rating: Float
+  ibc_tx_in_rating_diff: Float
+  ibc_tx_in_weight: Float
+  ibc_tx_out: Float
+  ibc_tx_out_diff: Float
+  ibc_tx_out_rating: Float
+  ibc_tx_out_rating_diff: Float
+  ibc_tx_out_weight: Float
+  timeframe: Float
+  total_ibc_txs: Float
+  total_ibc_txs_diff: Float
+  total_ibc_txs_rating: Float
+  total_ibc_txs_rating_diff: Float
+  total_ibc_txs_weight: Float
+  total_txs: Float
+  total_txs_diff: Float
+  total_txs_rating: Float
+  total_txs_rating_diff: Float
+  total_txs_weight: Float
+}
+
+# order by variance() on columns of table "zones_stats"
+input zones_stats_variance_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+

@@ -24,14 +24,14 @@ with Diagram("Architecture", show=False) as diagram:
         with Cluster("Txs processors"):
             processor = Go("Processor")
         mq = Rabbitmq("Message queue")
-        processor << mq
         with Cluster("Txs Watchers"):
             watcher = Go("Watcher")
-    watcher >> mq
-    react >> graphql
-    graphql >> master
-    master >> adaptor >> master
-    master >> processor >> master
-    users >> react
-    zone >> watcher
+    mq << Edge(xlabel="pop", color="darkgreen") << processor
+    watcher >> Edge(xlabel="put", color="firebrick") >> mq
+    react >> Edge(label="query/subscribe", color="darkgreen") >> graphql
+    graphql >> Edge(xlabel="read", color="darkgreen") >> master
+    adaptor >> Edge(xlabel="read/write", color="firebrick") >> master
+    processor >> Edge(xlabel="read/write", color="firebrick") >> master
+    users >> Edge(xlabel="get", color="darkgreen") >> react
+    watcher >> Edge(xlabel="listen/crawl", color="darkgreen") >> zone
 diagram

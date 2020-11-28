@@ -1,6 +1,7 @@
 site_name: Map of zones Docs
 nav:
-    - Home: index.md
+    - Getting started: index.md
+    - Architecture: architecture.md
     - About: about.md
 theme: readthedocs
 plugins:

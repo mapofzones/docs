@@ -16,8 +16,8 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 
-## Diagram template
+## Architecture
 
-![Advanced Web Service with On-Premise](advanced_web_service_with_on-premise.png)
+![Architecture](architecture.png)
 
 Hello!

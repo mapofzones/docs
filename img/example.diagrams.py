@@ -9,7 +9,7 @@ from diagrams.programming.language import Go
 from urllib.request import urlretrieve
 from diagrams.custom import Custom
 
-with Diagram("Architecture", show=False) as diagram:
+with Diagram("Project architecture", show=False) as diagram:
     users = Users("Users")
     with Cluster("Zones"):
         zone = Server("Zone")

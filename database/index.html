@@ -141,20 +141,24 @@
               
                 <h1 id="database">Database</h1>
 <h2 id="flat-tables">Flat tables</h2>
+<p>Flat tables contain prepared flat data, ready to use, specifically for the <a href="../front/">front</a> via <a href="../graphql/">hasura graphql</a>.</p>
 <p><img alt="flat" src="../img/db_flat_tables.png" /></p>
 <h2 id="core-tables">Core tables</h2>
+<p>The core tables store the state of the main solution logic and primary statistics.</p>
 <p><img alt="core" src="../img/db_core.png" /></p>
 <h2 id="temporary-tables">Temporary tables</h2>
+<p>Temporary tables are used only for the return set (RETURNS SETOF) in <a href="./#functions">PL/pgSQL functions</a>.</p>
 <p><img alt="temp" src="../img/db_temp.png" /></p>
 <h2 id="functions">Functions</h2>
+<p>The functions are used to calculate statistics from <a href="./#core-tables">core tables</a>. The function is called by the <a href="../adaptor/">statistical adapter</a>.</p>
 <h3 id="get_total_stats">get_total_stats</h3>
 <p>get_total_stats(period_in_hours integer, step_in_hours integer)
 <br>
-RETURNS SETOF temp_t_total_stats</p>
+RETURNS SETOF <a href="./#temporary-tables">temp_t_total_stats</a></p>
 <h3 id="get_full_stats_for_each_zone">get_full_stats_for_each_zone</h3>
 <p>get_full_stats_for_each_zone(period_in_hours integer, step_in_hours integer)
 <br>
-RETURNS SETOF temp_t_full_stats_for_each</p>
+RETURNS SETOF <a href="./#temporary-tables">temp_t_full_stats_for_each</a></p>
               
             </div>
           </div>

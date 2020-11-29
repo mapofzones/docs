@@ -1,5 +1,14 @@
 # Database
 
+The database is the main part of the solution that stores the state of the solution. The database includes:
+
+* [Flat tables](database.md#flat-tables)
+* [Core tables](database.md#core-tables)
+* [Temporary tables](database.md#temporary-tables)
+* [Functions](database.md#functions)
+
+Database migrations work using the [Hasura GraphQL](graphql.md) migrations engine.
+
 ## Flat tables
 
 Flat tables contain prepared flat data, ready to use, specifically for the [front](front.md) via [hasura graphql](graphql.md).

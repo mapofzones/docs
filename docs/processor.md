@@ -1,7 +1,5 @@
 # Tx processor
 
-## General
-
 The MoZ processor is a standalone process that listens to a queue for new blocks. There can be multiple processors. In this case, every processor must listen to his own queue. 
  
 ## Responsiblities

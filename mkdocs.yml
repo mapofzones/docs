@@ -10,7 +10,7 @@ nav:
     - Tx processor: processor.md
     - Message broker: broker.md
     - Watcher: watcher.md
-    - About: about.md
+    - Changelog: changelog.md
 theme: readthedocs
 plugins:
   - diagrams

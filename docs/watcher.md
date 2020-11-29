@@ -11,7 +11,7 @@ and listens to the given zone starting from the given block number.
 
 ## Responsibilies
 
-The newly created object of the ```block``` type is sent to the queue.
+The newly created object of the ```block``` type is sent to the queue in [message broker](broker.md).
 
 ```
 block {

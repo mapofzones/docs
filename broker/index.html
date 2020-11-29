@@ -90,7 +90,7 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a>
                     </li>
                 </ul>
       </div>
@@ -126,6 +126,8 @@
             <div class="section">
               
                 <h1 id="message-broker">Message broker</h1>
+<p>By default, the project uses the RabbitMQ message broker with one queue. All <a href="../watcher/">watchers</a> write data to it, and the <a href="../processor/">processor/processors</a> take data from the queue in portions.</p>
+<p>If there are multiple processors, a separate queue must be created for each processor.</p>
               
             </div>
           </div>

@@ -78,6 +78,10 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Tx processor</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#responsiblities">Responsiblities</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#possible-errors">Possible errors</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -90,7 +94,7 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a>
                     </li>
                 </ul>
       </div>
@@ -126,6 +130,17 @@
             <div class="section">
               
                 <h1 id="tx-processor">Tx processor</h1>
+<p>The MoZ processor is a standalone process that listens to a queue in <a href="../broker/">message broker</a> for new blocks and writes changes to the <a href="../database/#core-tables">database core tables</a>. There can be multiple processors. In this case, every processor must listen to his own queue. </p>
+<h2 id="responsiblities">Responsiblities</h2>
+<p>The processor gets performs the following functions:</p>
+<ul>
+<li>get a new block from the queue</li>
+<li>recognize a type of the messages</li>
+<li>process each message according to its type. For example, it can be an updating of the MoZ stats in case of an ibc transfer or adding a new record into the database if it's an ibc init message</li>
+<li>update the database with the latest processed block number</li>
+</ul>
+<h2 id="possible-errors">Possible errors</h2>
+<p>The processor will reject a new block if it has wrong block number (higher, or lower than expected)</p>
               
             </div>
           </div>

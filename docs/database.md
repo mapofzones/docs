@@ -24,12 +24,17 @@ The functions are used to calculate statistics from [core tables](database.md#co
 
 ### get_total_stats
 
-get_total_stats(period_in_hours integer, step_in_hours integer)
-<br>
-RETURNS SETOF [temp_t_total_stats](database.md#temporary-tables)
+    get_total_stats(period_in_hours integer, step_in_hours integer)
+    RETURNS SETOF temp_t_total_stats
+
+Details of the ```temp_t_total_stats``` temporary table are [here](database.md#temporary-tables).
 
 ### get_full_stats_for_each_zone
 
-get_full_stats_for_each_zone(period_in_hours integer, step_in_hours integer)
-<br>
-RETURNS SETOF [temp_t_full_stats_for_each](database.md#temporary-tables)
+<!-- ```get_full_stats_for_each_zone(period_in_hours integer, step_in_hours integer)
+RETURNS SETOF ```[temp_t_full_stats_for_each](database.md#temporary-tables) -->
+
+    get_full_stats_for_each_zone(period_in_hours integer, step_in_hours integer)
+    RETURNS SETOF temp_t_full_stats_for_each
+
+Details of the ```temp_t_full_stats_for_each``` temporary table are [here](database.md#temporary-tables).

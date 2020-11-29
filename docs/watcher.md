@@ -41,3 +41,12 @@ message {
    ibc_client_id: <string>
 }
 ```
+## Possible errors
+
+> 1) The watcher can't decode the block using the libraries every time the block contains MsgCreateValidator. It looks like a problem with the public key ```*types.Any```.
+
+> 2) Error when sometimes decoding MsgUpdateClient. The error was corrected if you fixed it in the cosmos-sdk source code. Need to add a type decoding parameter as it couldn't decode from a string.
+> ```Amount uint64 protobuf:"varint,2,opt,name=amount,proto3" json:"amount,string,omitempty"```
+> <br>It was necessary to add string. The file is located here:
+> ```cosmos-sdk@v0.40.0-rc3/x/ibc/applications/transfer/types/transfer.pb.go```
+> <br>And here is the link to the file on github: [transfer.pb.go#L33](https://github.com/cosmos/cosmos-sdk/blob/v0.40.0-rc3/x/ibc/applications/transfer/types/transfer.pb.go#L33) 

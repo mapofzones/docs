@@ -55,3 +55,13 @@ jobs:
           destination-repository-name: ${{ github.event.repository.name }}
           user-email: 41898282+github-actions[bot]@users.noreply.github.com
           target-branch: gh-pages
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Notify Telegram
+      uses: yanzay/notify-telegram@v0.1.0
+      if: always()
+      with:
+        chat: ${{ secrets.chat }} # user id or channel name secret
+        token: ${{ secrets.token }} # token secret
+        status: ${{ job.status }} # do not modify this line

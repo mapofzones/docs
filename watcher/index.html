@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Watcher - Map of zones Docs</title>
+  <title>[Protected] Watcher - Map of zones Docs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Watcher";
+    var mkdocs_page_name = "[Protected] Watcher";
     var mkdocs_page_input_path = "watcher.md";
     var mkdocs_page_url = null;
   </script>
@@ -48,43 +48,43 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="..">Getting started</a>
+                    <li class="toctree-l1"><a class="reference internal" href="..">[Protected] Getting started</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../architecture/">Architecture</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../architecture/">[Protected] Architecture</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../front/">Front</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../front/">[Protected] Front</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../graphql/">GraphQL</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../graphql/">[Protected] GraphQL</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../data/schema/">GraphQL schema Types</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../data/schema/">[Protected] GraphQL schema Types</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">[Protected] Database</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../adaptor/">Stats adaptor</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../adaptor/">[Protected] Stats adaptor</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../processor/">Tx processor</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../processor/">[Protected] Tx processor</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../broker/">Message broker</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../broker/">[Protected] Message broker</a>
                     </li>
                 </ul>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Watcher</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">[Protected] Watcher</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#responsibilies">Responsibilies</a>
     </li>
@@ -94,11 +94,11 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../ci%26cd%26cd/">CI/CD/CD</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../ci%26cd%26cd/">[Protected] CI/CD/CD</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../changelog/">[Protected] Changelog</a>
                     </li>
                 </ul>
       </div>
@@ -122,7 +122,7 @@
     
       
     
-    <li>Watcher</li>
+    <li>[Protected] Watcher</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -133,52 +133,125 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="watcher">Watcher</h1>
-<p>The watcher listens to the new blocks, parses them, and assembly the information into the zone-neutral data structures. Watcher only works with one zone, so you need to run a separate watcher for each zone.</p>
-<p>The MoZ watcher is a standalone process that takes 2 input arguments: </p>
-<ul>
-<li>a zone RPC address</li>
-<li>a starting block number</li>
-</ul>
-<p>and listens to the given zone starting from the given block number.</p>
-<h2 id="responsibilies">Responsibilies</h2>
-<p>The newly created object of the <code>block</code> type is sent to the queue in <a href="../broker/">message broker</a>.</p>
-<pre><code>block {
-   chain_id: &lt;string&gt;, the zone chain id
-   block_time: &lt;timestamp&gt; 
-   block_num: &lt;number&gt;
-   txs: array [transaction]
-}
+                <div id="mkdocs-encrypted-content" style="display:none">jVPu1oOTB2SgM0YtiJZ5uQ==;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;^</div>
+<div id="mkdocs-decrypted-content">
+    <form id="mkdocs-decrypt-form">
+        <h1>This content is protected with AES encryption. </h1>
+        <p>Contact your administrator for access to this page.</p>
+        <input type="password" id="mkdocs-content-password" placeholder="Provide password and press ENTER" />
+        
+        <p id="mkdocs-decrypt-msg"></p>
+    </form>
+</div>
 
-transaction {
-   hash: &lt;string&gt;
-   msgs: array [message]
-}
 
-message {
-   transfer_info: {
-     sender: &lt;address&gt;
-     recipient: &lt;address&gt;
-     quantity: &lt;int&gt;
-     precision: &lt;smallint&gt;
-     token: &lt;code&gt;
-   }
-   type: (send | receive | open_channel | open_connection | open_client | unknown)
-   ibc: true | false
-   ibc_channel_id: &lt;string&gt;
-   ibc_connection_id: &lt;string&gt;
-   ibc_client_id: &lt;string&gt;
-}
-</code></pre>
-<h2 id="possible-errors">Possible errors</h2>
-<blockquote>
-<p>1) The watcher can't decode the block using the libraries every time the block contains MsgCreateValidator. It looks like a problem with the public key <code>*types.Any</code>.</p>
-<p>2) Error when sometimes decoding MsgUpdateClient. The error was corrected if you fixed it in the cosmos-sdk source code. Need to add a type decoding parameter as it couldn't decode from a string.
-<code>Amount uint64 protobuf:"varint,2,opt,name=amount,proto3" json:"amount,string,omitempty"</code>
-<br>It was necessary to add string. The file is located here:
-<code>cosmos-sdk@v0.40.0-rc3/x/ibc/applications/transfer/types/transfer.pb.go</code>
-<br>And here is the link to the file on github: <a href="https://github.com/cosmos/cosmos-sdk/blob/v0.40.0-rc3/x/ibc/applications/transfer/types/transfer.pb.go#L33">transfer.pb.go#L33</a> </p>
-</blockquote>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/enc-base64.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/cipher-core.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/pad-nopadding.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/md5.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/aes.js"></script>
+
+
+<script type="text/javascript">
+    (function() {
+        var strip_padding = function(padded_content, padding_char) {
+            /* Strips the padding character from decrypted content. */
+            for (var i = padded_content.length; i > 0; i--) {
+                if (padded_content[i - 1] !== padding_char) {
+                    return padded_content.slice(0, i);
+                }
+            }
+        };
+        var decrypt_content = function(password, iv_b64, ciphertext_b64, padding_char) {
+            /* Decrypts the content from the ciphertext bundle. */
+            var key = CryptoJS.MD5(password),
+                iv = CryptoJS.enc.Base64.parse(iv_b64),
+                ciphertext = CryptoJS.enc.Base64.parse(ciphertext_b64),
+                bundle = {
+                    key: key,
+                    iv: iv,
+                    ciphertext: ciphertext
+                };
+            var plaintext = CryptoJS.AES.decrypt(bundle, key, {
+                iv: iv,
+                padding: CryptoJS.pad.NoPadding
+            });
+            try {
+                return strip_padding(plaintext.toString(CryptoJS.enc.Utf8), padding_char);
+            } catch (err) {
+                // encoding failed; wrong password
+                return false;
+            }
+        };
+        
+        var init_decryptor = function() {
+            var password_input = document.getElementById('mkdocs-content-password'),
+                encrypted_content = document.getElementById('mkdocs-encrypted-content'),
+                decrypted_content = document.getElementById('mkdocs-decrypted-content'),
+                
+                decrypt_form = document.getElementById('mkdocs-decrypt-form');
+            // Adjust password field width to placeholder length
+            let input = document.getElementById("mkdocs-content-password");
+            input.setAttribute('size', input.getAttribute('placeholder').length);
+            
+            // Decrypt content
+            var decrypt_action = function() {
+                // grab the ciphertext bundle
+                var parts = encrypted_content.innerHTML.split(';');
+                // decrypt it
+                var content = decrypt_content(
+                    password_input.value,
+                    parts[0],
+                    parts[1],
+                    parts[2]
+                );
+                if (content) {
+                    // success; display the decrypted content
+                    decrypted_content.innerHTML = content;
+                    encrypted_content.parentNode.removeChild(encrypted_content);
+                    // any post processing on the decrypted content should be done here
+                    
+                    
+                    document.getElementById("mkdocs-decrypted-content").querySelectorAll('pre code').forEach((block) => {
+                        hljs.highlightBlock(block);
+                    });
+                    
+                } else {
+                    // create HTML element for the inform message
+                    var decrypt_msg = document.createElement('p');
+                    decrypt_msg.setAttribute('id', 'mkdocs-decrypt-msg')
+                    var node = document.createTextNode('Invalid password.')
+                    decrypt_msg.appendChild(node)
+                    var mkdocs_decrypt_msg = document.getElementById('mkdocs-decrypt-msg');
+                    // clear all previous failure messages
+                    while (mkdocs_decrypt_msg.firstChild) {
+                        mkdocs_decrypt_msg.firstChild.remove();
+                    }
+                    mkdocs_decrypt_msg.appendChild(decrypt_msg);
+                    password_input.value = '';
+                    password_input.focus();
+                }
+            }
+            
+            
+            password_input.addEventListener('keydown', function(event) {
+                if (event.key === "Enter") {
+                    
+                    event.preventDefault();
+                    decrypt_action();
+                    
+                }
+            });
+        };
+        document.addEventListener('DOMContentLoaded', init_decryptor);
+    })();
+</script>
               
             </div>
           </div>
@@ -186,10 +259,10 @@ message {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ci%26cd%26cd/" class="btn btn-neutral float-right" title="CI/CD/CD">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ci%26cd%26cd/" class="btn btn-neutral float-right" title="[Protected] CI/CD/CD">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../broker/" class="btn btn-neutral" title="Message broker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../broker/" class="btn btn-neutral" title="[Protected] Message broker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

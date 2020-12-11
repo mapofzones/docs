@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Tx processor - Map of zones Docs</title>
+  <title>[Protected] Tx processor - Map of zones Docs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Tx processor";
+    var mkdocs_page_name = "[Protected] Tx processor";
     var mkdocs_page_input_path = "processor.md";
     var mkdocs_page_url = null;
   </script>
@@ -48,35 +48,35 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="..">Getting started</a>
+                    <li class="toctree-l1"><a class="reference internal" href="..">[Protected] Getting started</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../architecture/">Architecture</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../architecture/">[Protected] Architecture</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../front/">Front</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../front/">[Protected] Front</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../graphql/">GraphQL</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../graphql/">[Protected] GraphQL</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../data/schema/">GraphQL schema Types</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../data/schema/">[Protected] GraphQL schema Types</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">[Protected] Database</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../adaptor/">Stats adaptor</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../adaptor/">[Protected] Stats adaptor</a>
                     </li>
                 </ul>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Tx processor</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">[Protected] Tx processor</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#responsiblities">Responsiblities</a>
     </li>
@@ -86,19 +86,19 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../broker/">Message broker</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../broker/">[Protected] Message broker</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../watcher/">Watcher</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../watcher/">[Protected] Watcher</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../ci%26cd%26cd/">CI/CD/CD</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../ci%26cd%26cd/">[Protected] CI/CD/CD</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../changelog/">[Protected] Changelog</a>
                     </li>
                 </ul>
       </div>
@@ -122,7 +122,7 @@
     
       
     
-    <li>Tx processor</li>
+    <li>[Protected] Tx processor</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -133,18 +133,125 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="tx-processor">Tx processor</h1>
-<p>The MoZ processor is a standalone process that listens to a queue in <a href="../broker/">message broker</a> for new blocks and writes changes to the <a href="../database/#core-tables">database core tables</a>. There can be multiple processors. In this case, every processor must listen to his own queue. </p>
-<h2 id="responsiblities">Responsiblities</h2>
-<p>The processor gets performs the following functions:</p>
-<ul>
-<li>get a new block from the queue</li>
-<li>recognize a type of the messages</li>
-<li>process each message according to its type. For example, it can be an updating of the MoZ stats in case of an ibc transfer or adding a new record into the database if it's an ibc init message</li>
-<li>update the database with the latest processed block number</li>
-</ul>
-<h2 id="possible-errors">Possible errors</h2>
-<p>The processor will reject a new block if it has wrong block number (higher, or lower than expected)</p>
+                <div id="mkdocs-encrypted-content" style="display:none">h9EYF0E5TVKPa6mzxRosYA==;xJDr8F5fFGNXV1bpVHiwYVYZHTsFsp/py2JMY33pr5Tg0tzU+RVTr7YLMjSnqJJ9Pk1Dq2LIBEFMfnUbTbFl9hzY8ylHaZna8ch7o+lnlNU/siT2czHlr2taosvBqqwVGdDwBFDmdy3KT043J1ZEo64TuplD/FeXwhFmvuZav/gGsv+JXdLOhL8kmyj+GoK0a+fMSRKm8s4s2Feh+nOEEEv3L1zfU6EBFkI/qZ65QAezlR+qxtslC3uYh+JYEAAuJh8ntuwyey3+TGlA3nvtPQFtLpw8APDBKUk8MKOJHqEsM/i7oeiHEOXBqcK/SFw/4Qd2Nw7eIOQkFFuvOjPc0ZdzC3DOLPBpYTfu+x2rux2DoAEXkLjYzzw+BT/nfNGJO1Kv9LTdQssvzdpdAK2xVu1t8CqcBpc02XQJUCBrpoXiMIcYuSBROzq2CKc0Zkl8XRuOTGFOE9mMy/TRbMMygn0NZGIn2711xDH9a7e6iCGKm768mFzMeqOLAbir+lbPucQStwFbpUGoHKbGuCNkA600duYpuLerMDsAVVqOyjdE8aG5y5JzTScySygMZxr1u+LhUu9Ma4S3A1v91qzRC//wvymwyThS788PHlFJ2NABzaVtrd19kUrb/QmCxocobymCWZs1bXkeGBAZvficZqgFZEQ4EihzKp+BJUF0A1rwcNQMnft9xxXBdfTENwUS0h5J0xLSstnSd9v1vE3oyXs/goJiVoO5nmJdhE6VAp+VTJofq76cr4H4WBSt4C4MX/b9vV9QAvneC2S9+DmmdByEuCiLnM/8C7nWGGmtE5NBn0dKcsub8iDI92Sd1HQG3TIycyqs7TOUr13LrLsn785soy1ui696aPx2Zt28N9u0kkth3pK00e2yR+qn5OcStGSN75Ohwn0RNncxsH6DeUTqpAORp4vKxe8R6MBAKETmfHmqy6AY/8j22PYWS+dvm28K24U4ZWrqYDadwn/XcCBl3jq13FqZlEKzOeNFsCYnV6o0hGPCJhnCrm27WrnI1P+Oqpt9OpFE0EXavmIIzzBT6iCnDW/rvGs88tvfH6Z6JARC2DqCjNFTeHAJb3ERl+DV25uB0yWqzCKktlSGgiHssBm6LUx/+cBXb7g7DckyFXAu9yb0wN4V6AqcjFhnCA/unjX41Bm1N+jF8Rej8Sh9blfB2AM3wEm+5WHEuWvUu/NnPKh9hPcxbHE0sFu+Dq/lN7YG4WSeC7nxAcFfYX/NggSGtB/7cKElwmbaBs/qCFLHLM9PRrAjknDConuMFnWZALWu7QroJ1K69cebuBoTNV/B/t61P/UjlTe1l1g=;^</div>
+<div id="mkdocs-decrypted-content">
+    <form id="mkdocs-decrypt-form">
+        <h1>This content is protected with AES encryption. </h1>
+        <p>Contact your administrator for access to this page.</p>
+        <input type="password" id="mkdocs-content-password" placeholder="Provide password and press ENTER" />
+        
+        <p id="mkdocs-decrypt-msg"></p>
+    </form>
+</div>
+
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/enc-base64.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/cipher-core.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/pad-nopadding.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/md5.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/aes.js"></script>
+
+
+<script type="text/javascript">
+    (function() {
+        var strip_padding = function(padded_content, padding_char) {
+            /* Strips the padding character from decrypted content. */
+            for (var i = padded_content.length; i > 0; i--) {
+                if (padded_content[i - 1] !== padding_char) {
+                    return padded_content.slice(0, i);
+                }
+            }
+        };
+        var decrypt_content = function(password, iv_b64, ciphertext_b64, padding_char) {
+            /* Decrypts the content from the ciphertext bundle. */
+            var key = CryptoJS.MD5(password),
+                iv = CryptoJS.enc.Base64.parse(iv_b64),
+                ciphertext = CryptoJS.enc.Base64.parse(ciphertext_b64),
+                bundle = {
+                    key: key,
+                    iv: iv,
+                    ciphertext: ciphertext
+                };
+            var plaintext = CryptoJS.AES.decrypt(bundle, key, {
+                iv: iv,
+                padding: CryptoJS.pad.NoPadding
+            });
+            try {
+                return strip_padding(plaintext.toString(CryptoJS.enc.Utf8), padding_char);
+            } catch (err) {
+                // encoding failed; wrong password
+                return false;
+            }
+        };
+        
+        var init_decryptor = function() {
+            var password_input = document.getElementById('mkdocs-content-password'),
+                encrypted_content = document.getElementById('mkdocs-encrypted-content'),
+                decrypted_content = document.getElementById('mkdocs-decrypted-content'),
+                
+                decrypt_form = document.getElementById('mkdocs-decrypt-form');
+            // Adjust password field width to placeholder length
+            let input = document.getElementById("mkdocs-content-password");
+            input.setAttribute('size', input.getAttribute('placeholder').length);
+            
+            // Decrypt content
+            var decrypt_action = function() {
+                // grab the ciphertext bundle
+                var parts = encrypted_content.innerHTML.split(';');
+                // decrypt it
+                var content = decrypt_content(
+                    password_input.value,
+                    parts[0],
+                    parts[1],
+                    parts[2]
+                );
+                if (content) {
+                    // success; display the decrypted content
+                    decrypted_content.innerHTML = content;
+                    encrypted_content.parentNode.removeChild(encrypted_content);
+                    // any post processing on the decrypted content should be done here
+                    
+                    
+                    document.getElementById("mkdocs-decrypted-content").querySelectorAll('pre code').forEach((block) => {
+                        hljs.highlightBlock(block);
+                    });
+                    
+                } else {
+                    // create HTML element for the inform message
+                    var decrypt_msg = document.createElement('p');
+                    decrypt_msg.setAttribute('id', 'mkdocs-decrypt-msg')
+                    var node = document.createTextNode('Invalid password.')
+                    decrypt_msg.appendChild(node)
+                    var mkdocs_decrypt_msg = document.getElementById('mkdocs-decrypt-msg');
+                    // clear all previous failure messages
+                    while (mkdocs_decrypt_msg.firstChild) {
+                        mkdocs_decrypt_msg.firstChild.remove();
+                    }
+                    mkdocs_decrypt_msg.appendChild(decrypt_msg);
+                    password_input.value = '';
+                    password_input.focus();
+                }
+            }
+            
+            
+            password_input.addEventListener('keydown', function(event) {
+                if (event.key === "Enter") {
+                    
+                    event.preventDefault();
+                    decrypt_action();
+                    
+                }
+            });
+        };
+        document.addEventListener('DOMContentLoaded', init_decryptor);
+    })();
+</script>
               
             </div>
           </div>
@@ -152,10 +259,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../broker/" class="btn btn-neutral float-right" title="Message broker">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../broker/" class="btn btn-neutral float-right" title="[Protected] Message broker">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../adaptor/" class="btn btn-neutral" title="Stats adaptor"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../adaptor/" class="btn btn-neutral" title="[Protected] Stats adaptor"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

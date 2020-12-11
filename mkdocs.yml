@@ -16,3 +16,5 @@ theme: readthedocs
 plugins:
   - diagrams
   - search
+  - encryptcontent:
+      global_password: ''

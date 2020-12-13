@@ -190,13 +190,12 @@
 <p><em>Continuous delivery is an extension of continuous integration since it automatically deploys all code changes to a testing and/or production environment after the build stage.</em><br>
 <em>This means that on top of automated testing, you have an automated release process and you can deploy your application any time by clicking a button or automatically.</em></p>
 </blockquote>
-<!-- todo: describe out steps -->
-
+<p>Our continuous delivery uses <a href="./#argocd-architecture">argoCD</a> and keeps track of the <strong>"dev"</strong> directory in the <strong>"deploy"</strong> repository. The development application configuration for <a href="./#argocd-architecture">argoCD</a> is located at <strong>deploy/dev/app.yaml</strong>. Any changes made to the <strong>dev</strong> directory of the deploy repository will be reflected on the development server.</p>
 <h2 id="continuous-deployment">Continuous Deployment</h2>
 <blockquote>
 <p><em>Continuous deployment goes one step further than continuous delivery. With this practice, every change that passes all stages of your production pipeline is released to your product.</em></p>
 </blockquote>
-<!-- todo: describe out steps -->
+<p>Our continuous deployment uses <a href="./#argocd-architecture">argoCD</a> and keeps track of the <strong>"prod"</strong> directory in the <strong>"deploy"</strong> repository. The production application configuration for <a href="./#argocd-architecture">argoCD</a> is located at <strong>deploy/prod/app.yaml</strong>. Any changes made to the <strong>prod</strong> directory of the deploy repository will be reflected on the production server, but unlike development server for added security, automatic initialization of synchronization is disabled on the production server. This means that to start a new synchronization, you need to click on the <strong>"SYNC"</strong> button in the <a href="./#argocd-architecture">argoCD</a> client, or do it through the console.</p>
               
             </div>
           </div>

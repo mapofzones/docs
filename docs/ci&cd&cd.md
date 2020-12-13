@@ -22,6 +22,13 @@ Each GitHub repository has secret keys for publishing images, for sending messag
 
 ## Continuous Delivery
 
+>*Continuous delivery is an extension of continuous integration since it automatically deploys all code changes to a testing and/or production environment after the build stage.*<br>
+>*This means that on top of automated testing, you have an automated release process and you can deploy your application any time by clicking a button or automatically.*
+
+<!-- todo: describe out steps -->
+
 ## Continuous Deployment
 
-Continuous deployment goes one step further than continuous delivery.
+>*Continuous deployment goes one step further than continuous delivery. With this practice, every change that passes all stages of your production pipeline is released to your product.*
+
+<!-- todo: describe out steps -->

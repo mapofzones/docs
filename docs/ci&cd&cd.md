@@ -53,10 +53,10 @@ Each GitHub repository has secret keys for publishing images, for sending messag
 >*Continuous delivery is an extension of continuous integration since it automatically deploys all code changes to a testing and/or production environment after the build stage.*<br>
 >*This means that on top of automated testing, you have an automated release process and you can deploy your application any time by clicking a button or automatically.*
 
-<!-- todo: describe out steps -->
+Our continuous delivery uses [argoCD](ci&cd&cd.md#argocd-architecture) and keeps track of the **"dev"** directory in the **"deploy"** repository. The development application configuration for [argoCD](ci&cd&cd.md#argocd-architecture) is located at **deploy/dev/app.yaml**. Any changes made to the **dev** directory of the deploy repository will be reflected on the development server.
 
 ## Continuous Deployment
 
 >*Continuous deployment goes one step further than continuous delivery. With this practice, every change that passes all stages of your production pipeline is released to your product.*
 
-<!-- todo: describe out steps -->
+Our continuous deployment uses [argoCD](ci&cd&cd.md#argocd-architecture) and keeps track of the **"prod"** directory in the **"deploy"** repository. The production application configuration for [argoCD](ci&cd&cd.md#argocd-architecture) is located at **deploy/prod/app.yaml**. Any changes made to the **prod** directory of the deploy repository will be reflected on the production server, but unlike development server for added security, automatic initialization of synchronization is disabled on the production server. This means that to start a new synchronization, you need to click on the **"SYNC"** button in the [argoCD](ci&cd&cd.md#argocd-architecture) client, or do it through the console.

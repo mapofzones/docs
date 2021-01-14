@@ -129,16 +129,19 @@
               
                 <h1 id="add-new-node-to-proxy-server">Add new node to Proxy server</h1>
 <p>Add a parameter after the list of available nodes:</p>
-<p>acl k8 src <ip address node>/32</p>
-<p>Reconfigure squid:
-  squid -k reconfigure</p>
+<pre><code class="language-squid">acl k8 src &lt;ip address node&gt;/32
+</code></pre>
+<p>And reconfigure squid:</p>
+<pre><code class="language-squid">  squid -k reconfigure
+</code></pre>
 <h1 id="using-proxy-from-kubernetes">Using proxy from kubernetes</h1>
 <p>Add enviroment to container</p>
-<p>env:
+<pre><code class="language-kubernetes">   env:
     - name: http_proxy
       value: http://46.101.95.106:9999
     - name: https_proxy
-      value: http://46.101.95.106:9999</p>
+      value: http://46.101.95.106:9999
+</code></pre>
 <h1 id="check-logs-to-access-data-from-node">Check logs to access data from node:</h1>
 <p>tail /var/log/squid/access.log</p>
               

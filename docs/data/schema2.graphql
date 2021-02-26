@@ -1,0 +1,6326 @@
+schema {
+  query: query_root
+  mutation: mutation_root
+  subscription: subscription_root
+}
+
+# columns and relationships of "active_addresses"
+type active_addresses {
+  address: String!
+  hour: timestamp!
+  period: Int!
+  zone: String!
+}
+
+# aggregated selection of "active_addresses"
+type active_addresses_aggregate {
+  aggregate: active_addresses_aggregate_fields
+  nodes: [active_addresses!]!
+}
+
+# aggregate fields of "active_addresses"
+type active_addresses_aggregate_fields {
+  avg: active_addresses_avg_fields
+  count(columns: [active_addresses_select_column!], distinct: Boolean): Int
+  max: active_addresses_max_fields
+  min: active_addresses_min_fields
+  stddev: active_addresses_stddev_fields
+  stddev_pop: active_addresses_stddev_pop_fields
+  stddev_samp: active_addresses_stddev_samp_fields
+  sum: active_addresses_sum_fields
+  var_pop: active_addresses_var_pop_fields
+  var_samp: active_addresses_var_samp_fields
+  variance: active_addresses_variance_fields
+}
+
+# order by aggregate values of table "active_addresses"
+input active_addresses_aggregate_order_by {
+  avg: active_addresses_avg_order_by
+  count: order_by
+  max: active_addresses_max_order_by
+  min: active_addresses_min_order_by
+  stddev: active_addresses_stddev_order_by
+  stddev_pop: active_addresses_stddev_pop_order_by
+  stddev_samp: active_addresses_stddev_samp_order_by
+  sum: active_addresses_sum_order_by
+  var_pop: active_addresses_var_pop_order_by
+  var_samp: active_addresses_var_samp_order_by
+  variance: active_addresses_variance_order_by
+}
+
+# input type for inserting array relation for remote table "active_addresses"
+input active_addresses_arr_rel_insert_input {
+  data: [active_addresses_insert_input!]!
+  on_conflict: active_addresses_on_conflict
+}
+
+# aggregate avg on columns
+type active_addresses_avg_fields {
+  period: Float
+}
+
+# order by avg() on columns of table "active_addresses"
+input active_addresses_avg_order_by {
+  period: order_by
+}
+
+# Boolean expression to filter rows from the table "active_addresses". All fields are combined with a logical 'AND'.
+input active_addresses_bool_exp {
+  _and: [active_addresses_bool_exp]
+  _not: active_addresses_bool_exp
+  _or: [active_addresses_bool_exp]
+  address: String_comparison_exp
+  hour: timestamp_comparison_exp
+  period: Int_comparison_exp
+  zone: String_comparison_exp
+}
+
+# unique or primary key constraints on table "active_addresses"
+enum active_addresses_constraint {
+  # unique or primary key constraint
+  active_addresses_pkey
+}
+
+# input type for incrementing integer column in table "active_addresses"
+input active_addresses_inc_input {
+  period: Int
+}
+
+# input type for inserting data into table "active_addresses"
+input active_addresses_insert_input {
+  address: String
+  hour: timestamp
+  period: Int
+  zone: String
+}
+
+# aggregate max on columns
+type active_addresses_max_fields {
+  address: String
+  hour: timestamp
+  period: Int
+  zone: String
+}
+
+# order by max() on columns of table "active_addresses"
+input active_addresses_max_order_by {
+  address: order_by
+  hour: order_by
+  period: order_by
+  zone: order_by
+}
+
+# aggregate min on columns
+type active_addresses_min_fields {
+  address: String
+  hour: timestamp
+  period: Int
+  zone: String
+}
+
+# order by min() on columns of table "active_addresses"
+input active_addresses_min_order_by {
+  address: order_by
+  hour: order_by
+  period: order_by
+  zone: order_by
+}
+
+# response of any mutation on the table "active_addresses"
+type active_addresses_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [active_addresses!]!
+}
+
+# input type for inserting object relation for remote table "active_addresses"
+input active_addresses_obj_rel_insert_input {
+  data: active_addresses_insert_input!
+  on_conflict: active_addresses_on_conflict
+}
+
+# on conflict condition type for table "active_addresses"
+input active_addresses_on_conflict {
+  constraint: active_addresses_constraint!
+  update_columns: [active_addresses_update_column!]!
+  where: active_addresses_bool_exp
+}
+
+# ordering options when selecting data from "active_addresses"
+input active_addresses_order_by {
+  address: order_by
+  hour: order_by
+  period: order_by
+  zone: order_by
+}
+
+# primary key columns input for table: "active_addresses"
+input active_addresses_pk_columns_input {
+  address: String!
+  hour: timestamp!
+  period: Int!
+  zone: String!
+}
+
+# select columns of table "active_addresses"
+enum active_addresses_select_column {
+  # column name
+  address
+
+  # column name
+  hour
+
+  # column name
+  period
+
+  # column name
+  zone
+}
+
+# input type for updating data in table "active_addresses"
+input active_addresses_set_input {
+  address: String
+  hour: timestamp
+  period: Int
+  zone: String
+}
+
+# aggregate stddev on columns
+type active_addresses_stddev_fields {
+  period: Float
+}
+
+# order by stddev() on columns of table "active_addresses"
+input active_addresses_stddev_order_by {
+  period: order_by
+}
+
+# aggregate stddev_pop on columns
+type active_addresses_stddev_pop_fields {
+  period: Float
+}
+
+# order by stddev_pop() on columns of table "active_addresses"
+input active_addresses_stddev_pop_order_by {
+  period: order_by
+}
+
+# aggregate stddev_samp on columns
+type active_addresses_stddev_samp_fields {
+  period: Float
+}
+
+# order by stddev_samp() on columns of table "active_addresses"
+input active_addresses_stddev_samp_order_by {
+  period: order_by
+}
+
+# aggregate sum on columns
+type active_addresses_sum_fields {
+  period: Int
+}
+
+# order by sum() on columns of table "active_addresses"
+input active_addresses_sum_order_by {
+  period: order_by
+}
+
+# update columns of table "active_addresses"
+enum active_addresses_update_column {
+  # column name
+  address
+
+  # column name
+  hour
+
+  # column name
+  period
+
+  # column name
+  zone
+}
+
+# aggregate var_pop on columns
+type active_addresses_var_pop_fields {
+  period: Float
+}
+
+# order by var_pop() on columns of table "active_addresses"
+input active_addresses_var_pop_order_by {
+  period: order_by
+}
+
+# aggregate var_samp on columns
+type active_addresses_var_samp_fields {
+  period: Float
+}
+
+# order by var_samp() on columns of table "active_addresses"
+input active_addresses_var_samp_order_by {
+  period: order_by
+}
+
+# aggregate variance on columns
+type active_addresses_variance_fields {
+  period: Float
+}
+
+# order by variance() on columns of table "active_addresses"
+input active_addresses_variance_order_by {
+  period: order_by
+}
+
+scalar bigint
+
+# expression to compare columns of type bigint. All fields are combined with logical 'AND'.
+input bigint_comparison_exp {
+  _eq: bigint
+  _gt: bigint
+  _gte: bigint
+  _in: [bigint!]
+  _is_null: Boolean
+  _lt: bigint
+  _lte: bigint
+  _neq: bigint
+  _nin: [bigint!]
+}
+
+# columns and relationships of "blocks_log"
+type blocks_log {
+  last_processed_block: Int!
+  last_updated_at: timestamp!
+  zone: String!
+}
+
+# aggregated selection of "blocks_log"
+type blocks_log_aggregate {
+  aggregate: blocks_log_aggregate_fields
+  nodes: [blocks_log!]!
+}
+
+# aggregate fields of "blocks_log"
+type blocks_log_aggregate_fields {
+  avg: blocks_log_avg_fields
+  count(columns: [blocks_log_select_column!], distinct: Boolean): Int
+  max: blocks_log_max_fields
+  min: blocks_log_min_fields
+  stddev: blocks_log_stddev_fields
+  stddev_pop: blocks_log_stddev_pop_fields
+  stddev_samp: blocks_log_stddev_samp_fields
+  sum: blocks_log_sum_fields
+  var_pop: blocks_log_var_pop_fields
+  var_samp: blocks_log_var_samp_fields
+  variance: blocks_log_variance_fields
+}
+
+# order by aggregate values of table "blocks_log"
+input blocks_log_aggregate_order_by {
+  avg: blocks_log_avg_order_by
+  count: order_by
+  max: blocks_log_max_order_by
+  min: blocks_log_min_order_by
+  stddev: blocks_log_stddev_order_by
+  stddev_pop: blocks_log_stddev_pop_order_by
+  stddev_samp: blocks_log_stddev_samp_order_by
+  sum: blocks_log_sum_order_by
+  var_pop: blocks_log_var_pop_order_by
+  var_samp: blocks_log_var_samp_order_by
+  variance: blocks_log_variance_order_by
+}
+
+# input type for inserting array relation for remote table "blocks_log"
+input blocks_log_arr_rel_insert_input {
+  data: [blocks_log_insert_input!]!
+  on_conflict: blocks_log_on_conflict
+}
+
+# aggregate avg on columns
+type blocks_log_avg_fields {
+  last_processed_block: Float
+}
+
+# order by avg() on columns of table "blocks_log"
+input blocks_log_avg_order_by {
+  last_processed_block: order_by
+}
+
+# Boolean expression to filter rows from the table "blocks_log". All fields are combined with a logical 'AND'.
+input blocks_log_bool_exp {
+  _and: [blocks_log_bool_exp]
+  _not: blocks_log_bool_exp
+  _or: [blocks_log_bool_exp]
+  last_processed_block: Int_comparison_exp
+  last_updated_at: timestamp_comparison_exp
+  zone: String_comparison_exp
+}
+
+# unique or primary key constraints on table "blocks_log"
+enum blocks_log_constraint {
+  # unique or primary key constraint
+  blocks_log_hub_pkey
+}
+
+# input type for incrementing integer column in table "blocks_log"
+input blocks_log_inc_input {
+  last_processed_block: Int
+}
+
+# input type for inserting data into table "blocks_log"
+input blocks_log_insert_input {
+  last_processed_block: Int
+  last_updated_at: timestamp
+  zone: String
+}
+
+# aggregate max on columns
+type blocks_log_max_fields {
+  last_processed_block: Int
+  last_updated_at: timestamp
+  zone: String
+}
+
+# order by max() on columns of table "blocks_log"
+input blocks_log_max_order_by {
+  last_processed_block: order_by
+  last_updated_at: order_by
+  zone: order_by
+}
+
+# aggregate min on columns
+type blocks_log_min_fields {
+  last_processed_block: Int
+  last_updated_at: timestamp
+  zone: String
+}
+
+# order by min() on columns of table "blocks_log"
+input blocks_log_min_order_by {
+  last_processed_block: order_by
+  last_updated_at: order_by
+  zone: order_by
+}
+
+# response of any mutation on the table "blocks_log"
+type blocks_log_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [blocks_log!]!
+}
+
+# input type for inserting object relation for remote table "blocks_log"
+input blocks_log_obj_rel_insert_input {
+  data: blocks_log_insert_input!
+  on_conflict: blocks_log_on_conflict
+}
+
+# on conflict condition type for table "blocks_log"
+input blocks_log_on_conflict {
+  constraint: blocks_log_constraint!
+  update_columns: [blocks_log_update_column!]!
+  where: blocks_log_bool_exp
+}
+
+# ordering options when selecting data from "blocks_log"
+input blocks_log_order_by {
+  last_processed_block: order_by
+  last_updated_at: order_by
+  zone: order_by
+}
+
+# primary key columns input for table: "blocks_log"
+input blocks_log_pk_columns_input {
+  zone: String!
+}
+
+# select columns of table "blocks_log"
+enum blocks_log_select_column {
+  # column name
+  last_processed_block
+
+  # column name
+  last_updated_at
+
+  # column name
+  zone
+}
+
+# input type for updating data in table "blocks_log"
+input blocks_log_set_input {
+  last_processed_block: Int
+  last_updated_at: timestamp
+  zone: String
+}
+
+# aggregate stddev on columns
+type blocks_log_stddev_fields {
+  last_processed_block: Float
+}
+
+# order by stddev() on columns of table "blocks_log"
+input blocks_log_stddev_order_by {
+  last_processed_block: order_by
+}
+
+# aggregate stddev_pop on columns
+type blocks_log_stddev_pop_fields {
+  last_processed_block: Float
+}
+
+# order by stddev_pop() on columns of table "blocks_log"
+input blocks_log_stddev_pop_order_by {
+  last_processed_block: order_by
+}
+
+# aggregate stddev_samp on columns
+type blocks_log_stddev_samp_fields {
+  last_processed_block: Float
+}
+
+# order by stddev_samp() on columns of table "blocks_log"
+input blocks_log_stddev_samp_order_by {
+  last_processed_block: order_by
+}
+
+# aggregate sum on columns
+type blocks_log_sum_fields {
+  last_processed_block: Int
+}
+
+# order by sum() on columns of table "blocks_log"
+input blocks_log_sum_order_by {
+  last_processed_block: order_by
+}
+
+# update columns of table "blocks_log"
+enum blocks_log_update_column {
+  # column name
+  last_processed_block
+
+  # column name
+  last_updated_at
+
+  # column name
+  zone
+}
+
+# aggregate var_pop on columns
+type blocks_log_var_pop_fields {
+  last_processed_block: Float
+}
+
+# order by var_pop() on columns of table "blocks_log"
+input blocks_log_var_pop_order_by {
+  last_processed_block: order_by
+}
+
+# aggregate var_samp on columns
+type blocks_log_var_samp_fields {
+  last_processed_block: Float
+}
+
+# order by var_samp() on columns of table "blocks_log"
+input blocks_log_var_samp_order_by {
+  last_processed_block: order_by
+}
+
+# aggregate variance on columns
+type blocks_log_variance_fields {
+  last_processed_block: Float
+}
+
+# order by variance() on columns of table "blocks_log"
+input blocks_log_variance_order_by {
+  last_processed_block: order_by
+}
+
+# expression to compare columns of type Boolean. All fields are combined with logical 'AND'.
+input Boolean_comparison_exp {
+  _eq: Boolean
+  _gt: Boolean
+  _gte: Boolean
+  _in: [Boolean!]
+  _is_null: Boolean
+  _lt: Boolean
+  _lte: Boolean
+  _neq: Boolean
+  _nin: [Boolean!]
+}
+
+# columns and relationships of "headers"
+type headers {
+  channels_cnt_all: Int!
+  channels_cnt_period: Int!
+  chart(
+    # JSON select path
+    path: String
+  ): jsonb!
+  timeframe: Int!
+  top_zone_pair(
+    # JSON select path
+    path: String
+  ): jsonb!
+  zones_cnt_all: Int!
+  zones_cnt_period: Int!
+}
+
+# aggregated selection of "headers"
+type headers_aggregate {
+  aggregate: headers_aggregate_fields
+  nodes: [headers!]!
+}
+
+# aggregate fields of "headers"
+type headers_aggregate_fields {
+  avg: headers_avg_fields
+  count(columns: [headers_select_column!], distinct: Boolean): Int
+  max: headers_max_fields
+  min: headers_min_fields
+  stddev: headers_stddev_fields
+  stddev_pop: headers_stddev_pop_fields
+  stddev_samp: headers_stddev_samp_fields
+  sum: headers_sum_fields
+  var_pop: headers_var_pop_fields
+  var_samp: headers_var_samp_fields
+  variance: headers_variance_fields
+}
+
+# order by aggregate values of table "headers"
+input headers_aggregate_order_by {
+  avg: headers_avg_order_by
+  count: order_by
+  max: headers_max_order_by
+  min: headers_min_order_by
+  stddev: headers_stddev_order_by
+  stddev_pop: headers_stddev_pop_order_by
+  stddev_samp: headers_stddev_samp_order_by
+  sum: headers_sum_order_by
+  var_pop: headers_var_pop_order_by
+  var_samp: headers_var_samp_order_by
+  variance: headers_variance_order_by
+}
+
+# append existing jsonb value of filtered columns with new jsonb value
+input headers_append_input {
+  chart: jsonb
+  top_zone_pair: jsonb
+}
+
+# input type for inserting array relation for remote table "headers"
+input headers_arr_rel_insert_input {
+  data: [headers_insert_input!]!
+  on_conflict: headers_on_conflict
+}
+
+# aggregate avg on columns
+type headers_avg_fields {
+  channels_cnt_all: Float
+  channels_cnt_period: Float
+  timeframe: Float
+  zones_cnt_all: Float
+  zones_cnt_period: Float
+}
+
+# order by avg() on columns of table "headers"
+input headers_avg_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# Boolean expression to filter rows from the table "headers". All fields are combined with a logical 'AND'.
+input headers_bool_exp {
+  _and: [headers_bool_exp]
+  _not: headers_bool_exp
+  _or: [headers_bool_exp]
+  channels_cnt_all: Int_comparison_exp
+  channels_cnt_period: Int_comparison_exp
+  chart: jsonb_comparison_exp
+  timeframe: Int_comparison_exp
+  top_zone_pair: jsonb_comparison_exp
+  zones_cnt_all: Int_comparison_exp
+  zones_cnt_period: Int_comparison_exp
+}
+
+# unique or primary key constraints on table "headers"
+enum headers_constraint {
+  # unique or primary key constraint
+  headers_pkey
+}
+
+# delete the field or element with specified path (for JSON arrays, negative integers count from the end)
+input headers_delete_at_path_input {
+  chart: [String]
+  top_zone_pair: [String]
+}
+
+# delete the array element with specified index (negative integers count from the
+# end). throws an error if top level container is not an array
+input headers_delete_elem_input {
+  chart: Int
+  top_zone_pair: Int
+}
+
+# delete key/value pair or string element. key/value pairs are matched based on their key value
+input headers_delete_key_input {
+  chart: String
+  top_zone_pair: String
+}
+
+# input type for incrementing integer column in table "headers"
+input headers_inc_input {
+  channels_cnt_all: Int
+  channels_cnt_period: Int
+  timeframe: Int
+  zones_cnt_all: Int
+  zones_cnt_period: Int
+}
+
+# input type for inserting data into table "headers"
+input headers_insert_input {
+  channels_cnt_all: Int
+  channels_cnt_period: Int
+  chart: jsonb
+  timeframe: Int
+  top_zone_pair: jsonb
+  zones_cnt_all: Int
+  zones_cnt_period: Int
+}
+
+# aggregate max on columns
+type headers_max_fields {
+  channels_cnt_all: Int
+  channels_cnt_period: Int
+  timeframe: Int
+  zones_cnt_all: Int
+  zones_cnt_period: Int
+}
+
+# order by max() on columns of table "headers"
+input headers_max_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# aggregate min on columns
+type headers_min_fields {
+  channels_cnt_all: Int
+  channels_cnt_period: Int
+  timeframe: Int
+  zones_cnt_all: Int
+  zones_cnt_period: Int
+}
+
+# order by min() on columns of table "headers"
+input headers_min_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# response of any mutation on the table "headers"
+type headers_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [headers!]!
+}
+
+# input type for inserting object relation for remote table "headers"
+input headers_obj_rel_insert_input {
+  data: headers_insert_input!
+  on_conflict: headers_on_conflict
+}
+
+# on conflict condition type for table "headers"
+input headers_on_conflict {
+  constraint: headers_constraint!
+  update_columns: [headers_update_column!]!
+  where: headers_bool_exp
+}
+
+# ordering options when selecting data from "headers"
+input headers_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  chart: order_by
+  timeframe: order_by
+  top_zone_pair: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# primary key columns input for table: "headers"
+input headers_pk_columns_input {
+  timeframe: Int!
+}
+
+# prepend existing jsonb value of filtered columns with new jsonb value
+input headers_prepend_input {
+  chart: jsonb
+  top_zone_pair: jsonb
+}
+
+# select columns of table "headers"
+enum headers_select_column {
+  # column name
+  channels_cnt_all
+
+  # column name
+  channels_cnt_period
+
+  # column name
+  chart
+
+  # column name
+  timeframe
+
+  # column name
+  top_zone_pair
+
+  # column name
+  zones_cnt_all
+
+  # column name
+  zones_cnt_period
+}
+
+# input type for updating data in table "headers"
+input headers_set_input {
+  channels_cnt_all: Int
+  channels_cnt_period: Int
+  chart: jsonb
+  timeframe: Int
+  top_zone_pair: jsonb
+  zones_cnt_all: Int
+  zones_cnt_period: Int
+}
+
+# aggregate stddev on columns
+type headers_stddev_fields {
+  channels_cnt_all: Float
+  channels_cnt_period: Float
+  timeframe: Float
+  zones_cnt_all: Float
+  zones_cnt_period: Float
+}
+
+# order by stddev() on columns of table "headers"
+input headers_stddev_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# aggregate stddev_pop on columns
+type headers_stddev_pop_fields {
+  channels_cnt_all: Float
+  channels_cnt_period: Float
+  timeframe: Float
+  zones_cnt_all: Float
+  zones_cnt_period: Float
+}
+
+# order by stddev_pop() on columns of table "headers"
+input headers_stddev_pop_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# aggregate stddev_samp on columns
+type headers_stddev_samp_fields {
+  channels_cnt_all: Float
+  channels_cnt_period: Float
+  timeframe: Float
+  zones_cnt_all: Float
+  zones_cnt_period: Float
+}
+
+# order by stddev_samp() on columns of table "headers"
+input headers_stddev_samp_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# aggregate sum on columns
+type headers_sum_fields {
+  channels_cnt_all: Int
+  channels_cnt_period: Int
+  timeframe: Int
+  zones_cnt_all: Int
+  zones_cnt_period: Int
+}
+
+# order by sum() on columns of table "headers"
+input headers_sum_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# update columns of table "headers"
+enum headers_update_column {
+  # column name
+  channels_cnt_all
+
+  # column name
+  channels_cnt_period
+
+  # column name
+  chart
+
+  # column name
+  timeframe
+
+  # column name
+  top_zone_pair
+
+  # column name
+  zones_cnt_all
+
+  # column name
+  zones_cnt_period
+}
+
+# aggregate var_pop on columns
+type headers_var_pop_fields {
+  channels_cnt_all: Float
+  channels_cnt_period: Float
+  timeframe: Float
+  zones_cnt_all: Float
+  zones_cnt_period: Float
+}
+
+# order by var_pop() on columns of table "headers"
+input headers_var_pop_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# aggregate var_samp on columns
+type headers_var_samp_fields {
+  channels_cnt_all: Float
+  channels_cnt_period: Float
+  timeframe: Float
+  zones_cnt_all: Float
+  zones_cnt_period: Float
+}
+
+# order by var_samp() on columns of table "headers"
+input headers_var_samp_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# aggregate variance on columns
+type headers_variance_fields {
+  channels_cnt_all: Float
+  channels_cnt_period: Float
+  timeframe: Float
+  zones_cnt_all: Float
+  zones_cnt_period: Float
+}
+
+# order by variance() on columns of table "headers"
+input headers_variance_order_by {
+  channels_cnt_all: order_by
+  channels_cnt_period: order_by
+  timeframe: order_by
+  zones_cnt_all: order_by
+  zones_cnt_period: order_by
+}
+
+# columns and relationships of "ibc_channel_zone"
+type ibc_channel_zone {
+  added_at: timestamp!
+  chain_id: String!
+  chanel_id: String!
+  zone: String!
+}
+
+# aggregated selection of "ibc_channel_zone"
+type ibc_channel_zone_aggregate {
+  aggregate: ibc_channel_zone_aggregate_fields
+  nodes: [ibc_channel_zone!]!
+}
+
+# aggregate fields of "ibc_channel_zone"
+type ibc_channel_zone_aggregate_fields {
+  count(columns: [ibc_channel_zone_select_column!], distinct: Boolean): Int
+  max: ibc_channel_zone_max_fields
+  min: ibc_channel_zone_min_fields
+}
+
+# order by aggregate values of table "ibc_channel_zone"
+input ibc_channel_zone_aggregate_order_by {
+  count: order_by
+  max: ibc_channel_zone_max_order_by
+  min: ibc_channel_zone_min_order_by
+}
+
+# input type for inserting array relation for remote table "ibc_channel_zone"
+input ibc_channel_zone_arr_rel_insert_input {
+  data: [ibc_channel_zone_insert_input!]!
+  on_conflict: ibc_channel_zone_on_conflict
+}
+
+# Boolean expression to filter rows from the table "ibc_channel_zone". All fields are combined with a logical 'AND'.
+input ibc_channel_zone_bool_exp {
+  _and: [ibc_channel_zone_bool_exp]
+  _not: ibc_channel_zone_bool_exp
+  _or: [ibc_channel_zone_bool_exp]
+  added_at: timestamp_comparison_exp
+  chain_id: String_comparison_exp
+  chanel_id: String_comparison_exp
+  zone: String_comparison_exp
+}
+
+# unique or primary key constraints on table "ibc_channel_zone"
+enum ibc_channel_zone_constraint {
+  # unique or primary key constraint
+  ibc_channel_zone_pkey
+}
+
+# input type for inserting data into table "ibc_channel_zone"
+input ibc_channel_zone_insert_input {
+  added_at: timestamp
+  chain_id: String
+  chanel_id: String
+  zone: String
+}
+
+# aggregate max on columns
+type ibc_channel_zone_max_fields {
+  added_at: timestamp
+  chain_id: String
+  chanel_id: String
+  zone: String
+}
+
+# order by max() on columns of table "ibc_channel_zone"
+input ibc_channel_zone_max_order_by {
+  added_at: order_by
+  chain_id: order_by
+  chanel_id: order_by
+  zone: order_by
+}
+
+# aggregate min on columns
+type ibc_channel_zone_min_fields {
+  added_at: timestamp
+  chain_id: String
+  chanel_id: String
+  zone: String
+}
+
+# order by min() on columns of table "ibc_channel_zone"
+input ibc_channel_zone_min_order_by {
+  added_at: order_by
+  chain_id: order_by
+  chanel_id: order_by
+  zone: order_by
+}
+
+# response of any mutation on the table "ibc_channel_zone"
+type ibc_channel_zone_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [ibc_channel_zone!]!
+}
+
+# input type for inserting object relation for remote table "ibc_channel_zone"
+input ibc_channel_zone_obj_rel_insert_input {
+  data: ibc_channel_zone_insert_input!
+  on_conflict: ibc_channel_zone_on_conflict
+}
+
+# on conflict condition type for table "ibc_channel_zone"
+input ibc_channel_zone_on_conflict {
+  constraint: ibc_channel_zone_constraint!
+  update_columns: [ibc_channel_zone_update_column!]!
+  where: ibc_channel_zone_bool_exp
+}
+
+# ordering options when selecting data from "ibc_channel_zone"
+input ibc_channel_zone_order_by {
+  added_at: order_by
+  chain_id: order_by
+  chanel_id: order_by
+  zone: order_by
+}
+
+# primary key columns input for table: "ibc_channel_zone"
+input ibc_channel_zone_pk_columns_input {
+  chanel_id: String!
+  zone: String!
+}
+
+# select columns of table "ibc_channel_zone"
+enum ibc_channel_zone_select_column {
+  # column name
+  added_at
+
+  # column name
+  chain_id
+
+  # column name
+  chanel_id
+
+  # column name
+  zone
+}
+
+# input type for updating data in table "ibc_channel_zone"
+input ibc_channel_zone_set_input {
+  added_at: timestamp
+  chain_id: String
+  chanel_id: String
+  zone: String
+}
+
+# update columns of table "ibc_channel_zone"
+enum ibc_channel_zone_update_column {
+  # column name
+  added_at
+
+  # column name
+  chain_id
+
+  # column name
+  chanel_id
+
+  # column name
+  zone
+}
+
+# columns and relationships of "ibc_channels"
+type ibc_channels {
+  added_at: timestamp!
+  channel_id: String!
+  connection_id: String!
+  is_opened: Boolean!
+  zone: String!
+}
+
+# aggregated selection of "ibc_channels"
+type ibc_channels_aggregate {
+  aggregate: ibc_channels_aggregate_fields
+  nodes: [ibc_channels!]!
+}
+
+# aggregate fields of "ibc_channels"
+type ibc_channels_aggregate_fields {
+  count(columns: [ibc_channels_select_column!], distinct: Boolean): Int
+  max: ibc_channels_max_fields
+  min: ibc_channels_min_fields
+}
+
+# order by aggregate values of table "ibc_channels"
+input ibc_channels_aggregate_order_by {
+  count: order_by
+  max: ibc_channels_max_order_by
+  min: ibc_channels_min_order_by
+}
+
+# input type for inserting array relation for remote table "ibc_channels"
+input ibc_channels_arr_rel_insert_input {
+  data: [ibc_channels_insert_input!]!
+  on_conflict: ibc_channels_on_conflict
+}
+
+# Boolean expression to filter rows from the table "ibc_channels". All fields are combined with a logical 'AND'.
+input ibc_channels_bool_exp {
+  _and: [ibc_channels_bool_exp]
+  _not: ibc_channels_bool_exp
+  _or: [ibc_channels_bool_exp]
+  added_at: timestamp_comparison_exp
+  channel_id: String_comparison_exp
+  connection_id: String_comparison_exp
+  is_opened: Boolean_comparison_exp
+  zone: String_comparison_exp
+}
+
+# unique or primary key constraints on table "ibc_channels"
+enum ibc_channels_constraint {
+  # unique or primary key constraint
+  channels_pkey
+}
+
+# input type for inserting data into table "ibc_channels"
+input ibc_channels_insert_input {
+  added_at: timestamp
+  channel_id: String
+  connection_id: String
+  is_opened: Boolean
+  zone: String
+}
+
+# aggregate max on columns
+type ibc_channels_max_fields {
+  added_at: timestamp
+  channel_id: String
+  connection_id: String
+  zone: String
+}
+
+# order by max() on columns of table "ibc_channels"
+input ibc_channels_max_order_by {
+  added_at: order_by
+  channel_id: order_by
+  connection_id: order_by
+  zone: order_by
+}
+
+# aggregate min on columns
+type ibc_channels_min_fields {
+  added_at: timestamp
+  channel_id: String
+  connection_id: String
+  zone: String
+}
+
+# order by min() on columns of table "ibc_channels"
+input ibc_channels_min_order_by {
+  added_at: order_by
+  channel_id: order_by
+  connection_id: order_by
+  zone: order_by
+}
+
+# response of any mutation on the table "ibc_channels"
+type ibc_channels_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [ibc_channels!]!
+}
+
+# input type for inserting object relation for remote table "ibc_channels"
+input ibc_channels_obj_rel_insert_input {
+  data: ibc_channels_insert_input!
+  on_conflict: ibc_channels_on_conflict
+}
+
+# on conflict condition type for table "ibc_channels"
+input ibc_channels_on_conflict {
+  constraint: ibc_channels_constraint!
+  update_columns: [ibc_channels_update_column!]!
+  where: ibc_channels_bool_exp
+}
+
+# ordering options when selecting data from "ibc_channels"
+input ibc_channels_order_by {
+  added_at: order_by
+  channel_id: order_by
+  connection_id: order_by
+  is_opened: order_by
+  zone: order_by
+}
+
+# primary key columns input for table: "ibc_channels"
+input ibc_channels_pk_columns_input {
+  channel_id: String!
+  zone: String!
+}
+
+# select columns of table "ibc_channels"
+enum ibc_channels_select_column {
+  # column name
+  added_at
+
+  # column name
+  channel_id
+
+  # column name
+  connection_id
+
+  # column name
+  is_opened
+
+  # column name
+  zone
+}
+
+# input type for updating data in table "ibc_channels"
+input ibc_channels_set_input {
+  added_at: timestamp
+  channel_id: String
+  connection_id: String
+  is_opened: Boolean
+  zone: String
+}
+
+# update columns of table "ibc_channels"
+enum ibc_channels_update_column {
+  # column name
+  added_at
+
+  # column name
+  channel_id
+
+  # column name
+  connection_id
+
+  # column name
+  is_opened
+
+  # column name
+  zone
+}
+
+# columns and relationships of "ibc_clients"
+type ibc_clients {
+  added_at: timestamp!
+  chain_id: String!
+  client_id: String!
+  zone: String!
+}
+
+# aggregated selection of "ibc_clients"
+type ibc_clients_aggregate {
+  aggregate: ibc_clients_aggregate_fields
+  nodes: [ibc_clients!]!
+}
+
+# aggregate fields of "ibc_clients"
+type ibc_clients_aggregate_fields {
+  count(columns: [ibc_clients_select_column!], distinct: Boolean): Int
+  max: ibc_clients_max_fields
+  min: ibc_clients_min_fields
+}
+
+# order by aggregate values of table "ibc_clients"
+input ibc_clients_aggregate_order_by {
+  count: order_by
+  max: ibc_clients_max_order_by
+  min: ibc_clients_min_order_by
+}
+
+# input type for inserting array relation for remote table "ibc_clients"
+input ibc_clients_arr_rel_insert_input {
+  data: [ibc_clients_insert_input!]!
+  on_conflict: ibc_clients_on_conflict
+}
+
+# Boolean expression to filter rows from the table "ibc_clients". All fields are combined with a logical 'AND'.
+input ibc_clients_bool_exp {
+  _and: [ibc_clients_bool_exp]
+  _not: ibc_clients_bool_exp
+  _or: [ibc_clients_bool_exp]
+  added_at: timestamp_comparison_exp
+  chain_id: String_comparison_exp
+  client_id: String_comparison_exp
+  zone: String_comparison_exp
+}
+
+# unique or primary key constraints on table "ibc_clients"
+enum ibc_clients_constraint {
+  # unique or primary key constraint
+  ibc_clients_pkey
+}
+
+# input type for inserting data into table "ibc_clients"
+input ibc_clients_insert_input {
+  added_at: timestamp
+  chain_id: String
+  client_id: String
+  zone: String
+}
+
+# aggregate max on columns
+type ibc_clients_max_fields {
+  added_at: timestamp
+  chain_id: String
+  client_id: String
+  zone: String
+}
+
+# order by max() on columns of table "ibc_clients"
+input ibc_clients_max_order_by {
+  added_at: order_by
+  chain_id: order_by
+  client_id: order_by
+  zone: order_by
+}
+
+# aggregate min on columns
+type ibc_clients_min_fields {
+  added_at: timestamp
+  chain_id: String
+  client_id: String
+  zone: String
+}
+
+# order by min() on columns of table "ibc_clients"
+input ibc_clients_min_order_by {
+  added_at: order_by
+  chain_id: order_by
+  client_id: order_by
+  zone: order_by
+}
+
+# response of any mutation on the table "ibc_clients"
+type ibc_clients_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [ibc_clients!]!
+}
+
+# input type for inserting object relation for remote table "ibc_clients"
+input ibc_clients_obj_rel_insert_input {
+  data: ibc_clients_insert_input!
+  on_conflict: ibc_clients_on_conflict
+}
+
+# on conflict condition type for table "ibc_clients"
+input ibc_clients_on_conflict {
+  constraint: ibc_clients_constraint!
+  update_columns: [ibc_clients_update_column!]!
+  where: ibc_clients_bool_exp
+}
+
+# ordering options when selecting data from "ibc_clients"
+input ibc_clients_order_by {
+  added_at: order_by
+  chain_id: order_by
+  client_id: order_by
+  zone: order_by
+}
+
+# primary key columns input for table: "ibc_clients"
+input ibc_clients_pk_columns_input {
+  client_id: String!
+  zone: String!
+}
+
+# select columns of table "ibc_clients"
+enum ibc_clients_select_column {
+  # column name
+  added_at
+
+  # column name
+  chain_id
+
+  # column name
+  client_id
+
+  # column name
+  zone
+}
+
+# input type for updating data in table "ibc_clients"
+input ibc_clients_set_input {
+  added_at: timestamp
+  chain_id: String
+  client_id: String
+  zone: String
+}
+
+# update columns of table "ibc_clients"
+enum ibc_clients_update_column {
+  # column name
+  added_at
+
+  # column name
+  chain_id
+
+  # column name
+  client_id
+
+  # column name
+  zone
+}
+
+# columns and relationships of "ibc_connections"
+type ibc_connections {
+  added_at: timestamp!
+  client_id: String!
+  connection_id: String!
+  zone: String!
+}
+
+# aggregated selection of "ibc_connections"
+type ibc_connections_aggregate {
+  aggregate: ibc_connections_aggregate_fields
+  nodes: [ibc_connections!]!
+}
+
+# aggregate fields of "ibc_connections"
+type ibc_connections_aggregate_fields {
+  count(columns: [ibc_connections_select_column!], distinct: Boolean): Int
+  max: ibc_connections_max_fields
+  min: ibc_connections_min_fields
+}
+
+# order by aggregate values of table "ibc_connections"
+input ibc_connections_aggregate_order_by {
+  count: order_by
+  max: ibc_connections_max_order_by
+  min: ibc_connections_min_order_by
+}
+
+# input type for inserting array relation for remote table "ibc_connections"
+input ibc_connections_arr_rel_insert_input {
+  data: [ibc_connections_insert_input!]!
+  on_conflict: ibc_connections_on_conflict
+}
+
+# Boolean expression to filter rows from the table "ibc_connections". All fields are combined with a logical 'AND'.
+input ibc_connections_bool_exp {
+  _and: [ibc_connections_bool_exp]
+  _not: ibc_connections_bool_exp
+  _or: [ibc_connections_bool_exp]
+  added_at: timestamp_comparison_exp
+  client_id: String_comparison_exp
+  connection_id: String_comparison_exp
+  zone: String_comparison_exp
+}
+
+# unique or primary key constraints on table "ibc_connections"
+enum ibc_connections_constraint {
+  # unique or primary key constraint
+  connections_pkey
+}
+
+# input type for inserting data into table "ibc_connections"
+input ibc_connections_insert_input {
+  added_at: timestamp
+  client_id: String
+  connection_id: String
+  zone: String
+}
+
+# aggregate max on columns
+type ibc_connections_max_fields {
+  added_at: timestamp
+  client_id: String
+  connection_id: String
+  zone: String
+}
+
+# order by max() on columns of table "ibc_connections"
+input ibc_connections_max_order_by {
+  added_at: order_by
+  client_id: order_by
+  connection_id: order_by
+  zone: order_by
+}
+
+# aggregate min on columns
+type ibc_connections_min_fields {
+  added_at: timestamp
+  client_id: String
+  connection_id: String
+  zone: String
+}
+
+# order by min() on columns of table "ibc_connections"
+input ibc_connections_min_order_by {
+  added_at: order_by
+  client_id: order_by
+  connection_id: order_by
+  zone: order_by
+}
+
+# response of any mutation on the table "ibc_connections"
+type ibc_connections_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [ibc_connections!]!
+}
+
+# input type for inserting object relation for remote table "ibc_connections"
+input ibc_connections_obj_rel_insert_input {
+  data: ibc_connections_insert_input!
+  on_conflict: ibc_connections_on_conflict
+}
+
+# on conflict condition type for table "ibc_connections"
+input ibc_connections_on_conflict {
+  constraint: ibc_connections_constraint!
+  update_columns: [ibc_connections_update_column!]!
+  where: ibc_connections_bool_exp
+}
+
+# ordering options when selecting data from "ibc_connections"
+input ibc_connections_order_by {
+  added_at: order_by
+  client_id: order_by
+  connection_id: order_by
+  zone: order_by
+}
+
+# primary key columns input for table: "ibc_connections"
+input ibc_connections_pk_columns_input {
+  connection_id: String!
+  zone: String!
+}
+
+# select columns of table "ibc_connections"
+enum ibc_connections_select_column {
+  # column name
+  added_at
+
+  # column name
+  client_id
+
+  # column name
+  connection_id
+
+  # column name
+  zone
+}
+
+# input type for updating data in table "ibc_connections"
+input ibc_connections_set_input {
+  added_at: timestamp
+  client_id: String
+  connection_id: String
+  zone: String
+}
+
+# update columns of table "ibc_connections"
+enum ibc_connections_update_column {
+  # column name
+  added_at
+
+  # column name
+  client_id
+
+  # column name
+  connection_id
+
+  # column name
+  zone
+}
+
+# columns and relationships of "ibc_transfer_hourly_stats"
+type ibc_transfer_hourly_stats {
+  hour: timestamp!
+  period: Int!
+  txs_cnt: Int!
+  zone: String!
+  zone_dest: String!
+  zone_src: String!
+}
+
+# aggregated selection of "ibc_transfer_hourly_stats"
+type ibc_transfer_hourly_stats_aggregate {
+  aggregate: ibc_transfer_hourly_stats_aggregate_fields
+  nodes: [ibc_transfer_hourly_stats!]!
+}
+
+# aggregate fields of "ibc_transfer_hourly_stats"
+type ibc_transfer_hourly_stats_aggregate_fields {
+  avg: ibc_transfer_hourly_stats_avg_fields
+  count(columns: [ibc_transfer_hourly_stats_select_column!], distinct: Boolean): Int
+  max: ibc_transfer_hourly_stats_max_fields
+  min: ibc_transfer_hourly_stats_min_fields
+  stddev: ibc_transfer_hourly_stats_stddev_fields
+  stddev_pop: ibc_transfer_hourly_stats_stddev_pop_fields
+  stddev_samp: ibc_transfer_hourly_stats_stddev_samp_fields
+  sum: ibc_transfer_hourly_stats_sum_fields
+  var_pop: ibc_transfer_hourly_stats_var_pop_fields
+  var_samp: ibc_transfer_hourly_stats_var_samp_fields
+  variance: ibc_transfer_hourly_stats_variance_fields
+}
+
+# order by aggregate values of table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_aggregate_order_by {
+  avg: ibc_transfer_hourly_stats_avg_order_by
+  count: order_by
+  max: ibc_transfer_hourly_stats_max_order_by
+  min: ibc_transfer_hourly_stats_min_order_by
+  stddev: ibc_transfer_hourly_stats_stddev_order_by
+  stddev_pop: ibc_transfer_hourly_stats_stddev_pop_order_by
+  stddev_samp: ibc_transfer_hourly_stats_stddev_samp_order_by
+  sum: ibc_transfer_hourly_stats_sum_order_by
+  var_pop: ibc_transfer_hourly_stats_var_pop_order_by
+  var_samp: ibc_transfer_hourly_stats_var_samp_order_by
+  variance: ibc_transfer_hourly_stats_variance_order_by
+}
+
+# input type for inserting array relation for remote table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_arr_rel_insert_input {
+  data: [ibc_transfer_hourly_stats_insert_input!]!
+  on_conflict: ibc_transfer_hourly_stats_on_conflict
+}
+
+# aggregate avg on columns
+type ibc_transfer_hourly_stats_avg_fields {
+  period: Float
+  txs_cnt: Float
+}
+
+# order by avg() on columns of table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_avg_order_by {
+  period: order_by
+  txs_cnt: order_by
+}
+
+# Boolean expression to filter rows from the table "ibc_transfer_hourly_stats". All fields are combined with a logical 'AND'.
+input ibc_transfer_hourly_stats_bool_exp {
+  _and: [ibc_transfer_hourly_stats_bool_exp]
+  _not: ibc_transfer_hourly_stats_bool_exp
+  _or: [ibc_transfer_hourly_stats_bool_exp]
+  hour: timestamp_comparison_exp
+  period: Int_comparison_exp
+  txs_cnt: Int_comparison_exp
+  zone: String_comparison_exp
+  zone_dest: String_comparison_exp
+  zone_src: String_comparison_exp
+}
+
+# unique or primary key constraints on table "ibc_transfer_hourly_stats"
+enum ibc_transfer_hourly_stats_constraint {
+  # unique or primary key constraint
+  ibc_transfer_hourly_stats_pkey
+}
+
+# input type for incrementing integer column in table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_inc_input {
+  period: Int
+  txs_cnt: Int
+}
+
+# input type for inserting data into table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_insert_input {
+  hour: timestamp
+  period: Int
+  txs_cnt: Int
+  zone: String
+  zone_dest: String
+  zone_src: String
+}
+
+# aggregate max on columns
+type ibc_transfer_hourly_stats_max_fields {
+  hour: timestamp
+  period: Int
+  txs_cnt: Int
+  zone: String
+  zone_dest: String
+  zone_src: String
+}
+
+# order by max() on columns of table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_max_order_by {
+  hour: order_by
+  period: order_by
+  txs_cnt: order_by
+  zone: order_by
+  zone_dest: order_by
+  zone_src: order_by
+}
+
+# aggregate min on columns
+type ibc_transfer_hourly_stats_min_fields {
+  hour: timestamp
+  period: Int
+  txs_cnt: Int
+  zone: String
+  zone_dest: String
+  zone_src: String
+}
+
+# order by min() on columns of table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_min_order_by {
+  hour: order_by
+  period: order_by
+  txs_cnt: order_by
+  zone: order_by
+  zone_dest: order_by
+  zone_src: order_by
+}
+
+# response of any mutation on the table "ibc_transfer_hourly_stats"
+type ibc_transfer_hourly_stats_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [ibc_transfer_hourly_stats!]!
+}
+
+# input type for inserting object relation for remote table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_obj_rel_insert_input {
+  data: ibc_transfer_hourly_stats_insert_input!
+  on_conflict: ibc_transfer_hourly_stats_on_conflict
+}
+
+# on conflict condition type for table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_on_conflict {
+  constraint: ibc_transfer_hourly_stats_constraint!
+  update_columns: [ibc_transfer_hourly_stats_update_column!]!
+  where: ibc_transfer_hourly_stats_bool_exp
+}
+
+# ordering options when selecting data from "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_order_by {
+  hour: order_by
+  period: order_by
+  txs_cnt: order_by
+  zone: order_by
+  zone_dest: order_by
+  zone_src: order_by
+}
+
+# primary key columns input for table: "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_pk_columns_input {
+  hour: timestamp!
+  period: Int!
+  zone: String!
+  zone_dest: String!
+  zone_src: String!
+}
+
+# select columns of table "ibc_transfer_hourly_stats"
+enum ibc_transfer_hourly_stats_select_column {
+  # column name
+  hour
+
+  # column name
+  period
+
+  # column name
+  txs_cnt
+
+  # column name
+  zone
+
+  # column name
+  zone_dest
+
+  # column name
+  zone_src
+}
+
+# input type for updating data in table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_set_input {
+  hour: timestamp
+  period: Int
+  txs_cnt: Int
+  zone: String
+  zone_dest: String
+  zone_src: String
+}
+
+# aggregate stddev on columns
+type ibc_transfer_hourly_stats_stddev_fields {
+  period: Float
+  txs_cnt: Float
+}
+
+# order by stddev() on columns of table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_stddev_order_by {
+  period: order_by
+  txs_cnt: order_by
+}
+
+# aggregate stddev_pop on columns
+type ibc_transfer_hourly_stats_stddev_pop_fields {
+  period: Float
+  txs_cnt: Float
+}
+
+# order by stddev_pop() on columns of table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_stddev_pop_order_by {
+  period: order_by
+  txs_cnt: order_by
+}
+
+# aggregate stddev_samp on columns
+type ibc_transfer_hourly_stats_stddev_samp_fields {
+  period: Float
+  txs_cnt: Float
+}
+
+# order by stddev_samp() on columns of table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_stddev_samp_order_by {
+  period: order_by
+  txs_cnt: order_by
+}
+
+# aggregate sum on columns
+type ibc_transfer_hourly_stats_sum_fields {
+  period: Int
+  txs_cnt: Int
+}
+
+# order by sum() on columns of table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_sum_order_by {
+  period: order_by
+  txs_cnt: order_by
+}
+
+# update columns of table "ibc_transfer_hourly_stats"
+enum ibc_transfer_hourly_stats_update_column {
+  # column name
+  hour
+
+  # column name
+  period
+
+  # column name
+  txs_cnt
+
+  # column name
+  zone
+
+  # column name
+  zone_dest
+
+  # column name
+  zone_src
+}
+
+# aggregate var_pop on columns
+type ibc_transfer_hourly_stats_var_pop_fields {
+  period: Float
+  txs_cnt: Float
+}
+
+# order by var_pop() on columns of table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_var_pop_order_by {
+  period: order_by
+  txs_cnt: order_by
+}
+
+# aggregate var_samp on columns
+type ibc_transfer_hourly_stats_var_samp_fields {
+  period: Float
+  txs_cnt: Float
+}
+
+# order by var_samp() on columns of table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_var_samp_order_by {
+  period: order_by
+  txs_cnt: order_by
+}
+
+# aggregate variance on columns
+type ibc_transfer_hourly_stats_variance_fields {
+  period: Float
+  txs_cnt: Float
+}
+
+# order by variance() on columns of table "ibc_transfer_hourly_stats"
+input ibc_transfer_hourly_stats_variance_order_by {
+  period: order_by
+  txs_cnt: order_by
+}
+
+# expression to compare columns of type Int. All fields are combined with logical 'AND'.
+input Int_comparison_exp {
+  _eq: Int
+  _gt: Int
+  _gte: Int
+  _in: [Int!]
+  _is_null: Boolean
+  _lt: Int
+  _lte: Int
+  _neq: Int
+  _nin: [Int!]
+}
+
+scalar jsonb
+
+# expression to compare columns of type jsonb. All fields are combined with logical 'AND'.
+input jsonb_comparison_exp {
+  # is the column contained in the given json value
+  _contained_in: jsonb
+
+  # does the column contain the given json value at the top level
+  _contains: jsonb
+  _eq: jsonb
+  _gt: jsonb
+  _gte: jsonb
+
+  # does the string exist as a top-level key in the column
+  _has_key: String
+
+  # do all of these strings exist as top-level keys in the column
+  _has_keys_all: [String!]
+
+  # do any of these strings exist as top-level keys in the column
+  _has_keys_any: [String!]
+  _in: [jsonb!]
+  _is_null: Boolean
+  _lt: jsonb
+  _lte: jsonb
+  _neq: jsonb
+  _nin: [jsonb!]
+}
+
+# mutation root
+type mutation_root {
+  # delete data from the table: "active_addresses"
+  delete_active_addresses(
+    # filter the rows which have to be deleted
+    where: active_addresses_bool_exp!
+  ): active_addresses_mutation_response
+
+  # delete single row from the table: "active_addresses"
+  delete_active_addresses_by_pk(address: String!, hour: timestamp!, period: Int!, zone: String!): active_addresses
+
+  # delete data from the table: "blocks_log"
+  delete_blocks_log(
+    # filter the rows which have to be deleted
+    where: blocks_log_bool_exp!
+  ): blocks_log_mutation_response
+
+  # delete single row from the table: "blocks_log"
+  delete_blocks_log_by_pk(zone: String!): blocks_log
+
+  # delete data from the table: "headers"
+  delete_headers(
+    # filter the rows which have to be deleted
+    where: headers_bool_exp!
+  ): headers_mutation_response
+
+  # delete single row from the table: "headers"
+  delete_headers_by_pk(timeframe: Int!): headers
+
+  # delete data from the table: "ibc_channel_zone"
+  delete_ibc_channel_zone(
+    # filter the rows which have to be deleted
+    where: ibc_channel_zone_bool_exp!
+  ): ibc_channel_zone_mutation_response
+
+  # delete single row from the table: "ibc_channel_zone"
+  delete_ibc_channel_zone_by_pk(chanel_id: String!, zone: String!): ibc_channel_zone
+
+  # delete data from the table: "ibc_channels"
+  delete_ibc_channels(
+    # filter the rows which have to be deleted
+    where: ibc_channels_bool_exp!
+  ): ibc_channels_mutation_response
+
+  # delete single row from the table: "ibc_channels"
+  delete_ibc_channels_by_pk(channel_id: String!, zone: String!): ibc_channels
+
+  # delete data from the table: "ibc_clients"
+  delete_ibc_clients(
+    # filter the rows which have to be deleted
+    where: ibc_clients_bool_exp!
+  ): ibc_clients_mutation_response
+
+  # delete single row from the table: "ibc_clients"
+  delete_ibc_clients_by_pk(client_id: String!, zone: String!): ibc_clients
+
+  # delete data from the table: "ibc_connections"
+  delete_ibc_connections(
+    # filter the rows which have to be deleted
+    where: ibc_connections_bool_exp!
+  ): ibc_connections_mutation_response
+
+  # delete single row from the table: "ibc_connections"
+  delete_ibc_connections_by_pk(connection_id: String!, zone: String!): ibc_connections
+
+  # delete data from the table: "ibc_transfer_hourly_stats"
+  delete_ibc_transfer_hourly_stats(
+    # filter the rows which have to be deleted
+    where: ibc_transfer_hourly_stats_bool_exp!
+  ): ibc_transfer_hourly_stats_mutation_response
+
+  # delete single row from the table: "ibc_transfer_hourly_stats"
+  delete_ibc_transfer_hourly_stats_by_pk(hour: timestamp!, period: Int!, zone: String!, zone_dest: String!, zone_src: String!): ibc_transfer_hourly_stats
+
+  # delete data from the table: "periods"
+  delete_periods(
+    # filter the rows which have to be deleted
+    where: periods_bool_exp!
+  ): periods_mutation_response
+
+  # delete single row from the table: "periods"
+  delete_periods_by_pk(period_in_hours: Int!): periods
+
+  # delete data from the table: "total_tx_hourly_stats"
+  delete_total_tx_hourly_stats(
+    # filter the rows which have to be deleted
+    where: total_tx_hourly_stats_bool_exp!
+  ): total_tx_hourly_stats_mutation_response
+
+  # delete single row from the table: "total_tx_hourly_stats"
+  delete_total_tx_hourly_stats_by_pk(hour: timestamp!, period: Int!, zone: String!): total_tx_hourly_stats
+
+  # delete data from the table: "zone_nodes"
+  delete_zone_nodes(
+    # filter the rows which have to be deleted
+    where: zone_nodes_bool_exp!
+  ): zone_nodes_mutation_response
+
+  # delete single row from the table: "zone_nodes"
+  delete_zone_nodes_by_pk(rpc_addr: String!, zone: String!): zone_nodes
+
+  # delete data from the table: "zones"
+  delete_zones(
+    # filter the rows which have to be deleted
+    where: zones_bool_exp!
+  ): zones_mutation_response
+
+  # delete single row from the table: "zones"
+  delete_zones_by_pk(chain_id: String!): zones
+
+  # delete data from the table: "zones_graphs"
+  delete_zones_graphs(
+    # filter the rows which have to be deleted
+    where: zones_graphs_bool_exp!
+  ): zones_graphs_mutation_response
+
+  # delete single row from the table: "zones_graphs"
+  delete_zones_graphs_by_pk(source: String!, target: String!, timeframe: Int!): zones_graphs
+
+  # delete data from the table: "zones_stats"
+  delete_zones_stats(
+    # filter the rows which have to be deleted
+    where: zones_stats_bool_exp!
+  ): zones_stats_mutation_response
+
+  # delete single row from the table: "zones_stats"
+  delete_zones_stats_by_pk(timeframe: Int!, zone: String!): zones_stats
+
+  # insert data into the table: "active_addresses"
+  insert_active_addresses(
+    # the rows to be inserted
+    objects: [active_addresses_insert_input!]!
+
+    # on conflict condition
+    on_conflict: active_addresses_on_conflict
+  ): active_addresses_mutation_response
+
+  # insert a single row into the table: "active_addresses"
+  insert_active_addresses_one(
+    # the row to be inserted
+    object: active_addresses_insert_input!
+
+    # on conflict condition
+    on_conflict: active_addresses_on_conflict
+  ): active_addresses
+
+  # insert data into the table: "blocks_log"
+  insert_blocks_log(
+    # the rows to be inserted
+    objects: [blocks_log_insert_input!]!
+
+    # on conflict condition
+    on_conflict: blocks_log_on_conflict
+  ): blocks_log_mutation_response
+
+  # insert a single row into the table: "blocks_log"
+  insert_blocks_log_one(
+    # the row to be inserted
+    object: blocks_log_insert_input!
+
+    # on conflict condition
+    on_conflict: blocks_log_on_conflict
+  ): blocks_log
+
+  # insert data into the table: "headers"
+  insert_headers(
+    # the rows to be inserted
+    objects: [headers_insert_input!]!
+
+    # on conflict condition
+    on_conflict: headers_on_conflict
+  ): headers_mutation_response
+
+  # insert a single row into the table: "headers"
+  insert_headers_one(
+    # the row to be inserted
+    object: headers_insert_input!
+
+    # on conflict condition
+    on_conflict: headers_on_conflict
+  ): headers
+
+  # insert data into the table: "ibc_channel_zone"
+  insert_ibc_channel_zone(
+    # the rows to be inserted
+    objects: [ibc_channel_zone_insert_input!]!
+
+    # on conflict condition
+    on_conflict: ibc_channel_zone_on_conflict
+  ): ibc_channel_zone_mutation_response
+
+  # insert a single row into the table: "ibc_channel_zone"
+  insert_ibc_channel_zone_one(
+    # the row to be inserted
+    object: ibc_channel_zone_insert_input!
+
+    # on conflict condition
+    on_conflict: ibc_channel_zone_on_conflict
+  ): ibc_channel_zone
+
+  # insert data into the table: "ibc_channels"
+  insert_ibc_channels(
+    # the rows to be inserted
+    objects: [ibc_channels_insert_input!]!
+
+    # on conflict condition
+    on_conflict: ibc_channels_on_conflict
+  ): ibc_channels_mutation_response
+
+  # insert a single row into the table: "ibc_channels"
+  insert_ibc_channels_one(
+    # the row to be inserted
+    object: ibc_channels_insert_input!
+
+    # on conflict condition
+    on_conflict: ibc_channels_on_conflict
+  ): ibc_channels
+
+  # insert data into the table: "ibc_clients"
+  insert_ibc_clients(
+    # the rows to be inserted
+    objects: [ibc_clients_insert_input!]!
+
+    # on conflict condition
+    on_conflict: ibc_clients_on_conflict
+  ): ibc_clients_mutation_response
+
+  # insert a single row into the table: "ibc_clients"
+  insert_ibc_clients_one(
+    # the row to be inserted
+    object: ibc_clients_insert_input!
+
+    # on conflict condition
+    on_conflict: ibc_clients_on_conflict
+  ): ibc_clients
+
+  # insert data into the table: "ibc_connections"
+  insert_ibc_connections(
+    # the rows to be inserted
+    objects: [ibc_connections_insert_input!]!
+
+    # on conflict condition
+    on_conflict: ibc_connections_on_conflict
+  ): ibc_connections_mutation_response
+
+  # insert a single row into the table: "ibc_connections"
+  insert_ibc_connections_one(
+    # the row to be inserted
+    object: ibc_connections_insert_input!
+
+    # on conflict condition
+    on_conflict: ibc_connections_on_conflict
+  ): ibc_connections
+
+  # insert data into the table: "ibc_transfer_hourly_stats"
+  insert_ibc_transfer_hourly_stats(
+    # the rows to be inserted
+    objects: [ibc_transfer_hourly_stats_insert_input!]!
+
+    # on conflict condition
+    on_conflict: ibc_transfer_hourly_stats_on_conflict
+  ): ibc_transfer_hourly_stats_mutation_response
+
+  # insert a single row into the table: "ibc_transfer_hourly_stats"
+  insert_ibc_transfer_hourly_stats_one(
+    # the row to be inserted
+    object: ibc_transfer_hourly_stats_insert_input!
+
+    # on conflict condition
+    on_conflict: ibc_transfer_hourly_stats_on_conflict
+  ): ibc_transfer_hourly_stats
+
+  # insert data into the table: "periods"
+  insert_periods(
+    # the rows to be inserted
+    objects: [periods_insert_input!]!
+
+    # on conflict condition
+    on_conflict: periods_on_conflict
+  ): periods_mutation_response
+
+  # insert a single row into the table: "periods"
+  insert_periods_one(
+    # the row to be inserted
+    object: periods_insert_input!
+
+    # on conflict condition
+    on_conflict: periods_on_conflict
+  ): periods
+
+  # insert data into the table: "total_tx_hourly_stats"
+  insert_total_tx_hourly_stats(
+    # the rows to be inserted
+    objects: [total_tx_hourly_stats_insert_input!]!
+
+    # on conflict condition
+    on_conflict: total_tx_hourly_stats_on_conflict
+  ): total_tx_hourly_stats_mutation_response
+
+  # insert a single row into the table: "total_tx_hourly_stats"
+  insert_total_tx_hourly_stats_one(
+    # the row to be inserted
+    object: total_tx_hourly_stats_insert_input!
+
+    # on conflict condition
+    on_conflict: total_tx_hourly_stats_on_conflict
+  ): total_tx_hourly_stats
+
+  # insert data into the table: "zone_nodes"
+  insert_zone_nodes(
+    # the rows to be inserted
+    objects: [zone_nodes_insert_input!]!
+
+    # on conflict condition
+    on_conflict: zone_nodes_on_conflict
+  ): zone_nodes_mutation_response
+
+  # insert a single row into the table: "zone_nodes"
+  insert_zone_nodes_one(
+    # the row to be inserted
+    object: zone_nodes_insert_input!
+
+    # on conflict condition
+    on_conflict: zone_nodes_on_conflict
+  ): zone_nodes
+
+  # insert data into the table: "zones"
+  insert_zones(
+    # the rows to be inserted
+    objects: [zones_insert_input!]!
+
+    # on conflict condition
+    on_conflict: zones_on_conflict
+  ): zones_mutation_response
+
+  # insert data into the table: "zones_graphs"
+  insert_zones_graphs(
+    # the rows to be inserted
+    objects: [zones_graphs_insert_input!]!
+
+    # on conflict condition
+    on_conflict: zones_graphs_on_conflict
+  ): zones_graphs_mutation_response
+
+  # insert a single row into the table: "zones_graphs"
+  insert_zones_graphs_one(
+    # the row to be inserted
+    object: zones_graphs_insert_input!
+
+    # on conflict condition
+    on_conflict: zones_graphs_on_conflict
+  ): zones_graphs
+
+  # insert a single row into the table: "zones"
+  insert_zones_one(
+    # the row to be inserted
+    object: zones_insert_input!
+
+    # on conflict condition
+    on_conflict: zones_on_conflict
+  ): zones
+
+  # insert data into the table: "zones_stats"
+  insert_zones_stats(
+    # the rows to be inserted
+    objects: [zones_stats_insert_input!]!
+
+    # on conflict condition
+    on_conflict: zones_stats_on_conflict
+  ): zones_stats_mutation_response
+
+  # insert a single row into the table: "zones_stats"
+  insert_zones_stats_one(
+    # the row to be inserted
+    object: zones_stats_insert_input!
+
+    # on conflict condition
+    on_conflict: zones_stats_on_conflict
+  ): zones_stats
+
+  # update data of the table: "active_addresses"
+  update_active_addresses(
+    # increments the integer columns with given value of the filtered values
+    _inc: active_addresses_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: active_addresses_set_input
+
+    # filter the rows which have to be updated
+    where: active_addresses_bool_exp!
+  ): active_addresses_mutation_response
+
+  # update single row of the table: "active_addresses"
+  update_active_addresses_by_pk(
+    # increments the integer columns with given value of the filtered values
+    _inc: active_addresses_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: active_addresses_set_input
+    pk_columns: active_addresses_pk_columns_input!
+  ): active_addresses
+
+  # update data of the table: "blocks_log"
+  update_blocks_log(
+    # increments the integer columns with given value of the filtered values
+    _inc: blocks_log_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: blocks_log_set_input
+
+    # filter the rows which have to be updated
+    where: blocks_log_bool_exp!
+  ): blocks_log_mutation_response
+
+  # update single row of the table: "blocks_log"
+  update_blocks_log_by_pk(
+    # increments the integer columns with given value of the filtered values
+    _inc: blocks_log_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: blocks_log_set_input
+    pk_columns: blocks_log_pk_columns_input!
+  ): blocks_log
+
+  # update data of the table: "headers"
+  update_headers(
+    # append existing jsonb value of filtered columns with new jsonb value
+    _append: headers_append_input
+
+    # delete the field or element with specified path (for JSON arrays, negative integers count from the end)
+    _delete_at_path: headers_delete_at_path_input
+
+    # delete the array element with specified index (negative integers count from
+    # the end). throws an error if top level container is not an array
+    _delete_elem: headers_delete_elem_input
+
+    # delete key/value pair or string element. key/value pairs are matched based on their key value
+    _delete_key: headers_delete_key_input
+
+    # increments the integer columns with given value of the filtered values
+    _inc: headers_inc_input
+
+    # prepend existing jsonb value of filtered columns with new jsonb value
+    _prepend: headers_prepend_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: headers_set_input
+
+    # filter the rows which have to be updated
+    where: headers_bool_exp!
+  ): headers_mutation_response
+
+  # update single row of the table: "headers"
+  update_headers_by_pk(
+    # append existing jsonb value of filtered columns with new jsonb value
+    _append: headers_append_input
+
+    # delete the field or element with specified path (for JSON arrays, negative integers count from the end)
+    _delete_at_path: headers_delete_at_path_input
+
+    # delete the array element with specified index (negative integers count from
+    # the end). throws an error if top level container is not an array
+    _delete_elem: headers_delete_elem_input
+
+    # delete key/value pair or string element. key/value pairs are matched based on their key value
+    _delete_key: headers_delete_key_input
+
+    # increments the integer columns with given value of the filtered values
+    _inc: headers_inc_input
+
+    # prepend existing jsonb value of filtered columns with new jsonb value
+    _prepend: headers_prepend_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: headers_set_input
+    pk_columns: headers_pk_columns_input!
+  ): headers
+
+  # update data of the table: "ibc_channel_zone"
+  update_ibc_channel_zone(
+    # sets the columns of the filtered rows to the given values
+    _set: ibc_channel_zone_set_input
+
+    # filter the rows which have to be updated
+    where: ibc_channel_zone_bool_exp!
+  ): ibc_channel_zone_mutation_response
+
+  # update single row of the table: "ibc_channel_zone"
+  update_ibc_channel_zone_by_pk(
+    # sets the columns of the filtered rows to the given values
+    _set: ibc_channel_zone_set_input
+    pk_columns: ibc_channel_zone_pk_columns_input!
+  ): ibc_channel_zone
+
+  # update data of the table: "ibc_channels"
+  update_ibc_channels(
+    # sets the columns of the filtered rows to the given values
+    _set: ibc_channels_set_input
+
+    # filter the rows which have to be updated
+    where: ibc_channels_bool_exp!
+  ): ibc_channels_mutation_response
+
+  # update single row of the table: "ibc_channels"
+  update_ibc_channels_by_pk(
+    # sets the columns of the filtered rows to the given values
+    _set: ibc_channels_set_input
+    pk_columns: ibc_channels_pk_columns_input!
+  ): ibc_channels
+
+  # update data of the table: "ibc_clients"
+  update_ibc_clients(
+    # sets the columns of the filtered rows to the given values
+    _set: ibc_clients_set_input
+
+    # filter the rows which have to be updated
+    where: ibc_clients_bool_exp!
+  ): ibc_clients_mutation_response
+
+  # update single row of the table: "ibc_clients"
+  update_ibc_clients_by_pk(
+    # sets the columns of the filtered rows to the given values
+    _set: ibc_clients_set_input
+    pk_columns: ibc_clients_pk_columns_input!
+  ): ibc_clients
+
+  # update data of the table: "ibc_connections"
+  update_ibc_connections(
+    # sets the columns of the filtered rows to the given values
+    _set: ibc_connections_set_input
+
+    # filter the rows which have to be updated
+    where: ibc_connections_bool_exp!
+  ): ibc_connections_mutation_response
+
+  # update single row of the table: "ibc_connections"
+  update_ibc_connections_by_pk(
+    # sets the columns of the filtered rows to the given values
+    _set: ibc_connections_set_input
+    pk_columns: ibc_connections_pk_columns_input!
+  ): ibc_connections
+
+  # update data of the table: "ibc_transfer_hourly_stats"
+  update_ibc_transfer_hourly_stats(
+    # increments the integer columns with given value of the filtered values
+    _inc: ibc_transfer_hourly_stats_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: ibc_transfer_hourly_stats_set_input
+
+    # filter the rows which have to be updated
+    where: ibc_transfer_hourly_stats_bool_exp!
+  ): ibc_transfer_hourly_stats_mutation_response
+
+  # update single row of the table: "ibc_transfer_hourly_stats"
+  update_ibc_transfer_hourly_stats_by_pk(
+    # increments the integer columns with given value of the filtered values
+    _inc: ibc_transfer_hourly_stats_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: ibc_transfer_hourly_stats_set_input
+    pk_columns: ibc_transfer_hourly_stats_pk_columns_input!
+  ): ibc_transfer_hourly_stats
+
+  # update data of the table: "periods"
+  update_periods(
+    # increments the integer columns with given value of the filtered values
+    _inc: periods_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: periods_set_input
+
+    # filter the rows which have to be updated
+    where: periods_bool_exp!
+  ): periods_mutation_response
+
+  # update single row of the table: "periods"
+  update_periods_by_pk(
+    # increments the integer columns with given value of the filtered values
+    _inc: periods_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: periods_set_input
+    pk_columns: periods_pk_columns_input!
+  ): periods
+
+  # update data of the table: "total_tx_hourly_stats"
+  update_total_tx_hourly_stats(
+    # increments the integer columns with given value of the filtered values
+    _inc: total_tx_hourly_stats_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: total_tx_hourly_stats_set_input
+
+    # filter the rows which have to be updated
+    where: total_tx_hourly_stats_bool_exp!
+  ): total_tx_hourly_stats_mutation_response
+
+  # update single row of the table: "total_tx_hourly_stats"
+  update_total_tx_hourly_stats_by_pk(
+    # increments the integer columns with given value of the filtered values
+    _inc: total_tx_hourly_stats_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: total_tx_hourly_stats_set_input
+    pk_columns: total_tx_hourly_stats_pk_columns_input!
+  ): total_tx_hourly_stats
+
+  # update data of the table: "zone_nodes"
+  update_zone_nodes(
+    # sets the columns of the filtered rows to the given values
+    _set: zone_nodes_set_input
+
+    # filter the rows which have to be updated
+    where: zone_nodes_bool_exp!
+  ): zone_nodes_mutation_response
+
+  # update single row of the table: "zone_nodes"
+  update_zone_nodes_by_pk(
+    # sets the columns of the filtered rows to the given values
+    _set: zone_nodes_set_input
+    pk_columns: zone_nodes_pk_columns_input!
+  ): zone_nodes
+
+  # update data of the table: "zones"
+  update_zones(
+    # sets the columns of the filtered rows to the given values
+    _set: zones_set_input
+
+    # filter the rows which have to be updated
+    where: zones_bool_exp!
+  ): zones_mutation_response
+
+  # update single row of the table: "zones"
+  update_zones_by_pk(
+    # sets the columns of the filtered rows to the given values
+    _set: zones_set_input
+    pk_columns: zones_pk_columns_input!
+  ): zones
+
+  # update data of the table: "zones_graphs"
+  update_zones_graphs(
+    # increments the integer columns with given value of the filtered values
+    _inc: zones_graphs_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: zones_graphs_set_input
+
+    # filter the rows which have to be updated
+    where: zones_graphs_bool_exp!
+  ): zones_graphs_mutation_response
+
+  # update single row of the table: "zones_graphs"
+  update_zones_graphs_by_pk(
+    # increments the integer columns with given value of the filtered values
+    _inc: zones_graphs_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: zones_graphs_set_input
+    pk_columns: zones_graphs_pk_columns_input!
+  ): zones_graphs
+
+  # update data of the table: "zones_stats"
+  update_zones_stats(
+    # append existing jsonb value of filtered columns with new jsonb value
+    _append: zones_stats_append_input
+
+    # delete the field or element with specified path (for JSON arrays, negative integers count from the end)
+    _delete_at_path: zones_stats_delete_at_path_input
+
+    # delete the array element with specified index (negative integers count from
+    # the end). throws an error if top level container is not an array
+    _delete_elem: zones_stats_delete_elem_input
+
+    # delete key/value pair or string element. key/value pairs are matched based on their key value
+    _delete_key: zones_stats_delete_key_input
+
+    # increments the integer columns with given value of the filtered values
+    _inc: zones_stats_inc_input
+
+    # prepend existing jsonb value of filtered columns with new jsonb value
+    _prepend: zones_stats_prepend_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: zones_stats_set_input
+
+    # filter the rows which have to be updated
+    where: zones_stats_bool_exp!
+  ): zones_stats_mutation_response
+
+  # update single row of the table: "zones_stats"
+  update_zones_stats_by_pk(
+    # append existing jsonb value of filtered columns with new jsonb value
+    _append: zones_stats_append_input
+
+    # delete the field or element with specified path (for JSON arrays, negative integers count from the end)
+    _delete_at_path: zones_stats_delete_at_path_input
+
+    # delete the array element with specified index (negative integers count from
+    # the end). throws an error if top level container is not an array
+    _delete_elem: zones_stats_delete_elem_input
+
+    # delete key/value pair or string element. key/value pairs are matched based on their key value
+    _delete_key: zones_stats_delete_key_input
+
+    # increments the integer columns with given value of the filtered values
+    _inc: zones_stats_inc_input
+
+    # prepend existing jsonb value of filtered columns with new jsonb value
+    _prepend: zones_stats_prepend_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: zones_stats_set_input
+    pk_columns: zones_stats_pk_columns_input!
+  ): zones_stats
+}
+
+scalar numeric
+
+# expression to compare columns of type numeric. All fields are combined with logical 'AND'.
+input numeric_comparison_exp {
+  _eq: numeric
+  _gt: numeric
+  _gte: numeric
+  _in: [numeric!]
+  _is_null: Boolean
+  _lt: numeric
+  _lte: numeric
+  _neq: numeric
+  _nin: [numeric!]
+}
+
+# column ordering options
+enum order_by {
+  # in the ascending order, nulls last
+  asc
+
+  # in the ascending order, nulls first
+  asc_nulls_first
+
+  # in the ascending order, nulls last
+  asc_nulls_last
+
+  # in the descending order, nulls first
+  desc
+
+  # in the descending order, nulls first
+  desc_nulls_first
+
+  # in the descending order, nulls last
+  desc_nulls_last
+}
+
+# columns and relationships of "periods"
+type periods {
+  period_in_hours: Int!
+}
+
+# aggregated selection of "periods"
+type periods_aggregate {
+  aggregate: periods_aggregate_fields
+  nodes: [periods!]!
+}
+
+# aggregate fields of "periods"
+type periods_aggregate_fields {
+  avg: periods_avg_fields
+  count(columns: [periods_select_column!], distinct: Boolean): Int
+  max: periods_max_fields
+  min: periods_min_fields
+  stddev: periods_stddev_fields
+  stddev_pop: periods_stddev_pop_fields
+  stddev_samp: periods_stddev_samp_fields
+  sum: periods_sum_fields
+  var_pop: periods_var_pop_fields
+  var_samp: periods_var_samp_fields
+  variance: periods_variance_fields
+}
+
+# order by aggregate values of table "periods"
+input periods_aggregate_order_by {
+  avg: periods_avg_order_by
+  count: order_by
+  max: periods_max_order_by
+  min: periods_min_order_by
+  stddev: periods_stddev_order_by
+  stddev_pop: periods_stddev_pop_order_by
+  stddev_samp: periods_stddev_samp_order_by
+  sum: periods_sum_order_by
+  var_pop: periods_var_pop_order_by
+  var_samp: periods_var_samp_order_by
+  variance: periods_variance_order_by
+}
+
+# input type for inserting array relation for remote table "periods"
+input periods_arr_rel_insert_input {
+  data: [periods_insert_input!]!
+  on_conflict: periods_on_conflict
+}
+
+# aggregate avg on columns
+type periods_avg_fields {
+  period_in_hours: Float
+}
+
+# order by avg() on columns of table "periods"
+input periods_avg_order_by {
+  period_in_hours: order_by
+}
+
+# Boolean expression to filter rows from the table "periods". All fields are combined with a logical 'AND'.
+input periods_bool_exp {
+  _and: [periods_bool_exp]
+  _not: periods_bool_exp
+  _or: [periods_bool_exp]
+  period_in_hours: Int_comparison_exp
+}
+
+# unique or primary key constraints on table "periods"
+enum periods_constraint {
+  # unique or primary key constraint
+  periods_pkey
+}
+
+# input type for incrementing integer column in table "periods"
+input periods_inc_input {
+  period_in_hours: Int
+}
+
+# input type for inserting data into table "periods"
+input periods_insert_input {
+  period_in_hours: Int
+}
+
+# aggregate max on columns
+type periods_max_fields {
+  period_in_hours: Int
+}
+
+# order by max() on columns of table "periods"
+input periods_max_order_by {
+  period_in_hours: order_by
+}
+
+# aggregate min on columns
+type periods_min_fields {
+  period_in_hours: Int
+}
+
+# order by min() on columns of table "periods"
+input periods_min_order_by {
+  period_in_hours: order_by
+}
+
+# response of any mutation on the table "periods"
+type periods_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [periods!]!
+}
+
+# input type for inserting object relation for remote table "periods"
+input periods_obj_rel_insert_input {
+  data: periods_insert_input!
+  on_conflict: periods_on_conflict
+}
+
+# on conflict condition type for table "periods"
+input periods_on_conflict {
+  constraint: periods_constraint!
+  update_columns: [periods_update_column!]!
+  where: periods_bool_exp
+}
+
+# ordering options when selecting data from "periods"
+input periods_order_by {
+  period_in_hours: order_by
+}
+
+# primary key columns input for table: "periods"
+input periods_pk_columns_input {
+  period_in_hours: Int!
+}
+
+# select columns of table "periods"
+enum periods_select_column {
+  # column name
+  period_in_hours
+}
+
+# input type for updating data in table "periods"
+input periods_set_input {
+  period_in_hours: Int
+}
+
+# aggregate stddev on columns
+type periods_stddev_fields {
+  period_in_hours: Float
+}
+
+# order by stddev() on columns of table "periods"
+input periods_stddev_order_by {
+  period_in_hours: order_by
+}
+
+# aggregate stddev_pop on columns
+type periods_stddev_pop_fields {
+  period_in_hours: Float
+}
+
+# order by stddev_pop() on columns of table "periods"
+input periods_stddev_pop_order_by {
+  period_in_hours: order_by
+}
+
+# aggregate stddev_samp on columns
+type periods_stddev_samp_fields {
+  period_in_hours: Float
+}
+
+# order by stddev_samp() on columns of table "periods"
+input periods_stddev_samp_order_by {
+  period_in_hours: order_by
+}
+
+# aggregate sum on columns
+type periods_sum_fields {
+  period_in_hours: Int
+}
+
+# order by sum() on columns of table "periods"
+input periods_sum_order_by {
+  period_in_hours: order_by
+}
+
+# update columns of table "periods"
+enum periods_update_column {
+  # column name
+  period_in_hours
+}
+
+# aggregate var_pop on columns
+type periods_var_pop_fields {
+  period_in_hours: Float
+}
+
+# order by var_pop() on columns of table "periods"
+input periods_var_pop_order_by {
+  period_in_hours: order_by
+}
+
+# aggregate var_samp on columns
+type periods_var_samp_fields {
+  period_in_hours: Float
+}
+
+# order by var_samp() on columns of table "periods"
+input periods_var_samp_order_by {
+  period_in_hours: order_by
+}
+
+# aggregate variance on columns
+type periods_variance_fields {
+  period_in_hours: Float
+}
+
+# order by variance() on columns of table "periods"
+input periods_variance_order_by {
+  period_in_hours: order_by
+}
+
+# query root
+type query_root {
+  # fetch data from the table: "active_addresses"
+  active_addresses(
+    # distinct select on columns
+    distinct_on: [active_addresses_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [active_addresses_order_by!]
+
+    # filter the rows returned
+    where: active_addresses_bool_exp
+  ): [active_addresses!]!
+
+  # fetch aggregated fields from the table: "active_addresses"
+  active_addresses_aggregate(
+    # distinct select on columns
+    distinct_on: [active_addresses_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [active_addresses_order_by!]
+
+    # filter the rows returned
+    where: active_addresses_bool_exp
+  ): active_addresses_aggregate!
+
+  # fetch data from the table: "active_addresses" using primary key columns
+  active_addresses_by_pk(address: String!, hour: timestamp!, period: Int!, zone: String!): active_addresses
+
+  # fetch data from the table: "blocks_log"
+  blocks_log(
+    # distinct select on columns
+    distinct_on: [blocks_log_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [blocks_log_order_by!]
+
+    # filter the rows returned
+    where: blocks_log_bool_exp
+  ): [blocks_log!]!
+
+  # fetch aggregated fields from the table: "blocks_log"
+  blocks_log_aggregate(
+    # distinct select on columns
+    distinct_on: [blocks_log_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [blocks_log_order_by!]
+
+    # filter the rows returned
+    where: blocks_log_bool_exp
+  ): blocks_log_aggregate!
+
+  # fetch data from the table: "blocks_log" using primary key columns
+  blocks_log_by_pk(zone: String!): blocks_log
+
+  # fetch data from the table: "headers"
+  headers(
+    # distinct select on columns
+    distinct_on: [headers_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [headers_order_by!]
+
+    # filter the rows returned
+    where: headers_bool_exp
+  ): [headers!]!
+
+  # fetch aggregated fields from the table: "headers"
+  headers_aggregate(
+    # distinct select on columns
+    distinct_on: [headers_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [headers_order_by!]
+
+    # filter the rows returned
+    where: headers_bool_exp
+  ): headers_aggregate!
+
+  # fetch data from the table: "headers" using primary key columns
+  headers_by_pk(timeframe: Int!): headers
+
+  # fetch data from the table: "ibc_channel_zone"
+  ibc_channel_zone(
+    # distinct select on columns
+    distinct_on: [ibc_channel_zone_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_channel_zone_order_by!]
+
+    # filter the rows returned
+    where: ibc_channel_zone_bool_exp
+  ): [ibc_channel_zone!]!
+
+  # fetch aggregated fields from the table: "ibc_channel_zone"
+  ibc_channel_zone_aggregate(
+    # distinct select on columns
+    distinct_on: [ibc_channel_zone_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_channel_zone_order_by!]
+
+    # filter the rows returned
+    where: ibc_channel_zone_bool_exp
+  ): ibc_channel_zone_aggregate!
+
+  # fetch data from the table: "ibc_channel_zone" using primary key columns
+  ibc_channel_zone_by_pk(chanel_id: String!, zone: String!): ibc_channel_zone
+
+  # fetch data from the table: "ibc_channels"
+  ibc_channels(
+    # distinct select on columns
+    distinct_on: [ibc_channels_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_channels_order_by!]
+
+    # filter the rows returned
+    where: ibc_channels_bool_exp
+  ): [ibc_channels!]!
+
+  # fetch aggregated fields from the table: "ibc_channels"
+  ibc_channels_aggregate(
+    # distinct select on columns
+    distinct_on: [ibc_channels_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_channels_order_by!]
+
+    # filter the rows returned
+    where: ibc_channels_bool_exp
+  ): ibc_channels_aggregate!
+
+  # fetch data from the table: "ibc_channels" using primary key columns
+  ibc_channels_by_pk(channel_id: String!, zone: String!): ibc_channels
+
+  # fetch data from the table: "ibc_clients"
+  ibc_clients(
+    # distinct select on columns
+    distinct_on: [ibc_clients_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_clients_order_by!]
+
+    # filter the rows returned
+    where: ibc_clients_bool_exp
+  ): [ibc_clients!]!
+
+  # fetch aggregated fields from the table: "ibc_clients"
+  ibc_clients_aggregate(
+    # distinct select on columns
+    distinct_on: [ibc_clients_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_clients_order_by!]
+
+    # filter the rows returned
+    where: ibc_clients_bool_exp
+  ): ibc_clients_aggregate!
+
+  # fetch data from the table: "ibc_clients" using primary key columns
+  ibc_clients_by_pk(client_id: String!, zone: String!): ibc_clients
+
+  # fetch data from the table: "ibc_connections"
+  ibc_connections(
+    # distinct select on columns
+    distinct_on: [ibc_connections_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_connections_order_by!]
+
+    # filter the rows returned
+    where: ibc_connections_bool_exp
+  ): [ibc_connections!]!
+
+  # fetch aggregated fields from the table: "ibc_connections"
+  ibc_connections_aggregate(
+    # distinct select on columns
+    distinct_on: [ibc_connections_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_connections_order_by!]
+
+    # filter the rows returned
+    where: ibc_connections_bool_exp
+  ): ibc_connections_aggregate!
+
+  # fetch data from the table: "ibc_connections" using primary key columns
+  ibc_connections_by_pk(connection_id: String!, zone: String!): ibc_connections
+
+  # fetch data from the table: "ibc_transfer_hourly_stats"
+  ibc_transfer_hourly_stats(
+    # distinct select on columns
+    distinct_on: [ibc_transfer_hourly_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_transfer_hourly_stats_order_by!]
+
+    # filter the rows returned
+    where: ibc_transfer_hourly_stats_bool_exp
+  ): [ibc_transfer_hourly_stats!]!
+
+  # fetch aggregated fields from the table: "ibc_transfer_hourly_stats"
+  ibc_transfer_hourly_stats_aggregate(
+    # distinct select on columns
+    distinct_on: [ibc_transfer_hourly_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_transfer_hourly_stats_order_by!]
+
+    # filter the rows returned
+    where: ibc_transfer_hourly_stats_bool_exp
+  ): ibc_transfer_hourly_stats_aggregate!
+
+  # fetch data from the table: "ibc_transfer_hourly_stats" using primary key columns
+  ibc_transfer_hourly_stats_by_pk(hour: timestamp!, period: Int!, zone: String!, zone_dest: String!, zone_src: String!): ibc_transfer_hourly_stats
+
+  # fetch data from the table: "periods"
+  periods(
+    # distinct select on columns
+    distinct_on: [periods_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [periods_order_by!]
+
+    # filter the rows returned
+    where: periods_bool_exp
+  ): [periods!]!
+
+  # fetch aggregated fields from the table: "periods"
+  periods_aggregate(
+    # distinct select on columns
+    distinct_on: [periods_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [periods_order_by!]
+
+    # filter the rows returned
+    where: periods_bool_exp
+  ): periods_aggregate!
+
+  # fetch data from the table: "periods" using primary key columns
+  periods_by_pk(period_in_hours: Int!): periods
+
+  # fetch data from the table: "total_tx_hourly_stats"
+  total_tx_hourly_stats(
+    # distinct select on columns
+    distinct_on: [total_tx_hourly_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [total_tx_hourly_stats_order_by!]
+
+    # filter the rows returned
+    where: total_tx_hourly_stats_bool_exp
+  ): [total_tx_hourly_stats!]!
+
+  # fetch aggregated fields from the table: "total_tx_hourly_stats"
+  total_tx_hourly_stats_aggregate(
+    # distinct select on columns
+    distinct_on: [total_tx_hourly_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [total_tx_hourly_stats_order_by!]
+
+    # filter the rows returned
+    where: total_tx_hourly_stats_bool_exp
+  ): total_tx_hourly_stats_aggregate!
+
+  # fetch data from the table: "total_tx_hourly_stats" using primary key columns
+  total_tx_hourly_stats_by_pk(hour: timestamp!, period: Int!, zone: String!): total_tx_hourly_stats
+
+  # fetch data from the table: "zone_nodes"
+  zone_nodes(
+    # distinct select on columns
+    distinct_on: [zone_nodes_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zone_nodes_order_by!]
+
+    # filter the rows returned
+    where: zone_nodes_bool_exp
+  ): [zone_nodes!]!
+
+  # fetch aggregated fields from the table: "zone_nodes"
+  zone_nodes_aggregate(
+    # distinct select on columns
+    distinct_on: [zone_nodes_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zone_nodes_order_by!]
+
+    # filter the rows returned
+    where: zone_nodes_bool_exp
+  ): zone_nodes_aggregate!
+
+  # fetch data from the table: "zone_nodes" using primary key columns
+  zone_nodes_by_pk(rpc_addr: String!, zone: String!): zone_nodes
+
+  # fetch data from the table: "zones"
+  zones(
+    # distinct select on columns
+    distinct_on: [zones_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_order_by!]
+
+    # filter the rows returned
+    where: zones_bool_exp
+  ): [zones!]!
+
+  # fetch aggregated fields from the table: "zones"
+  zones_aggregate(
+    # distinct select on columns
+    distinct_on: [zones_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_order_by!]
+
+    # filter the rows returned
+    where: zones_bool_exp
+  ): zones_aggregate!
+
+  # fetch data from the table: "zones" using primary key columns
+  zones_by_pk(chain_id: String!): zones
+
+  # fetch data from the table: "zones_graphs"
+  zones_graphs(
+    # distinct select on columns
+    distinct_on: [zones_graphs_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_graphs_order_by!]
+
+    # filter the rows returned
+    where: zones_graphs_bool_exp
+  ): [zones_graphs!]!
+
+  # fetch aggregated fields from the table: "zones_graphs"
+  zones_graphs_aggregate(
+    # distinct select on columns
+    distinct_on: [zones_graphs_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_graphs_order_by!]
+
+    # filter the rows returned
+    where: zones_graphs_bool_exp
+  ): zones_graphs_aggregate!
+
+  # fetch data from the table: "zones_graphs" using primary key columns
+  zones_graphs_by_pk(source: String!, target: String!, timeframe: Int!): zones_graphs
+
+  # fetch data from the table: "zones_stats"
+  zones_stats(
+    # distinct select on columns
+    distinct_on: [zones_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_stats_order_by!]
+
+    # filter the rows returned
+    where: zones_stats_bool_exp
+  ): [zones_stats!]!
+
+  # fetch aggregated fields from the table: "zones_stats"
+  zones_stats_aggregate(
+    # distinct select on columns
+    distinct_on: [zones_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_stats_order_by!]
+
+    # filter the rows returned
+    where: zones_stats_bool_exp
+  ): zones_stats_aggregate!
+
+  # fetch data from the table: "zones_stats" using primary key columns
+  zones_stats_by_pk(timeframe: Int!, zone: String!): zones_stats
+}
+
+# expression to compare columns of type String. All fields are combined with logical 'AND'.
+input String_comparison_exp {
+  _eq: String
+  _gt: String
+  _gte: String
+  _ilike: String
+  _in: [String!]
+  _is_null: Boolean
+  _like: String
+  _lt: String
+  _lte: String
+  _neq: String
+  _nilike: String
+  _nin: [String!]
+  _nlike: String
+  _nsimilar: String
+  _similar: String
+}
+
+# subscription root
+type subscription_root {
+  # fetch data from the table: "active_addresses"
+  active_addresses(
+    # distinct select on columns
+    distinct_on: [active_addresses_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [active_addresses_order_by!]
+
+    # filter the rows returned
+    where: active_addresses_bool_exp
+  ): [active_addresses!]!
+
+  # fetch aggregated fields from the table: "active_addresses"
+  active_addresses_aggregate(
+    # distinct select on columns
+    distinct_on: [active_addresses_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [active_addresses_order_by!]
+
+    # filter the rows returned
+    where: active_addresses_bool_exp
+  ): active_addresses_aggregate!
+
+  # fetch data from the table: "active_addresses" using primary key columns
+  active_addresses_by_pk(address: String!, hour: timestamp!, period: Int!, zone: String!): active_addresses
+
+  # fetch data from the table: "blocks_log"
+  blocks_log(
+    # distinct select on columns
+    distinct_on: [blocks_log_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [blocks_log_order_by!]
+
+    # filter the rows returned
+    where: blocks_log_bool_exp
+  ): [blocks_log!]!
+
+  # fetch aggregated fields from the table: "blocks_log"
+  blocks_log_aggregate(
+    # distinct select on columns
+    distinct_on: [blocks_log_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [blocks_log_order_by!]
+
+    # filter the rows returned
+    where: blocks_log_bool_exp
+  ): blocks_log_aggregate!
+
+  # fetch data from the table: "blocks_log" using primary key columns
+  blocks_log_by_pk(zone: String!): blocks_log
+
+  # fetch data from the table: "headers"
+  headers(
+    # distinct select on columns
+    distinct_on: [headers_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [headers_order_by!]
+
+    # filter the rows returned
+    where: headers_bool_exp
+  ): [headers!]!
+
+  # fetch aggregated fields from the table: "headers"
+  headers_aggregate(
+    # distinct select on columns
+    distinct_on: [headers_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [headers_order_by!]
+
+    # filter the rows returned
+    where: headers_bool_exp
+  ): headers_aggregate!
+
+  # fetch data from the table: "headers" using primary key columns
+  headers_by_pk(timeframe: Int!): headers
+
+  # fetch data from the table: "ibc_channel_zone"
+  ibc_channel_zone(
+    # distinct select on columns
+    distinct_on: [ibc_channel_zone_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_channel_zone_order_by!]
+
+    # filter the rows returned
+    where: ibc_channel_zone_bool_exp
+  ): [ibc_channel_zone!]!
+
+  # fetch aggregated fields from the table: "ibc_channel_zone"
+  ibc_channel_zone_aggregate(
+    # distinct select on columns
+    distinct_on: [ibc_channel_zone_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_channel_zone_order_by!]
+
+    # filter the rows returned
+    where: ibc_channel_zone_bool_exp
+  ): ibc_channel_zone_aggregate!
+
+  # fetch data from the table: "ibc_channel_zone" using primary key columns
+  ibc_channel_zone_by_pk(chanel_id: String!, zone: String!): ibc_channel_zone
+
+  # fetch data from the table: "ibc_channels"
+  ibc_channels(
+    # distinct select on columns
+    distinct_on: [ibc_channels_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_channels_order_by!]
+
+    # filter the rows returned
+    where: ibc_channels_bool_exp
+  ): [ibc_channels!]!
+
+  # fetch aggregated fields from the table: "ibc_channels"
+  ibc_channels_aggregate(
+    # distinct select on columns
+    distinct_on: [ibc_channels_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_channels_order_by!]
+
+    # filter the rows returned
+    where: ibc_channels_bool_exp
+  ): ibc_channels_aggregate!
+
+  # fetch data from the table: "ibc_channels" using primary key columns
+  ibc_channels_by_pk(channel_id: String!, zone: String!): ibc_channels
+
+  # fetch data from the table: "ibc_clients"
+  ibc_clients(
+    # distinct select on columns
+    distinct_on: [ibc_clients_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_clients_order_by!]
+
+    # filter the rows returned
+    where: ibc_clients_bool_exp
+  ): [ibc_clients!]!
+
+  # fetch aggregated fields from the table: "ibc_clients"
+  ibc_clients_aggregate(
+    # distinct select on columns
+    distinct_on: [ibc_clients_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_clients_order_by!]
+
+    # filter the rows returned
+    where: ibc_clients_bool_exp
+  ): ibc_clients_aggregate!
+
+  # fetch data from the table: "ibc_clients" using primary key columns
+  ibc_clients_by_pk(client_id: String!, zone: String!): ibc_clients
+
+  # fetch data from the table: "ibc_connections"
+  ibc_connections(
+    # distinct select on columns
+    distinct_on: [ibc_connections_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_connections_order_by!]
+
+    # filter the rows returned
+    where: ibc_connections_bool_exp
+  ): [ibc_connections!]!
+
+  # fetch aggregated fields from the table: "ibc_connections"
+  ibc_connections_aggregate(
+    # distinct select on columns
+    distinct_on: [ibc_connections_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_connections_order_by!]
+
+    # filter the rows returned
+    where: ibc_connections_bool_exp
+  ): ibc_connections_aggregate!
+
+  # fetch data from the table: "ibc_connections" using primary key columns
+  ibc_connections_by_pk(connection_id: String!, zone: String!): ibc_connections
+
+  # fetch data from the table: "ibc_transfer_hourly_stats"
+  ibc_transfer_hourly_stats(
+    # distinct select on columns
+    distinct_on: [ibc_transfer_hourly_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_transfer_hourly_stats_order_by!]
+
+    # filter the rows returned
+    where: ibc_transfer_hourly_stats_bool_exp
+  ): [ibc_transfer_hourly_stats!]!
+
+  # fetch aggregated fields from the table: "ibc_transfer_hourly_stats"
+  ibc_transfer_hourly_stats_aggregate(
+    # distinct select on columns
+    distinct_on: [ibc_transfer_hourly_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [ibc_transfer_hourly_stats_order_by!]
+
+    # filter the rows returned
+    where: ibc_transfer_hourly_stats_bool_exp
+  ): ibc_transfer_hourly_stats_aggregate!
+
+  # fetch data from the table: "ibc_transfer_hourly_stats" using primary key columns
+  ibc_transfer_hourly_stats_by_pk(hour: timestamp!, period: Int!, zone: String!, zone_dest: String!, zone_src: String!): ibc_transfer_hourly_stats
+
+  # fetch data from the table: "periods"
+  periods(
+    # distinct select on columns
+    distinct_on: [periods_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [periods_order_by!]
+
+    # filter the rows returned
+    where: periods_bool_exp
+  ): [periods!]!
+
+  # fetch aggregated fields from the table: "periods"
+  periods_aggregate(
+    # distinct select on columns
+    distinct_on: [periods_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [periods_order_by!]
+
+    # filter the rows returned
+    where: periods_bool_exp
+  ): periods_aggregate!
+
+  # fetch data from the table: "periods" using primary key columns
+  periods_by_pk(period_in_hours: Int!): periods
+
+  # fetch data from the table: "total_tx_hourly_stats"
+  total_tx_hourly_stats(
+    # distinct select on columns
+    distinct_on: [total_tx_hourly_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [total_tx_hourly_stats_order_by!]
+
+    # filter the rows returned
+    where: total_tx_hourly_stats_bool_exp
+  ): [total_tx_hourly_stats!]!
+
+  # fetch aggregated fields from the table: "total_tx_hourly_stats"
+  total_tx_hourly_stats_aggregate(
+    # distinct select on columns
+    distinct_on: [total_tx_hourly_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [total_tx_hourly_stats_order_by!]
+
+    # filter the rows returned
+    where: total_tx_hourly_stats_bool_exp
+  ): total_tx_hourly_stats_aggregate!
+
+  # fetch data from the table: "total_tx_hourly_stats" using primary key columns
+  total_tx_hourly_stats_by_pk(hour: timestamp!, period: Int!, zone: String!): total_tx_hourly_stats
+
+  # fetch data from the table: "zone_nodes"
+  zone_nodes(
+    # distinct select on columns
+    distinct_on: [zone_nodes_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zone_nodes_order_by!]
+
+    # filter the rows returned
+    where: zone_nodes_bool_exp
+  ): [zone_nodes!]!
+
+  # fetch aggregated fields from the table: "zone_nodes"
+  zone_nodes_aggregate(
+    # distinct select on columns
+    distinct_on: [zone_nodes_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zone_nodes_order_by!]
+
+    # filter the rows returned
+    where: zone_nodes_bool_exp
+  ): zone_nodes_aggregate!
+
+  # fetch data from the table: "zone_nodes" using primary key columns
+  zone_nodes_by_pk(rpc_addr: String!, zone: String!): zone_nodes
+
+  # fetch data from the table: "zones"
+  zones(
+    # distinct select on columns
+    distinct_on: [zones_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_order_by!]
+
+    # filter the rows returned
+    where: zones_bool_exp
+  ): [zones!]!
+
+  # fetch aggregated fields from the table: "zones"
+  zones_aggregate(
+    # distinct select on columns
+    distinct_on: [zones_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_order_by!]
+
+    # filter the rows returned
+    where: zones_bool_exp
+  ): zones_aggregate!
+
+  # fetch data from the table: "zones" using primary key columns
+  zones_by_pk(chain_id: String!): zones
+
+  # fetch data from the table: "zones_graphs"
+  zones_graphs(
+    # distinct select on columns
+    distinct_on: [zones_graphs_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_graphs_order_by!]
+
+    # filter the rows returned
+    where: zones_graphs_bool_exp
+  ): [zones_graphs!]!
+
+  # fetch aggregated fields from the table: "zones_graphs"
+  zones_graphs_aggregate(
+    # distinct select on columns
+    distinct_on: [zones_graphs_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_graphs_order_by!]
+
+    # filter the rows returned
+    where: zones_graphs_bool_exp
+  ): zones_graphs_aggregate!
+
+  # fetch data from the table: "zones_graphs" using primary key columns
+  zones_graphs_by_pk(source: String!, target: String!, timeframe: Int!): zones_graphs
+
+  # fetch data from the table: "zones_stats"
+  zones_stats(
+    # distinct select on columns
+    distinct_on: [zones_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_stats_order_by!]
+
+    # filter the rows returned
+    where: zones_stats_bool_exp
+  ): [zones_stats!]!
+
+  # fetch aggregated fields from the table: "zones_stats"
+  zones_stats_aggregate(
+    # distinct select on columns
+    distinct_on: [zones_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zones_stats_order_by!]
+
+    # filter the rows returned
+    where: zones_stats_bool_exp
+  ): zones_stats_aggregate!
+
+  # fetch data from the table: "zones_stats" using primary key columns
+  zones_stats_by_pk(timeframe: Int!, zone: String!): zones_stats
+}
+
+scalar timestamp
+
+# expression to compare columns of type timestamp. All fields are combined with logical 'AND'.
+input timestamp_comparison_exp {
+  _eq: timestamp
+  _gt: timestamp
+  _gte: timestamp
+  _in: [timestamp!]
+  _is_null: Boolean
+  _lt: timestamp
+  _lte: timestamp
+  _neq: timestamp
+  _nin: [timestamp!]
+}
+
+# columns and relationships of "total_tx_hourly_stats"
+type total_tx_hourly_stats {
+  hour: timestamp!
+  period: Int!
+  total_coin_turnover_amount: bigint!
+  txs_cnt: Int!
+  txs_w_ibc_xfer_cnt: Int!
+  txs_w_ibc_xfer_fail_cnt: Int!
+  zone: String!
+}
+
+# aggregated selection of "total_tx_hourly_stats"
+type total_tx_hourly_stats_aggregate {
+  aggregate: total_tx_hourly_stats_aggregate_fields
+  nodes: [total_tx_hourly_stats!]!
+}
+
+# aggregate fields of "total_tx_hourly_stats"
+type total_tx_hourly_stats_aggregate_fields {
+  avg: total_tx_hourly_stats_avg_fields
+  count(columns: [total_tx_hourly_stats_select_column!], distinct: Boolean): Int
+  max: total_tx_hourly_stats_max_fields
+  min: total_tx_hourly_stats_min_fields
+  stddev: total_tx_hourly_stats_stddev_fields
+  stddev_pop: total_tx_hourly_stats_stddev_pop_fields
+  stddev_samp: total_tx_hourly_stats_stddev_samp_fields
+  sum: total_tx_hourly_stats_sum_fields
+  var_pop: total_tx_hourly_stats_var_pop_fields
+  var_samp: total_tx_hourly_stats_var_samp_fields
+  variance: total_tx_hourly_stats_variance_fields
+}
+
+# order by aggregate values of table "total_tx_hourly_stats"
+input total_tx_hourly_stats_aggregate_order_by {
+  avg: total_tx_hourly_stats_avg_order_by
+  count: order_by
+  max: total_tx_hourly_stats_max_order_by
+  min: total_tx_hourly_stats_min_order_by
+  stddev: total_tx_hourly_stats_stddev_order_by
+  stddev_pop: total_tx_hourly_stats_stddev_pop_order_by
+  stddev_samp: total_tx_hourly_stats_stddev_samp_order_by
+  sum: total_tx_hourly_stats_sum_order_by
+  var_pop: total_tx_hourly_stats_var_pop_order_by
+  var_samp: total_tx_hourly_stats_var_samp_order_by
+  variance: total_tx_hourly_stats_variance_order_by
+}
+
+# input type for inserting array relation for remote table "total_tx_hourly_stats"
+input total_tx_hourly_stats_arr_rel_insert_input {
+  data: [total_tx_hourly_stats_insert_input!]!
+  on_conflict: total_tx_hourly_stats_on_conflict
+}
+
+# aggregate avg on columns
+type total_tx_hourly_stats_avg_fields {
+  period: Float
+  total_coin_turnover_amount: Float
+  txs_cnt: Float
+  txs_w_ibc_xfer_cnt: Float
+  txs_w_ibc_xfer_fail_cnt: Float
+}
+
+# order by avg() on columns of table "total_tx_hourly_stats"
+input total_tx_hourly_stats_avg_order_by {
+  period: order_by
+  total_coin_turnover_amount: order_by
+  txs_cnt: order_by
+  txs_w_ibc_xfer_cnt: order_by
+  txs_w_ibc_xfer_fail_cnt: order_by
+}
+
+# Boolean expression to filter rows from the table "total_tx_hourly_stats". All fields are combined with a logical 'AND'.
+input total_tx_hourly_stats_bool_exp {
+  _and: [total_tx_hourly_stats_bool_exp]
+  _not: total_tx_hourly_stats_bool_exp
+  _or: [total_tx_hourly_stats_bool_exp]
+  hour: timestamp_comparison_exp
+  period: Int_comparison_exp
+  total_coin_turnover_amount: bigint_comparison_exp
+  txs_cnt: Int_comparison_exp
+  txs_w_ibc_xfer_cnt: Int_comparison_exp
+  txs_w_ibc_xfer_fail_cnt: Int_comparison_exp
+  zone: String_comparison_exp
+}
+
+# unique or primary key constraints on table "total_tx_hourly_stats"
+enum total_tx_hourly_stats_constraint {
+  # unique or primary key constraint
+  total_tx_hourly_stats_pkey
+}
+
+# input type for incrementing integer column in table "total_tx_hourly_stats"
+input total_tx_hourly_stats_inc_input {
+  period: Int
+  total_coin_turnover_amount: bigint
+  txs_cnt: Int
+  txs_w_ibc_xfer_cnt: Int
+  txs_w_ibc_xfer_fail_cnt: Int
+}
+
+# input type for inserting data into table "total_tx_hourly_stats"
+input total_tx_hourly_stats_insert_input {
+  hour: timestamp
+  period: Int
+  total_coin_turnover_amount: bigint
+  txs_cnt: Int
+  txs_w_ibc_xfer_cnt: Int
+  txs_w_ibc_xfer_fail_cnt: Int
+  zone: String
+}
+
+# aggregate max on columns
+type total_tx_hourly_stats_max_fields {
+  hour: timestamp
+  period: Int
+  total_coin_turnover_amount: bigint
+  txs_cnt: Int
+  txs_w_ibc_xfer_cnt: Int
+  txs_w_ibc_xfer_fail_cnt: Int
+  zone: String
+}
+
+# order by max() on columns of table "total_tx_hourly_stats"
+input total_tx_hourly_stats_max_order_by {
+  hour: order_by
+  period: order_by
+  total_coin_turnover_amount: order_by
+  txs_cnt: order_by
+  txs_w_ibc_xfer_cnt: order_by
+  txs_w_ibc_xfer_fail_cnt: order_by
+  zone: order_by
+}
+
+# aggregate min on columns
+type total_tx_hourly_stats_min_fields {
+  hour: timestamp
+  period: Int
+  total_coin_turnover_amount: bigint
+  txs_cnt: Int
+  txs_w_ibc_xfer_cnt: Int
+  txs_w_ibc_xfer_fail_cnt: Int
+  zone: String
+}
+
+# order by min() on columns of table "total_tx_hourly_stats"
+input total_tx_hourly_stats_min_order_by {
+  hour: order_by
+  period: order_by
+  total_coin_turnover_amount: order_by
+  txs_cnt: order_by
+  txs_w_ibc_xfer_cnt: order_by
+  txs_w_ibc_xfer_fail_cnt: order_by
+  zone: order_by
+}
+
+# response of any mutation on the table "total_tx_hourly_stats"
+type total_tx_hourly_stats_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [total_tx_hourly_stats!]!
+}
+
+# input type for inserting object relation for remote table "total_tx_hourly_stats"
+input total_tx_hourly_stats_obj_rel_insert_input {
+  data: total_tx_hourly_stats_insert_input!
+  on_conflict: total_tx_hourly_stats_on_conflict
+}
+
+# on conflict condition type for table "total_tx_hourly_stats"
+input total_tx_hourly_stats_on_conflict {
+  constraint: total_tx_hourly_stats_constraint!
+  update_columns: [total_tx_hourly_stats_update_column!]!
+  where: total_tx_hourly_stats_bool_exp
+}
+
+# ordering options when selecting data from "total_tx_hourly_stats"
+input total_tx_hourly_stats_order_by {
+  hour: order_by
+  period: order_by
+  total_coin_turnover_amount: order_by
+  txs_cnt: order_by
+  txs_w_ibc_xfer_cnt: order_by
+  txs_w_ibc_xfer_fail_cnt: order_by
+  zone: order_by
+}
+
+# primary key columns input for table: "total_tx_hourly_stats"
+input total_tx_hourly_stats_pk_columns_input {
+  hour: timestamp!
+  period: Int!
+  zone: String!
+}
+
+# select columns of table "total_tx_hourly_stats"
+enum total_tx_hourly_stats_select_column {
+  # column name
+  hour
+
+  # column name
+  period
+
+  # column name
+  total_coin_turnover_amount
+
+  # column name
+  txs_cnt
+
+  # column name
+  txs_w_ibc_xfer_cnt
+
+  # column name
+  txs_w_ibc_xfer_fail_cnt
+
+  # column name
+  zone
+}
+
+# input type for updating data in table "total_tx_hourly_stats"
+input total_tx_hourly_stats_set_input {
+  hour: timestamp
+  period: Int
+  total_coin_turnover_amount: bigint
+  txs_cnt: Int
+  txs_w_ibc_xfer_cnt: Int
+  txs_w_ibc_xfer_fail_cnt: Int
+  zone: String
+}
+
+# aggregate stddev on columns
+type total_tx_hourly_stats_stddev_fields {
+  period: Float
+  total_coin_turnover_amount: Float
+  txs_cnt: Float
+  txs_w_ibc_xfer_cnt: Float
+  txs_w_ibc_xfer_fail_cnt: Float
+}
+
+# order by stddev() on columns of table "total_tx_hourly_stats"
+input total_tx_hourly_stats_stddev_order_by {
+  period: order_by
+  total_coin_turnover_amount: order_by
+  txs_cnt: order_by
+  txs_w_ibc_xfer_cnt: order_by
+  txs_w_ibc_xfer_fail_cnt: order_by
+}
+
+# aggregate stddev_pop on columns
+type total_tx_hourly_stats_stddev_pop_fields {
+  period: Float
+  total_coin_turnover_amount: Float
+  txs_cnt: Float
+  txs_w_ibc_xfer_cnt: Float
+  txs_w_ibc_xfer_fail_cnt: Float
+}
+
+# order by stddev_pop() on columns of table "total_tx_hourly_stats"
+input total_tx_hourly_stats_stddev_pop_order_by {
+  period: order_by
+  total_coin_turnover_amount: order_by
+  txs_cnt: order_by
+  txs_w_ibc_xfer_cnt: order_by
+  txs_w_ibc_xfer_fail_cnt: order_by
+}
+
+# aggregate stddev_samp on columns
+type total_tx_hourly_stats_stddev_samp_fields {
+  period: Float
+  total_coin_turnover_amount: Float
+  txs_cnt: Float
+  txs_w_ibc_xfer_cnt: Float
+  txs_w_ibc_xfer_fail_cnt: Float
+}
+
+# order by stddev_samp() on columns of table "total_tx_hourly_stats"
+input total_tx_hourly_stats_stddev_samp_order_by {
+  period: order_by
+  total_coin_turnover_amount: order_by
+  txs_cnt: order_by
+  txs_w_ibc_xfer_cnt: order_by
+  txs_w_ibc_xfer_fail_cnt: order_by
+}
+
+# aggregate sum on columns
+type total_tx_hourly_stats_sum_fields {
+  period: Int
+  total_coin_turnover_amount: bigint
+  txs_cnt: Int
+  txs_w_ibc_xfer_cnt: Int
+  txs_w_ibc_xfer_fail_cnt: Int
+}
+
+# order by sum() on columns of table "total_tx_hourly_stats"
+input total_tx_hourly_stats_sum_order_by {
+  period: order_by
+  total_coin_turnover_amount: order_by
+  txs_cnt: order_by
+  txs_w_ibc_xfer_cnt: order_by
+  txs_w_ibc_xfer_fail_cnt: order_by
+}
+
+# update columns of table "total_tx_hourly_stats"
+enum total_tx_hourly_stats_update_column {
+  # column name
+  hour
+
+  # column name
+  period
+
+  # column name
+  total_coin_turnover_amount
+
+  # column name
+  txs_cnt
+
+  # column name
+  txs_w_ibc_xfer_cnt
+
+  # column name
+  txs_w_ibc_xfer_fail_cnt
+
+  # column name
+  zone
+}
+
+# aggregate var_pop on columns
+type total_tx_hourly_stats_var_pop_fields {
+  period: Float
+  total_coin_turnover_amount: Float
+  txs_cnt: Float
+  txs_w_ibc_xfer_cnt: Float
+  txs_w_ibc_xfer_fail_cnt: Float
+}
+
+# order by var_pop() on columns of table "total_tx_hourly_stats"
+input total_tx_hourly_stats_var_pop_order_by {
+  period: order_by
+  total_coin_turnover_amount: order_by
+  txs_cnt: order_by
+  txs_w_ibc_xfer_cnt: order_by
+  txs_w_ibc_xfer_fail_cnt: order_by
+}
+
+# aggregate var_samp on columns
+type total_tx_hourly_stats_var_samp_fields {
+  period: Float
+  total_coin_turnover_amount: Float
+  txs_cnt: Float
+  txs_w_ibc_xfer_cnt: Float
+  txs_w_ibc_xfer_fail_cnt: Float
+}
+
+# order by var_samp() on columns of table "total_tx_hourly_stats"
+input total_tx_hourly_stats_var_samp_order_by {
+  period: order_by
+  total_coin_turnover_amount: order_by
+  txs_cnt: order_by
+  txs_w_ibc_xfer_cnt: order_by
+  txs_w_ibc_xfer_fail_cnt: order_by
+}
+
+# aggregate variance on columns
+type total_tx_hourly_stats_variance_fields {
+  period: Float
+  total_coin_turnover_amount: Float
+  txs_cnt: Float
+  txs_w_ibc_xfer_cnt: Float
+  txs_w_ibc_xfer_fail_cnt: Float
+}
+
+# order by variance() on columns of table "total_tx_hourly_stats"
+input total_tx_hourly_stats_variance_order_by {
+  period: order_by
+  total_coin_turnover_amount: order_by
+  txs_cnt: order_by
+  txs_w_ibc_xfer_cnt: order_by
+  txs_w_ibc_xfer_fail_cnt: order_by
+}
+
+# columns and relationships of "zone_nodes"
+type zone_nodes {
+  is_alive: Boolean!
+  last_checked_at: timestamp!
+  rpc_addr: String!
+  zone: String!
+}
+
+# aggregated selection of "zone_nodes"
+type zone_nodes_aggregate {
+  aggregate: zone_nodes_aggregate_fields
+  nodes: [zone_nodes!]!
+}
+
+# aggregate fields of "zone_nodes"
+type zone_nodes_aggregate_fields {
+  count(columns: [zone_nodes_select_column!], distinct: Boolean): Int
+  max: zone_nodes_max_fields
+  min: zone_nodes_min_fields
+}
+
+# order by aggregate values of table "zone_nodes"
+input zone_nodes_aggregate_order_by {
+  count: order_by
+  max: zone_nodes_max_order_by
+  min: zone_nodes_min_order_by
+}
+
+# input type for inserting array relation for remote table "zone_nodes"
+input zone_nodes_arr_rel_insert_input {
+  data: [zone_nodes_insert_input!]!
+  on_conflict: zone_nodes_on_conflict
+}
+
+# Boolean expression to filter rows from the table "zone_nodes". All fields are combined with a logical 'AND'.
+input zone_nodes_bool_exp {
+  _and: [zone_nodes_bool_exp]
+  _not: zone_nodes_bool_exp
+  _or: [zone_nodes_bool_exp]
+  is_alive: Boolean_comparison_exp
+  last_checked_at: timestamp_comparison_exp
+  rpc_addr: String_comparison_exp
+  zone: String_comparison_exp
+}
+
+# unique or primary key constraints on table "zone_nodes"
+enum zone_nodes_constraint {
+  # unique or primary key constraint
+  zone_nodes_pkey
+
+  # unique or primary key constraint
+  zone_nodes_rpc_addr_key
+}
+
+# input type for inserting data into table "zone_nodes"
+input zone_nodes_insert_input {
+  is_alive: Boolean
+  last_checked_at: timestamp
+  rpc_addr: String
+  zone: String
+}
+
+# aggregate max on columns
+type zone_nodes_max_fields {
+  last_checked_at: timestamp
+  rpc_addr: String
+  zone: String
+}
+
+# order by max() on columns of table "zone_nodes"
+input zone_nodes_max_order_by {
+  last_checked_at: order_by
+  rpc_addr: order_by
+  zone: order_by
+}
+
+# aggregate min on columns
+type zone_nodes_min_fields {
+  last_checked_at: timestamp
+  rpc_addr: String
+  zone: String
+}
+
+# order by min() on columns of table "zone_nodes"
+input zone_nodes_min_order_by {
+  last_checked_at: order_by
+  rpc_addr: order_by
+  zone: order_by
+}
+
+# response of any mutation on the table "zone_nodes"
+type zone_nodes_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [zone_nodes!]!
+}
+
+# input type for inserting object relation for remote table "zone_nodes"
+input zone_nodes_obj_rel_insert_input {
+  data: zone_nodes_insert_input!
+  on_conflict: zone_nodes_on_conflict
+}
+
+# on conflict condition type for table "zone_nodes"
+input zone_nodes_on_conflict {
+  constraint: zone_nodes_constraint!
+  update_columns: [zone_nodes_update_column!]!
+  where: zone_nodes_bool_exp
+}
+
+# ordering options when selecting data from "zone_nodes"
+input zone_nodes_order_by {
+  is_alive: order_by
+  last_checked_at: order_by
+  rpc_addr: order_by
+  zone: order_by
+}
+
+# primary key columns input for table: "zone_nodes"
+input zone_nodes_pk_columns_input {
+  rpc_addr: String!
+  zone: String!
+}
+
+# select columns of table "zone_nodes"
+enum zone_nodes_select_column {
+  # column name
+  is_alive
+
+  # column name
+  last_checked_at
+
+  # column name
+  rpc_addr
+
+  # column name
+  zone
+}
+
+# input type for updating data in table "zone_nodes"
+input zone_nodes_set_input {
+  is_alive: Boolean
+  last_checked_at: timestamp
+  rpc_addr: String
+  zone: String
+}
+
+# update columns of table "zone_nodes"
+enum zone_nodes_update_column {
+  # column name
+  is_alive
+
+  # column name
+  last_checked_at
+
+  # column name
+  rpc_addr
+
+  # column name
+  zone
+}
+
+# columns and relationships of "zones"
+type zones {
+  added_at: timestamp!
+  chain_id: String!
+  description: String
+  is_caught_up: Boolean!
+  is_enabled: Boolean!
+  name: String!
+  updated_at: timestamp!
+}
+
+# aggregated selection of "zones"
+type zones_aggregate {
+  aggregate: zones_aggregate_fields
+  nodes: [zones!]!
+}
+
+# aggregate fields of "zones"
+type zones_aggregate_fields {
+  count(columns: [zones_select_column!], distinct: Boolean): Int
+  max: zones_max_fields
+  min: zones_min_fields
+}
+
+# order by aggregate values of table "zones"
+input zones_aggregate_order_by {
+  count: order_by
+  max: zones_max_order_by
+  min: zones_min_order_by
+}
+
+# input type for inserting array relation for remote table "zones"
+input zones_arr_rel_insert_input {
+  data: [zones_insert_input!]!
+  on_conflict: zones_on_conflict
+}
+
+# Boolean expression to filter rows from the table "zones". All fields are combined with a logical 'AND'.
+input zones_bool_exp {
+  _and: [zones_bool_exp]
+  _not: zones_bool_exp
+  _or: [zones_bool_exp]
+  added_at: timestamp_comparison_exp
+  chain_id: String_comparison_exp
+  description: String_comparison_exp
+  is_caught_up: Boolean_comparison_exp
+  is_enabled: Boolean_comparison_exp
+  name: String_comparison_exp
+  updated_at: timestamp_comparison_exp
+}
+
+# unique or primary key constraints on table "zones"
+enum zones_constraint {
+  # unique or primary key constraint
+  zones_pkey
+}
+
+# columns and relationships of "zones_graphs"
+type zones_graphs {
+  source: String!
+  target: String!
+  timeframe: Int!
+}
+
+# aggregated selection of "zones_graphs"
+type zones_graphs_aggregate {
+  aggregate: zones_graphs_aggregate_fields
+  nodes: [zones_graphs!]!
+}
+
+# aggregate fields of "zones_graphs"
+type zones_graphs_aggregate_fields {
+  avg: zones_graphs_avg_fields
+  count(columns: [zones_graphs_select_column!], distinct: Boolean): Int
+  max: zones_graphs_max_fields
+  min: zones_graphs_min_fields
+  stddev: zones_graphs_stddev_fields
+  stddev_pop: zones_graphs_stddev_pop_fields
+  stddev_samp: zones_graphs_stddev_samp_fields
+  sum: zones_graphs_sum_fields
+  var_pop: zones_graphs_var_pop_fields
+  var_samp: zones_graphs_var_samp_fields
+  variance: zones_graphs_variance_fields
+}
+
+# order by aggregate values of table "zones_graphs"
+input zones_graphs_aggregate_order_by {
+  avg: zones_graphs_avg_order_by
+  count: order_by
+  max: zones_graphs_max_order_by
+  min: zones_graphs_min_order_by
+  stddev: zones_graphs_stddev_order_by
+  stddev_pop: zones_graphs_stddev_pop_order_by
+  stddev_samp: zones_graphs_stddev_samp_order_by
+  sum: zones_graphs_sum_order_by
+  var_pop: zones_graphs_var_pop_order_by
+  var_samp: zones_graphs_var_samp_order_by
+  variance: zones_graphs_variance_order_by
+}
+
+# input type for inserting array relation for remote table "zones_graphs"
+input zones_graphs_arr_rel_insert_input {
+  data: [zones_graphs_insert_input!]!
+  on_conflict: zones_graphs_on_conflict
+}
+
+# aggregate avg on columns
+type zones_graphs_avg_fields {
+  timeframe: Float
+}
+
+# order by avg() on columns of table "zones_graphs"
+input zones_graphs_avg_order_by {
+  timeframe: order_by
+}
+
+# Boolean expression to filter rows from the table "zones_graphs". All fields are combined with a logical 'AND'.
+input zones_graphs_bool_exp {
+  _and: [zones_graphs_bool_exp]
+  _not: zones_graphs_bool_exp
+  _or: [zones_graphs_bool_exp]
+  source: String_comparison_exp
+  target: String_comparison_exp
+  timeframe: Int_comparison_exp
+}
+
+# unique or primary key constraints on table "zones_graphs"
+enum zones_graphs_constraint {
+  # unique or primary key constraint
+  zones_graphs_pkey
+}
+
+# input type for incrementing integer column in table "zones_graphs"
+input zones_graphs_inc_input {
+  timeframe: Int
+}
+
+# input type for inserting data into table "zones_graphs"
+input zones_graphs_insert_input {
+  source: String
+  target: String
+  timeframe: Int
+}
+
+# aggregate max on columns
+type zones_graphs_max_fields {
+  source: String
+  target: String
+  timeframe: Int
+}
+
+# order by max() on columns of table "zones_graphs"
+input zones_graphs_max_order_by {
+  source: order_by
+  target: order_by
+  timeframe: order_by
+}
+
+# aggregate min on columns
+type zones_graphs_min_fields {
+  source: String
+  target: String
+  timeframe: Int
+}
+
+# order by min() on columns of table "zones_graphs"
+input zones_graphs_min_order_by {
+  source: order_by
+  target: order_by
+  timeframe: order_by
+}
+
+# response of any mutation on the table "zones_graphs"
+type zones_graphs_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [zones_graphs!]!
+}
+
+# input type for inserting object relation for remote table "zones_graphs"
+input zones_graphs_obj_rel_insert_input {
+  data: zones_graphs_insert_input!
+  on_conflict: zones_graphs_on_conflict
+}
+
+# on conflict condition type for table "zones_graphs"
+input zones_graphs_on_conflict {
+  constraint: zones_graphs_constraint!
+  update_columns: [zones_graphs_update_column!]!
+  where: zones_graphs_bool_exp
+}
+
+# ordering options when selecting data from "zones_graphs"
+input zones_graphs_order_by {
+  source: order_by
+  target: order_by
+  timeframe: order_by
+}
+
+# primary key columns input for table: "zones_graphs"
+input zones_graphs_pk_columns_input {
+  source: String!
+  target: String!
+  timeframe: Int!
+}
+
+# select columns of table "zones_graphs"
+enum zones_graphs_select_column {
+  # column name
+  source
+
+  # column name
+  target
+
+  # column name
+  timeframe
+}
+
+# input type for updating data in table "zones_graphs"
+input zones_graphs_set_input {
+  source: String
+  target: String
+  timeframe: Int
+}
+
+# aggregate stddev on columns
+type zones_graphs_stddev_fields {
+  timeframe: Float
+}
+
+# order by stddev() on columns of table "zones_graphs"
+input zones_graphs_stddev_order_by {
+  timeframe: order_by
+}
+
+# aggregate stddev_pop on columns
+type zones_graphs_stddev_pop_fields {
+  timeframe: Float
+}
+
+# order by stddev_pop() on columns of table "zones_graphs"
+input zones_graphs_stddev_pop_order_by {
+  timeframe: order_by
+}
+
+# aggregate stddev_samp on columns
+type zones_graphs_stddev_samp_fields {
+  timeframe: Float
+}
+
+# order by stddev_samp() on columns of table "zones_graphs"
+input zones_graphs_stddev_samp_order_by {
+  timeframe: order_by
+}
+
+# aggregate sum on columns
+type zones_graphs_sum_fields {
+  timeframe: Int
+}
+
+# order by sum() on columns of table "zones_graphs"
+input zones_graphs_sum_order_by {
+  timeframe: order_by
+}
+
+# update columns of table "zones_graphs"
+enum zones_graphs_update_column {
+  # column name
+  source
+
+  # column name
+  target
+
+  # column name
+  timeframe
+}
+
+# aggregate var_pop on columns
+type zones_graphs_var_pop_fields {
+  timeframe: Float
+}
+
+# order by var_pop() on columns of table "zones_graphs"
+input zones_graphs_var_pop_order_by {
+  timeframe: order_by
+}
+
+# aggregate var_samp on columns
+type zones_graphs_var_samp_fields {
+  timeframe: Float
+}
+
+# order by var_samp() on columns of table "zones_graphs"
+input zones_graphs_var_samp_order_by {
+  timeframe: order_by
+}
+
+# aggregate variance on columns
+type zones_graphs_variance_fields {
+  timeframe: Float
+}
+
+# order by variance() on columns of table "zones_graphs"
+input zones_graphs_variance_order_by {
+  timeframe: order_by
+}
+
+# input type for inserting data into table "zones"
+input zones_insert_input {
+  added_at: timestamp
+  chain_id: String
+  description: String
+  is_caught_up: Boolean
+  is_enabled: Boolean
+  name: String
+  updated_at: timestamp
+}
+
+# aggregate max on columns
+type zones_max_fields {
+  added_at: timestamp
+  chain_id: String
+  description: String
+  name: String
+  updated_at: timestamp
+}
+
+# order by max() on columns of table "zones"
+input zones_max_order_by {
+  added_at: order_by
+  chain_id: order_by
+  description: order_by
+  name: order_by
+  updated_at: order_by
+}
+
+# aggregate min on columns
+type zones_min_fields {
+  added_at: timestamp
+  chain_id: String
+  description: String
+  name: String
+  updated_at: timestamp
+}
+
+# order by min() on columns of table "zones"
+input zones_min_order_by {
+  added_at: order_by
+  chain_id: order_by
+  description: order_by
+  name: order_by
+  updated_at: order_by
+}
+
+# response of any mutation on the table "zones"
+type zones_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [zones!]!
+}
+
+# input type for inserting object relation for remote table "zones"
+input zones_obj_rel_insert_input {
+  data: zones_insert_input!
+  on_conflict: zones_on_conflict
+}
+
+# on conflict condition type for table "zones"
+input zones_on_conflict {
+  constraint: zones_constraint!
+  update_columns: [zones_update_column!]!
+  where: zones_bool_exp
+}
+
+# ordering options when selecting data from "zones"
+input zones_order_by {
+  added_at: order_by
+  chain_id: order_by
+  description: order_by
+  is_caught_up: order_by
+  is_enabled: order_by
+  name: order_by
+  updated_at: order_by
+}
+
+# primary key columns input for table: "zones"
+input zones_pk_columns_input {
+  chain_id: String!
+}
+
+# select columns of table "zones"
+enum zones_select_column {
+  # column name
+  added_at
+
+  # column name
+  chain_id
+
+  # column name
+  description
+
+  # column name
+  is_caught_up
+
+  # column name
+  is_enabled
+
+  # column name
+  name
+
+  # column name
+  updated_at
+}
+
+# input type for updating data in table "zones"
+input zones_set_input {
+  added_at: timestamp
+  chain_id: String
+  description: String
+  is_caught_up: Boolean
+  is_enabled: Boolean
+  name: String
+  updated_at: timestamp
+}
+
+# columns and relationships of "zones_stats"
+type zones_stats {
+  channels_num: Int!
+  chart(
+    # JSON select path
+    path: String
+  ): jsonb!
+  ibc_percent: Int!
+  ibc_tx_failed: Int!
+  ibc_tx_failed_diff: Int!
+  ibc_tx_in: Int!
+  ibc_tx_in_diff: Int!
+  ibc_tx_in_rating: Int!
+  ibc_tx_in_rating_diff: Int!
+  ibc_tx_in_weight: numeric!
+  ibc_tx_out: Int!
+  ibc_tx_out_diff: Int!
+  ibc_tx_out_rating: Int!
+  ibc_tx_out_rating_diff: Int!
+  ibc_tx_out_weight: numeric!
+  timeframe: Int!
+  total_active_addresses: Int!
+  total_active_addresses_diff: Int!
+  total_active_addresses_rating: Int!
+  total_active_addresses_rating_diff: Int!
+  total_coin_turnover_amount: numeric!
+  total_coin_turnover_amount_diff: numeric!
+  total_ibc_txs: Int!
+  total_ibc_txs_diff: Int!
+  total_ibc_txs_rating: Int!
+  total_ibc_txs_rating_diff: Int!
+  total_ibc_txs_weight: numeric!
+  total_txs: Int!
+  total_txs_diff: Int!
+  total_txs_rating: Int!
+  total_txs_rating_diff: Int!
+  total_txs_weight: numeric!
+  zone: String!
+}
+
+# aggregated selection of "zones_stats"
+type zones_stats_aggregate {
+  aggregate: zones_stats_aggregate_fields
+  nodes: [zones_stats!]!
+}
+
+# aggregate fields of "zones_stats"
+type zones_stats_aggregate_fields {
+  avg: zones_stats_avg_fields
+  count(columns: [zones_stats_select_column!], distinct: Boolean): Int
+  max: zones_stats_max_fields
+  min: zones_stats_min_fields
+  stddev: zones_stats_stddev_fields
+  stddev_pop: zones_stats_stddev_pop_fields
+  stddev_samp: zones_stats_stddev_samp_fields
+  sum: zones_stats_sum_fields
+  var_pop: zones_stats_var_pop_fields
+  var_samp: zones_stats_var_samp_fields
+  variance: zones_stats_variance_fields
+}
+
+# order by aggregate values of table "zones_stats"
+input zones_stats_aggregate_order_by {
+  avg: zones_stats_avg_order_by
+  count: order_by
+  max: zones_stats_max_order_by
+  min: zones_stats_min_order_by
+  stddev: zones_stats_stddev_order_by
+  stddev_pop: zones_stats_stddev_pop_order_by
+  stddev_samp: zones_stats_stddev_samp_order_by
+  sum: zones_stats_sum_order_by
+  var_pop: zones_stats_var_pop_order_by
+  var_samp: zones_stats_var_samp_order_by
+  variance: zones_stats_variance_order_by
+}
+
+# append existing jsonb value of filtered columns with new jsonb value
+input zones_stats_append_input {
+  chart: jsonb
+}
+
+# input type for inserting array relation for remote table "zones_stats"
+input zones_stats_arr_rel_insert_input {
+  data: [zones_stats_insert_input!]!
+  on_conflict: zones_stats_on_conflict
+}
+
+# aggregate avg on columns
+type zones_stats_avg_fields {
+  channels_num: Float
+  ibc_percent: Float
+  ibc_tx_failed: Float
+  ibc_tx_failed_diff: Float
+  ibc_tx_in: Float
+  ibc_tx_in_diff: Float
+  ibc_tx_in_rating: Float
+  ibc_tx_in_rating_diff: Float
+  ibc_tx_in_weight: Float
+  ibc_tx_out: Float
+  ibc_tx_out_diff: Float
+  ibc_tx_out_rating: Float
+  ibc_tx_out_rating_diff: Float
+  ibc_tx_out_weight: Float
+  timeframe: Float
+  total_active_addresses: Float
+  total_active_addresses_diff: Float
+  total_active_addresses_rating: Float
+  total_active_addresses_rating_diff: Float
+  total_coin_turnover_amount: Float
+  total_coin_turnover_amount_diff: Float
+  total_ibc_txs: Float
+  total_ibc_txs_diff: Float
+  total_ibc_txs_rating: Float
+  total_ibc_txs_rating_diff: Float
+  total_ibc_txs_weight: Float
+  total_txs: Float
+  total_txs_diff: Float
+  total_txs_rating: Float
+  total_txs_rating_diff: Float
+  total_txs_weight: Float
+}
+
+# order by avg() on columns of table "zones_stats"
+input zones_stats_avg_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# Boolean expression to filter rows from the table "zones_stats". All fields are combined with a logical 'AND'.
+input zones_stats_bool_exp {
+  _and: [zones_stats_bool_exp]
+  _not: zones_stats_bool_exp
+  _or: [zones_stats_bool_exp]
+  channels_num: Int_comparison_exp
+  chart: jsonb_comparison_exp
+  ibc_percent: Int_comparison_exp
+  ibc_tx_failed: Int_comparison_exp
+  ibc_tx_failed_diff: Int_comparison_exp
+  ibc_tx_in: Int_comparison_exp
+  ibc_tx_in_diff: Int_comparison_exp
+  ibc_tx_in_rating: Int_comparison_exp
+  ibc_tx_in_rating_diff: Int_comparison_exp
+  ibc_tx_in_weight: numeric_comparison_exp
+  ibc_tx_out: Int_comparison_exp
+  ibc_tx_out_diff: Int_comparison_exp
+  ibc_tx_out_rating: Int_comparison_exp
+  ibc_tx_out_rating_diff: Int_comparison_exp
+  ibc_tx_out_weight: numeric_comparison_exp
+  timeframe: Int_comparison_exp
+  total_active_addresses: Int_comparison_exp
+  total_active_addresses_diff: Int_comparison_exp
+  total_active_addresses_rating: Int_comparison_exp
+  total_active_addresses_rating_diff: Int_comparison_exp
+  total_coin_turnover_amount: numeric_comparison_exp
+  total_coin_turnover_amount_diff: numeric_comparison_exp
+  total_ibc_txs: Int_comparison_exp
+  total_ibc_txs_diff: Int_comparison_exp
+  total_ibc_txs_rating: Int_comparison_exp
+  total_ibc_txs_rating_diff: Int_comparison_exp
+  total_ibc_txs_weight: numeric_comparison_exp
+  total_txs: Int_comparison_exp
+  total_txs_diff: Int_comparison_exp
+  total_txs_rating: Int_comparison_exp
+  total_txs_rating_diff: Int_comparison_exp
+  total_txs_weight: numeric_comparison_exp
+  zone: String_comparison_exp
+}
+
+# unique or primary key constraints on table "zones_stats"
+enum zones_stats_constraint {
+  # unique or primary key constraint
+  zones_stats_pkey
+}
+
+# delete the field or element with specified path (for JSON arrays, negative integers count from the end)
+input zones_stats_delete_at_path_input {
+  chart: [String]
+}
+
+# delete the array element with specified index (negative integers count from the
+# end). throws an error if top level container is not an array
+input zones_stats_delete_elem_input {
+  chart: Int
+}
+
+# delete key/value pair or string element. key/value pairs are matched based on their key value
+input zones_stats_delete_key_input {
+  chart: String
+}
+
+# input type for incrementing integer column in table "zones_stats"
+input zones_stats_inc_input {
+  channels_num: Int
+  ibc_percent: Int
+  ibc_tx_failed: Int
+  ibc_tx_failed_diff: Int
+  ibc_tx_in: Int
+  ibc_tx_in_diff: Int
+  ibc_tx_in_rating: Int
+  ibc_tx_in_rating_diff: Int
+  ibc_tx_in_weight: numeric
+  ibc_tx_out: Int
+  ibc_tx_out_diff: Int
+  ibc_tx_out_rating: Int
+  ibc_tx_out_rating_diff: Int
+  ibc_tx_out_weight: numeric
+  timeframe: Int
+  total_active_addresses: Int
+  total_active_addresses_diff: Int
+  total_active_addresses_rating: Int
+  total_active_addresses_rating_diff: Int
+  total_coin_turnover_amount: numeric
+  total_coin_turnover_amount_diff: numeric
+  total_ibc_txs: Int
+  total_ibc_txs_diff: Int
+  total_ibc_txs_rating: Int
+  total_ibc_txs_rating_diff: Int
+  total_ibc_txs_weight: numeric
+  total_txs: Int
+  total_txs_diff: Int
+  total_txs_rating: Int
+  total_txs_rating_diff: Int
+  total_txs_weight: numeric
+}
+
+# input type for inserting data into table "zones_stats"
+input zones_stats_insert_input {
+  channels_num: Int
+  chart: jsonb
+  ibc_percent: Int
+  ibc_tx_failed: Int
+  ibc_tx_failed_diff: Int
+  ibc_tx_in: Int
+  ibc_tx_in_diff: Int
+  ibc_tx_in_rating: Int
+  ibc_tx_in_rating_diff: Int
+  ibc_tx_in_weight: numeric
+  ibc_tx_out: Int
+  ibc_tx_out_diff: Int
+  ibc_tx_out_rating: Int
+  ibc_tx_out_rating_diff: Int
+  ibc_tx_out_weight: numeric
+  timeframe: Int
+  total_active_addresses: Int
+  total_active_addresses_diff: Int
+  total_active_addresses_rating: Int
+  total_active_addresses_rating_diff: Int
+  total_coin_turnover_amount: numeric
+  total_coin_turnover_amount_diff: numeric
+  total_ibc_txs: Int
+  total_ibc_txs_diff: Int
+  total_ibc_txs_rating: Int
+  total_ibc_txs_rating_diff: Int
+  total_ibc_txs_weight: numeric
+  total_txs: Int
+  total_txs_diff: Int
+  total_txs_rating: Int
+  total_txs_rating_diff: Int
+  total_txs_weight: numeric
+  zone: String
+}
+
+# aggregate max on columns
+type zones_stats_max_fields {
+  channels_num: Int
+  ibc_percent: Int
+  ibc_tx_failed: Int
+  ibc_tx_failed_diff: Int
+  ibc_tx_in: Int
+  ibc_tx_in_diff: Int
+  ibc_tx_in_rating: Int
+  ibc_tx_in_rating_diff: Int
+  ibc_tx_in_weight: numeric
+  ibc_tx_out: Int
+  ibc_tx_out_diff: Int
+  ibc_tx_out_rating: Int
+  ibc_tx_out_rating_diff: Int
+  ibc_tx_out_weight: numeric
+  timeframe: Int
+  total_active_addresses: Int
+  total_active_addresses_diff: Int
+  total_active_addresses_rating: Int
+  total_active_addresses_rating_diff: Int
+  total_coin_turnover_amount: numeric
+  total_coin_turnover_amount_diff: numeric
+  total_ibc_txs: Int
+  total_ibc_txs_diff: Int
+  total_ibc_txs_rating: Int
+  total_ibc_txs_rating_diff: Int
+  total_ibc_txs_weight: numeric
+  total_txs: Int
+  total_txs_diff: Int
+  total_txs_rating: Int
+  total_txs_rating_diff: Int
+  total_txs_weight: numeric
+  zone: String
+}
+
+# order by max() on columns of table "zones_stats"
+input zones_stats_max_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+  zone: order_by
+}
+
+# aggregate min on columns
+type zones_stats_min_fields {
+  channels_num: Int
+  ibc_percent: Int
+  ibc_tx_failed: Int
+  ibc_tx_failed_diff: Int
+  ibc_tx_in: Int
+  ibc_tx_in_diff: Int
+  ibc_tx_in_rating: Int
+  ibc_tx_in_rating_diff: Int
+  ibc_tx_in_weight: numeric
+  ibc_tx_out: Int
+  ibc_tx_out_diff: Int
+  ibc_tx_out_rating: Int
+  ibc_tx_out_rating_diff: Int
+  ibc_tx_out_weight: numeric
+  timeframe: Int
+  total_active_addresses: Int
+  total_active_addresses_diff: Int
+  total_active_addresses_rating: Int
+  total_active_addresses_rating_diff: Int
+  total_coin_turnover_amount: numeric
+  total_coin_turnover_amount_diff: numeric
+  total_ibc_txs: Int
+  total_ibc_txs_diff: Int
+  total_ibc_txs_rating: Int
+  total_ibc_txs_rating_diff: Int
+  total_ibc_txs_weight: numeric
+  total_txs: Int
+  total_txs_diff: Int
+  total_txs_rating: Int
+  total_txs_rating_diff: Int
+  total_txs_weight: numeric
+  zone: String
+}
+
+# order by min() on columns of table "zones_stats"
+input zones_stats_min_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+  zone: order_by
+}
+
+# response of any mutation on the table "zones_stats"
+type zones_stats_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [zones_stats!]!
+}
+
+# input type for inserting object relation for remote table "zones_stats"
+input zones_stats_obj_rel_insert_input {
+  data: zones_stats_insert_input!
+  on_conflict: zones_stats_on_conflict
+}
+
+# on conflict condition type for table "zones_stats"
+input zones_stats_on_conflict {
+  constraint: zones_stats_constraint!
+  update_columns: [zones_stats_update_column!]!
+  where: zones_stats_bool_exp
+}
+
+# ordering options when selecting data from "zones_stats"
+input zones_stats_order_by {
+  channels_num: order_by
+  chart: order_by
+  ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+  zone: order_by
+}
+
+# primary key columns input for table: "zones_stats"
+input zones_stats_pk_columns_input {
+  timeframe: Int!
+  zone: String!
+}
+
+# prepend existing jsonb value of filtered columns with new jsonb value
+input zones_stats_prepend_input {
+  chart: jsonb
+}
+
+# select columns of table "zones_stats"
+enum zones_stats_select_column {
+  # column name
+  channels_num
+
+  # column name
+  chart
+
+  # column name
+  ibc_percent
+
+  # column name
+  ibc_tx_failed
+
+  # column name
+  ibc_tx_failed_diff
+
+  # column name
+  ibc_tx_in
+
+  # column name
+  ibc_tx_in_diff
+
+  # column name
+  ibc_tx_in_rating
+
+  # column name
+  ibc_tx_in_rating_diff
+
+  # column name
+  ibc_tx_in_weight
+
+  # column name
+  ibc_tx_out
+
+  # column name
+  ibc_tx_out_diff
+
+  # column name
+  ibc_tx_out_rating
+
+  # column name
+  ibc_tx_out_rating_diff
+
+  # column name
+  ibc_tx_out_weight
+
+  # column name
+  timeframe
+
+  # column name
+  total_active_addresses
+
+  # column name
+  total_active_addresses_diff
+
+  # column name
+  total_active_addresses_rating
+
+  # column name
+  total_active_addresses_rating_diff
+
+  # column name
+  total_coin_turnover_amount
+
+  # column name
+  total_coin_turnover_amount_diff
+
+  # column name
+  total_ibc_txs
+
+  # column name
+  total_ibc_txs_diff
+
+  # column name
+  total_ibc_txs_rating
+
+  # column name
+  total_ibc_txs_rating_diff
+
+  # column name
+  total_ibc_txs_weight
+
+  # column name
+  total_txs
+
+  # column name
+  total_txs_diff
+
+  # column name
+  total_txs_rating
+
+  # column name
+  total_txs_rating_diff
+
+  # column name
+  total_txs_weight
+
+  # column name
+  zone
+}
+
+# input type for updating data in table "zones_stats"
+input zones_stats_set_input {
+  channels_num: Int
+  chart: jsonb
+  ibc_percent: Int
+  ibc_tx_failed: Int
+  ibc_tx_failed_diff: Int
+  ibc_tx_in: Int
+  ibc_tx_in_diff: Int
+  ibc_tx_in_rating: Int
+  ibc_tx_in_rating_diff: Int
+  ibc_tx_in_weight: numeric
+  ibc_tx_out: Int
+  ibc_tx_out_diff: Int
+  ibc_tx_out_rating: Int
+  ibc_tx_out_rating_diff: Int
+  ibc_tx_out_weight: numeric
+  timeframe: Int
+  total_active_addresses: Int
+  total_active_addresses_diff: Int
+  total_active_addresses_rating: Int
+  total_active_addresses_rating_diff: Int
+  total_coin_turnover_amount: numeric
+  total_coin_turnover_amount_diff: numeric
+  total_ibc_txs: Int
+  total_ibc_txs_diff: Int
+  total_ibc_txs_rating: Int
+  total_ibc_txs_rating_diff: Int
+  total_ibc_txs_weight: numeric
+  total_txs: Int
+  total_txs_diff: Int
+  total_txs_rating: Int
+  total_txs_rating_diff: Int
+  total_txs_weight: numeric
+  zone: String
+}
+
+# aggregate stddev on columns
+type zones_stats_stddev_fields {
+  channels_num: Float
+  ibc_percent: Float
+  ibc_tx_failed: Float
+  ibc_tx_failed_diff: Float
+  ibc_tx_in: Float
+  ibc_tx_in_diff: Float
+  ibc_tx_in_rating: Float
+  ibc_tx_in_rating_diff: Float
+  ibc_tx_in_weight: Float
+  ibc_tx_out: Float
+  ibc_tx_out_diff: Float
+  ibc_tx_out_rating: Float
+  ibc_tx_out_rating_diff: Float
+  ibc_tx_out_weight: Float
+  timeframe: Float
+  total_active_addresses: Float
+  total_active_addresses_diff: Float
+  total_active_addresses_rating: Float
+  total_active_addresses_rating_diff: Float
+  total_coin_turnover_amount: Float
+  total_coin_turnover_amount_diff: Float
+  total_ibc_txs: Float
+  total_ibc_txs_diff: Float
+  total_ibc_txs_rating: Float
+  total_ibc_txs_rating_diff: Float
+  total_ibc_txs_weight: Float
+  total_txs: Float
+  total_txs_diff: Float
+  total_txs_rating: Float
+  total_txs_rating_diff: Float
+  total_txs_weight: Float
+}
+
+# order by stddev() on columns of table "zones_stats"
+input zones_stats_stddev_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# aggregate stddev_pop on columns
+type zones_stats_stddev_pop_fields {
+  channels_num: Float
+  ibc_percent: Float
+  ibc_tx_failed: Float
+  ibc_tx_failed_diff: Float
+  ibc_tx_in: Float
+  ibc_tx_in_diff: Float
+  ibc_tx_in_rating: Float
+  ibc_tx_in_rating_diff: Float
+  ibc_tx_in_weight: Float
+  ibc_tx_out: Float
+  ibc_tx_out_diff: Float
+  ibc_tx_out_rating: Float
+  ibc_tx_out_rating_diff: Float
+  ibc_tx_out_weight: Float
+  timeframe: Float
+  total_active_addresses: Float
+  total_active_addresses_diff: Float
+  total_active_addresses_rating: Float
+  total_active_addresses_rating_diff: Float
+  total_coin_turnover_amount: Float
+  total_coin_turnover_amount_diff: Float
+  total_ibc_txs: Float
+  total_ibc_txs_diff: Float
+  total_ibc_txs_rating: Float
+  total_ibc_txs_rating_diff: Float
+  total_ibc_txs_weight: Float
+  total_txs: Float
+  total_txs_diff: Float
+  total_txs_rating: Float
+  total_txs_rating_diff: Float
+  total_txs_weight: Float
+}
+
+# order by stddev_pop() on columns of table "zones_stats"
+input zones_stats_stddev_pop_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# aggregate stddev_samp on columns
+type zones_stats_stddev_samp_fields {
+  channels_num: Float
+  ibc_percent: Float
+  ibc_tx_failed: Float
+  ibc_tx_failed_diff: Float
+  ibc_tx_in: Float
+  ibc_tx_in_diff: Float
+  ibc_tx_in_rating: Float
+  ibc_tx_in_rating_diff: Float
+  ibc_tx_in_weight: Float
+  ibc_tx_out: Float
+  ibc_tx_out_diff: Float
+  ibc_tx_out_rating: Float
+  ibc_tx_out_rating_diff: Float
+  ibc_tx_out_weight: Float
+  timeframe: Float
+  total_active_addresses: Float
+  total_active_addresses_diff: Float
+  total_active_addresses_rating: Float
+  total_active_addresses_rating_diff: Float
+  total_coin_turnover_amount: Float
+  total_coin_turnover_amount_diff: Float
+  total_ibc_txs: Float
+  total_ibc_txs_diff: Float
+  total_ibc_txs_rating: Float
+  total_ibc_txs_rating_diff: Float
+  total_ibc_txs_weight: Float
+  total_txs: Float
+  total_txs_diff: Float
+  total_txs_rating: Float
+  total_txs_rating_diff: Float
+  total_txs_weight: Float
+}
+
+# order by stddev_samp() on columns of table "zones_stats"
+input zones_stats_stddev_samp_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# aggregate sum on columns
+type zones_stats_sum_fields {
+  channels_num: Int
+  ibc_percent: Int
+  ibc_tx_failed: Int
+  ibc_tx_failed_diff: Int
+  ibc_tx_in: Int
+  ibc_tx_in_diff: Int
+  ibc_tx_in_rating: Int
+  ibc_tx_in_rating_diff: Int
+  ibc_tx_in_weight: numeric
+  ibc_tx_out: Int
+  ibc_tx_out_diff: Int
+  ibc_tx_out_rating: Int
+  ibc_tx_out_rating_diff: Int
+  ibc_tx_out_weight: numeric
+  timeframe: Int
+  total_active_addresses: Int
+  total_active_addresses_diff: Int
+  total_active_addresses_rating: Int
+  total_active_addresses_rating_diff: Int
+  total_coin_turnover_amount: numeric
+  total_coin_turnover_amount_diff: numeric
+  total_ibc_txs: Int
+  total_ibc_txs_diff: Int
+  total_ibc_txs_rating: Int
+  total_ibc_txs_rating_diff: Int
+  total_ibc_txs_weight: numeric
+  total_txs: Int
+  total_txs_diff: Int
+  total_txs_rating: Int
+  total_txs_rating_diff: Int
+  total_txs_weight: numeric
+}
+
+# order by sum() on columns of table "zones_stats"
+input zones_stats_sum_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# update columns of table "zones_stats"
+enum zones_stats_update_column {
+  # column name
+  channels_num
+
+  # column name
+  chart
+
+  # column name
+  ibc_percent
+
+  # column name
+  ibc_tx_failed
+
+  # column name
+  ibc_tx_failed_diff
+
+  # column name
+  ibc_tx_in
+
+  # column name
+  ibc_tx_in_diff
+
+  # column name
+  ibc_tx_in_rating
+
+  # column name
+  ibc_tx_in_rating_diff
+
+  # column name
+  ibc_tx_in_weight
+
+  # column name
+  ibc_tx_out
+
+  # column name
+  ibc_tx_out_diff
+
+  # column name
+  ibc_tx_out_rating
+
+  # column name
+  ibc_tx_out_rating_diff
+
+  # column name
+  ibc_tx_out_weight
+
+  # column name
+  timeframe
+
+  # column name
+  total_active_addresses
+
+  # column name
+  total_active_addresses_diff
+
+  # column name
+  total_active_addresses_rating
+
+  # column name
+  total_active_addresses_rating_diff
+
+  # column name
+  total_coin_turnover_amount
+
+  # column name
+  total_coin_turnover_amount_diff
+
+  # column name
+  total_ibc_txs
+
+  # column name
+  total_ibc_txs_diff
+
+  # column name
+  total_ibc_txs_rating
+
+  # column name
+  total_ibc_txs_rating_diff
+
+  # column name
+  total_ibc_txs_weight
+
+  # column name
+  total_txs
+
+  # column name
+  total_txs_diff
+
+  # column name
+  total_txs_rating
+
+  # column name
+  total_txs_rating_diff
+
+  # column name
+  total_txs_weight
+
+  # column name
+  zone
+}
+
+# aggregate var_pop on columns
+type zones_stats_var_pop_fields {
+  channels_num: Float
+  ibc_percent: Float
+  ibc_tx_failed: Float
+  ibc_tx_failed_diff: Float
+  ibc_tx_in: Float
+  ibc_tx_in_diff: Float
+  ibc_tx_in_rating: Float
+  ibc_tx_in_rating_diff: Float
+  ibc_tx_in_weight: Float
+  ibc_tx_out: Float
+  ibc_tx_out_diff: Float
+  ibc_tx_out_rating: Float
+  ibc_tx_out_rating_diff: Float
+  ibc_tx_out_weight: Float
+  timeframe: Float
+  total_active_addresses: Float
+  total_active_addresses_diff: Float
+  total_active_addresses_rating: Float
+  total_active_addresses_rating_diff: Float
+  total_coin_turnover_amount: Float
+  total_coin_turnover_amount_diff: Float
+  total_ibc_txs: Float
+  total_ibc_txs_diff: Float
+  total_ibc_txs_rating: Float
+  total_ibc_txs_rating_diff: Float
+  total_ibc_txs_weight: Float
+  total_txs: Float
+  total_txs_diff: Float
+  total_txs_rating: Float
+  total_txs_rating_diff: Float
+  total_txs_weight: Float
+}
+
+# order by var_pop() on columns of table "zones_stats"
+input zones_stats_var_pop_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# aggregate var_samp on columns
+type zones_stats_var_samp_fields {
+  channels_num: Float
+  ibc_percent: Float
+  ibc_tx_failed: Float
+  ibc_tx_failed_diff: Float
+  ibc_tx_in: Float
+  ibc_tx_in_diff: Float
+  ibc_tx_in_rating: Float
+  ibc_tx_in_rating_diff: Float
+  ibc_tx_in_weight: Float
+  ibc_tx_out: Float
+  ibc_tx_out_diff: Float
+  ibc_tx_out_rating: Float
+  ibc_tx_out_rating_diff: Float
+  ibc_tx_out_weight: Float
+  timeframe: Float
+  total_active_addresses: Float
+  total_active_addresses_diff: Float
+  total_active_addresses_rating: Float
+  total_active_addresses_rating_diff: Float
+  total_coin_turnover_amount: Float
+  total_coin_turnover_amount_diff: Float
+  total_ibc_txs: Float
+  total_ibc_txs_diff: Float
+  total_ibc_txs_rating: Float
+  total_ibc_txs_rating_diff: Float
+  total_ibc_txs_weight: Float
+  total_txs: Float
+  total_txs_diff: Float
+  total_txs_rating: Float
+  total_txs_rating_diff: Float
+  total_txs_weight: Float
+}
+
+# order by var_samp() on columns of table "zones_stats"
+input zones_stats_var_samp_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# aggregate variance on columns
+type zones_stats_variance_fields {
+  channels_num: Float
+  ibc_percent: Float
+  ibc_tx_failed: Float
+  ibc_tx_failed_diff: Float
+  ibc_tx_in: Float
+  ibc_tx_in_diff: Float
+  ibc_tx_in_rating: Float
+  ibc_tx_in_rating_diff: Float
+  ibc_tx_in_weight: Float
+  ibc_tx_out: Float
+  ibc_tx_out_diff: Float
+  ibc_tx_out_rating: Float
+  ibc_tx_out_rating_diff: Float
+  ibc_tx_out_weight: Float
+  timeframe: Float
+  total_active_addresses: Float
+  total_active_addresses_diff: Float
+  total_active_addresses_rating: Float
+  total_active_addresses_rating_diff: Float
+  total_coin_turnover_amount: Float
+  total_coin_turnover_amount_diff: Float
+  total_ibc_txs: Float
+  total_ibc_txs_diff: Float
+  total_ibc_txs_rating: Float
+  total_ibc_txs_rating_diff: Float
+  total_ibc_txs_weight: Float
+  total_txs: Float
+  total_txs_diff: Float
+  total_txs_rating: Float
+  total_txs_rating_diff: Float
+  total_txs_weight: Float
+}
+
+# order by variance() on columns of table "zones_stats"
+input zones_stats_variance_order_by {
+  channels_num: order_by
+  ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
+  ibc_tx_in: order_by
+  ibc_tx_in_diff: order_by
+  ibc_tx_in_rating: order_by
+  ibc_tx_in_rating_diff: order_by
+  ibc_tx_in_weight: order_by
+  ibc_tx_out: order_by
+  ibc_tx_out_diff: order_by
+  ibc_tx_out_rating: order_by
+  ibc_tx_out_rating_diff: order_by
+  ibc_tx_out_weight: order_by
+  timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
+  total_ibc_txs: order_by
+  total_ibc_txs_diff: order_by
+  total_ibc_txs_rating: order_by
+  total_ibc_txs_rating_diff: order_by
+  total_ibc_txs_weight: order_by
+  total_txs: order_by
+  total_txs_diff: order_by
+  total_txs_rating: order_by
+  total_txs_rating_diff: order_by
+  total_txs_weight: order_by
+}
+
+# update columns of table "zones"
+enum zones_update_column {
+  # column name
+  added_at
+
+  # column name
+  chain_id
+
+  # column name
+  description
+
+  # column name
+  is_caught_up
+
+  # column name
+  is_enabled
+
+  # column name
+  name
+
+  # column name
+  updated_at
+}
+

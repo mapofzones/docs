@@ -4,7 +4,8 @@ nav:
     - Architecture: architecture.md
     - Front: front.md
     - GraphQL: graphql.md
-    - GraphQL schema Types: data/schema.md
+    - GraphQL public schema Types: data/schema.md
+    - GraphQL admin schema Types: data/schema2.md
     - Database: database.md
     - Stats adaptor: adaptor.md
     - Tx processor: processor.md

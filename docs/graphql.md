@@ -10,7 +10,7 @@ All tables of the database tracked by the GraphQL engine can be queried over the
 
 By default, only [flat tables](database.md#flat-tables) are tracked.
 
-You can explore the entire schema and the available queries using the GraphiQL interface in the [Hasura console](graphql.md#console) or using [GraphQL Schema Types](data/schema.md).
+You can explore the entire schema and the available queries using the GraphiQL interface in the [Hasura console](graphql.md#console) or using [GraphQL public Schema Types](data/schema.md) for guest or [GraphQL admin Schema Types](data/schema2.md) for admin.
 
 ### Queries
 

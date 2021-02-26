@@ -5,6 +5,7 @@
 
   * [Query](#query)
   * [Objects](#objects)
+    * [blocks_log](#blocks_log)
     * [headers](#headers)
     * [headers_aggregate](#headers_aggregate)
     * [headers_aggregate_fields](#headers_aggregate_fields)
@@ -48,6 +49,9 @@
   * [Inputs](#inputs)
     * [Int_comparison_exp](#int_comparison_exp)
     * [String_comparison_exp](#string_comparison_exp)
+    * [blocks_log_bool_exp](#blocks_log_bool_exp)
+    * [blocks_log_order_by](#blocks_log_order_by)
+    * [blocks_log_pk_columns_input](#blocks_log_pk_columns_input)
     * [headers_aggregate_order_by](#headers_aggregate_order_by)
     * [headers_avg_order_by](#headers_avg_order_by)
     * [headers_bool_exp](#headers_bool_exp)
@@ -64,6 +68,7 @@
     * [headers_variance_order_by](#headers_variance_order_by)
     * [jsonb_comparison_exp](#jsonb_comparison_exp)
     * [numeric_comparison_exp](#numeric_comparison_exp)
+    * [timestamp_comparison_exp](#timestamp_comparison_exp)
     * [zones_graphs_aggregate_order_by](#zones_graphs_aggregate_order_by)
     * [zones_graphs_avg_order_by](#zones_graphs_avg_order_by)
     * [zones_graphs_bool_exp](#zones_graphs_bool_exp)
@@ -93,6 +98,7 @@
     * [zones_stats_var_samp_order_by](#zones_stats_var_samp_order_by)
     * [zones_stats_variance_order_by](#zones_stats_variance_order_by)
   * [Enums](#enums)
+    * [blocks_log_select_column](#blocks_log_select_column)
     * [headers_select_column](#headers_select_column)
     * [order_by](#order_by)
     * [zones_graphs_select_column](#zones_graphs_select_column)
@@ -104,6 +110,7 @@
     * [String](#string)
     * [jsonb](#jsonb)
     * [numeric](#numeric)
+    * [timestamp](#timestamp)
 
 </details>
 
@@ -118,6 +125,46 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>blocks_log</strong></td>
+<td valign="top">[<a href="#blocks_log">blocks_log</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">distinct_on</td>
+<td valign="top">[<a href="#blocks_log_select_column">blocks_log_select_column</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">limit</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">offset</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">order_by</td>
+<td valign="top">[<a href="#blocks_log_order_by">blocks_log_order_by</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#blocks_log_bool_exp">blocks_log_bool_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>blocks_log_by_pk</strong></td>
+<td valign="top"><a href="#blocks_log">blocks_log</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">zone</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>headers</strong></td>
 <td valign="top">[<a href="#headers">headers</a>!]!</td>
@@ -347,6 +394,36 @@
 </table>
 
 ## Objects
+
+### blocks_log
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>last_processed_block</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>last_updated_at</strong></td>
+<td valign="top"><a href="#timestamp">timestamp</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 ### headers
 
@@ -925,6 +1002,46 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>blocks_log</strong></td>
+<td valign="top">[<a href="#blocks_log">blocks_log</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">distinct_on</td>
+<td valign="top">[<a href="#blocks_log_select_column">blocks_log_select_column</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">limit</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">offset</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">order_by</td>
+<td valign="top">[<a href="#blocks_log_order_by">blocks_log_order_by</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#blocks_log_bool_exp">blocks_log_bool_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>blocks_log_by_pk</strong></td>
+<td valign="top"><a href="#blocks_log">blocks_log</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">zone</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>headers</strong></td>
 <td valign="top">[<a href="#headers">headers</a>!]!</td>
@@ -1541,6 +1658,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
 <td></td>
@@ -1593,6 +1720,36 @@
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#numeric">numeric</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
+<td valign="top"><a href="#numeric">numeric</a>!</td>
 <td></td>
 </tr>
 <tr>
@@ -1781,6 +1938,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -1832,6 +1999,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -1911,6 +2108,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
@@ -1963,6 +2170,36 @@
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2046,6 +2283,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
@@ -2098,6 +2345,36 @@
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2181,6 +2458,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -2232,6 +2519,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -2311,6 +2628,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -2362,6 +2689,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -2441,6 +2798,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -2492,6 +2859,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -2571,6 +2968,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
@@ -2623,6 +3030,36 @@
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2701,6 +3138,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -2752,6 +3199,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -2831,6 +3308,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -2882,6 +3369,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -2961,6 +3478,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -3012,6 +3539,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -3213,6 +3770,98 @@
 <tr>
 <td colspan="2" valign="top"><strong>_similar</strong></td>
 <td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### blocks_log_bool_exp
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_and</strong></td>
+<td valign="top">[<a href="#blocks_log_bool_exp">blocks_log_bool_exp</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_not</strong></td>
+<td valign="top"><a href="#blocks_log_bool_exp">blocks_log_bool_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_or</strong></td>
+<td valign="top">[<a href="#blocks_log_bool_exp">blocks_log_bool_exp</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>last_processed_block</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>last_updated_at</strong></td>
+<td valign="top"><a href="#timestamp_comparison_exp">timestamp_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#string_comparison_exp">String_comparison_exp</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### blocks_log_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>last_processed_block</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>last_updated_at</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### blocks_log_pk_columns_input
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 </tbody>
@@ -3952,6 +4601,65 @@
 </tbody>
 </table>
 
+### timestamp_comparison_exp
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_eq</strong></td>
+<td valign="top"><a href="#timestamp">timestamp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_gt</strong></td>
+<td valign="top"><a href="#timestamp">timestamp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_gte</strong></td>
+<td valign="top"><a href="#timestamp">timestamp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_in</strong></td>
+<td valign="top">[<a href="#timestamp">timestamp</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_is_null</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_lt</strong></td>
+<td valign="top"><a href="#timestamp">timestamp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_lte</strong></td>
+<td valign="top"><a href="#timestamp">timestamp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_neq</strong></td>
+<td valign="top"><a href="#timestamp">timestamp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_nin</strong></td>
+<td valign="top">[<a href="#timestamp">timestamp</a>!]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
 ### zones_graphs_aggregate_order_by
 
 <table>
@@ -4424,6 +5132,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -4475,6 +5193,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -4573,6 +5321,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
 <td></td>
@@ -4625,6 +5383,36 @@
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#numeric_comparison_exp">numeric_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
+<td valign="top"><a href="#numeric_comparison_exp">numeric_comparison_exp</a></td>
 <td></td>
 </tr>
 <tr>
@@ -4707,6 +5495,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -4758,6 +5556,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -4841,6 +5669,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -4892,6 +5730,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -4980,6 +5848,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5031,6 +5909,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -5138,6 +6046,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5189,6 +6107,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -5267,6 +6215,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5318,6 +6276,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -5396,6 +6384,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5447,6 +6445,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -5525,6 +6553,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5576,6 +6614,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -5654,6 +6722,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5705,6 +6783,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -5783,6 +6891,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5834,6 +6952,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -5912,6 +7060,16 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5963,6 +7121,36 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6020,6 +7208,29 @@
 </table>
 
 ## Enums
+
+### blocks_log_select_column
+
+<table>
+<thead>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>last_processed_block</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>last_updated_at</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>zone</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 ### headers_select_column
 
@@ -6139,6 +7350,14 @@
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>ibc_tx_failed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ibc_tx_failed_diff</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>ibc_tx_in</strong></td>
 <td></td>
 </tr>
@@ -6180,6 +7399,30 @@
 </tr>
 <tr>
 <td valign="top"><strong>timeframe</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>total_active_addresses</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>total_active_addresses_diff</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>total_active_addresses_rating</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>total_coin_turnover_amount</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>total_coin_turnover_amount_diff</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -6250,4 +7493,6 @@ The `String` scalar type represents textual data, represented as UTF-8 character
 ### jsonb
 
 ### numeric
+
+### timestamp
 

@@ -23,6 +23,10 @@ Map of Zones docs is a project documentation static site. Used static site gener
 
 2) **Diagram as Code** - diagrams lets you draw the cloud system architecture in Python code. Examples: [diagrams.mingrammer.com](https://diagrams.mingrammer.com/docs/getting-started/examples)
 
+3) **GraphQL schema** - just install graphqurl via: `npm install -g graphqurl` then use this for guest: `gq https://<your_ip>/v1/graphql --introspect > schema.graphql` or this for admin: `gq https://<your_ip>/v1/graphql -H "X-Hasura-Admin-Secret: <your_adminsecretkey>" --introspect > schema.graphql` source: [hasura.io/docs/latest/graphql/core/guides/export-graphql-schema](https://hasura.io/docs/latest/graphql/core/guides/export-graphql-schema.html)
+
+4) **GraphQL schema to markdown** - install library via: `npm install graphql-markdown --save-dev` then transform graphql to markdown: `graphql-markdown ./path/to/schema.graphql > schema.md` source: [github.com/exogen/graphql-markdown](https://github.com/exogen/graphql-markdown)
+
 
 
 ## Deploy

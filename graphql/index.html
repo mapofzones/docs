@@ -94,7 +94,11 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../data/schema/">GraphQL schema Types</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../data/schema/">GraphQL public schema Types</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../data/schema2/">GraphQL admin schema Types</a>
                     </li>
                 </ul>
                 <ul>
@@ -167,7 +171,7 @@
 <p>By default, the Hasura GraphQL API tracks all tables, but only <a href="../database/#flat-tables">flat tables</a> are publicly accessible (no password required). Interacting with APIs during development is handy using the <a href="./#explorer">Hasura GraphQL explorer</a>. By default, explorer is located here: <a href="localhost:8081/console/api-explorer">localhost:8081/console/api-explorer</a>.</p>
 <p>All tables of the database tracked by the GraphQL engine can be queried over the GraphQL endpoint. If you have a tracked table in your database, its query field is added as a nested field under the query_root root level type.</p>
 <p>By default, only <a href="../database/#flat-tables">flat tables</a> are tracked.</p>
-<p>You can explore the entire schema and the available queries using the GraphiQL interface in the <a href="./#console">Hasura console</a> or using <a href="../data/schema/">GraphQL Schema Types</a>.</p>
+<p>You can explore the entire schema and the available queries using the GraphiQL interface in the <a href="./#console">Hasura console</a> or using <a href="../data/schema/">GraphQL public Schema Types</a> for guest or <a href="../data/schema2/">GraphQL admin Schema Types</a> for admin.</p>
 <h3 id="queries">Queries</h3>
 <p>GraphQL queries are used to fetch data from the server.</p>
 <p>Query request example:</p>
@@ -274,7 +278,7 @@ Content-Type: application/json; charset=utf-8
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../data/schema/" class="btn btn-neutral float-right" title="GraphQL schema Types">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../data/schema/" class="btn btn-neutral float-right" title="GraphQL public schema Types">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../front/" class="btn btn-neutral" title="Front"><span class="icon icon-circle-arrow-left"></span> Previous</a>

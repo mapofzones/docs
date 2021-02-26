@@ -3,6 +3,47 @@ schema {
   subscription: subscription_root
 }
 
+# columns and relationships of "blocks_log"
+type blocks_log {
+  last_processed_block: Int!
+  last_updated_at: timestamp!
+  zone: String!
+}
+
+# Boolean expression to filter rows from the table "blocks_log". All fields are combined with a logical 'AND'.
+input blocks_log_bool_exp {
+  _and: [blocks_log_bool_exp]
+  _not: blocks_log_bool_exp
+  _or: [blocks_log_bool_exp]
+  last_processed_block: Int_comparison_exp
+  last_updated_at: timestamp_comparison_exp
+  zone: String_comparison_exp
+}
+
+# ordering options when selecting data from "blocks_log"
+input blocks_log_order_by {
+  last_processed_block: order_by
+  last_updated_at: order_by
+  zone: order_by
+}
+
+# primary key columns input for table: "blocks_log"
+input blocks_log_pk_columns_input {
+  zone: String!
+}
+
+# select columns of table "blocks_log"
+enum blocks_log_select_column {
+  # column name
+  last_processed_block
+
+  # column name
+  last_updated_at
+
+  # column name
+  zone
+}
+
 # columns and relationships of "headers"
 type headers {
   channels_cnt_all: Int!
@@ -370,6 +411,27 @@ enum order_by {
 
 # query root
 type query_root {
+  # fetch data from the table: "blocks_log"
+  blocks_log(
+    # distinct select on columns
+    distinct_on: [blocks_log_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [blocks_log_order_by!]
+
+    # filter the rows returned
+    where: blocks_log_bool_exp
+  ): [blocks_log!]!
+
+  # fetch data from the table: "blocks_log" using primary key columns
+  blocks_log_by_pk(zone: String!): blocks_log
+
   # fetch data from the table: "headers"
   headers(
     # distinct select on columns
@@ -509,6 +571,27 @@ input String_comparison_exp {
 
 # subscription root
 type subscription_root {
+  # fetch data from the table: "blocks_log"
+  blocks_log(
+    # distinct select on columns
+    distinct_on: [blocks_log_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [blocks_log_order_by!]
+
+    # filter the rows returned
+    where: blocks_log_bool_exp
+  ): [blocks_log!]!
+
+  # fetch data from the table: "blocks_log" using primary key columns
+  blocks_log_by_pk(zone: String!): blocks_log
+
   # fetch data from the table: "headers"
   headers(
     # distinct select on columns
@@ -625,6 +708,21 @@ type subscription_root {
 
   # fetch data from the table: "zones_stats" using primary key columns
   zones_stats_by_pk(timeframe: Int!, zone: String!): zones_stats
+}
+
+scalar timestamp
+
+# expression to compare columns of type timestamp. All fields are combined with logical 'AND'.
+input timestamp_comparison_exp {
+  _eq: timestamp
+  _gt: timestamp
+  _gte: timestamp
+  _in: [timestamp!]
+  _is_null: Boolean
+  _lt: timestamp
+  _lte: timestamp
+  _neq: timestamp
+  _nin: [timestamp!]
 }
 
 # columns and relationships of "zones_graphs"
@@ -822,6 +920,8 @@ type zones_stats {
     path: String
   ): jsonb!
   ibc_percent: Int!
+  ibc_tx_failed: Int!
+  ibc_tx_failed_diff: Int!
   ibc_tx_in: Int!
   ibc_tx_in_diff: Int!
   ibc_tx_in_rating: Int!
@@ -833,6 +933,12 @@ type zones_stats {
   ibc_tx_out_rating_diff: Int!
   ibc_tx_out_weight: numeric!
   timeframe: Int!
+  total_active_addresses: Int!
+  total_active_addresses_diff: Int!
+  total_active_addresses_rating: Int!
+  total_active_addresses_rating_diff: Int!
+  total_coin_turnover_amount: numeric!
+  total_coin_turnover_amount_diff: numeric!
   total_ibc_txs: Int!
   total_ibc_txs_diff: Int!
   total_ibc_txs_rating: Int!
@@ -886,6 +992,8 @@ input zones_stats_aggregate_order_by {
 type zones_stats_avg_fields {
   channels_num: Float
   ibc_percent: Float
+  ibc_tx_failed: Float
+  ibc_tx_failed_diff: Float
   ibc_tx_in: Float
   ibc_tx_in_diff: Float
   ibc_tx_in_rating: Float
@@ -897,6 +1005,12 @@ type zones_stats_avg_fields {
   ibc_tx_out_rating_diff: Float
   ibc_tx_out_weight: Float
   timeframe: Float
+  total_active_addresses: Float
+  total_active_addresses_diff: Float
+  total_active_addresses_rating: Float
+  total_active_addresses_rating_diff: Float
+  total_coin_turnover_amount: Float
+  total_coin_turnover_amount_diff: Float
   total_ibc_txs: Float
   total_ibc_txs_diff: Float
   total_ibc_txs_rating: Float
@@ -913,6 +1027,8 @@ type zones_stats_avg_fields {
 input zones_stats_avg_order_by {
   channels_num: order_by
   ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
   ibc_tx_in_rating: order_by
@@ -924,6 +1040,12 @@ input zones_stats_avg_order_by {
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
   timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
   total_ibc_txs_diff: order_by
   total_ibc_txs_rating: order_by
@@ -944,6 +1066,8 @@ input zones_stats_bool_exp {
   channels_num: Int_comparison_exp
   chart: jsonb_comparison_exp
   ibc_percent: Int_comparison_exp
+  ibc_tx_failed: Int_comparison_exp
+  ibc_tx_failed_diff: Int_comparison_exp
   ibc_tx_in: Int_comparison_exp
   ibc_tx_in_diff: Int_comparison_exp
   ibc_tx_in_rating: Int_comparison_exp
@@ -955,6 +1079,12 @@ input zones_stats_bool_exp {
   ibc_tx_out_rating_diff: Int_comparison_exp
   ibc_tx_out_weight: numeric_comparison_exp
   timeframe: Int_comparison_exp
+  total_active_addresses: Int_comparison_exp
+  total_active_addresses_diff: Int_comparison_exp
+  total_active_addresses_rating: Int_comparison_exp
+  total_active_addresses_rating_diff: Int_comparison_exp
+  total_coin_turnover_amount: numeric_comparison_exp
+  total_coin_turnover_amount_diff: numeric_comparison_exp
   total_ibc_txs: Int_comparison_exp
   total_ibc_txs_diff: Int_comparison_exp
   total_ibc_txs_rating: Int_comparison_exp
@@ -972,6 +1102,8 @@ input zones_stats_bool_exp {
 type zones_stats_max_fields {
   channels_num: Int
   ibc_percent: Int
+  ibc_tx_failed: Int
+  ibc_tx_failed_diff: Int
   ibc_tx_in: Int
   ibc_tx_in_diff: Int
   ibc_tx_in_rating: Int
@@ -983,6 +1115,12 @@ type zones_stats_max_fields {
   ibc_tx_out_rating_diff: Int
   ibc_tx_out_weight: numeric
   timeframe: Int
+  total_active_addresses: Int
+  total_active_addresses_diff: Int
+  total_active_addresses_rating: Int
+  total_active_addresses_rating_diff: Int
+  total_coin_turnover_amount: numeric
+  total_coin_turnover_amount_diff: numeric
   total_ibc_txs: Int
   total_ibc_txs_diff: Int
   total_ibc_txs_rating: Int
@@ -1000,6 +1138,8 @@ type zones_stats_max_fields {
 input zones_stats_max_order_by {
   channels_num: order_by
   ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
   ibc_tx_in_rating: order_by
@@ -1011,6 +1151,12 @@ input zones_stats_max_order_by {
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
   timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
   total_ibc_txs_diff: order_by
   total_ibc_txs_rating: order_by
@@ -1028,6 +1174,8 @@ input zones_stats_max_order_by {
 type zones_stats_min_fields {
   channels_num: Int
   ibc_percent: Int
+  ibc_tx_failed: Int
+  ibc_tx_failed_diff: Int
   ibc_tx_in: Int
   ibc_tx_in_diff: Int
   ibc_tx_in_rating: Int
@@ -1039,6 +1187,12 @@ type zones_stats_min_fields {
   ibc_tx_out_rating_diff: Int
   ibc_tx_out_weight: numeric
   timeframe: Int
+  total_active_addresses: Int
+  total_active_addresses_diff: Int
+  total_active_addresses_rating: Int
+  total_active_addresses_rating_diff: Int
+  total_coin_turnover_amount: numeric
+  total_coin_turnover_amount_diff: numeric
   total_ibc_txs: Int
   total_ibc_txs_diff: Int
   total_ibc_txs_rating: Int
@@ -1056,6 +1210,8 @@ type zones_stats_min_fields {
 input zones_stats_min_order_by {
   channels_num: order_by
   ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
   ibc_tx_in_rating: order_by
@@ -1067,6 +1223,12 @@ input zones_stats_min_order_by {
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
   timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
   total_ibc_txs_diff: order_by
   total_ibc_txs_rating: order_by
@@ -1085,6 +1247,8 @@ input zones_stats_order_by {
   channels_num: order_by
   chart: order_by
   ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
   ibc_tx_in_rating: order_by
@@ -1096,6 +1260,12 @@ input zones_stats_order_by {
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
   timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
   total_ibc_txs_diff: order_by
   total_ibc_txs_rating: order_by
@@ -1125,6 +1295,12 @@ enum zones_stats_select_column {
 
   # column name
   ibc_percent
+
+  # column name
+  ibc_tx_failed
+
+  # column name
+  ibc_tx_failed_diff
 
   # column name
   ibc_tx_in
@@ -1158,6 +1334,24 @@ enum zones_stats_select_column {
 
   # column name
   timeframe
+
+  # column name
+  total_active_addresses
+
+  # column name
+  total_active_addresses_diff
+
+  # column name
+  total_active_addresses_rating
+
+  # column name
+  total_active_addresses_rating_diff
+
+  # column name
+  total_coin_turnover_amount
+
+  # column name
+  total_coin_turnover_amount_diff
 
   # column name
   total_ibc_txs
@@ -1197,6 +1391,8 @@ enum zones_stats_select_column {
 type zones_stats_stddev_fields {
   channels_num: Float
   ibc_percent: Float
+  ibc_tx_failed: Float
+  ibc_tx_failed_diff: Float
   ibc_tx_in: Float
   ibc_tx_in_diff: Float
   ibc_tx_in_rating: Float
@@ -1208,6 +1404,12 @@ type zones_stats_stddev_fields {
   ibc_tx_out_rating_diff: Float
   ibc_tx_out_weight: Float
   timeframe: Float
+  total_active_addresses: Float
+  total_active_addresses_diff: Float
+  total_active_addresses_rating: Float
+  total_active_addresses_rating_diff: Float
+  total_coin_turnover_amount: Float
+  total_coin_turnover_amount_diff: Float
   total_ibc_txs: Float
   total_ibc_txs_diff: Float
   total_ibc_txs_rating: Float
@@ -1224,6 +1426,8 @@ type zones_stats_stddev_fields {
 input zones_stats_stddev_order_by {
   channels_num: order_by
   ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
   ibc_tx_in_rating: order_by
@@ -1235,6 +1439,12 @@ input zones_stats_stddev_order_by {
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
   timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
   total_ibc_txs_diff: order_by
   total_ibc_txs_rating: order_by
@@ -1251,6 +1461,8 @@ input zones_stats_stddev_order_by {
 type zones_stats_stddev_pop_fields {
   channels_num: Float
   ibc_percent: Float
+  ibc_tx_failed: Float
+  ibc_tx_failed_diff: Float
   ibc_tx_in: Float
   ibc_tx_in_diff: Float
   ibc_tx_in_rating: Float
@@ -1262,6 +1474,12 @@ type zones_stats_stddev_pop_fields {
   ibc_tx_out_rating_diff: Float
   ibc_tx_out_weight: Float
   timeframe: Float
+  total_active_addresses: Float
+  total_active_addresses_diff: Float
+  total_active_addresses_rating: Float
+  total_active_addresses_rating_diff: Float
+  total_coin_turnover_amount: Float
+  total_coin_turnover_amount_diff: Float
   total_ibc_txs: Float
   total_ibc_txs_diff: Float
   total_ibc_txs_rating: Float
@@ -1278,6 +1496,8 @@ type zones_stats_stddev_pop_fields {
 input zones_stats_stddev_pop_order_by {
   channels_num: order_by
   ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
   ibc_tx_in_rating: order_by
@@ -1289,6 +1509,12 @@ input zones_stats_stddev_pop_order_by {
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
   timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
   total_ibc_txs_diff: order_by
   total_ibc_txs_rating: order_by
@@ -1305,6 +1531,8 @@ input zones_stats_stddev_pop_order_by {
 type zones_stats_stddev_samp_fields {
   channels_num: Float
   ibc_percent: Float
+  ibc_tx_failed: Float
+  ibc_tx_failed_diff: Float
   ibc_tx_in: Float
   ibc_tx_in_diff: Float
   ibc_tx_in_rating: Float
@@ -1316,6 +1544,12 @@ type zones_stats_stddev_samp_fields {
   ibc_tx_out_rating_diff: Float
   ibc_tx_out_weight: Float
   timeframe: Float
+  total_active_addresses: Float
+  total_active_addresses_diff: Float
+  total_active_addresses_rating: Float
+  total_active_addresses_rating_diff: Float
+  total_coin_turnover_amount: Float
+  total_coin_turnover_amount_diff: Float
   total_ibc_txs: Float
   total_ibc_txs_diff: Float
   total_ibc_txs_rating: Float
@@ -1332,6 +1566,8 @@ type zones_stats_stddev_samp_fields {
 input zones_stats_stddev_samp_order_by {
   channels_num: order_by
   ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
   ibc_tx_in_rating: order_by
@@ -1343,6 +1579,12 @@ input zones_stats_stddev_samp_order_by {
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
   timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
   total_ibc_txs_diff: order_by
   total_ibc_txs_rating: order_by
@@ -1359,6 +1601,8 @@ input zones_stats_stddev_samp_order_by {
 type zones_stats_sum_fields {
   channels_num: Int
   ibc_percent: Int
+  ibc_tx_failed: Int
+  ibc_tx_failed_diff: Int
   ibc_tx_in: Int
   ibc_tx_in_diff: Int
   ibc_tx_in_rating: Int
@@ -1370,6 +1614,12 @@ type zones_stats_sum_fields {
   ibc_tx_out_rating_diff: Int
   ibc_tx_out_weight: numeric
   timeframe: Int
+  total_active_addresses: Int
+  total_active_addresses_diff: Int
+  total_active_addresses_rating: Int
+  total_active_addresses_rating_diff: Int
+  total_coin_turnover_amount: numeric
+  total_coin_turnover_amount_diff: numeric
   total_ibc_txs: Int
   total_ibc_txs_diff: Int
   total_ibc_txs_rating: Int
@@ -1386,6 +1636,8 @@ type zones_stats_sum_fields {
 input zones_stats_sum_order_by {
   channels_num: order_by
   ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
   ibc_tx_in_rating: order_by
@@ -1397,6 +1649,12 @@ input zones_stats_sum_order_by {
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
   timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
   total_ibc_txs_diff: order_by
   total_ibc_txs_rating: order_by
@@ -1413,6 +1671,8 @@ input zones_stats_sum_order_by {
 type zones_stats_var_pop_fields {
   channels_num: Float
   ibc_percent: Float
+  ibc_tx_failed: Float
+  ibc_tx_failed_diff: Float
   ibc_tx_in: Float
   ibc_tx_in_diff: Float
   ibc_tx_in_rating: Float
@@ -1424,6 +1684,12 @@ type zones_stats_var_pop_fields {
   ibc_tx_out_rating_diff: Float
   ibc_tx_out_weight: Float
   timeframe: Float
+  total_active_addresses: Float
+  total_active_addresses_diff: Float
+  total_active_addresses_rating: Float
+  total_active_addresses_rating_diff: Float
+  total_coin_turnover_amount: Float
+  total_coin_turnover_amount_diff: Float
   total_ibc_txs: Float
   total_ibc_txs_diff: Float
   total_ibc_txs_rating: Float
@@ -1440,6 +1706,8 @@ type zones_stats_var_pop_fields {
 input zones_stats_var_pop_order_by {
   channels_num: order_by
   ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
   ibc_tx_in_rating: order_by
@@ -1451,6 +1719,12 @@ input zones_stats_var_pop_order_by {
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
   timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
   total_ibc_txs_diff: order_by
   total_ibc_txs_rating: order_by
@@ -1467,6 +1741,8 @@ input zones_stats_var_pop_order_by {
 type zones_stats_var_samp_fields {
   channels_num: Float
   ibc_percent: Float
+  ibc_tx_failed: Float
+  ibc_tx_failed_diff: Float
   ibc_tx_in: Float
   ibc_tx_in_diff: Float
   ibc_tx_in_rating: Float
@@ -1478,6 +1754,12 @@ type zones_stats_var_samp_fields {
   ibc_tx_out_rating_diff: Float
   ibc_tx_out_weight: Float
   timeframe: Float
+  total_active_addresses: Float
+  total_active_addresses_diff: Float
+  total_active_addresses_rating: Float
+  total_active_addresses_rating_diff: Float
+  total_coin_turnover_amount: Float
+  total_coin_turnover_amount_diff: Float
   total_ibc_txs: Float
   total_ibc_txs_diff: Float
   total_ibc_txs_rating: Float
@@ -1494,6 +1776,8 @@ type zones_stats_var_samp_fields {
 input zones_stats_var_samp_order_by {
   channels_num: order_by
   ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
   ibc_tx_in_rating: order_by
@@ -1505,6 +1789,12 @@ input zones_stats_var_samp_order_by {
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
   timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
   total_ibc_txs_diff: order_by
   total_ibc_txs_rating: order_by
@@ -1521,6 +1811,8 @@ input zones_stats_var_samp_order_by {
 type zones_stats_variance_fields {
   channels_num: Float
   ibc_percent: Float
+  ibc_tx_failed: Float
+  ibc_tx_failed_diff: Float
   ibc_tx_in: Float
   ibc_tx_in_diff: Float
   ibc_tx_in_rating: Float
@@ -1532,6 +1824,12 @@ type zones_stats_variance_fields {
   ibc_tx_out_rating_diff: Float
   ibc_tx_out_weight: Float
   timeframe: Float
+  total_active_addresses: Float
+  total_active_addresses_diff: Float
+  total_active_addresses_rating: Float
+  total_active_addresses_rating_diff: Float
+  total_coin_turnover_amount: Float
+  total_coin_turnover_amount_diff: Float
   total_ibc_txs: Float
   total_ibc_txs_diff: Float
   total_ibc_txs_rating: Float
@@ -1548,6 +1846,8 @@ type zones_stats_variance_fields {
 input zones_stats_variance_order_by {
   channels_num: order_by
   ibc_percent: order_by
+  ibc_tx_failed: order_by
+  ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
   ibc_tx_in_rating: order_by
@@ -1559,6 +1859,12 @@ input zones_stats_variance_order_by {
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
   timeframe: order_by
+  total_active_addresses: order_by
+  total_active_addresses_diff: order_by
+  total_active_addresses_rating: order_by
+  total_active_addresses_rating_diff: order_by
+  total_coin_turnover_amount: order_by
+  total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
   total_ibc_txs_diff: order_by
   total_ibc_txs_rating: order_by

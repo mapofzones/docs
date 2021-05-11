@@ -11,6 +11,7 @@ nav:
     - Tx processor: processor.md
     - Message broker: broker.md
     - Watcher: watcher.md
+    - Height checker: height-checker.md
     - Proxy: proxy.md
     - CI/CD/CD: ci&cd&cd.md
     - Changelog: changelog.md

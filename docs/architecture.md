@@ -10,7 +10,13 @@
 
 ## Service adaptor architecture
 
-![Architecture-adaptor](img/map-of-zones-Adaptor.jpg)
+![Architecture-adaptor](img/map-of-zones-Adaptor.png)
+
+* triggered every 10 sec(+runtime)
+* calls database functions
+* functions calculate all statistics from database engine tables
+* new statistics are returned to the adapter
+* inserts a pack of upcoming stats items into the DB flat tables
 
 ## Service endpoint checker
 

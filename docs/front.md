@@ -1,11 +1,12 @@
 # Front
 
+![full_main_page](img/front_map_1.png)
+
 ***There are 3 main components:*** 
 
 * aggregated global data [dashboard](front.md#dashboard)
 * the [map](front.md#map)
 * the [rating table](front.md#rating-table)
-
 
 ## Dashboard
 
@@ -20,7 +21,13 @@ It includes aggregated data of the:
 
 ## Map
 
-![front_map](img/front_map.jpg)
+### Map 2d
+
+![front_map_2d](img/front_map_2.png)
+
+### Map 3d
+
+![front_map_3d](img/front_map_3.png)
 
 Each zone is displayed as a circle with animated rays that represent active connection channels. We used different circle sizes to highlight zones that are more ”active” in terms of number of IBC token transfers or transactions (chosen column). Color coding is used to display zones’ the ratio of incoming/outgoing IBC token transfer transactions. 
 Map could be zoomed in and zones could be selected in order to interact with zones that are of a higher interest to you.
@@ -39,6 +46,7 @@ Rating table consist of 8 columns:
 * IBC out - sending tokens in IBC transfer
 * IBC in - receiving tokens in IBC transfer
 * number of channels
+* MAU/WAU/DAU - monthly/weekly/daily active users(addresses)
 * IBC TXs activity chart
 
 

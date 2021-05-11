@@ -179,7 +179,6 @@
     * [active_addresses_var_pop_order_by](#active_addresses_var_pop_order_by)
     * [active_addresses_var_samp_order_by](#active_addresses_var_samp_order_by)
     * [active_addresses_variance_order_by](#active_addresses_variance_order_by)
-    * [bigint_comparison_exp](#bigint_comparison_exp)
     * [blocks_log_aggregate_order_by](#blocks_log_aggregate_order_by)
     * [blocks_log_arr_rel_insert_input](#blocks_log_arr_rel_insert_input)
     * [blocks_log_avg_order_by](#blocks_log_avg_order_by)
@@ -448,7 +447,6 @@
     * [Float](#float)
     * [Int](#int)
     * [String](#string)
-    * [bigint](#bigint)
     * [jsonb](#jsonb)
     * [numeric](#numeric)
     * [timestamp](#timestamp)
@@ -7004,7 +7002,7 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
-<td valign="top"><a href="#bigint">bigint</a>!</td>
+<td valign="top"><a href="#numeric">numeric</a>!</td>
 <td></td>
 </tr>
 <tr>
@@ -7199,7 +7197,7 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
-<td valign="top"><a href="#bigint">bigint</a></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -7249,7 +7247,7 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
-<td valign="top"><a href="#bigint">bigint</a></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -7439,7 +7437,7 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
-<td valign="top"><a href="#bigint">bigint</a></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -11164,65 +11162,6 @@
 <tr>
 <td colspan="2" valign="top"><strong>period</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### bigint_comparison_exp
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_eq</strong></td>
-<td valign="top"><a href="#bigint">bigint</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>_gt</strong></td>
-<td valign="top"><a href="#bigint">bigint</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>_gte</strong></td>
-<td valign="top"><a href="#bigint">bigint</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>_in</strong></td>
-<td valign="top">[<a href="#bigint">bigint</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>_is_null</strong></td>
-<td valign="top"><a href="#boolean">Boolean</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>_lt</strong></td>
-<td valign="top"><a href="#bigint">bigint</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>_lte</strong></td>
-<td valign="top"><a href="#bigint">bigint</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>_neq</strong></td>
-<td valign="top"><a href="#bigint">bigint</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>_nin</strong></td>
-<td valign="top">[<a href="#bigint">bigint</a>!]</td>
 <td></td>
 </tr>
 </tbody>
@@ -15611,7 +15550,7 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
-<td valign="top"><a href="#bigint_comparison_exp">bigint_comparison_exp</a></td>
+<td valign="top"><a href="#numeric_comparison_exp">numeric_comparison_exp</a></td>
 <td></td>
 </tr>
 <tr>
@@ -15655,7 +15594,7 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
-<td valign="top"><a href="#bigint">bigint</a></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -15699,7 +15638,7 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
-<td valign="top"><a href="#bigint">bigint</a></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -15977,7 +15916,7 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_coin_turnover_amount</strong></td>
-<td valign="top"><a href="#bigint">bigint</a></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -21741,8 +21680,6 @@ The `Int` scalar type represents non-fractional signed whole numeric values. Int
 ### String
 
 The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
-
-### bigint
 
 ### jsonb
 

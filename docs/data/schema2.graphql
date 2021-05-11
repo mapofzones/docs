@@ -272,21 +272,6 @@ input active_addresses_variance_order_by {
   period: order_by
 }
 
-scalar bigint
-
-# expression to compare columns of type bigint. All fields are combined with logical 'AND'.
-input bigint_comparison_exp {
-  _eq: bigint
-  _gt: bigint
-  _gte: bigint
-  _in: [bigint!]
-  _is_null: Boolean
-  _lt: bigint
-  _lte: bigint
-  _neq: bigint
-  _nin: [bigint!]
-}
-
 # columns and relationships of "blocks_log"
 type blocks_log {
   last_processed_block: Int!
@@ -4095,7 +4080,7 @@ input timestamp_comparison_exp {
 type total_tx_hourly_stats {
   hour: timestamp!
   period: Int!
-  total_coin_turnover_amount: bigint!
+  total_coin_turnover_amount: numeric!
   txs_cnt: Int!
   txs_w_ibc_xfer_cnt: Int!
   txs_w_ibc_xfer_fail_cnt: Int!
@@ -4169,7 +4154,7 @@ input total_tx_hourly_stats_bool_exp {
   _or: [total_tx_hourly_stats_bool_exp]
   hour: timestamp_comparison_exp
   period: Int_comparison_exp
-  total_coin_turnover_amount: bigint_comparison_exp
+  total_coin_turnover_amount: numeric_comparison_exp
   txs_cnt: Int_comparison_exp
   txs_w_ibc_xfer_cnt: Int_comparison_exp
   txs_w_ibc_xfer_fail_cnt: Int_comparison_exp
@@ -4185,7 +4170,7 @@ enum total_tx_hourly_stats_constraint {
 # input type for incrementing integer column in table "total_tx_hourly_stats"
 input total_tx_hourly_stats_inc_input {
   period: Int
-  total_coin_turnover_amount: bigint
+  total_coin_turnover_amount: numeric
   txs_cnt: Int
   txs_w_ibc_xfer_cnt: Int
   txs_w_ibc_xfer_fail_cnt: Int
@@ -4195,7 +4180,7 @@ input total_tx_hourly_stats_inc_input {
 input total_tx_hourly_stats_insert_input {
   hour: timestamp
   period: Int
-  total_coin_turnover_amount: bigint
+  total_coin_turnover_amount: numeric
   txs_cnt: Int
   txs_w_ibc_xfer_cnt: Int
   txs_w_ibc_xfer_fail_cnt: Int
@@ -4206,7 +4191,7 @@ input total_tx_hourly_stats_insert_input {
 type total_tx_hourly_stats_max_fields {
   hour: timestamp
   period: Int
-  total_coin_turnover_amount: bigint
+  total_coin_turnover_amount: numeric
   txs_cnt: Int
   txs_w_ibc_xfer_cnt: Int
   txs_w_ibc_xfer_fail_cnt: Int
@@ -4228,7 +4213,7 @@ input total_tx_hourly_stats_max_order_by {
 type total_tx_hourly_stats_min_fields {
   hour: timestamp
   period: Int
-  total_coin_turnover_amount: bigint
+  total_coin_turnover_amount: numeric
   txs_cnt: Int
   txs_w_ibc_xfer_cnt: Int
   txs_w_ibc_xfer_fail_cnt: Int
@@ -4314,7 +4299,7 @@ enum total_tx_hourly_stats_select_column {
 input total_tx_hourly_stats_set_input {
   hour: timestamp
   period: Int
-  total_coin_turnover_amount: bigint
+  total_coin_turnover_amount: numeric
   txs_cnt: Int
   txs_w_ibc_xfer_cnt: Int
   txs_w_ibc_xfer_fail_cnt: Int
@@ -4378,7 +4363,7 @@ input total_tx_hourly_stats_stddev_samp_order_by {
 # aggregate sum on columns
 type total_tx_hourly_stats_sum_fields {
   period: Int
-  total_coin_turnover_amount: bigint
+  total_coin_turnover_amount: numeric
   txs_cnt: Int
   txs_w_ibc_xfer_cnt: Int
   txs_w_ibc_xfer_fail_cnt: Int

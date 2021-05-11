@@ -155,39 +155,87 @@
               
                 <h1 id="watcher">Watcher</h1>
 <p>The watcher listens to the new blocks, parses them, and assembly the information into the zone-neutral data structures. Watcher only works with one zone, so you need to run a separate watcher for each zone.</p>
-<p>The MoZ watcher is a standalone process that takes 2 input arguments: </p>
+<p><code>The MoZ watcher is a standalone process that takes 3 input arguments.</code></p>
+<p>3 input arguments via docker container:</p>
+<ul>
+<li>chain id (network)</li>
+<li>rabbitmq connector</li>
+<li>graphql endpoint</li>
+</ul>
+<p>3 input arguments directly without script:</p>
 <ul>
 <li>a zone RPC address</li>
 <li>a starting block number</li>
+<li>rabbitmq connector</li>
 </ul>
 <p>and listens to the given zone starting from the given block number.</p>
 <h2 id="responsibilies">Responsibilies</h2>
 <p>The newly created object of the <code>block</code> type is sent to the queue in <a href="../broker/">message broker</a>.</p>
 <pre><code>block {
-   chain_id: &lt;string&gt;, the zone chain id
-   block_time: &lt;timestamp&gt; 
-   block_num: &lt;number&gt;
-   txs: array [transaction]
+   height: &lt;number&gt;
+   chain_id: &lt;string&gt;
+   time: &lt;timestamp&gt;
+   messages: array [message] (transaction in real)
 }
-
-transaction {
+</code></pre>
+<p>messages:
+* transaction(not message in real)
+* transfer
+* ibcTransfer
+* openChannel
+* createConnection
+* createClient
+* createChannel
+* closeChannel</p>
+<pre><code>transaction {
+   sender: &lt;string&gt;
    hash: &lt;string&gt;
-   msgs: array [message]
+   accepted: &lt;bool&gt;
+   messages: array [message]
 }
 
-message {
-   transfer_info: {
-     sender: &lt;address&gt;
-     recipient: &lt;address&gt;
-     quantity: &lt;int&gt;
-     precision: &lt;smallint&gt;
-     token: &lt;code&gt;
-   }
-   type: (send | receive | open_channel | open_connection | open_client | unknown)
-   ibc: true | false
-   ibc_channel_id: &lt;string&gt;
-   ibc_connection_id: &lt;string&gt;
-   ibc_client_id: &lt;string&gt;
+transfer {
+   sender: &lt;string&gt;
+   recipient: &lt;string&gt;
+   amount: array[
+      amount: &lt;number&gt;, 
+      coin: &lt;string&gt;
+   ]
+}
+
+createClient {
+   clientId: &lt;string&gt;
+   clientType: &lt;string&gt;
+   chainId: &lt;string&gt;
+}
+
+createConnection {
+   connectionID: &lt;string&gt;
+   clientID: &lt;string&gt;
+}
+
+createChannel {
+   channelID: &lt;string&gt;
+   connectionID: &lt;string&gt;
+   portID: &lt;string&gt;
+}
+
+openChannel {
+   channelID: &lt;string&gt;
+}
+
+closeChannel {
+   channelID: &lt;string&gt;
+}
+
+ibcTransfer {
+   channelID: &lt;string&gt;
+   sender: &lt;string&gt;
+   recipient: &lt;string&gt;
+   amount: array[
+      amount: &lt;number&gt;, 
+      coin: &lt;string&gt;
+   ]
 }
 </code></pre>
 <h2 id="possible-errors">Possible errors</h2>

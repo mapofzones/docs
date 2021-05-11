@@ -178,15 +178,17 @@
    messages: array [message] (transaction in real)
 }
 </code></pre>
-<p>messages:
-* transaction(not message in real)
-* transfer
-* ibcTransfer
-* openChannel
-* createConnection
-* createClient
-* createChannel
-* closeChannel</p>
+<p>messages:</p>
+<ul>
+<li>transaction(not message in real)</li>
+<li>transfer</li>
+<li>ibcTransfer</li>
+<li>openChannel</li>
+<li>createConnection</li>
+<li>createClient</li>
+<li>createChannel</li>
+<li>closeChannel</li>
+</ul>
 <pre><code>transaction {
    sender: &lt;string&gt;
    hash: &lt;string&gt;
@@ -246,6 +248,7 @@ ibcTransfer {
 <br>It was necessary to add string. The file is located here:
 <code>cosmos-sdk@v0.40.0-rc3/x/ibc/applications/transfer/types/transfer.pb.go</code>
 <br>And here is the link to the file on github: <a href="https://github.com/cosmos/cosmos-sdk/blob/v0.40.0-rc3/x/ibc/applications/transfer/types/transfer.pb.go#L33">transfer.pb.go#L33</a> </p>
+<p>3) The cosmos-watcher may currently be stuck waiting for data from the channel that will not come. Therefore, when the idle timeout is reached, the cosmos-watcher will be turned off, after which it will be turned on again in the cluster. This problem should be resolved in the future.</p>
 </blockquote>
               
             </div>

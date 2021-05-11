@@ -162,13 +162,13 @@
 <p>Database migrations work using the <a href="../graphql/">Hasura GraphQL</a> migrations engine.</p>
 <h2 id="flat-tables">Flat tables</h2>
 <p>Flat tables contain prepared flat data, ready to use, specifically for the <a href="../front/">front</a> via <a href="../graphql/">hasura graphql</a>.</p>
-<p><img alt="flat" src="../img/db_flat_tables.png" /></p>
+<p><img alt="flat" src="../img/map-of-zones-DB%20flat.png" /></p>
 <h2 id="core-tables">Core tables</h2>
 <p>The core tables store the state of the main solution logic and primary statistics.</p>
 <p><img alt="core" src="../img/db_core.png" /></p>
 <h2 id="temporary-tables">Temporary tables</h2>
 <p>Temporary tables are used only for the return set (RETURNS SETOF) in <a href="./#functions">PL/pgSQL functions</a>.</p>
-<p><img alt="temp" src="../img/db_temp.png" /></p>
+<p><img alt="temp" src="../img/map-of-zones-DB%20temp.png" /></p>
 <h2 id="functions">Functions</h2>
 <p>The functions are used to calculate statistics from <a href="./#core-tables">core tables</a>. The function is called by the <a href="../adaptor/">statistical adapter</a>.</p>
 <h3 id="get_total_stats">get_total_stats</h3>

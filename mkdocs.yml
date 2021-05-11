@@ -13,6 +13,7 @@ nav:
     - Watcher: watcher.md
     - Height checker: height-checker.md
     - Endpoint checker: endpoint-checker.md
+    - Database cleaner: database-cleaner.md
     - Proxy: proxy.md
     - CI/CD/CD: ci&cd&cd.md
     - Changelog: changelog.md

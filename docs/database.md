@@ -13,7 +13,7 @@ Database migrations work using the [Hasura GraphQL](graphql.md) migrations engin
 
 Flat tables contain prepared flat data, ready to use, specifically for the [front](front.md) via [hasura graphql](graphql.md).
 
-![flat](img/db_flat_tables.png)
+![flat](img/map-of-zones-DB flat.png)
 
 ## Core tables
 

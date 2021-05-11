@@ -138,7 +138,14 @@
             <div class="section">
               
                 <h1 id="adaptor">Adaptor</h1>
-<p><img alt="Architecture-adaptor" src="../img/map-of-zones-Adaptor.jpg" /></p>
+<p><img alt="Architecture-adaptor" src="../img/map-of-zones-Adaptor.png" /></p>
+<ul>
+<li>triggered every 10 sec(+runtime)</li>
+<li>calls database functions</li>
+<li>functions calculate all statistics from database engine tables</li>
+<li>new statistics are returned to the adapter</li>
+<li>inserts a pack of upcoming stats items into the DB flat tables</li>
+</ul>
 <p>The statistics adaptor updates statistics in <a href="../database/#flat-tables">flat tables</a>, by default every 10 seconds + runtime.
 The adaptor makes a query in <a href="../database/#functions">PL/pgSQL functions</a> and <a href="../database/#core-tables">tables</a>, and then updates the values in <a href="../database/#flat-tables">flat tables</a> with the received data.</p>
               

@@ -54,6 +54,16 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Architecture</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#system-context-architecture">System context architecture</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#solution-architecture">Solution architecture</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#service-adaptor-architecture">Service adaptor architecture</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#service-endpoint-checker">Service endpoint checker</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#service-height-checker">Service height checker</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -138,9 +148,36 @@
             <div class="section">
               
                 <h1 id="architecture">Architecture</h1>
-<p><img alt="Architecture" src="../img/project_architecture.png" /></p>
-<p><img alt="Architecture-prod" src="../img/map-of-zones-Deploy%20kube.jpg" /></p>
-<p><img alt="Architecture-adaptor" src="../img/map-of-zones-Adaptor.jpg" /></p>
+<h2 id="system-context-architecture">System context architecture</h2>
+<p><img alt="Architecture-system" src="../img/map-of-zones-System%20context.png" /></p>
+<h2 id="solution-architecture">Solution architecture</h2>
+<p><img alt="Architecture-prod" src="../img/map-of-zones-Deploy%20kube.png" /></p>
+<h2 id="service-adaptor-architecture">Service adaptor architecture</h2>
+<p><img alt="Architecture-adaptor" src="../img/map-of-zones-Adaptor.png" /></p>
+<ul>
+<li>triggered every 10 sec(+runtime)</li>
+<li>calls database functions</li>
+<li>functions calculate all statistics from database engine tables</li>
+<li>new statistics are returned to the adapter</li>
+<li>inserts a pack of upcoming stats items into the DB flat tables</li>
+</ul>
+<h2 id="service-endpoint-checker">Service endpoint checker</h2>
+<p><img alt="Architecture-endpoint-checker" src="../img/map-of-zones-Endpoint%20checker.png" /></p>
+<ul>
+<li>triggered every 10 sec(+runtime)</li>
+<li>gets endpoints data from core database tables</li>
+<li>makes requests to the cosmos network for the received endpoints</li>
+<li>checks if endpoints are working correctly</li>
+<li>updates endpoint information in database core tables</li>
+</ul>
+<h2 id="service-height-checker">Service height checker</h2>
+<p><img alt="Architecture-height-checker" src="../img/map-of-zones-Height%20checker.png" /></p>
+<ul>
+<li>triggered every 4 hours</li>
+<li>receives information from the database about the processing of new blocks of blockchains (zones)</li>
+<li>checks the work information for each zone</li>
+<li>if in the last 1 hour there is no analytics for some zone, then it sends a notification to the telegrams development group</li>
+</ul>
               
             </div>
           </div>

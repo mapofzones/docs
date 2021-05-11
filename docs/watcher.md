@@ -32,6 +32,7 @@ block {
 ```
 
 messages:
+
 * transaction(not message in real)
 * transfer
 * ibcTransfer
@@ -102,3 +103,5 @@ ibcTransfer {
 > <br>It was necessary to add string. The file is located here:
 > ```cosmos-sdk@v0.40.0-rc3/x/ibc/applications/transfer/types/transfer.pb.go```
 > <br>And here is the link to the file on github: [transfer.pb.go#L33](https://github.com/cosmos/cosmos-sdk/blob/v0.40.0-rc3/x/ibc/applications/transfer/types/transfer.pb.go#L33) 
+
+> 3) The cosmos-watcher may currently be stuck waiting for data from the channel that will not come. Therefore, when the idle timeout is reached, the cosmos-watcher will be turned off, after which it will be turned on again in the cluster. This problem should be resolved in the future.

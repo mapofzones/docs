@@ -20,6 +20,11 @@
     * [headers_var_samp_fields](#headers_var_samp_fields)
     * [headers_variance_fields](#headers_variance_fields)
     * [subscription_root](#subscription_root)
+    * [zone_nodes](#zone_nodes)
+    * [zone_nodes_aggregate](#zone_nodes_aggregate)
+    * [zone_nodes_aggregate_fields](#zone_nodes_aggregate_fields)
+    * [zone_nodes_max_fields](#zone_nodes_max_fields)
+    * [zone_nodes_min_fields](#zone_nodes_min_fields)
     * [zones_graphs](#zones_graphs)
     * [zones_graphs_aggregate](#zones_graphs_aggregate)
     * [zones_graphs_aggregate_fields](#zones_graphs_aggregate_fields)
@@ -47,6 +52,7 @@
     * [zones_stats_var_samp_fields](#zones_stats_var_samp_fields)
     * [zones_stats_variance_fields](#zones_stats_variance_fields)
   * [Inputs](#inputs)
+    * [Boolean_comparison_exp](#boolean_comparison_exp)
     * [Int_comparison_exp](#int_comparison_exp)
     * [String_comparison_exp](#string_comparison_exp)
     * [blocks_log_bool_exp](#blocks_log_bool_exp)
@@ -69,6 +75,12 @@
     * [jsonb_comparison_exp](#jsonb_comparison_exp)
     * [numeric_comparison_exp](#numeric_comparison_exp)
     * [timestamp_comparison_exp](#timestamp_comparison_exp)
+    * [zone_nodes_aggregate_order_by](#zone_nodes_aggregate_order_by)
+    * [zone_nodes_bool_exp](#zone_nodes_bool_exp)
+    * [zone_nodes_max_order_by](#zone_nodes_max_order_by)
+    * [zone_nodes_min_order_by](#zone_nodes_min_order_by)
+    * [zone_nodes_order_by](#zone_nodes_order_by)
+    * [zone_nodes_pk_columns_input](#zone_nodes_pk_columns_input)
     * [zones_graphs_aggregate_order_by](#zones_graphs_aggregate_order_by)
     * [zones_graphs_avg_order_by](#zones_graphs_avg_order_by)
     * [zones_graphs_bool_exp](#zones_graphs_bool_exp)
@@ -101,6 +113,7 @@
     * [blocks_log_select_column](#blocks_log_select_column)
     * [headers_select_column](#headers_select_column)
     * [order_by](#order_by)
+    * [zone_nodes_select_column](#zone_nodes_select_column)
     * [zones_graphs_select_column](#zones_graphs_select_column)
     * [zones_stats_select_column](#zones_stats_select_column)
   * [Scalars](#scalars)
@@ -233,6 +246,81 @@
 <tr>
 <td colspan="2" align="right" valign="top">timeframe</td>
 <td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone_nodes</strong></td>
+<td valign="top">[<a href="#zone_nodes">zone_nodes</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">distinct_on</td>
+<td valign="top">[<a href="#zone_nodes_select_column">zone_nodes_select_column</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">limit</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">offset</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">order_by</td>
+<td valign="top">[<a href="#zone_nodes_order_by">zone_nodes_order_by</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#zone_nodes_bool_exp">zone_nodes_bool_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone_nodes_aggregate</strong></td>
+<td valign="top"><a href="#zone_nodes_aggregate">zone_nodes_aggregate</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">distinct_on</td>
+<td valign="top">[<a href="#zone_nodes_select_column">zone_nodes_select_column</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">limit</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">offset</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">order_by</td>
+<td valign="top">[<a href="#zone_nodes_order_by">zone_nodes_order_by</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#zone_nodes_bool_exp">zone_nodes_bool_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone_nodes_by_pk</strong></td>
+<td valign="top"><a href="#zone_nodes">zone_nodes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">rpc_addr</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">zone</td>
+<td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 <tr>
@@ -1113,6 +1201,81 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>zone_nodes</strong></td>
+<td valign="top">[<a href="#zone_nodes">zone_nodes</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">distinct_on</td>
+<td valign="top">[<a href="#zone_nodes_select_column">zone_nodes_select_column</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">limit</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">offset</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">order_by</td>
+<td valign="top">[<a href="#zone_nodes_order_by">zone_nodes_order_by</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#zone_nodes_bool_exp">zone_nodes_bool_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone_nodes_aggregate</strong></td>
+<td valign="top"><a href="#zone_nodes_aggregate">zone_nodes_aggregate</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">distinct_on</td>
+<td valign="top">[<a href="#zone_nodes_select_column">zone_nodes_select_column</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">limit</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">offset</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">order_by</td>
+<td valign="top">[<a href="#zone_nodes_order_by">zone_nodes_order_by</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#zone_nodes_bool_exp">zone_nodes_bool_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone_nodes_by_pk</strong></td>
+<td valign="top"><a href="#zone_nodes">zone_nodes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">rpc_addr</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">zone</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>zones_graphs</strong></td>
 <td valign="top">[<a href="#zones_graphs">zones_graphs</a>!]!</td>
 <td></td>
@@ -1265,6 +1428,166 @@
 <tr>
 <td colspan="2" align="right" valign="top">zone</td>
 <td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### zone_nodes
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>is_alive</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>last_checked_at</strong></td>
+<td valign="top"><a href="#timestamp">timestamp</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>rpc_addr</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### zone_nodes_aggregate
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>aggregate</strong></td>
+<td valign="top"><a href="#zone_nodes_aggregate_fields">zone_nodes_aggregate_fields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td valign="top">[<a href="#zone_nodes">zone_nodes</a>!]!</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### zone_nodes_aggregate_fields
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>count</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">columns</td>
+<td valign="top">[<a href="#zone_nodes_select_column">zone_nodes_select_column</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">distinct</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>max</strong></td>
+<td valign="top"><a href="#zone_nodes_max_fields">zone_nodes_max_fields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>min</strong></td>
+<td valign="top"><a href="#zone_nodes_min_fields">zone_nodes_min_fields</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### zone_nodes_max_fields
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>last_checked_at</strong></td>
+<td valign="top"><a href="#timestamp">timestamp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>rpc_addr</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### zone_nodes_min_fields
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>last_checked_at</strong></td>
+<td valign="top"><a href="#timestamp">timestamp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>rpc_addr</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 </tbody>
@@ -3627,6 +3950,65 @@
 
 ## Inputs
 
+### Boolean_comparison_exp
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_eq</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_gt</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_gte</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_in</strong></td>
+<td valign="top">[<a href="#boolean">Boolean</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_is_null</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_lt</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_lte</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_neq</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_nin</strong></td>
+<td valign="top">[<a href="#boolean">Boolean</a>!]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
 ### Int_comparison_exp
 
 <table>
@@ -4655,6 +5037,200 @@
 <tr>
 <td colspan="2" valign="top"><strong>_nin</strong></td>
 <td valign="top">[<a href="#timestamp">timestamp</a>!]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### zone_nodes_aggregate_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>count</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>max</strong></td>
+<td valign="top"><a href="#zone_nodes_max_order_by">zone_nodes_max_order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>min</strong></td>
+<td valign="top"><a href="#zone_nodes_min_order_by">zone_nodes_min_order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### zone_nodes_bool_exp
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_and</strong></td>
+<td valign="top">[<a href="#zone_nodes_bool_exp">zone_nodes_bool_exp</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_not</strong></td>
+<td valign="top"><a href="#zone_nodes_bool_exp">zone_nodes_bool_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_or</strong></td>
+<td valign="top">[<a href="#zone_nodes_bool_exp">zone_nodes_bool_exp</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>is_alive</strong></td>
+<td valign="top"><a href="#boolean_comparison_exp">Boolean_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>last_checked_at</strong></td>
+<td valign="top"><a href="#timestamp_comparison_exp">timestamp_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>rpc_addr</strong></td>
+<td valign="top"><a href="#string_comparison_exp">String_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#string_comparison_exp">String_comparison_exp</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### zone_nodes_max_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>last_checked_at</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>rpc_addr</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### zone_nodes_min_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>last_checked_at</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>rpc_addr</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### zone_nodes_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>is_alive</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>last_checked_at</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>rpc_addr</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### zone_nodes_pk_columns_input
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>rpc_addr</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 </tbody>
@@ -7301,6 +7877,33 @@
 </tr>
 <tr>
 <td valign="top"><strong>desc_nulls_last</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### zone_nodes_select_column
+
+<table>
+<thead>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>is_alive</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>last_checked_at</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>rpc_addr</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>zone</strong></td>
 <td></td>
 </tr>
 </tbody>

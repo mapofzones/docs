@@ -44,6 +44,19 @@ enum blocks_log_select_column {
   zone
 }
 
+# expression to compare columns of type Boolean. All fields are combined with logical 'AND'.
+input Boolean_comparison_exp {
+  _eq: Boolean
+  _gt: Boolean
+  _gte: Boolean
+  _in: [Boolean!]
+  _is_null: Boolean
+  _lt: Boolean
+  _lte: Boolean
+  _neq: Boolean
+  _nin: [Boolean!]
+}
+
 # columns and relationships of "headers"
 type headers {
   channels_cnt_all: Int!
@@ -471,6 +484,45 @@ type query_root {
   # fetch data from the table: "headers" using primary key columns
   headers_by_pk(timeframe: Int!): headers
 
+  # fetch data from the table: "zone_nodes"
+  zone_nodes(
+    # distinct select on columns
+    distinct_on: [zone_nodes_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zone_nodes_order_by!]
+
+    # filter the rows returned
+    where: zone_nodes_bool_exp
+  ): [zone_nodes!]!
+
+  # fetch aggregated fields from the table: "zone_nodes"
+  zone_nodes_aggregate(
+    # distinct select on columns
+    distinct_on: [zone_nodes_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zone_nodes_order_by!]
+
+    # filter the rows returned
+    where: zone_nodes_bool_exp
+  ): zone_nodes_aggregate!
+
+  # fetch data from the table: "zone_nodes" using primary key columns
+  zone_nodes_by_pk(rpc_addr: String!, zone: String!): zone_nodes
+
   # fetch data from the table: "zones_graphs"
   zones_graphs(
     # distinct select on columns
@@ -631,6 +683,45 @@ type subscription_root {
   # fetch data from the table: "headers" using primary key columns
   headers_by_pk(timeframe: Int!): headers
 
+  # fetch data from the table: "zone_nodes"
+  zone_nodes(
+    # distinct select on columns
+    distinct_on: [zone_nodes_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zone_nodes_order_by!]
+
+    # filter the rows returned
+    where: zone_nodes_bool_exp
+  ): [zone_nodes!]!
+
+  # fetch aggregated fields from the table: "zone_nodes"
+  zone_nodes_aggregate(
+    # distinct select on columns
+    distinct_on: [zone_nodes_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [zone_nodes_order_by!]
+
+    # filter the rows returned
+    where: zone_nodes_bool_exp
+  ): zone_nodes_aggregate!
+
+  # fetch data from the table: "zone_nodes" using primary key columns
+  zone_nodes_by_pk(rpc_addr: String!, zone: String!): zone_nodes
+
   # fetch data from the table: "zones_graphs"
   zones_graphs(
     # distinct select on columns
@@ -723,6 +814,102 @@ input timestamp_comparison_exp {
   _lte: timestamp
   _neq: timestamp
   _nin: [timestamp!]
+}
+
+# columns and relationships of "zone_nodes"
+type zone_nodes {
+  is_alive: Boolean!
+  last_checked_at: timestamp!
+  rpc_addr: String!
+  zone: String!
+}
+
+# aggregated selection of "zone_nodes"
+type zone_nodes_aggregate {
+  aggregate: zone_nodes_aggregate_fields
+  nodes: [zone_nodes!]!
+}
+
+# aggregate fields of "zone_nodes"
+type zone_nodes_aggregate_fields {
+  count(columns: [zone_nodes_select_column!], distinct: Boolean): Int
+  max: zone_nodes_max_fields
+  min: zone_nodes_min_fields
+}
+
+# order by aggregate values of table "zone_nodes"
+input zone_nodes_aggregate_order_by {
+  count: order_by
+  max: zone_nodes_max_order_by
+  min: zone_nodes_min_order_by
+}
+
+# Boolean expression to filter rows from the table "zone_nodes". All fields are combined with a logical 'AND'.
+input zone_nodes_bool_exp {
+  _and: [zone_nodes_bool_exp]
+  _not: zone_nodes_bool_exp
+  _or: [zone_nodes_bool_exp]
+  is_alive: Boolean_comparison_exp
+  last_checked_at: timestamp_comparison_exp
+  rpc_addr: String_comparison_exp
+  zone: String_comparison_exp
+}
+
+# aggregate max on columns
+type zone_nodes_max_fields {
+  last_checked_at: timestamp
+  rpc_addr: String
+  zone: String
+}
+
+# order by max() on columns of table "zone_nodes"
+input zone_nodes_max_order_by {
+  last_checked_at: order_by
+  rpc_addr: order_by
+  zone: order_by
+}
+
+# aggregate min on columns
+type zone_nodes_min_fields {
+  last_checked_at: timestamp
+  rpc_addr: String
+  zone: String
+}
+
+# order by min() on columns of table "zone_nodes"
+input zone_nodes_min_order_by {
+  last_checked_at: order_by
+  rpc_addr: order_by
+  zone: order_by
+}
+
+# ordering options when selecting data from "zone_nodes"
+input zone_nodes_order_by {
+  is_alive: order_by
+  last_checked_at: order_by
+  rpc_addr: order_by
+  zone: order_by
+}
+
+# primary key columns input for table: "zone_nodes"
+input zone_nodes_pk_columns_input {
+  rpc_addr: String!
+  zone: String!
+}
+
+# select columns of table "zone_nodes"
+enum zone_nodes_select_column {
+  # column name
+  is_alive
+
+  # column name
+  last_checked_at
+
+  # column name
+  rpc_addr
+
+  # column name
+  zone
 }
 
 # columns and relationships of "zones_graphs"

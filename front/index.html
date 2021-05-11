@@ -61,6 +61,12 @@
     <li class="toctree-l2"><a class="reference internal" href="#dashboard">Dashboard</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#map">Map</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#map-2d">Map 2d</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#map-3d">Map 3d</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#rating-table">Rating Table</a>
     </li>
@@ -156,6 +162,7 @@
             <div class="section">
               
                 <h1 id="front">Front</h1>
+<p><img alt="full_main_page" src="../img/front_map_1.png" /></p>
 <p><strong><em>There are 3 main components:</em></strong> </p>
 <ul>
 <li>aggregated global data <a href="./#dashboard">dashboard</a></li>
@@ -172,7 +179,10 @@
 <li>the most active pair of zones according to the number of the IBC transfers they sent to each other</li>
 </ul>
 <h2 id="map">Map</h2>
-<p><img alt="front_map" src="../img/front_map.jpg" /></p>
+<h3 id="map-2d">Map 2d</h3>
+<p><img alt="front_map_2d" src="../img/front_map_2.png" /></p>
+<h3 id="map-3d">Map 3d</h3>
+<p><img alt="front_map_3d" src="../img/front_map_3.png" /></p>
 <p>Each zone is displayed as a circle with animated rays that represent active connection channels. We used different circle sizes to highlight zones that are more ”active” in terms of number of IBC token transfers or transactions (chosen column). Color coding is used to display zones’ the ratio of incoming/outgoing IBC token transfer transactions. 
 Map could be zoomed in and zones could be selected in order to interact with zones that are of a higher interest to you.</p>
 <h2 id="rating-table">Rating Table</h2>
@@ -186,6 +196,7 @@ Map could be zoomed in and zones could be selected in order to interact with zon
 <li>IBC out - sending tokens in IBC transfer</li>
 <li>IBC in - receiving tokens in IBC transfer</li>
 <li>number of channels</li>
+<li>MAU/WAU/DAU - monthly/weekly/daily active users(addresses)</li>
 <li>IBC TXs activity chart</li>
 </ul>
               

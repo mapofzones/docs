@@ -25,7 +25,7 @@ The core tables store the state of the main solution logic and primary statistic
 
 Temporary tables are used only for the return set (RETURNS SETOF) in [PL/pgSQL functions](database.md#functions).
 
-![temp](img/db_temp.png)
+![temp](img/map-of-zones-DB temp.png)
 
 ## Functions
 

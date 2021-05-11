@@ -2,10 +2,19 @@
 
 The watcher listens to the new blocks, parses them, and assembly the information into the zone-neutral data structures. Watcher only works with one zone, so you need to run a separate watcher for each zone.
 
-The MoZ watcher is a standalone process that takes 2 input arguments: 
+```The MoZ watcher is a standalone process that takes 3 input arguments.```
+
+3 input arguments via docker container:
+
+* chain id (network)
+* rabbitmq connector
+* graphql endpoint
+
+3 input arguments directly without script:
 
 * a zone RPC address
 * a starting block number
+* rabbitmq connector
 
 and listens to the given zone starting from the given block number.
 
@@ -15,30 +24,73 @@ The newly created object of the ```block``` type is sent to the queue in [messag
 
 ```
 block {
-   chain_id: <string>, the zone chain id
-   block_time: <timestamp> 
-   block_num: <number>
-   txs: array [transaction]
+   height: <number>
+   chain_id: <string>
+   time: <timestamp>
+   messages: array [message] (transaction in real)
 }
+```
 
+messages:
+* transaction(not message in real)
+* transfer
+* ibcTransfer
+* openChannel
+* createConnection
+* createClient
+* createChannel
+* closeChannel
+
+```
 transaction {
+   sender: <string>
    hash: <string>
-   msgs: array [message]
+   accepted: <bool>
+   messages: array [message]
 }
 
-message {
-   transfer_info: {
-     sender: <address>
-     recipient: <address>
-     quantity: <int>
-     precision: <smallint>
-     token: <code>
-   }
-   type: (send | receive | open_channel | open_connection | open_client | unknown)
-   ibc: true | false
-   ibc_channel_id: <string>
-   ibc_connection_id: <string>
-   ibc_client_id: <string>
+transfer {
+   sender: <string>
+   recipient: <string>
+   amount: array[
+      amount: <number>, 
+      coin: <string>
+   ]
+}
+
+createClient {
+   clientId: <string>
+   clientType: <string>
+   chainId: <string>
+}
+
+createConnection {
+   connectionID: <string>
+   clientID: <string>
+}
+
+createChannel {
+   channelID: <string>
+   connectionID: <string>
+   portID: <string>
+}
+
+openChannel {
+   channelID: <string>
+}
+
+closeChannel {
+   channelID: <string>
+}
+
+ibcTransfer {
+   channelID: <string>
+   sender: <string>
+   recipient: <string>
+   amount: array[
+      amount: <number>, 
+      coin: <string>
+   ]
 }
 ```
 ## Possible errors

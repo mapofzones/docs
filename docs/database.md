@@ -47,3 +47,10 @@ RETURNS SETOF ```[temp_t_full_stats_for_each](database.md#temporary-tables) -->
     RETURNS SETOF temp_t_full_stats_for_each
 
 Details of the ```temp_t_full_stats_for_each``` temporary table are [here](database.md#temporary-tables).
+
+### get_chanels_stats
+
+    get_chanels_stats()
+    RETURNS SETOF temp_t_channels_stats
+
+Details of the ```temp_t_channels_stats``` temporary table are [here](database.md#temporary-tables).

@@ -54,3 +54,11 @@ Details of the ```temp_t_full_stats_for_each``` temporary table are [here](datab
     RETURNS SETOF temp_t_channels_stats
 
 Details of the ```temp_t_channels_stats``` temporary table are [here](database.md#temporary-tables).
+
+
+### get_zones_graphs
+
+    get_zones_graphs(period_in_hours)
+    RETURNS SETOF temp_t_zones_graphs
+
+Details of the ```temp_t_zones_graphs``` temporary table are [here](database.md#temporary-tables).

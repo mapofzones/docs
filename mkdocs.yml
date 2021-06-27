@@ -16,6 +16,7 @@ nav:
     - Database cleaner: database-cleaner.md
     - Proxy: proxy.md
     - CI/CD/CD: ci&cd&cd.md
+    - Tools: tools.md
     - Changelog: changelog.md
 theme: readthedocs
 plugins:

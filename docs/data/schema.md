@@ -6,6 +6,19 @@
   * [Query](#query)
   * [Objects](#objects)
     * [blocks_log](#blocks_log)
+    * [channels_stats](#channels_stats)
+    * [channels_stats_aggregate](#channels_stats_aggregate)
+    * [channels_stats_aggregate_fields](#channels_stats_aggregate_fields)
+    * [channels_stats_avg_fields](#channels_stats_avg_fields)
+    * [channels_stats_max_fields](#channels_stats_max_fields)
+    * [channels_stats_min_fields](#channels_stats_min_fields)
+    * [channels_stats_stddev_fields](#channels_stats_stddev_fields)
+    * [channels_stats_stddev_pop_fields](#channels_stats_stddev_pop_fields)
+    * [channels_stats_stddev_samp_fields](#channels_stats_stddev_samp_fields)
+    * [channels_stats_sum_fields](#channels_stats_sum_fields)
+    * [channels_stats_var_pop_fields](#channels_stats_var_pop_fields)
+    * [channels_stats_var_samp_fields](#channels_stats_var_samp_fields)
+    * [channels_stats_variance_fields](#channels_stats_variance_fields)
     * [headers](#headers)
     * [headers_aggregate](#headers_aggregate)
     * [headers_aggregate_fields](#headers_aggregate_fields)
@@ -58,6 +71,20 @@
     * [blocks_log_bool_exp](#blocks_log_bool_exp)
     * [blocks_log_order_by](#blocks_log_order_by)
     * [blocks_log_pk_columns_input](#blocks_log_pk_columns_input)
+    * [channels_stats_aggregate_order_by](#channels_stats_aggregate_order_by)
+    * [channels_stats_avg_order_by](#channels_stats_avg_order_by)
+    * [channels_stats_bool_exp](#channels_stats_bool_exp)
+    * [channels_stats_max_order_by](#channels_stats_max_order_by)
+    * [channels_stats_min_order_by](#channels_stats_min_order_by)
+    * [channels_stats_order_by](#channels_stats_order_by)
+    * [channels_stats_pk_columns_input](#channels_stats_pk_columns_input)
+    * [channels_stats_stddev_order_by](#channels_stats_stddev_order_by)
+    * [channels_stats_stddev_pop_order_by](#channels_stats_stddev_pop_order_by)
+    * [channels_stats_stddev_samp_order_by](#channels_stats_stddev_samp_order_by)
+    * [channels_stats_sum_order_by](#channels_stats_sum_order_by)
+    * [channels_stats_var_pop_order_by](#channels_stats_var_pop_order_by)
+    * [channels_stats_var_samp_order_by](#channels_stats_var_samp_order_by)
+    * [channels_stats_variance_order_by](#channels_stats_variance_order_by)
     * [headers_aggregate_order_by](#headers_aggregate_order_by)
     * [headers_avg_order_by](#headers_avg_order_by)
     * [headers_bool_exp](#headers_bool_exp)
@@ -111,6 +138,7 @@
     * [zones_stats_variance_order_by](#zones_stats_variance_order_by)
   * [Enums](#enums)
     * [blocks_log_select_column](#blocks_log_select_column)
+    * [channels_stats_select_column](#channels_stats_select_column)
     * [headers_select_column](#headers_select_column)
     * [order_by](#order_by)
     * [zone_nodes_select_column](#zone_nodes_select_column)
@@ -171,6 +199,91 @@
 <tr>
 <td colspan="2" valign="top"><strong>blocks_log_by_pk</strong></td>
 <td valign="top"><a href="#blocks_log">blocks_log</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">zone</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_stats</strong></td>
+<td valign="top">[<a href="#channels_stats">channels_stats</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">distinct_on</td>
+<td valign="top">[<a href="#channels_stats_select_column">channels_stats_select_column</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">limit</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">offset</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">order_by</td>
+<td valign="top">[<a href="#channels_stats_order_by">channels_stats_order_by</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#channels_stats_bool_exp">channels_stats_bool_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_stats_aggregate</strong></td>
+<td valign="top"><a href="#channels_stats_aggregate">channels_stats_aggregate</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">distinct_on</td>
+<td valign="top">[<a href="#channels_stats_select_column">channels_stats_select_column</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">limit</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">offset</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">order_by</td>
+<td valign="top">[<a href="#channels_stats_order_by">channels_stats_order_by</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#channels_stats_bool_exp">channels_stats_bool_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_stats_by_pk</strong></td>
+<td valign="top"><a href="#channels_stats">channels_stats</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">channel_id</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">client_id</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">connection_id</td>
+<td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 <tr>
@@ -315,11 +428,6 @@
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">rpc_addr</td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">zone</td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
@@ -513,6 +621,1016 @@
 </tbody>
 </table>
 
+### channels_stats
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channel_id</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>client_id</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>connection_id</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>is_opened</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone_counerparty</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_aggregate
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>aggregate</strong></td>
+<td valign="top"><a href="#channels_stats_aggregate_fields">channels_stats_aggregate_fields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td valign="top">[<a href="#channels_stats">channels_stats</a>!]!</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_aggregate_fields
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>avg</strong></td>
+<td valign="top"><a href="#channels_stats_avg_fields">channels_stats_avg_fields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>count</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">columns</td>
+<td valign="top">[<a href="#channels_stats_select_column">channels_stats_select_column</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">distinct</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>max</strong></td>
+<td valign="top"><a href="#channels_stats_max_fields">channels_stats_max_fields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>min</strong></td>
+<td valign="top"><a href="#channels_stats_min_fields">channels_stats_min_fields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>stddev</strong></td>
+<td valign="top"><a href="#channels_stats_stddev_fields">channels_stats_stddev_fields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>stddev_pop</strong></td>
+<td valign="top"><a href="#channels_stats_stddev_pop_fields">channels_stats_stddev_pop_fields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>stddev_samp</strong></td>
+<td valign="top"><a href="#channels_stats_stddev_samp_fields">channels_stats_stddev_samp_fields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>sum</strong></td>
+<td valign="top"><a href="#channels_stats_sum_fields">channels_stats_sum_fields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>var_pop</strong></td>
+<td valign="top"><a href="#channels_stats_var_pop_fields">channels_stats_var_pop_fields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>var_samp</strong></td>
+<td valign="top"><a href="#channels_stats_var_samp_fields">channels_stats_var_samp_fields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>variance</strong></td>
+<td valign="top"><a href="#channels_stats_variance_fields">channels_stats_variance_fields</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_avg_fields
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_max_fields
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channel_id</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>client_id</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>connection_id</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone_counerparty</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_min_fields
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channel_id</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>client_id</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>connection_id</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone_counerparty</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_stddev_fields
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_stddev_pop_fields
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_stddev_samp_fields
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_sum_fields
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_var_pop_fields
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_var_samp_fields
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_variance_fields
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
 ### headers
 
 <table>
@@ -526,12 +1644,37 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
 <td></td>
 </tr>
@@ -543,6 +1686,11 @@
 <tr>
 <td colspan="2" align="right" valign="top">path</td>
 <td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
 <td></td>
 </tr>
 <tr>
@@ -691,12 +1839,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -731,12 +1909,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
@@ -771,12 +1979,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
@@ -811,12 +2049,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -851,12 +2119,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -891,12 +2189,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -931,12 +2259,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
@@ -971,12 +2329,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -1011,12 +2399,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -1051,12 +2469,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -1123,6 +2571,91 @@
 <tr>
 <td colspan="2" valign="top"><strong>blocks_log_by_pk</strong></td>
 <td valign="top"><a href="#blocks_log">blocks_log</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">zone</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_stats</strong></td>
+<td valign="top">[<a href="#channels_stats">channels_stats</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">distinct_on</td>
+<td valign="top">[<a href="#channels_stats_select_column">channels_stats_select_column</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">limit</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">offset</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">order_by</td>
+<td valign="top">[<a href="#channels_stats_order_by">channels_stats_order_by</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#channels_stats_bool_exp">channels_stats_bool_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_stats_aggregate</strong></td>
+<td valign="top"><a href="#channels_stats_aggregate">channels_stats_aggregate</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">distinct_on</td>
+<td valign="top">[<a href="#channels_stats_select_column">channels_stats_select_column</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">limit</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">offset</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">order_by</td>
+<td valign="top">[<a href="#channels_stats_order_by">channels_stats_order_by</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#channels_stats_bool_exp">channels_stats_bool_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_stats_by_pk</strong></td>
+<td valign="top"><a href="#channels_stats">channels_stats</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">channel_id</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">client_id</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">connection_id</td>
+<td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 <tr>
@@ -1267,11 +2800,6 @@
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">rpc_addr</td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">zone</td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
@@ -1606,6 +3134,21 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#numeric">numeric</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>source</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
@@ -1741,6 +3284,21 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -1760,6 +3318,21 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
+<td></td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>source</strong></td>
 <td valign="top"><a href="#string">String</a></td>
@@ -1791,6 +3364,21 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>source</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
@@ -1821,6 +3409,21 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -1840,6 +3443,21 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
@@ -1861,6 +3479,21 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -1880,6 +3513,21 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
+<td></td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
@@ -1901,6 +3549,21 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -1920,6 +3583,21 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
@@ -1941,6 +3619,21 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -1961,7 +3654,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
 <td></td>
 </tr>
@@ -1977,7 +3695,7 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_percent</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
+<td valign="top"><a href="#numeric">numeric</a>!</td>
 <td></td>
 </tr>
 <tr>
@@ -1997,6 +3715,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_diff</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
 <td></td>
 </tr>
@@ -2026,6 +3749,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
 <td></td>
@@ -2038,6 +3766,11 @@
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
 <td valign="top"><a href="#numeric">numeric</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
 <td></td>
 </tr>
 <tr>
@@ -2063,6 +3796,11 @@
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
+<td valign="top"><a href="#numeric">numeric</a>!</td>
 <td></td>
 </tr>
 <tr>
@@ -2251,7 +3989,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -2281,6 +4044,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -2306,6 +4074,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -2317,6 +4090,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -2342,6 +4120,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -2421,13 +4204,38 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>ibc_percent</strong></td>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_percent</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2447,6 +4255,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
@@ -2476,6 +4289,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
@@ -2488,6 +4306,11 @@
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
 <td valign="top"><a href="#numeric">numeric</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2513,6 +4336,11 @@
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2596,13 +4424,38 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>ibc_percent</strong></td>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_percent</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2622,6 +4475,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
@@ -2651,6 +4509,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
@@ -2663,6 +4526,11 @@
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
 <td valign="top"><a href="#numeric">numeric</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2688,6 +4556,11 @@
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2771,7 +4644,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -2801,6 +4699,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -2826,6 +4729,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -2837,6 +4745,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -2862,6 +4775,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -2941,7 +4859,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -2971,6 +4914,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -2996,6 +4944,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -3007,6 +4960,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -3032,6 +4990,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -3111,7 +5074,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -3141,6 +5129,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -3166,6 +5159,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -3177,6 +5175,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -3202,6 +5205,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -3281,13 +5289,38 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>ibc_percent</strong></td>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_percent</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3307,6 +5340,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_diff</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
@@ -3336,6 +5374,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
@@ -3348,6 +5391,11 @@
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
 <td valign="top"><a href="#numeric">numeric</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3373,6 +5421,11 @@
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
+<td valign="top"><a href="#numeric">numeric</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3451,7 +5504,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -3481,6 +5559,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -3506,6 +5589,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -3517,6 +5605,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -3542,6 +5635,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -3621,7 +5719,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -3651,6 +5774,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -3676,6 +5804,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -3687,6 +5820,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -3712,6 +5850,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -3791,7 +5934,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -3821,6 +5989,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -3846,6 +6019,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
@@ -3857,6 +6035,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -3882,6 +6065,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td></td>
 </tr>
@@ -4249,6 +6437,1122 @@
 </tbody>
 </table>
 
+### channels_stats_aggregate_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>avg</strong></td>
+<td valign="top"><a href="#channels_stats_avg_order_by">channels_stats_avg_order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>count</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>max</strong></td>
+<td valign="top"><a href="#channels_stats_max_order_by">channels_stats_max_order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>min</strong></td>
+<td valign="top"><a href="#channels_stats_min_order_by">channels_stats_min_order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>stddev</strong></td>
+<td valign="top"><a href="#channels_stats_stddev_order_by">channels_stats_stddev_order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>stddev_pop</strong></td>
+<td valign="top"><a href="#channels_stats_stddev_pop_order_by">channels_stats_stddev_pop_order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>stddev_samp</strong></td>
+<td valign="top"><a href="#channels_stats_stddev_samp_order_by">channels_stats_stddev_samp_order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>sum</strong></td>
+<td valign="top"><a href="#channels_stats_sum_order_by">channels_stats_sum_order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>var_pop</strong></td>
+<td valign="top"><a href="#channels_stats_var_pop_order_by">channels_stats_var_pop_order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>var_samp</strong></td>
+<td valign="top"><a href="#channels_stats_var_samp_order_by">channels_stats_var_samp_order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>variance</strong></td>
+<td valign="top"><a href="#channels_stats_variance_order_by">channels_stats_variance_order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_avg_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_bool_exp
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_and</strong></td>
+<td valign="top">[<a href="#channels_stats_bool_exp">channels_stats_bool_exp</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_not</strong></td>
+<td valign="top"><a href="#channels_stats_bool_exp">channels_stats_bool_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>_or</strong></td>
+<td valign="top">[<a href="#channels_stats_bool_exp">channels_stats_bool_exp</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channel_id</strong></td>
+<td valign="top"><a href="#string_comparison_exp">String_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>client_id</strong></td>
+<td valign="top"><a href="#string_comparison_exp">String_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>connection_id</strong></td>
+<td valign="top"><a href="#string_comparison_exp">String_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>is_opened</strong></td>
+<td valign="top"><a href="#boolean_comparison_exp">Boolean_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#string_comparison_exp">String_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone_counerparty</strong></td>
+<td valign="top"><a href="#string_comparison_exp">String_comparison_exp</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_max_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channel_id</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>client_id</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>connection_id</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone_counerparty</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_min_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channel_id</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>client_id</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>connection_id</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone_counerparty</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channel_id</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>client_id</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>connection_id</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>is_opened</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone_counerparty</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_pk_columns_input
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channel_id</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>client_id</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>connection_id</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>zone</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_stddev_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_stddev_pop_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_stddev_samp_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_sum_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_var_pop_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_var_samp_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### channels_stats_variance_order_by
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
 ### headers_aggregate_order_by
 
 <table>
@@ -4330,12 +7634,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -4384,7 +7718,22 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
 <td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
 <td></td>
 </tr>
@@ -4394,8 +7743,23 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>chart</strong></td>
 <td valign="top"><a href="#jsonb_comparison_exp">jsonb_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
 <td></td>
 </tr>
 <tr>
@@ -4433,12 +7797,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -4472,12 +7866,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -4511,7 +7935,22 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -4521,7 +7960,22 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>chart</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -4579,12 +8033,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -4618,12 +8102,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -4657,12 +8171,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -4696,12 +8240,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -4735,12 +8309,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -4774,12 +8378,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -4813,12 +8447,42 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_all</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_cnt_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -5228,11 +8892,6 @@
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
-<tr>
-<td colspan="2" valign="top"><strong>zone</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
@@ -5317,6 +8976,21 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5351,6 +9025,21 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#numeric_comparison_exp">numeric_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>source</strong></td>
 <td valign="top"><a href="#string_comparison_exp">String_comparison_exp</a></td>
 <td></td>
@@ -5379,6 +9068,21 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>source</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
@@ -5409,6 +9113,21 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>source</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5437,6 +9156,21 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>source</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
@@ -5496,6 +9230,21 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5514,6 +9263,21 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
@@ -5534,6 +9298,21 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5552,6 +9331,21 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
@@ -5572,6 +9366,21 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5591,6 +9400,21 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5609,6 +9433,21 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>timeframe</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
@@ -5698,7 +9537,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -5728,6 +9592,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5753,6 +9622,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -5764,6 +9638,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -5789,6 +9668,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -5882,7 +9766,32 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
 <td></td>
 </tr>
@@ -5893,7 +9802,7 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_percent</strong></td>
-<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td valign="top"><a href="#numeric_comparison_exp">numeric_comparison_exp</a></td>
 <td></td>
 </tr>
 <tr>
@@ -5913,6 +9822,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_diff</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
 <td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
 <td></td>
 </tr>
@@ -5942,6 +9856,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
 <td></td>
@@ -5954,6 +9873,11 @@
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
 <td valign="top"><a href="#numeric_comparison_exp">numeric_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
+<td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
 <td></td>
 </tr>
 <tr>
@@ -5979,6 +9903,11 @@
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
 <td valign="top"><a href="#int_comparison_exp">Int_comparison_exp</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
+<td valign="top"><a href="#numeric_comparison_exp">numeric_comparison_exp</a></td>
 <td></td>
 </tr>
 <tr>
@@ -6061,7 +9990,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6091,6 +10045,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -6116,6 +10075,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -6127,6 +10091,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6152,6 +10121,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6235,7 +10209,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6265,6 +10264,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -6290,6 +10294,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -6301,6 +10310,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6326,6 +10340,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6409,7 +10428,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6444,6 +10488,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -6469,6 +10518,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -6480,6 +10534,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6505,6 +10564,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6612,7 +10676,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6642,6 +10731,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -6667,6 +10761,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -6678,6 +10777,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6703,6 +10807,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6781,7 +10890,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6811,6 +10945,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -6836,6 +10975,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -6847,6 +10991,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6872,6 +11021,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6950,7 +11104,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -6980,6 +11159,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -7005,6 +11189,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -7016,6 +11205,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -7041,6 +11235,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -7119,7 +11318,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -7149,6 +11373,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -7174,6 +11403,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -7185,6 +11419,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -7210,6 +11449,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -7288,7 +11532,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -7318,6 +11587,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -7343,6 +11617,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -7354,6 +11633,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -7379,6 +11663,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -7457,7 +11746,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -7487,6 +11801,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -7512,6 +11831,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -7523,6 +11847,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -7548,6 +11877,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -7626,7 +11960,32 @@
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_cnt_open</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>channels_num</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -7656,6 +12015,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -7681,6 +12045,11 @@
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
@@ -7692,6 +12061,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>relations_cnt_open</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -7717,6 +12091,11 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td valign="top"><a href="#order_by">order_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>total_active_addresses_weight</strong></td>
 <td valign="top"><a href="#order_by">order_by</a></td>
 <td></td>
 </tr>
@@ -7808,6 +12187,89 @@
 </tbody>
 </table>
 
+### channels_stats_select_column
+
+<table>
+<thead>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>channel_id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>client_id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>connection_id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ibc_tx_1d</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ibc_tx_1d_diff</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ibc_tx_1d_failed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ibc_tx_1d_failed_diff</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ibc_tx_30d</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ibc_tx_30d_diff</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ibc_tx_30d_failed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ibc_tx_30d_failed_diff</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ibc_tx_7d</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ibc_tx_7d_diff</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ibc_tx_7d_failed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ibc_tx_7d_failed_diff</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>is_opened</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>zone</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>zone_counerparty</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
 ### headers_select_column
 
 <table>
@@ -7817,7 +12279,19 @@
 </thead>
 <tbody>
 <tr>
+<td valign="top"><strong>channels_cnt_active_period</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>channels_cnt_all</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>channels_cnt_open</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -7825,7 +12299,19 @@
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>channels_percent_active_period</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>channels_percent_active_period_diff</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>chart</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>relations_cnt_open</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -7918,6 +12404,18 @@
 </thead>
 <tbody>
 <tr>
+<td valign="top"><strong>channels_cnt_active</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>channels_cnt_open</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>channels_percent_active</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>source</strong></td>
 <td></td>
 </tr>
@@ -7941,7 +12439,27 @@
 </thead>
 <tbody>
 <tr>
+<td valign="top"><strong>channels_cnt_active_period</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>channels_cnt_active_period_diff</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>channels_cnt_open</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>channels_num</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>channels_percent_active_period</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>channels_percent_active_period_diff</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -7969,6 +12487,10 @@
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>ibc_tx_in_failed</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>ibc_tx_in_rating</strong></td>
 <td></td>
 </tr>
@@ -7989,6 +12511,10 @@
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>ibc_tx_out_failed</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>ibc_tx_out_rating</strong></td>
 <td></td>
 </tr>
@@ -7998,6 +12524,10 @@
 </tr>
 <tr>
 <td valign="top"><strong>ibc_tx_out_weight</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>relations_cnt_open</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -8018,6 +12548,10 @@
 </tr>
 <tr>
 <td valign="top"><strong>total_active_addresses_rating_diff</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>total_active_addresses_weight</strong></td>
 <td></td>
 </tr>
 <tr>

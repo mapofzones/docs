@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Stats adaptor - Map of zones Docs</title>
+  <title>Tools - Map of zones Docs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Stats adaptor";
-    var mkdocs_page_input_path = "adaptor.md";
+    var mkdocs_page_name = "Tools";
+    var mkdocs_page_input_path = "tools.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -74,10 +74,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="database.html">Database</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="adaptor.html">Stats adaptor</a>
-    <ul class="current">
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="adaptor.html">Stats adaptor</a>
                     </li>
                 </ul>
                 <ul>
@@ -112,8 +110,14 @@
                     <li class="toctree-l1"><a class="reference internal" href="ci%26cd%26cd.html">CI/CD/CD</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="tools.html">Tools</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#argocd">ArgoCD</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#grafana">Grafana</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <ul>
@@ -141,7 +145,7 @@
     
       
     
-    <li>Stats adaptor</li>
+    <li>Tools</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -153,17 +157,15 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="adaptor">Adaptor</h1>
-<p><img alt="Architecture-adaptor" src="img/map-of-zones-Adaptor.png" /></p>
-<ul>
-<li>triggered every 10 sec(+runtime)</li>
-<li>calls database functions</li>
-<li>functions calculate all statistics from database engine tables</li>
-<li>new statistics are returned to the adapter</li>
-<li>inserts a pack of upcoming stats items into the DB flat tables</li>
-</ul>
-<p>The statistics adaptor updates statistics in <a href="database.html#flat-tables">flat tables</a>, by default every 10 seconds + runtime.
-The adaptor makes a query in <a href="database.html#functions">PL/pgSQL functions</a> and <a href="database.html#core-tables">tables</a>, and then updates the values in <a href="database.html#flat-tables">flat tables</a> with the received data.</p>
+                <h1 id="tools">Tools</h1>
+<h2 id="argocd">ArgoCD</h2>
+<p>An example of ArgoCD port forwarding. You must specify the kubectl keys and know the argocd admin panel password.</p>
+<pre><code>kubectl port-forward svc/argocd-server -n argocd 8080:443
+</code></pre>
+<h2 id="grafana">Grafana</h2>
+<p>An example of Grafana port forwarding. You must specify the kubectl keys and know the grafana admin panel password.</p>
+<pre><code>kubectl port-forward svc/prometheus-operator-grafana -n prometheus-operator 9090:80
+</code></pre>
               
             </div>
           </div>
@@ -171,10 +173,10 @@ The adaptor makes a query in <a href="database.html#functions">PL/pgSQL function
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="processor.html" class="btn btn-neutral float-right" title="Tx processor">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="database.html" class="btn btn-neutral" title="Database"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="ci%26cd%26cd.html" class="btn btn-neutral" title="CI/CD/CD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -200,10 +202,10 @@ The adaptor makes a query in <a href="database.html#functions">PL/pgSQL function
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="database.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="ci%26cd%26cd.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="processor.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="changelog.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

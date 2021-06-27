@@ -535,14 +535,681 @@ input Boolean_comparison_exp {
   _nin: [Boolean!]
 }
 
+# columns and relationships of "channels_stats"
+type channels_stats {
+  channel_id: String!
+  client_id: String!
+  connection_id: String!
+  ibc_tx_1d: Int!
+  ibc_tx_1d_diff: Int!
+  ibc_tx_1d_failed: Int!
+  ibc_tx_1d_failed_diff: Int!
+  ibc_tx_30d: Int!
+  ibc_tx_30d_diff: Int!
+  ibc_tx_30d_failed: Int!
+  ibc_tx_30d_failed_diff: Int!
+  ibc_tx_7d: Int!
+  ibc_tx_7d_diff: Int!
+  ibc_tx_7d_failed: Int!
+  ibc_tx_7d_failed_diff: Int!
+  is_opened: Boolean!
+  zone: String!
+  zone_counerparty: String!
+}
+
+# aggregated selection of "channels_stats"
+type channels_stats_aggregate {
+  aggregate: channels_stats_aggregate_fields
+  nodes: [channels_stats!]!
+}
+
+# aggregate fields of "channels_stats"
+type channels_stats_aggregate_fields {
+  avg: channels_stats_avg_fields
+  count(columns: [channels_stats_select_column!], distinct: Boolean): Int
+  max: channels_stats_max_fields
+  min: channels_stats_min_fields
+  stddev: channels_stats_stddev_fields
+  stddev_pop: channels_stats_stddev_pop_fields
+  stddev_samp: channels_stats_stddev_samp_fields
+  sum: channels_stats_sum_fields
+  var_pop: channels_stats_var_pop_fields
+  var_samp: channels_stats_var_samp_fields
+  variance: channels_stats_variance_fields
+}
+
+# order by aggregate values of table "channels_stats"
+input channels_stats_aggregate_order_by {
+  avg: channels_stats_avg_order_by
+  count: order_by
+  max: channels_stats_max_order_by
+  min: channels_stats_min_order_by
+  stddev: channels_stats_stddev_order_by
+  stddev_pop: channels_stats_stddev_pop_order_by
+  stddev_samp: channels_stats_stddev_samp_order_by
+  sum: channels_stats_sum_order_by
+  var_pop: channels_stats_var_pop_order_by
+  var_samp: channels_stats_var_samp_order_by
+  variance: channels_stats_variance_order_by
+}
+
+# input type for inserting array relation for remote table "channels_stats"
+input channels_stats_arr_rel_insert_input {
+  data: [channels_stats_insert_input!]!
+  on_conflict: channels_stats_on_conflict
+}
+
+# aggregate avg on columns
+type channels_stats_avg_fields {
+  ibc_tx_1d: Float
+  ibc_tx_1d_diff: Float
+  ibc_tx_1d_failed: Float
+  ibc_tx_1d_failed_diff: Float
+  ibc_tx_30d: Float
+  ibc_tx_30d_diff: Float
+  ibc_tx_30d_failed: Float
+  ibc_tx_30d_failed_diff: Float
+  ibc_tx_7d: Float
+  ibc_tx_7d_diff: Float
+  ibc_tx_7d_failed: Float
+  ibc_tx_7d_failed_diff: Float
+}
+
+# order by avg() on columns of table "channels_stats"
+input channels_stats_avg_order_by {
+  ibc_tx_1d: order_by
+  ibc_tx_1d_diff: order_by
+  ibc_tx_1d_failed: order_by
+  ibc_tx_1d_failed_diff: order_by
+  ibc_tx_30d: order_by
+  ibc_tx_30d_diff: order_by
+  ibc_tx_30d_failed: order_by
+  ibc_tx_30d_failed_diff: order_by
+  ibc_tx_7d: order_by
+  ibc_tx_7d_diff: order_by
+  ibc_tx_7d_failed: order_by
+  ibc_tx_7d_failed_diff: order_by
+}
+
+# Boolean expression to filter rows from the table "channels_stats". All fields are combined with a logical 'AND'.
+input channels_stats_bool_exp {
+  _and: [channels_stats_bool_exp]
+  _not: channels_stats_bool_exp
+  _or: [channels_stats_bool_exp]
+  channel_id: String_comparison_exp
+  client_id: String_comparison_exp
+  connection_id: String_comparison_exp
+  ibc_tx_1d: Int_comparison_exp
+  ibc_tx_1d_diff: Int_comparison_exp
+  ibc_tx_1d_failed: Int_comparison_exp
+  ibc_tx_1d_failed_diff: Int_comparison_exp
+  ibc_tx_30d: Int_comparison_exp
+  ibc_tx_30d_diff: Int_comparison_exp
+  ibc_tx_30d_failed: Int_comparison_exp
+  ibc_tx_30d_failed_diff: Int_comparison_exp
+  ibc_tx_7d: Int_comparison_exp
+  ibc_tx_7d_diff: Int_comparison_exp
+  ibc_tx_7d_failed: Int_comparison_exp
+  ibc_tx_7d_failed_diff: Int_comparison_exp
+  is_opened: Boolean_comparison_exp
+  zone: String_comparison_exp
+  zone_counerparty: String_comparison_exp
+}
+
+# unique or primary key constraints on table "channels_stats"
+enum channels_stats_constraint {
+  # unique or primary key constraint
+  channels_stats_pkey
+}
+
+# input type for incrementing integer column in table "channels_stats"
+input channels_stats_inc_input {
+  ibc_tx_1d: Int
+  ibc_tx_1d_diff: Int
+  ibc_tx_1d_failed: Int
+  ibc_tx_1d_failed_diff: Int
+  ibc_tx_30d: Int
+  ibc_tx_30d_diff: Int
+  ibc_tx_30d_failed: Int
+  ibc_tx_30d_failed_diff: Int
+  ibc_tx_7d: Int
+  ibc_tx_7d_diff: Int
+  ibc_tx_7d_failed: Int
+  ibc_tx_7d_failed_diff: Int
+}
+
+# input type for inserting data into table "channels_stats"
+input channels_stats_insert_input {
+  channel_id: String
+  client_id: String
+  connection_id: String
+  ibc_tx_1d: Int
+  ibc_tx_1d_diff: Int
+  ibc_tx_1d_failed: Int
+  ibc_tx_1d_failed_diff: Int
+  ibc_tx_30d: Int
+  ibc_tx_30d_diff: Int
+  ibc_tx_30d_failed: Int
+  ibc_tx_30d_failed_diff: Int
+  ibc_tx_7d: Int
+  ibc_tx_7d_diff: Int
+  ibc_tx_7d_failed: Int
+  ibc_tx_7d_failed_diff: Int
+  is_opened: Boolean
+  zone: String
+  zone_counerparty: String
+}
+
+# aggregate max on columns
+type channels_stats_max_fields {
+  channel_id: String
+  client_id: String
+  connection_id: String
+  ibc_tx_1d: Int
+  ibc_tx_1d_diff: Int
+  ibc_tx_1d_failed: Int
+  ibc_tx_1d_failed_diff: Int
+  ibc_tx_30d: Int
+  ibc_tx_30d_diff: Int
+  ibc_tx_30d_failed: Int
+  ibc_tx_30d_failed_diff: Int
+  ibc_tx_7d: Int
+  ibc_tx_7d_diff: Int
+  ibc_tx_7d_failed: Int
+  ibc_tx_7d_failed_diff: Int
+  zone: String
+  zone_counerparty: String
+}
+
+# order by max() on columns of table "channels_stats"
+input channels_stats_max_order_by {
+  channel_id: order_by
+  client_id: order_by
+  connection_id: order_by
+  ibc_tx_1d: order_by
+  ibc_tx_1d_diff: order_by
+  ibc_tx_1d_failed: order_by
+  ibc_tx_1d_failed_diff: order_by
+  ibc_tx_30d: order_by
+  ibc_tx_30d_diff: order_by
+  ibc_tx_30d_failed: order_by
+  ibc_tx_30d_failed_diff: order_by
+  ibc_tx_7d: order_by
+  ibc_tx_7d_diff: order_by
+  ibc_tx_7d_failed: order_by
+  ibc_tx_7d_failed_diff: order_by
+  zone: order_by
+  zone_counerparty: order_by
+}
+
+# aggregate min on columns
+type channels_stats_min_fields {
+  channel_id: String
+  client_id: String
+  connection_id: String
+  ibc_tx_1d: Int
+  ibc_tx_1d_diff: Int
+  ibc_tx_1d_failed: Int
+  ibc_tx_1d_failed_diff: Int
+  ibc_tx_30d: Int
+  ibc_tx_30d_diff: Int
+  ibc_tx_30d_failed: Int
+  ibc_tx_30d_failed_diff: Int
+  ibc_tx_7d: Int
+  ibc_tx_7d_diff: Int
+  ibc_tx_7d_failed: Int
+  ibc_tx_7d_failed_diff: Int
+  zone: String
+  zone_counerparty: String
+}
+
+# order by min() on columns of table "channels_stats"
+input channels_stats_min_order_by {
+  channel_id: order_by
+  client_id: order_by
+  connection_id: order_by
+  ibc_tx_1d: order_by
+  ibc_tx_1d_diff: order_by
+  ibc_tx_1d_failed: order_by
+  ibc_tx_1d_failed_diff: order_by
+  ibc_tx_30d: order_by
+  ibc_tx_30d_diff: order_by
+  ibc_tx_30d_failed: order_by
+  ibc_tx_30d_failed_diff: order_by
+  ibc_tx_7d: order_by
+  ibc_tx_7d_diff: order_by
+  ibc_tx_7d_failed: order_by
+  ibc_tx_7d_failed_diff: order_by
+  zone: order_by
+  zone_counerparty: order_by
+}
+
+# response of any mutation on the table "channels_stats"
+type channels_stats_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [channels_stats!]!
+}
+
+# input type for inserting object relation for remote table "channels_stats"
+input channels_stats_obj_rel_insert_input {
+  data: channels_stats_insert_input!
+  on_conflict: channels_stats_on_conflict
+}
+
+# on conflict condition type for table "channels_stats"
+input channels_stats_on_conflict {
+  constraint: channels_stats_constraint!
+  update_columns: [channels_stats_update_column!]!
+  where: channels_stats_bool_exp
+}
+
+# ordering options when selecting data from "channels_stats"
+input channels_stats_order_by {
+  channel_id: order_by
+  client_id: order_by
+  connection_id: order_by
+  ibc_tx_1d: order_by
+  ibc_tx_1d_diff: order_by
+  ibc_tx_1d_failed: order_by
+  ibc_tx_1d_failed_diff: order_by
+  ibc_tx_30d: order_by
+  ibc_tx_30d_diff: order_by
+  ibc_tx_30d_failed: order_by
+  ibc_tx_30d_failed_diff: order_by
+  ibc_tx_7d: order_by
+  ibc_tx_7d_diff: order_by
+  ibc_tx_7d_failed: order_by
+  ibc_tx_7d_failed_diff: order_by
+  is_opened: order_by
+  zone: order_by
+  zone_counerparty: order_by
+}
+
+# primary key columns input for table: "channels_stats"
+input channels_stats_pk_columns_input {
+  channel_id: String!
+  client_id: String!
+  connection_id: String!
+  zone: String!
+}
+
+# select columns of table "channels_stats"
+enum channels_stats_select_column {
+  # column name
+  channel_id
+
+  # column name
+  client_id
+
+  # column name
+  connection_id
+
+  # column name
+  ibc_tx_1d
+
+  # column name
+  ibc_tx_1d_diff
+
+  # column name
+  ibc_tx_1d_failed
+
+  # column name
+  ibc_tx_1d_failed_diff
+
+  # column name
+  ibc_tx_30d
+
+  # column name
+  ibc_tx_30d_diff
+
+  # column name
+  ibc_tx_30d_failed
+
+  # column name
+  ibc_tx_30d_failed_diff
+
+  # column name
+  ibc_tx_7d
+
+  # column name
+  ibc_tx_7d_diff
+
+  # column name
+  ibc_tx_7d_failed
+
+  # column name
+  ibc_tx_7d_failed_diff
+
+  # column name
+  is_opened
+
+  # column name
+  zone
+
+  # column name
+  zone_counerparty
+}
+
+# input type for updating data in table "channels_stats"
+input channels_stats_set_input {
+  channel_id: String
+  client_id: String
+  connection_id: String
+  ibc_tx_1d: Int
+  ibc_tx_1d_diff: Int
+  ibc_tx_1d_failed: Int
+  ibc_tx_1d_failed_diff: Int
+  ibc_tx_30d: Int
+  ibc_tx_30d_diff: Int
+  ibc_tx_30d_failed: Int
+  ibc_tx_30d_failed_diff: Int
+  ibc_tx_7d: Int
+  ibc_tx_7d_diff: Int
+  ibc_tx_7d_failed: Int
+  ibc_tx_7d_failed_diff: Int
+  is_opened: Boolean
+  zone: String
+  zone_counerparty: String
+}
+
+# aggregate stddev on columns
+type channels_stats_stddev_fields {
+  ibc_tx_1d: Float
+  ibc_tx_1d_diff: Float
+  ibc_tx_1d_failed: Float
+  ibc_tx_1d_failed_diff: Float
+  ibc_tx_30d: Float
+  ibc_tx_30d_diff: Float
+  ibc_tx_30d_failed: Float
+  ibc_tx_30d_failed_diff: Float
+  ibc_tx_7d: Float
+  ibc_tx_7d_diff: Float
+  ibc_tx_7d_failed: Float
+  ibc_tx_7d_failed_diff: Float
+}
+
+# order by stddev() on columns of table "channels_stats"
+input channels_stats_stddev_order_by {
+  ibc_tx_1d: order_by
+  ibc_tx_1d_diff: order_by
+  ibc_tx_1d_failed: order_by
+  ibc_tx_1d_failed_diff: order_by
+  ibc_tx_30d: order_by
+  ibc_tx_30d_diff: order_by
+  ibc_tx_30d_failed: order_by
+  ibc_tx_30d_failed_diff: order_by
+  ibc_tx_7d: order_by
+  ibc_tx_7d_diff: order_by
+  ibc_tx_7d_failed: order_by
+  ibc_tx_7d_failed_diff: order_by
+}
+
+# aggregate stddev_pop on columns
+type channels_stats_stddev_pop_fields {
+  ibc_tx_1d: Float
+  ibc_tx_1d_diff: Float
+  ibc_tx_1d_failed: Float
+  ibc_tx_1d_failed_diff: Float
+  ibc_tx_30d: Float
+  ibc_tx_30d_diff: Float
+  ibc_tx_30d_failed: Float
+  ibc_tx_30d_failed_diff: Float
+  ibc_tx_7d: Float
+  ibc_tx_7d_diff: Float
+  ibc_tx_7d_failed: Float
+  ibc_tx_7d_failed_diff: Float
+}
+
+# order by stddev_pop() on columns of table "channels_stats"
+input channels_stats_stddev_pop_order_by {
+  ibc_tx_1d: order_by
+  ibc_tx_1d_diff: order_by
+  ibc_tx_1d_failed: order_by
+  ibc_tx_1d_failed_diff: order_by
+  ibc_tx_30d: order_by
+  ibc_tx_30d_diff: order_by
+  ibc_tx_30d_failed: order_by
+  ibc_tx_30d_failed_diff: order_by
+  ibc_tx_7d: order_by
+  ibc_tx_7d_diff: order_by
+  ibc_tx_7d_failed: order_by
+  ibc_tx_7d_failed_diff: order_by
+}
+
+# aggregate stddev_samp on columns
+type channels_stats_stddev_samp_fields {
+  ibc_tx_1d: Float
+  ibc_tx_1d_diff: Float
+  ibc_tx_1d_failed: Float
+  ibc_tx_1d_failed_diff: Float
+  ibc_tx_30d: Float
+  ibc_tx_30d_diff: Float
+  ibc_tx_30d_failed: Float
+  ibc_tx_30d_failed_diff: Float
+  ibc_tx_7d: Float
+  ibc_tx_7d_diff: Float
+  ibc_tx_7d_failed: Float
+  ibc_tx_7d_failed_diff: Float
+}
+
+# order by stddev_samp() on columns of table "channels_stats"
+input channels_stats_stddev_samp_order_by {
+  ibc_tx_1d: order_by
+  ibc_tx_1d_diff: order_by
+  ibc_tx_1d_failed: order_by
+  ibc_tx_1d_failed_diff: order_by
+  ibc_tx_30d: order_by
+  ibc_tx_30d_diff: order_by
+  ibc_tx_30d_failed: order_by
+  ibc_tx_30d_failed_diff: order_by
+  ibc_tx_7d: order_by
+  ibc_tx_7d_diff: order_by
+  ibc_tx_7d_failed: order_by
+  ibc_tx_7d_failed_diff: order_by
+}
+
+# aggregate sum on columns
+type channels_stats_sum_fields {
+  ibc_tx_1d: Int
+  ibc_tx_1d_diff: Int
+  ibc_tx_1d_failed: Int
+  ibc_tx_1d_failed_diff: Int
+  ibc_tx_30d: Int
+  ibc_tx_30d_diff: Int
+  ibc_tx_30d_failed: Int
+  ibc_tx_30d_failed_diff: Int
+  ibc_tx_7d: Int
+  ibc_tx_7d_diff: Int
+  ibc_tx_7d_failed: Int
+  ibc_tx_7d_failed_diff: Int
+}
+
+# order by sum() on columns of table "channels_stats"
+input channels_stats_sum_order_by {
+  ibc_tx_1d: order_by
+  ibc_tx_1d_diff: order_by
+  ibc_tx_1d_failed: order_by
+  ibc_tx_1d_failed_diff: order_by
+  ibc_tx_30d: order_by
+  ibc_tx_30d_diff: order_by
+  ibc_tx_30d_failed: order_by
+  ibc_tx_30d_failed_diff: order_by
+  ibc_tx_7d: order_by
+  ibc_tx_7d_diff: order_by
+  ibc_tx_7d_failed: order_by
+  ibc_tx_7d_failed_diff: order_by
+}
+
+# update columns of table "channels_stats"
+enum channels_stats_update_column {
+  # column name
+  channel_id
+
+  # column name
+  client_id
+
+  # column name
+  connection_id
+
+  # column name
+  ibc_tx_1d
+
+  # column name
+  ibc_tx_1d_diff
+
+  # column name
+  ibc_tx_1d_failed
+
+  # column name
+  ibc_tx_1d_failed_diff
+
+  # column name
+  ibc_tx_30d
+
+  # column name
+  ibc_tx_30d_diff
+
+  # column name
+  ibc_tx_30d_failed
+
+  # column name
+  ibc_tx_30d_failed_diff
+
+  # column name
+  ibc_tx_7d
+
+  # column name
+  ibc_tx_7d_diff
+
+  # column name
+  ibc_tx_7d_failed
+
+  # column name
+  ibc_tx_7d_failed_diff
+
+  # column name
+  is_opened
+
+  # column name
+  zone
+
+  # column name
+  zone_counerparty
+}
+
+# aggregate var_pop on columns
+type channels_stats_var_pop_fields {
+  ibc_tx_1d: Float
+  ibc_tx_1d_diff: Float
+  ibc_tx_1d_failed: Float
+  ibc_tx_1d_failed_diff: Float
+  ibc_tx_30d: Float
+  ibc_tx_30d_diff: Float
+  ibc_tx_30d_failed: Float
+  ibc_tx_30d_failed_diff: Float
+  ibc_tx_7d: Float
+  ibc_tx_7d_diff: Float
+  ibc_tx_7d_failed: Float
+  ibc_tx_7d_failed_diff: Float
+}
+
+# order by var_pop() on columns of table "channels_stats"
+input channels_stats_var_pop_order_by {
+  ibc_tx_1d: order_by
+  ibc_tx_1d_diff: order_by
+  ibc_tx_1d_failed: order_by
+  ibc_tx_1d_failed_diff: order_by
+  ibc_tx_30d: order_by
+  ibc_tx_30d_diff: order_by
+  ibc_tx_30d_failed: order_by
+  ibc_tx_30d_failed_diff: order_by
+  ibc_tx_7d: order_by
+  ibc_tx_7d_diff: order_by
+  ibc_tx_7d_failed: order_by
+  ibc_tx_7d_failed_diff: order_by
+}
+
+# aggregate var_samp on columns
+type channels_stats_var_samp_fields {
+  ibc_tx_1d: Float
+  ibc_tx_1d_diff: Float
+  ibc_tx_1d_failed: Float
+  ibc_tx_1d_failed_diff: Float
+  ibc_tx_30d: Float
+  ibc_tx_30d_diff: Float
+  ibc_tx_30d_failed: Float
+  ibc_tx_30d_failed_diff: Float
+  ibc_tx_7d: Float
+  ibc_tx_7d_diff: Float
+  ibc_tx_7d_failed: Float
+  ibc_tx_7d_failed_diff: Float
+}
+
+# order by var_samp() on columns of table "channels_stats"
+input channels_stats_var_samp_order_by {
+  ibc_tx_1d: order_by
+  ibc_tx_1d_diff: order_by
+  ibc_tx_1d_failed: order_by
+  ibc_tx_1d_failed_diff: order_by
+  ibc_tx_30d: order_by
+  ibc_tx_30d_diff: order_by
+  ibc_tx_30d_failed: order_by
+  ibc_tx_30d_failed_diff: order_by
+  ibc_tx_7d: order_by
+  ibc_tx_7d_diff: order_by
+  ibc_tx_7d_failed: order_by
+  ibc_tx_7d_failed_diff: order_by
+}
+
+# aggregate variance on columns
+type channels_stats_variance_fields {
+  ibc_tx_1d: Float
+  ibc_tx_1d_diff: Float
+  ibc_tx_1d_failed: Float
+  ibc_tx_1d_failed_diff: Float
+  ibc_tx_30d: Float
+  ibc_tx_30d_diff: Float
+  ibc_tx_30d_failed: Float
+  ibc_tx_30d_failed_diff: Float
+  ibc_tx_7d: Float
+  ibc_tx_7d_diff: Float
+  ibc_tx_7d_failed: Float
+  ibc_tx_7d_failed_diff: Float
+}
+
+# order by variance() on columns of table "channels_stats"
+input channels_stats_variance_order_by {
+  ibc_tx_1d: order_by
+  ibc_tx_1d_diff: order_by
+  ibc_tx_1d_failed: order_by
+  ibc_tx_1d_failed_diff: order_by
+  ibc_tx_30d: order_by
+  ibc_tx_30d_diff: order_by
+  ibc_tx_30d_failed: order_by
+  ibc_tx_30d_failed_diff: order_by
+  ibc_tx_7d: order_by
+  ibc_tx_7d_diff: order_by
+  ibc_tx_7d_failed: order_by
+  ibc_tx_7d_failed_diff: order_by
+}
+
 # columns and relationships of "headers"
 type headers {
+  channels_cnt_active_period: Int!
+  channels_cnt_active_period_diff: Int!
   channels_cnt_all: Int!
+  channels_cnt_open: Int!
   channels_cnt_period: Int!
+  channels_percent_active_period: Int!
+  channels_percent_active_period_diff: Int!
   chart(
     # JSON select path
     path: String
   ): jsonb!
+  relations_cnt_open: Int!
   timeframe: Int!
   top_zone_pair(
     # JSON select path
@@ -602,8 +1269,14 @@ input headers_arr_rel_insert_input {
 
 # aggregate avg on columns
 type headers_avg_fields {
+  channels_cnt_active_period: Float
+  channels_cnt_active_period_diff: Float
   channels_cnt_all: Float
+  channels_cnt_open: Float
   channels_cnt_period: Float
+  channels_percent_active_period: Float
+  channels_percent_active_period_diff: Float
+  relations_cnt_open: Float
   timeframe: Float
   zones_cnt_all: Float
   zones_cnt_period: Float
@@ -611,8 +1284,14 @@ type headers_avg_fields {
 
 # order by avg() on columns of table "headers"
 input headers_avg_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
   channels_cnt_all: order_by
+  channels_cnt_open: order_by
   channels_cnt_period: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   zones_cnt_all: order_by
   zones_cnt_period: order_by
@@ -623,9 +1302,15 @@ input headers_bool_exp {
   _and: [headers_bool_exp]
   _not: headers_bool_exp
   _or: [headers_bool_exp]
+  channels_cnt_active_period: Int_comparison_exp
+  channels_cnt_active_period_diff: Int_comparison_exp
   channels_cnt_all: Int_comparison_exp
+  channels_cnt_open: Int_comparison_exp
   channels_cnt_period: Int_comparison_exp
+  channels_percent_active_period: Int_comparison_exp
+  channels_percent_active_period_diff: Int_comparison_exp
   chart: jsonb_comparison_exp
+  relations_cnt_open: Int_comparison_exp
   timeframe: Int_comparison_exp
   top_zone_pair: jsonb_comparison_exp
   zones_cnt_all: Int_comparison_exp
@@ -659,8 +1344,14 @@ input headers_delete_key_input {
 
 # input type for incrementing integer column in table "headers"
 input headers_inc_input {
+  channels_cnt_active_period: Int
+  channels_cnt_active_period_diff: Int
   channels_cnt_all: Int
+  channels_cnt_open: Int
   channels_cnt_period: Int
+  channels_percent_active_period: Int
+  channels_percent_active_period_diff: Int
+  relations_cnt_open: Int
   timeframe: Int
   zones_cnt_all: Int
   zones_cnt_period: Int
@@ -668,9 +1359,15 @@ input headers_inc_input {
 
 # input type for inserting data into table "headers"
 input headers_insert_input {
+  channels_cnt_active_period: Int
+  channels_cnt_active_period_diff: Int
   channels_cnt_all: Int
+  channels_cnt_open: Int
   channels_cnt_period: Int
+  channels_percent_active_period: Int
+  channels_percent_active_period_diff: Int
   chart: jsonb
+  relations_cnt_open: Int
   timeframe: Int
   top_zone_pair: jsonb
   zones_cnt_all: Int
@@ -679,8 +1376,14 @@ input headers_insert_input {
 
 # aggregate max on columns
 type headers_max_fields {
+  channels_cnt_active_period: Int
+  channels_cnt_active_period_diff: Int
   channels_cnt_all: Int
+  channels_cnt_open: Int
   channels_cnt_period: Int
+  channels_percent_active_period: Int
+  channels_percent_active_period_diff: Int
+  relations_cnt_open: Int
   timeframe: Int
   zones_cnt_all: Int
   zones_cnt_period: Int
@@ -688,8 +1391,14 @@ type headers_max_fields {
 
 # order by max() on columns of table "headers"
 input headers_max_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
   channels_cnt_all: order_by
+  channels_cnt_open: order_by
   channels_cnt_period: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   zones_cnt_all: order_by
   zones_cnt_period: order_by
@@ -697,8 +1406,14 @@ input headers_max_order_by {
 
 # aggregate min on columns
 type headers_min_fields {
+  channels_cnt_active_period: Int
+  channels_cnt_active_period_diff: Int
   channels_cnt_all: Int
+  channels_cnt_open: Int
   channels_cnt_period: Int
+  channels_percent_active_period: Int
+  channels_percent_active_period_diff: Int
+  relations_cnt_open: Int
   timeframe: Int
   zones_cnt_all: Int
   zones_cnt_period: Int
@@ -706,8 +1421,14 @@ type headers_min_fields {
 
 # order by min() on columns of table "headers"
 input headers_min_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
   channels_cnt_all: order_by
+  channels_cnt_open: order_by
   channels_cnt_period: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   zones_cnt_all: order_by
   zones_cnt_period: order_by
@@ -737,9 +1458,15 @@ input headers_on_conflict {
 
 # ordering options when selecting data from "headers"
 input headers_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
   channels_cnt_all: order_by
+  channels_cnt_open: order_by
   channels_cnt_period: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
   chart: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   top_zone_pair: order_by
   zones_cnt_all: order_by
@@ -760,13 +1487,31 @@ input headers_prepend_input {
 # select columns of table "headers"
 enum headers_select_column {
   # column name
+  channels_cnt_active_period
+
+  # column name
+  channels_cnt_active_period_diff
+
+  # column name
   channels_cnt_all
+
+  # column name
+  channels_cnt_open
 
   # column name
   channels_cnt_period
 
   # column name
+  channels_percent_active_period
+
+  # column name
+  channels_percent_active_period_diff
+
+  # column name
   chart
+
+  # column name
+  relations_cnt_open
 
   # column name
   timeframe
@@ -783,9 +1528,15 @@ enum headers_select_column {
 
 # input type for updating data in table "headers"
 input headers_set_input {
+  channels_cnt_active_period: Int
+  channels_cnt_active_period_diff: Int
   channels_cnt_all: Int
+  channels_cnt_open: Int
   channels_cnt_period: Int
+  channels_percent_active_period: Int
+  channels_percent_active_period_diff: Int
   chart: jsonb
+  relations_cnt_open: Int
   timeframe: Int
   top_zone_pair: jsonb
   zones_cnt_all: Int
@@ -794,8 +1545,14 @@ input headers_set_input {
 
 # aggregate stddev on columns
 type headers_stddev_fields {
+  channels_cnt_active_period: Float
+  channels_cnt_active_period_diff: Float
   channels_cnt_all: Float
+  channels_cnt_open: Float
   channels_cnt_period: Float
+  channels_percent_active_period: Float
+  channels_percent_active_period_diff: Float
+  relations_cnt_open: Float
   timeframe: Float
   zones_cnt_all: Float
   zones_cnt_period: Float
@@ -803,8 +1560,14 @@ type headers_stddev_fields {
 
 # order by stddev() on columns of table "headers"
 input headers_stddev_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
   channels_cnt_all: order_by
+  channels_cnt_open: order_by
   channels_cnt_period: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   zones_cnt_all: order_by
   zones_cnt_period: order_by
@@ -812,8 +1575,14 @@ input headers_stddev_order_by {
 
 # aggregate stddev_pop on columns
 type headers_stddev_pop_fields {
+  channels_cnt_active_period: Float
+  channels_cnt_active_period_diff: Float
   channels_cnt_all: Float
+  channels_cnt_open: Float
   channels_cnt_period: Float
+  channels_percent_active_period: Float
+  channels_percent_active_period_diff: Float
+  relations_cnt_open: Float
   timeframe: Float
   zones_cnt_all: Float
   zones_cnt_period: Float
@@ -821,8 +1590,14 @@ type headers_stddev_pop_fields {
 
 # order by stddev_pop() on columns of table "headers"
 input headers_stddev_pop_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
   channels_cnt_all: order_by
+  channels_cnt_open: order_by
   channels_cnt_period: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   zones_cnt_all: order_by
   zones_cnt_period: order_by
@@ -830,8 +1605,14 @@ input headers_stddev_pop_order_by {
 
 # aggregate stddev_samp on columns
 type headers_stddev_samp_fields {
+  channels_cnt_active_period: Float
+  channels_cnt_active_period_diff: Float
   channels_cnt_all: Float
+  channels_cnt_open: Float
   channels_cnt_period: Float
+  channels_percent_active_period: Float
+  channels_percent_active_period_diff: Float
+  relations_cnt_open: Float
   timeframe: Float
   zones_cnt_all: Float
   zones_cnt_period: Float
@@ -839,8 +1620,14 @@ type headers_stddev_samp_fields {
 
 # order by stddev_samp() on columns of table "headers"
 input headers_stddev_samp_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
   channels_cnt_all: order_by
+  channels_cnt_open: order_by
   channels_cnt_period: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   zones_cnt_all: order_by
   zones_cnt_period: order_by
@@ -848,8 +1635,14 @@ input headers_stddev_samp_order_by {
 
 # aggregate sum on columns
 type headers_sum_fields {
+  channels_cnt_active_period: Int
+  channels_cnt_active_period_diff: Int
   channels_cnt_all: Int
+  channels_cnt_open: Int
   channels_cnt_period: Int
+  channels_percent_active_period: Int
+  channels_percent_active_period_diff: Int
+  relations_cnt_open: Int
   timeframe: Int
   zones_cnt_all: Int
   zones_cnt_period: Int
@@ -857,8 +1650,14 @@ type headers_sum_fields {
 
 # order by sum() on columns of table "headers"
 input headers_sum_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
   channels_cnt_all: order_by
+  channels_cnt_open: order_by
   channels_cnt_period: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   zones_cnt_all: order_by
   zones_cnt_period: order_by
@@ -867,13 +1666,31 @@ input headers_sum_order_by {
 # update columns of table "headers"
 enum headers_update_column {
   # column name
+  channels_cnt_active_period
+
+  # column name
+  channels_cnt_active_period_diff
+
+  # column name
   channels_cnt_all
+
+  # column name
+  channels_cnt_open
 
   # column name
   channels_cnt_period
 
   # column name
+  channels_percent_active_period
+
+  # column name
+  channels_percent_active_period_diff
+
+  # column name
   chart
+
+  # column name
+  relations_cnt_open
 
   # column name
   timeframe
@@ -890,8 +1707,14 @@ enum headers_update_column {
 
 # aggregate var_pop on columns
 type headers_var_pop_fields {
+  channels_cnt_active_period: Float
+  channels_cnt_active_period_diff: Float
   channels_cnt_all: Float
+  channels_cnt_open: Float
   channels_cnt_period: Float
+  channels_percent_active_period: Float
+  channels_percent_active_period_diff: Float
+  relations_cnt_open: Float
   timeframe: Float
   zones_cnt_all: Float
   zones_cnt_period: Float
@@ -899,8 +1722,14 @@ type headers_var_pop_fields {
 
 # order by var_pop() on columns of table "headers"
 input headers_var_pop_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
   channels_cnt_all: order_by
+  channels_cnt_open: order_by
   channels_cnt_period: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   zones_cnt_all: order_by
   zones_cnt_period: order_by
@@ -908,8 +1737,14 @@ input headers_var_pop_order_by {
 
 # aggregate var_samp on columns
 type headers_var_samp_fields {
+  channels_cnt_active_period: Float
+  channels_cnt_active_period_diff: Float
   channels_cnt_all: Float
+  channels_cnt_open: Float
   channels_cnt_period: Float
+  channels_percent_active_period: Float
+  channels_percent_active_period_diff: Float
+  relations_cnt_open: Float
   timeframe: Float
   zones_cnt_all: Float
   zones_cnt_period: Float
@@ -917,8 +1752,14 @@ type headers_var_samp_fields {
 
 # order by var_samp() on columns of table "headers"
 input headers_var_samp_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
   channels_cnt_all: order_by
+  channels_cnt_open: order_by
   channels_cnt_period: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   zones_cnt_all: order_by
   zones_cnt_period: order_by
@@ -926,8 +1767,14 @@ input headers_var_samp_order_by {
 
 # aggregate variance on columns
 type headers_variance_fields {
+  channels_cnt_active_period: Float
+  channels_cnt_active_period_diff: Float
   channels_cnt_all: Float
+  channels_cnt_open: Float
   channels_cnt_period: Float
+  channels_percent_active_period: Float
+  channels_percent_active_period_diff: Float
+  relations_cnt_open: Float
   timeframe: Float
   zones_cnt_all: Float
   zones_cnt_period: Float
@@ -935,176 +1782,17 @@ type headers_variance_fields {
 
 # order by variance() on columns of table "headers"
 input headers_variance_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
   channels_cnt_all: order_by
+  channels_cnt_open: order_by
   channels_cnt_period: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   zones_cnt_all: order_by
   zones_cnt_period: order_by
-}
-
-# columns and relationships of "ibc_channel_zone"
-type ibc_channel_zone {
-  added_at: timestamp!
-  chain_id: String!
-  chanel_id: String!
-  zone: String!
-}
-
-# aggregated selection of "ibc_channel_zone"
-type ibc_channel_zone_aggregate {
-  aggregate: ibc_channel_zone_aggregate_fields
-  nodes: [ibc_channel_zone!]!
-}
-
-# aggregate fields of "ibc_channel_zone"
-type ibc_channel_zone_aggregate_fields {
-  count(columns: [ibc_channel_zone_select_column!], distinct: Boolean): Int
-  max: ibc_channel_zone_max_fields
-  min: ibc_channel_zone_min_fields
-}
-
-# order by aggregate values of table "ibc_channel_zone"
-input ibc_channel_zone_aggregate_order_by {
-  count: order_by
-  max: ibc_channel_zone_max_order_by
-  min: ibc_channel_zone_min_order_by
-}
-
-# input type for inserting array relation for remote table "ibc_channel_zone"
-input ibc_channel_zone_arr_rel_insert_input {
-  data: [ibc_channel_zone_insert_input!]!
-  on_conflict: ibc_channel_zone_on_conflict
-}
-
-# Boolean expression to filter rows from the table "ibc_channel_zone". All fields are combined with a logical 'AND'.
-input ibc_channel_zone_bool_exp {
-  _and: [ibc_channel_zone_bool_exp]
-  _not: ibc_channel_zone_bool_exp
-  _or: [ibc_channel_zone_bool_exp]
-  added_at: timestamp_comparison_exp
-  chain_id: String_comparison_exp
-  chanel_id: String_comparison_exp
-  zone: String_comparison_exp
-}
-
-# unique or primary key constraints on table "ibc_channel_zone"
-enum ibc_channel_zone_constraint {
-  # unique or primary key constraint
-  ibc_channel_zone_pkey
-}
-
-# input type for inserting data into table "ibc_channel_zone"
-input ibc_channel_zone_insert_input {
-  added_at: timestamp
-  chain_id: String
-  chanel_id: String
-  zone: String
-}
-
-# aggregate max on columns
-type ibc_channel_zone_max_fields {
-  added_at: timestamp
-  chain_id: String
-  chanel_id: String
-  zone: String
-}
-
-# order by max() on columns of table "ibc_channel_zone"
-input ibc_channel_zone_max_order_by {
-  added_at: order_by
-  chain_id: order_by
-  chanel_id: order_by
-  zone: order_by
-}
-
-# aggregate min on columns
-type ibc_channel_zone_min_fields {
-  added_at: timestamp
-  chain_id: String
-  chanel_id: String
-  zone: String
-}
-
-# order by min() on columns of table "ibc_channel_zone"
-input ibc_channel_zone_min_order_by {
-  added_at: order_by
-  chain_id: order_by
-  chanel_id: order_by
-  zone: order_by
-}
-
-# response of any mutation on the table "ibc_channel_zone"
-type ibc_channel_zone_mutation_response {
-  # number of affected rows by the mutation
-  affected_rows: Int!
-
-  # data of the affected rows by the mutation
-  returning: [ibc_channel_zone!]!
-}
-
-# input type for inserting object relation for remote table "ibc_channel_zone"
-input ibc_channel_zone_obj_rel_insert_input {
-  data: ibc_channel_zone_insert_input!
-  on_conflict: ibc_channel_zone_on_conflict
-}
-
-# on conflict condition type for table "ibc_channel_zone"
-input ibc_channel_zone_on_conflict {
-  constraint: ibc_channel_zone_constraint!
-  update_columns: [ibc_channel_zone_update_column!]!
-  where: ibc_channel_zone_bool_exp
-}
-
-# ordering options when selecting data from "ibc_channel_zone"
-input ibc_channel_zone_order_by {
-  added_at: order_by
-  chain_id: order_by
-  chanel_id: order_by
-  zone: order_by
-}
-
-# primary key columns input for table: "ibc_channel_zone"
-input ibc_channel_zone_pk_columns_input {
-  chanel_id: String!
-  zone: String!
-}
-
-# select columns of table "ibc_channel_zone"
-enum ibc_channel_zone_select_column {
-  # column name
-  added_at
-
-  # column name
-  chain_id
-
-  # column name
-  chanel_id
-
-  # column name
-  zone
-}
-
-# input type for updating data in table "ibc_channel_zone"
-input ibc_channel_zone_set_input {
-  added_at: timestamp
-  chain_id: String
-  chanel_id: String
-  zone: String
-}
-
-# update columns of table "ibc_channel_zone"
-enum ibc_channel_zone_update_column {
-  # column name
-  added_at
-
-  # column name
-  chain_id
-
-  # column name
-  chanel_id
-
-  # column name
-  zone
 }
 
 # columns and relationships of "ibc_channels"
@@ -1616,8 +2304,10 @@ enum ibc_connections_update_column {
 # columns and relationships of "ibc_transfer_hourly_stats"
 type ibc_transfer_hourly_stats {
   hour: timestamp!
+  ibc_channel: String!
   period: Int!
   txs_cnt: Int!
+  txs_fail_cnt: Int!
   zone: String!
   zone_dest: String!
   zone_src: String!
@@ -1669,12 +2359,14 @@ input ibc_transfer_hourly_stats_arr_rel_insert_input {
 type ibc_transfer_hourly_stats_avg_fields {
   period: Float
   txs_cnt: Float
+  txs_fail_cnt: Float
 }
 
 # order by avg() on columns of table "ibc_transfer_hourly_stats"
 input ibc_transfer_hourly_stats_avg_order_by {
   period: order_by
   txs_cnt: order_by
+  txs_fail_cnt: order_by
 }
 
 # Boolean expression to filter rows from the table "ibc_transfer_hourly_stats". All fields are combined with a logical 'AND'.
@@ -1683,8 +2375,10 @@ input ibc_transfer_hourly_stats_bool_exp {
   _not: ibc_transfer_hourly_stats_bool_exp
   _or: [ibc_transfer_hourly_stats_bool_exp]
   hour: timestamp_comparison_exp
+  ibc_channel: String_comparison_exp
   period: Int_comparison_exp
   txs_cnt: Int_comparison_exp
+  txs_fail_cnt: Int_comparison_exp
   zone: String_comparison_exp
   zone_dest: String_comparison_exp
   zone_src: String_comparison_exp
@@ -1700,13 +2394,16 @@ enum ibc_transfer_hourly_stats_constraint {
 input ibc_transfer_hourly_stats_inc_input {
   period: Int
   txs_cnt: Int
+  txs_fail_cnt: Int
 }
 
 # input type for inserting data into table "ibc_transfer_hourly_stats"
 input ibc_transfer_hourly_stats_insert_input {
   hour: timestamp
+  ibc_channel: String
   period: Int
   txs_cnt: Int
+  txs_fail_cnt: Int
   zone: String
   zone_dest: String
   zone_src: String
@@ -1715,8 +2412,10 @@ input ibc_transfer_hourly_stats_insert_input {
 # aggregate max on columns
 type ibc_transfer_hourly_stats_max_fields {
   hour: timestamp
+  ibc_channel: String
   period: Int
   txs_cnt: Int
+  txs_fail_cnt: Int
   zone: String
   zone_dest: String
   zone_src: String
@@ -1725,8 +2424,10 @@ type ibc_transfer_hourly_stats_max_fields {
 # order by max() on columns of table "ibc_transfer_hourly_stats"
 input ibc_transfer_hourly_stats_max_order_by {
   hour: order_by
+  ibc_channel: order_by
   period: order_by
   txs_cnt: order_by
+  txs_fail_cnt: order_by
   zone: order_by
   zone_dest: order_by
   zone_src: order_by
@@ -1735,8 +2436,10 @@ input ibc_transfer_hourly_stats_max_order_by {
 # aggregate min on columns
 type ibc_transfer_hourly_stats_min_fields {
   hour: timestamp
+  ibc_channel: String
   period: Int
   txs_cnt: Int
+  txs_fail_cnt: Int
   zone: String
   zone_dest: String
   zone_src: String
@@ -1745,8 +2448,10 @@ type ibc_transfer_hourly_stats_min_fields {
 # order by min() on columns of table "ibc_transfer_hourly_stats"
 input ibc_transfer_hourly_stats_min_order_by {
   hour: order_by
+  ibc_channel: order_by
   period: order_by
   txs_cnt: order_by
+  txs_fail_cnt: order_by
   zone: order_by
   zone_dest: order_by
   zone_src: order_by
@@ -1777,8 +2482,10 @@ input ibc_transfer_hourly_stats_on_conflict {
 # ordering options when selecting data from "ibc_transfer_hourly_stats"
 input ibc_transfer_hourly_stats_order_by {
   hour: order_by
+  ibc_channel: order_by
   period: order_by
   txs_cnt: order_by
+  txs_fail_cnt: order_by
   zone: order_by
   zone_dest: order_by
   zone_src: order_by
@@ -1787,6 +2494,7 @@ input ibc_transfer_hourly_stats_order_by {
 # primary key columns input for table: "ibc_transfer_hourly_stats"
 input ibc_transfer_hourly_stats_pk_columns_input {
   hour: timestamp!
+  ibc_channel: String!
   period: Int!
   zone: String!
   zone_dest: String!
@@ -1799,10 +2507,16 @@ enum ibc_transfer_hourly_stats_select_column {
   hour
 
   # column name
+  ibc_channel
+
+  # column name
   period
 
   # column name
   txs_cnt
+
+  # column name
+  txs_fail_cnt
 
   # column name
   zone
@@ -1817,8 +2531,10 @@ enum ibc_transfer_hourly_stats_select_column {
 # input type for updating data in table "ibc_transfer_hourly_stats"
 input ibc_transfer_hourly_stats_set_input {
   hour: timestamp
+  ibc_channel: String
   period: Int
   txs_cnt: Int
+  txs_fail_cnt: Int
   zone: String
   zone_dest: String
   zone_src: String
@@ -1828,48 +2544,56 @@ input ibc_transfer_hourly_stats_set_input {
 type ibc_transfer_hourly_stats_stddev_fields {
   period: Float
   txs_cnt: Float
+  txs_fail_cnt: Float
 }
 
 # order by stddev() on columns of table "ibc_transfer_hourly_stats"
 input ibc_transfer_hourly_stats_stddev_order_by {
   period: order_by
   txs_cnt: order_by
+  txs_fail_cnt: order_by
 }
 
 # aggregate stddev_pop on columns
 type ibc_transfer_hourly_stats_stddev_pop_fields {
   period: Float
   txs_cnt: Float
+  txs_fail_cnt: Float
 }
 
 # order by stddev_pop() on columns of table "ibc_transfer_hourly_stats"
 input ibc_transfer_hourly_stats_stddev_pop_order_by {
   period: order_by
   txs_cnt: order_by
+  txs_fail_cnt: order_by
 }
 
 # aggregate stddev_samp on columns
 type ibc_transfer_hourly_stats_stddev_samp_fields {
   period: Float
   txs_cnt: Float
+  txs_fail_cnt: Float
 }
 
 # order by stddev_samp() on columns of table "ibc_transfer_hourly_stats"
 input ibc_transfer_hourly_stats_stddev_samp_order_by {
   period: order_by
   txs_cnt: order_by
+  txs_fail_cnt: order_by
 }
 
 # aggregate sum on columns
 type ibc_transfer_hourly_stats_sum_fields {
   period: Int
   txs_cnt: Int
+  txs_fail_cnt: Int
 }
 
 # order by sum() on columns of table "ibc_transfer_hourly_stats"
 input ibc_transfer_hourly_stats_sum_order_by {
   period: order_by
   txs_cnt: order_by
+  txs_fail_cnt: order_by
 }
 
 # update columns of table "ibc_transfer_hourly_stats"
@@ -1878,10 +2602,16 @@ enum ibc_transfer_hourly_stats_update_column {
   hour
 
   # column name
+  ibc_channel
+
+  # column name
   period
 
   # column name
   txs_cnt
+
+  # column name
+  txs_fail_cnt
 
   # column name
   zone
@@ -1897,36 +2627,42 @@ enum ibc_transfer_hourly_stats_update_column {
 type ibc_transfer_hourly_stats_var_pop_fields {
   period: Float
   txs_cnt: Float
+  txs_fail_cnt: Float
 }
 
 # order by var_pop() on columns of table "ibc_transfer_hourly_stats"
 input ibc_transfer_hourly_stats_var_pop_order_by {
   period: order_by
   txs_cnt: order_by
+  txs_fail_cnt: order_by
 }
 
 # aggregate var_samp on columns
 type ibc_transfer_hourly_stats_var_samp_fields {
   period: Float
   txs_cnt: Float
+  txs_fail_cnt: Float
 }
 
 # order by var_samp() on columns of table "ibc_transfer_hourly_stats"
 input ibc_transfer_hourly_stats_var_samp_order_by {
   period: order_by
   txs_cnt: order_by
+  txs_fail_cnt: order_by
 }
 
 # aggregate variance on columns
 type ibc_transfer_hourly_stats_variance_fields {
   period: Float
   txs_cnt: Float
+  txs_fail_cnt: Float
 }
 
 # order by variance() on columns of table "ibc_transfer_hourly_stats"
 input ibc_transfer_hourly_stats_variance_order_by {
   period: order_by
   txs_cnt: order_by
+  txs_fail_cnt: order_by
 }
 
 # expression to compare columns of type Int. All fields are combined with logical 'AND'.
@@ -1991,6 +2727,15 @@ type mutation_root {
   # delete single row from the table: "blocks_log"
   delete_blocks_log_by_pk(zone: String!): blocks_log
 
+  # delete data from the table: "channels_stats"
+  delete_channels_stats(
+    # filter the rows which have to be deleted
+    where: channels_stats_bool_exp!
+  ): channels_stats_mutation_response
+
+  # delete single row from the table: "channels_stats"
+  delete_channels_stats_by_pk(channel_id: String!, client_id: String!, connection_id: String!, zone: String!): channels_stats
+
   # delete data from the table: "headers"
   delete_headers(
     # filter the rows which have to be deleted
@@ -1999,15 +2744,6 @@ type mutation_root {
 
   # delete single row from the table: "headers"
   delete_headers_by_pk(timeframe: Int!): headers
-
-  # delete data from the table: "ibc_channel_zone"
-  delete_ibc_channel_zone(
-    # filter the rows which have to be deleted
-    where: ibc_channel_zone_bool_exp!
-  ): ibc_channel_zone_mutation_response
-
-  # delete single row from the table: "ibc_channel_zone"
-  delete_ibc_channel_zone_by_pk(chanel_id: String!, zone: String!): ibc_channel_zone
 
   # delete data from the table: "ibc_channels"
   delete_ibc_channels(
@@ -2043,7 +2779,7 @@ type mutation_root {
   ): ibc_transfer_hourly_stats_mutation_response
 
   # delete single row from the table: "ibc_transfer_hourly_stats"
-  delete_ibc_transfer_hourly_stats_by_pk(hour: timestamp!, period: Int!, zone: String!, zone_dest: String!, zone_src: String!): ibc_transfer_hourly_stats
+  delete_ibc_transfer_hourly_stats_by_pk(hour: timestamp!, ibc_channel: String!, period: Int!, zone: String!, zone_dest: String!, zone_src: String!): ibc_transfer_hourly_stats
 
   # delete data from the table: "periods"
   delete_periods(
@@ -2070,7 +2806,7 @@ type mutation_root {
   ): zone_nodes_mutation_response
 
   # delete single row from the table: "zone_nodes"
-  delete_zone_nodes_by_pk(rpc_addr: String!, zone: String!): zone_nodes
+  delete_zone_nodes_by_pk(rpc_addr: String!): zone_nodes
 
   # delete data from the table: "zones"
   delete_zones(
@@ -2135,6 +2871,24 @@ type mutation_root {
     on_conflict: blocks_log_on_conflict
   ): blocks_log
 
+  # insert data into the table: "channels_stats"
+  insert_channels_stats(
+    # the rows to be inserted
+    objects: [channels_stats_insert_input!]!
+
+    # on conflict condition
+    on_conflict: channels_stats_on_conflict
+  ): channels_stats_mutation_response
+
+  # insert a single row into the table: "channels_stats"
+  insert_channels_stats_one(
+    # the row to be inserted
+    object: channels_stats_insert_input!
+
+    # on conflict condition
+    on_conflict: channels_stats_on_conflict
+  ): channels_stats
+
   # insert data into the table: "headers"
   insert_headers(
     # the rows to be inserted
@@ -2152,24 +2906,6 @@ type mutation_root {
     # on conflict condition
     on_conflict: headers_on_conflict
   ): headers
-
-  # insert data into the table: "ibc_channel_zone"
-  insert_ibc_channel_zone(
-    # the rows to be inserted
-    objects: [ibc_channel_zone_insert_input!]!
-
-    # on conflict condition
-    on_conflict: ibc_channel_zone_on_conflict
-  ): ibc_channel_zone_mutation_response
-
-  # insert a single row into the table: "ibc_channel_zone"
-  insert_ibc_channel_zone_one(
-    # the row to be inserted
-    object: ibc_channel_zone_insert_input!
-
-    # on conflict condition
-    on_conflict: ibc_channel_zone_on_conflict
-  ): ibc_channel_zone
 
   # insert data into the table: "ibc_channels"
   insert_ibc_channels(
@@ -2395,6 +3131,28 @@ type mutation_root {
     pk_columns: blocks_log_pk_columns_input!
   ): blocks_log
 
+  # update data of the table: "channels_stats"
+  update_channels_stats(
+    # increments the integer columns with given value of the filtered values
+    _inc: channels_stats_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: channels_stats_set_input
+
+    # filter the rows which have to be updated
+    where: channels_stats_bool_exp!
+  ): channels_stats_mutation_response
+
+  # update single row of the table: "channels_stats"
+  update_channels_stats_by_pk(
+    # increments the integer columns with given value of the filtered values
+    _inc: channels_stats_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: channels_stats_set_input
+    pk_columns: channels_stats_pk_columns_input!
+  ): channels_stats
+
   # update data of the table: "headers"
   update_headers(
     # append existing jsonb value of filtered columns with new jsonb value
@@ -2448,22 +3206,6 @@ type mutation_root {
     _set: headers_set_input
     pk_columns: headers_pk_columns_input!
   ): headers
-
-  # update data of the table: "ibc_channel_zone"
-  update_ibc_channel_zone(
-    # sets the columns of the filtered rows to the given values
-    _set: ibc_channel_zone_set_input
-
-    # filter the rows which have to be updated
-    where: ibc_channel_zone_bool_exp!
-  ): ibc_channel_zone_mutation_response
-
-  # update single row of the table: "ibc_channel_zone"
-  update_ibc_channel_zone_by_pk(
-    # sets the columns of the filtered rows to the given values
-    _set: ibc_channel_zone_set_input
-    pk_columns: ibc_channel_zone_pk_columns_input!
-  ): ibc_channel_zone
 
   # update data of the table: "ibc_channels"
   update_ibc_channels(
@@ -3024,6 +3766,45 @@ type query_root {
   # fetch data from the table: "blocks_log" using primary key columns
   blocks_log_by_pk(zone: String!): blocks_log
 
+  # fetch data from the table: "channels_stats"
+  channels_stats(
+    # distinct select on columns
+    distinct_on: [channels_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [channels_stats_order_by!]
+
+    # filter the rows returned
+    where: channels_stats_bool_exp
+  ): [channels_stats!]!
+
+  # fetch aggregated fields from the table: "channels_stats"
+  channels_stats_aggregate(
+    # distinct select on columns
+    distinct_on: [channels_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [channels_stats_order_by!]
+
+    # filter the rows returned
+    where: channels_stats_bool_exp
+  ): channels_stats_aggregate!
+
+  # fetch data from the table: "channels_stats" using primary key columns
+  channels_stats_by_pk(channel_id: String!, client_id: String!, connection_id: String!, zone: String!): channels_stats
+
   # fetch data from the table: "headers"
   headers(
     # distinct select on columns
@@ -3062,45 +3843,6 @@ type query_root {
 
   # fetch data from the table: "headers" using primary key columns
   headers_by_pk(timeframe: Int!): headers
-
-  # fetch data from the table: "ibc_channel_zone"
-  ibc_channel_zone(
-    # distinct select on columns
-    distinct_on: [ibc_channel_zone_select_column!]
-
-    # limit the number of rows returned
-    limit: Int
-
-    # skip the first n rows. Use only with order_by
-    offset: Int
-
-    # sort the rows by one or more columns
-    order_by: [ibc_channel_zone_order_by!]
-
-    # filter the rows returned
-    where: ibc_channel_zone_bool_exp
-  ): [ibc_channel_zone!]!
-
-  # fetch aggregated fields from the table: "ibc_channel_zone"
-  ibc_channel_zone_aggregate(
-    # distinct select on columns
-    distinct_on: [ibc_channel_zone_select_column!]
-
-    # limit the number of rows returned
-    limit: Int
-
-    # skip the first n rows. Use only with order_by
-    offset: Int
-
-    # sort the rows by one or more columns
-    order_by: [ibc_channel_zone_order_by!]
-
-    # filter the rows returned
-    where: ibc_channel_zone_bool_exp
-  ): ibc_channel_zone_aggregate!
-
-  # fetch data from the table: "ibc_channel_zone" using primary key columns
-  ibc_channel_zone_by_pk(chanel_id: String!, zone: String!): ibc_channel_zone
 
   # fetch data from the table: "ibc_channels"
   ibc_channels(
@@ -3256,7 +3998,7 @@ type query_root {
   ): ibc_transfer_hourly_stats_aggregate!
 
   # fetch data from the table: "ibc_transfer_hourly_stats" using primary key columns
-  ibc_transfer_hourly_stats_by_pk(hour: timestamp!, period: Int!, zone: String!, zone_dest: String!, zone_src: String!): ibc_transfer_hourly_stats
+  ibc_transfer_hourly_stats_by_pk(hour: timestamp!, ibc_channel: String!, period: Int!, zone: String!, zone_dest: String!, zone_src: String!): ibc_transfer_hourly_stats
 
   # fetch data from the table: "periods"
   periods(
@@ -3373,7 +4115,7 @@ type query_root {
   ): zone_nodes_aggregate!
 
   # fetch data from the table: "zone_nodes" using primary key columns
-  zone_nodes_by_pk(rpc_addr: String!, zone: String!): zone_nodes
+  zone_nodes_by_pk(rpc_addr: String!): zone_nodes
 
   # fetch data from the table: "zones"
   zones(
@@ -3592,6 +4334,45 @@ type subscription_root {
   # fetch data from the table: "blocks_log" using primary key columns
   blocks_log_by_pk(zone: String!): blocks_log
 
+  # fetch data from the table: "channels_stats"
+  channels_stats(
+    # distinct select on columns
+    distinct_on: [channels_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [channels_stats_order_by!]
+
+    # filter the rows returned
+    where: channels_stats_bool_exp
+  ): [channels_stats!]!
+
+  # fetch aggregated fields from the table: "channels_stats"
+  channels_stats_aggregate(
+    # distinct select on columns
+    distinct_on: [channels_stats_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [channels_stats_order_by!]
+
+    # filter the rows returned
+    where: channels_stats_bool_exp
+  ): channels_stats_aggregate!
+
+  # fetch data from the table: "channels_stats" using primary key columns
+  channels_stats_by_pk(channel_id: String!, client_id: String!, connection_id: String!, zone: String!): channels_stats
+
   # fetch data from the table: "headers"
   headers(
     # distinct select on columns
@@ -3630,45 +4411,6 @@ type subscription_root {
 
   # fetch data from the table: "headers" using primary key columns
   headers_by_pk(timeframe: Int!): headers
-
-  # fetch data from the table: "ibc_channel_zone"
-  ibc_channel_zone(
-    # distinct select on columns
-    distinct_on: [ibc_channel_zone_select_column!]
-
-    # limit the number of rows returned
-    limit: Int
-
-    # skip the first n rows. Use only with order_by
-    offset: Int
-
-    # sort the rows by one or more columns
-    order_by: [ibc_channel_zone_order_by!]
-
-    # filter the rows returned
-    where: ibc_channel_zone_bool_exp
-  ): [ibc_channel_zone!]!
-
-  # fetch aggregated fields from the table: "ibc_channel_zone"
-  ibc_channel_zone_aggregate(
-    # distinct select on columns
-    distinct_on: [ibc_channel_zone_select_column!]
-
-    # limit the number of rows returned
-    limit: Int
-
-    # skip the first n rows. Use only with order_by
-    offset: Int
-
-    # sort the rows by one or more columns
-    order_by: [ibc_channel_zone_order_by!]
-
-    # filter the rows returned
-    where: ibc_channel_zone_bool_exp
-  ): ibc_channel_zone_aggregate!
-
-  # fetch data from the table: "ibc_channel_zone" using primary key columns
-  ibc_channel_zone_by_pk(chanel_id: String!, zone: String!): ibc_channel_zone
 
   # fetch data from the table: "ibc_channels"
   ibc_channels(
@@ -3824,7 +4566,7 @@ type subscription_root {
   ): ibc_transfer_hourly_stats_aggregate!
 
   # fetch data from the table: "ibc_transfer_hourly_stats" using primary key columns
-  ibc_transfer_hourly_stats_by_pk(hour: timestamp!, period: Int!, zone: String!, zone_dest: String!, zone_src: String!): ibc_transfer_hourly_stats
+  ibc_transfer_hourly_stats_by_pk(hour: timestamp!, ibc_channel: String!, period: Int!, zone: String!, zone_dest: String!, zone_src: String!): ibc_transfer_hourly_stats
 
   # fetch data from the table: "periods"
   periods(
@@ -3941,7 +4683,7 @@ type subscription_root {
   ): zone_nodes_aggregate!
 
   # fetch data from the table: "zone_nodes" using primary key columns
-  zone_nodes_by_pk(rpc_addr: String!, zone: String!): zone_nodes
+  zone_nodes_by_pk(rpc_addr: String!): zone_nodes
 
   # fetch data from the table: "zones"
   zones(
@@ -4579,7 +5321,6 @@ input zone_nodes_order_by {
 # primary key columns input for table: "zone_nodes"
 input zone_nodes_pk_columns_input {
   rpc_addr: String!
-  zone: String!
 }
 
 # select columns of table "zone_nodes"
@@ -4679,6 +5420,9 @@ enum zones_constraint {
 
 # columns and relationships of "zones_graphs"
 type zones_graphs {
+  channels_cnt_active: Int!
+  channels_cnt_open: Int!
+  channels_percent_active: numeric!
   source: String!
   target: String!
   timeframe: Int!
@@ -4728,11 +5472,17 @@ input zones_graphs_arr_rel_insert_input {
 
 # aggregate avg on columns
 type zones_graphs_avg_fields {
+  channels_cnt_active: Float
+  channels_cnt_open: Float
+  channels_percent_active: Float
   timeframe: Float
 }
 
 # order by avg() on columns of table "zones_graphs"
 input zones_graphs_avg_order_by {
+  channels_cnt_active: order_by
+  channels_cnt_open: order_by
+  channels_percent_active: order_by
   timeframe: order_by
 }
 
@@ -4741,6 +5491,9 @@ input zones_graphs_bool_exp {
   _and: [zones_graphs_bool_exp]
   _not: zones_graphs_bool_exp
   _or: [zones_graphs_bool_exp]
+  channels_cnt_active: Int_comparison_exp
+  channels_cnt_open: Int_comparison_exp
+  channels_percent_active: numeric_comparison_exp
   source: String_comparison_exp
   target: String_comparison_exp
   timeframe: Int_comparison_exp
@@ -4754,11 +5507,17 @@ enum zones_graphs_constraint {
 
 # input type for incrementing integer column in table "zones_graphs"
 input zones_graphs_inc_input {
+  channels_cnt_active: Int
+  channels_cnt_open: Int
+  channels_percent_active: numeric
   timeframe: Int
 }
 
 # input type for inserting data into table "zones_graphs"
 input zones_graphs_insert_input {
+  channels_cnt_active: Int
+  channels_cnt_open: Int
+  channels_percent_active: numeric
   source: String
   target: String
   timeframe: Int
@@ -4766,6 +5525,9 @@ input zones_graphs_insert_input {
 
 # aggregate max on columns
 type zones_graphs_max_fields {
+  channels_cnt_active: Int
+  channels_cnt_open: Int
+  channels_percent_active: numeric
   source: String
   target: String
   timeframe: Int
@@ -4773,6 +5535,9 @@ type zones_graphs_max_fields {
 
 # order by max() on columns of table "zones_graphs"
 input zones_graphs_max_order_by {
+  channels_cnt_active: order_by
+  channels_cnt_open: order_by
+  channels_percent_active: order_by
   source: order_by
   target: order_by
   timeframe: order_by
@@ -4780,6 +5545,9 @@ input zones_graphs_max_order_by {
 
 # aggregate min on columns
 type zones_graphs_min_fields {
+  channels_cnt_active: Int
+  channels_cnt_open: Int
+  channels_percent_active: numeric
   source: String
   target: String
   timeframe: Int
@@ -4787,6 +5555,9 @@ type zones_graphs_min_fields {
 
 # order by min() on columns of table "zones_graphs"
 input zones_graphs_min_order_by {
+  channels_cnt_active: order_by
+  channels_cnt_open: order_by
+  channels_percent_active: order_by
   source: order_by
   target: order_by
   timeframe: order_by
@@ -4816,6 +5587,9 @@ input zones_graphs_on_conflict {
 
 # ordering options when selecting data from "zones_graphs"
 input zones_graphs_order_by {
+  channels_cnt_active: order_by
+  channels_cnt_open: order_by
+  channels_percent_active: order_by
   source: order_by
   target: order_by
   timeframe: order_by
@@ -4831,6 +5605,15 @@ input zones_graphs_pk_columns_input {
 # select columns of table "zones_graphs"
 enum zones_graphs_select_column {
   # column name
+  channels_cnt_active
+
+  # column name
+  channels_cnt_open
+
+  # column name
+  channels_percent_active
+
+  # column name
   source
 
   # column name
@@ -4842,6 +5625,9 @@ enum zones_graphs_select_column {
 
 # input type for updating data in table "zones_graphs"
 input zones_graphs_set_input {
+  channels_cnt_active: Int
+  channels_cnt_open: Int
+  channels_percent_active: numeric
   source: String
   target: String
   timeframe: Int
@@ -4849,46 +5635,79 @@ input zones_graphs_set_input {
 
 # aggregate stddev on columns
 type zones_graphs_stddev_fields {
+  channels_cnt_active: Float
+  channels_cnt_open: Float
+  channels_percent_active: Float
   timeframe: Float
 }
 
 # order by stddev() on columns of table "zones_graphs"
 input zones_graphs_stddev_order_by {
+  channels_cnt_active: order_by
+  channels_cnt_open: order_by
+  channels_percent_active: order_by
   timeframe: order_by
 }
 
 # aggregate stddev_pop on columns
 type zones_graphs_stddev_pop_fields {
+  channels_cnt_active: Float
+  channels_cnt_open: Float
+  channels_percent_active: Float
   timeframe: Float
 }
 
 # order by stddev_pop() on columns of table "zones_graphs"
 input zones_graphs_stddev_pop_order_by {
+  channels_cnt_active: order_by
+  channels_cnt_open: order_by
+  channels_percent_active: order_by
   timeframe: order_by
 }
 
 # aggregate stddev_samp on columns
 type zones_graphs_stddev_samp_fields {
+  channels_cnt_active: Float
+  channels_cnt_open: Float
+  channels_percent_active: Float
   timeframe: Float
 }
 
 # order by stddev_samp() on columns of table "zones_graphs"
 input zones_graphs_stddev_samp_order_by {
+  channels_cnt_active: order_by
+  channels_cnt_open: order_by
+  channels_percent_active: order_by
   timeframe: order_by
 }
 
 # aggregate sum on columns
 type zones_graphs_sum_fields {
+  channels_cnt_active: Int
+  channels_cnt_open: Int
+  channels_percent_active: numeric
   timeframe: Int
 }
 
 # order by sum() on columns of table "zones_graphs"
 input zones_graphs_sum_order_by {
+  channels_cnt_active: order_by
+  channels_cnt_open: order_by
+  channels_percent_active: order_by
   timeframe: order_by
 }
 
 # update columns of table "zones_graphs"
 enum zones_graphs_update_column {
+  # column name
+  channels_cnt_active
+
+  # column name
+  channels_cnt_open
+
+  # column name
+  channels_percent_active
+
   # column name
   source
 
@@ -4901,31 +5720,49 @@ enum zones_graphs_update_column {
 
 # aggregate var_pop on columns
 type zones_graphs_var_pop_fields {
+  channels_cnt_active: Float
+  channels_cnt_open: Float
+  channels_percent_active: Float
   timeframe: Float
 }
 
 # order by var_pop() on columns of table "zones_graphs"
 input zones_graphs_var_pop_order_by {
+  channels_cnt_active: order_by
+  channels_cnt_open: order_by
+  channels_percent_active: order_by
   timeframe: order_by
 }
 
 # aggregate var_samp on columns
 type zones_graphs_var_samp_fields {
+  channels_cnt_active: Float
+  channels_cnt_open: Float
+  channels_percent_active: Float
   timeframe: Float
 }
 
 # order by var_samp() on columns of table "zones_graphs"
 input zones_graphs_var_samp_order_by {
+  channels_cnt_active: order_by
+  channels_cnt_open: order_by
+  channels_percent_active: order_by
   timeframe: order_by
 }
 
 # aggregate variance on columns
 type zones_graphs_variance_fields {
+  channels_cnt_active: Float
+  channels_cnt_open: Float
+  channels_percent_active: Float
   timeframe: Float
 }
 
 # order by variance() on columns of table "zones_graphs"
 input zones_graphs_variance_order_by {
+  channels_cnt_active: order_by
+  channels_cnt_open: order_by
+  channels_percent_active: order_by
   timeframe: order_by
 }
 
@@ -5051,29 +5888,38 @@ input zones_set_input {
 
 # columns and relationships of "zones_stats"
 type zones_stats {
+  channels_cnt_active_period: Int!
+  channels_cnt_active_period_diff: Int!
+  channels_cnt_open: Int!
   channels_num: Int!
+  channels_percent_active_period: Int!
+  channels_percent_active_period_diff: Int!
   chart(
     # JSON select path
     path: String
   ): jsonb!
-  ibc_percent: Int!
+  ibc_percent: numeric!
   ibc_tx_failed: Int!
   ibc_tx_failed_diff: Int!
   ibc_tx_in: Int!
   ibc_tx_in_diff: Int!
+  ibc_tx_in_failed: Int!
   ibc_tx_in_rating: Int!
   ibc_tx_in_rating_diff: Int!
   ibc_tx_in_weight: numeric!
   ibc_tx_out: Int!
   ibc_tx_out_diff: Int!
+  ibc_tx_out_failed: Int!
   ibc_tx_out_rating: Int!
   ibc_tx_out_rating_diff: Int!
   ibc_tx_out_weight: numeric!
+  relations_cnt_open: Int!
   timeframe: Int!
   total_active_addresses: Int!
   total_active_addresses_diff: Int!
   total_active_addresses_rating: Int!
   total_active_addresses_rating_diff: Int!
+  total_active_addresses_weight: numeric!
   total_coin_turnover_amount: numeric!
   total_coin_turnover_amount_diff: numeric!
   total_ibc_txs: Int!
@@ -5138,25 +5984,34 @@ input zones_stats_arr_rel_insert_input {
 
 # aggregate avg on columns
 type zones_stats_avg_fields {
+  channels_cnt_active_period: Float
+  channels_cnt_active_period_diff: Float
+  channels_cnt_open: Float
   channels_num: Float
+  channels_percent_active_period: Float
+  channels_percent_active_period_diff: Float
   ibc_percent: Float
   ibc_tx_failed: Float
   ibc_tx_failed_diff: Float
   ibc_tx_in: Float
   ibc_tx_in_diff: Float
+  ibc_tx_in_failed: Float
   ibc_tx_in_rating: Float
   ibc_tx_in_rating_diff: Float
   ibc_tx_in_weight: Float
   ibc_tx_out: Float
   ibc_tx_out_diff: Float
+  ibc_tx_out_failed: Float
   ibc_tx_out_rating: Float
   ibc_tx_out_rating_diff: Float
   ibc_tx_out_weight: Float
+  relations_cnt_open: Float
   timeframe: Float
   total_active_addresses: Float
   total_active_addresses_diff: Float
   total_active_addresses_rating: Float
   total_active_addresses_rating_diff: Float
+  total_active_addresses_weight: Float
   total_coin_turnover_amount: Float
   total_coin_turnover_amount_diff: Float
   total_ibc_txs: Float
@@ -5173,25 +6028,34 @@ type zones_stats_avg_fields {
 
 # order by avg() on columns of table "zones_stats"
 input zones_stats_avg_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
+  channels_cnt_open: order_by
   channels_num: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
   ibc_percent: order_by
   ibc_tx_failed: order_by
   ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
+  ibc_tx_in_failed: order_by
   ibc_tx_in_rating: order_by
   ibc_tx_in_rating_diff: order_by
   ibc_tx_in_weight: order_by
   ibc_tx_out: order_by
   ibc_tx_out_diff: order_by
+  ibc_tx_out_failed: order_by
   ibc_tx_out_rating: order_by
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   total_active_addresses: order_by
   total_active_addresses_diff: order_by
   total_active_addresses_rating: order_by
   total_active_addresses_rating_diff: order_by
+  total_active_addresses_weight: order_by
   total_coin_turnover_amount: order_by
   total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
@@ -5211,26 +6075,35 @@ input zones_stats_bool_exp {
   _and: [zones_stats_bool_exp]
   _not: zones_stats_bool_exp
   _or: [zones_stats_bool_exp]
+  channels_cnt_active_period: Int_comparison_exp
+  channels_cnt_active_period_diff: Int_comparison_exp
+  channels_cnt_open: Int_comparison_exp
   channels_num: Int_comparison_exp
+  channels_percent_active_period: Int_comparison_exp
+  channels_percent_active_period_diff: Int_comparison_exp
   chart: jsonb_comparison_exp
-  ibc_percent: Int_comparison_exp
+  ibc_percent: numeric_comparison_exp
   ibc_tx_failed: Int_comparison_exp
   ibc_tx_failed_diff: Int_comparison_exp
   ibc_tx_in: Int_comparison_exp
   ibc_tx_in_diff: Int_comparison_exp
+  ibc_tx_in_failed: Int_comparison_exp
   ibc_tx_in_rating: Int_comparison_exp
   ibc_tx_in_rating_diff: Int_comparison_exp
   ibc_tx_in_weight: numeric_comparison_exp
   ibc_tx_out: Int_comparison_exp
   ibc_tx_out_diff: Int_comparison_exp
+  ibc_tx_out_failed: Int_comparison_exp
   ibc_tx_out_rating: Int_comparison_exp
   ibc_tx_out_rating_diff: Int_comparison_exp
   ibc_tx_out_weight: numeric_comparison_exp
+  relations_cnt_open: Int_comparison_exp
   timeframe: Int_comparison_exp
   total_active_addresses: Int_comparison_exp
   total_active_addresses_diff: Int_comparison_exp
   total_active_addresses_rating: Int_comparison_exp
   total_active_addresses_rating_diff: Int_comparison_exp
+  total_active_addresses_weight: numeric_comparison_exp
   total_coin_turnover_amount: numeric_comparison_exp
   total_coin_turnover_amount_diff: numeric_comparison_exp
   total_ibc_txs: Int_comparison_exp
@@ -5270,25 +6143,34 @@ input zones_stats_delete_key_input {
 
 # input type for incrementing integer column in table "zones_stats"
 input zones_stats_inc_input {
+  channels_cnt_active_period: Int
+  channels_cnt_active_period_diff: Int
+  channels_cnt_open: Int
   channels_num: Int
-  ibc_percent: Int
+  channels_percent_active_period: Int
+  channels_percent_active_period_diff: Int
+  ibc_percent: numeric
   ibc_tx_failed: Int
   ibc_tx_failed_diff: Int
   ibc_tx_in: Int
   ibc_tx_in_diff: Int
+  ibc_tx_in_failed: Int
   ibc_tx_in_rating: Int
   ibc_tx_in_rating_diff: Int
   ibc_tx_in_weight: numeric
   ibc_tx_out: Int
   ibc_tx_out_diff: Int
+  ibc_tx_out_failed: Int
   ibc_tx_out_rating: Int
   ibc_tx_out_rating_diff: Int
   ibc_tx_out_weight: numeric
+  relations_cnt_open: Int
   timeframe: Int
   total_active_addresses: Int
   total_active_addresses_diff: Int
   total_active_addresses_rating: Int
   total_active_addresses_rating_diff: Int
+  total_active_addresses_weight: numeric
   total_coin_turnover_amount: numeric
   total_coin_turnover_amount_diff: numeric
   total_ibc_txs: Int
@@ -5305,26 +6187,35 @@ input zones_stats_inc_input {
 
 # input type for inserting data into table "zones_stats"
 input zones_stats_insert_input {
+  channels_cnt_active_period: Int
+  channels_cnt_active_period_diff: Int
+  channels_cnt_open: Int
   channels_num: Int
+  channels_percent_active_period: Int
+  channels_percent_active_period_diff: Int
   chart: jsonb
-  ibc_percent: Int
+  ibc_percent: numeric
   ibc_tx_failed: Int
   ibc_tx_failed_diff: Int
   ibc_tx_in: Int
   ibc_tx_in_diff: Int
+  ibc_tx_in_failed: Int
   ibc_tx_in_rating: Int
   ibc_tx_in_rating_diff: Int
   ibc_tx_in_weight: numeric
   ibc_tx_out: Int
   ibc_tx_out_diff: Int
+  ibc_tx_out_failed: Int
   ibc_tx_out_rating: Int
   ibc_tx_out_rating_diff: Int
   ibc_tx_out_weight: numeric
+  relations_cnt_open: Int
   timeframe: Int
   total_active_addresses: Int
   total_active_addresses_diff: Int
   total_active_addresses_rating: Int
   total_active_addresses_rating_diff: Int
+  total_active_addresses_weight: numeric
   total_coin_turnover_amount: numeric
   total_coin_turnover_amount_diff: numeric
   total_ibc_txs: Int
@@ -5342,25 +6233,34 @@ input zones_stats_insert_input {
 
 # aggregate max on columns
 type zones_stats_max_fields {
+  channels_cnt_active_period: Int
+  channels_cnt_active_period_diff: Int
+  channels_cnt_open: Int
   channels_num: Int
-  ibc_percent: Int
+  channels_percent_active_period: Int
+  channels_percent_active_period_diff: Int
+  ibc_percent: numeric
   ibc_tx_failed: Int
   ibc_tx_failed_diff: Int
   ibc_tx_in: Int
   ibc_tx_in_diff: Int
+  ibc_tx_in_failed: Int
   ibc_tx_in_rating: Int
   ibc_tx_in_rating_diff: Int
   ibc_tx_in_weight: numeric
   ibc_tx_out: Int
   ibc_tx_out_diff: Int
+  ibc_tx_out_failed: Int
   ibc_tx_out_rating: Int
   ibc_tx_out_rating_diff: Int
   ibc_tx_out_weight: numeric
+  relations_cnt_open: Int
   timeframe: Int
   total_active_addresses: Int
   total_active_addresses_diff: Int
   total_active_addresses_rating: Int
   total_active_addresses_rating_diff: Int
+  total_active_addresses_weight: numeric
   total_coin_turnover_amount: numeric
   total_coin_turnover_amount_diff: numeric
   total_ibc_txs: Int
@@ -5378,25 +6278,34 @@ type zones_stats_max_fields {
 
 # order by max() on columns of table "zones_stats"
 input zones_stats_max_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
+  channels_cnt_open: order_by
   channels_num: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
   ibc_percent: order_by
   ibc_tx_failed: order_by
   ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
+  ibc_tx_in_failed: order_by
   ibc_tx_in_rating: order_by
   ibc_tx_in_rating_diff: order_by
   ibc_tx_in_weight: order_by
   ibc_tx_out: order_by
   ibc_tx_out_diff: order_by
+  ibc_tx_out_failed: order_by
   ibc_tx_out_rating: order_by
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   total_active_addresses: order_by
   total_active_addresses_diff: order_by
   total_active_addresses_rating: order_by
   total_active_addresses_rating_diff: order_by
+  total_active_addresses_weight: order_by
   total_coin_turnover_amount: order_by
   total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
@@ -5414,25 +6323,34 @@ input zones_stats_max_order_by {
 
 # aggregate min on columns
 type zones_stats_min_fields {
+  channels_cnt_active_period: Int
+  channels_cnt_active_period_diff: Int
+  channels_cnt_open: Int
   channels_num: Int
-  ibc_percent: Int
+  channels_percent_active_period: Int
+  channels_percent_active_period_diff: Int
+  ibc_percent: numeric
   ibc_tx_failed: Int
   ibc_tx_failed_diff: Int
   ibc_tx_in: Int
   ibc_tx_in_diff: Int
+  ibc_tx_in_failed: Int
   ibc_tx_in_rating: Int
   ibc_tx_in_rating_diff: Int
   ibc_tx_in_weight: numeric
   ibc_tx_out: Int
   ibc_tx_out_diff: Int
+  ibc_tx_out_failed: Int
   ibc_tx_out_rating: Int
   ibc_tx_out_rating_diff: Int
   ibc_tx_out_weight: numeric
+  relations_cnt_open: Int
   timeframe: Int
   total_active_addresses: Int
   total_active_addresses_diff: Int
   total_active_addresses_rating: Int
   total_active_addresses_rating_diff: Int
+  total_active_addresses_weight: numeric
   total_coin_turnover_amount: numeric
   total_coin_turnover_amount_diff: numeric
   total_ibc_txs: Int
@@ -5450,25 +6368,34 @@ type zones_stats_min_fields {
 
 # order by min() on columns of table "zones_stats"
 input zones_stats_min_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
+  channels_cnt_open: order_by
   channels_num: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
   ibc_percent: order_by
   ibc_tx_failed: order_by
   ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
+  ibc_tx_in_failed: order_by
   ibc_tx_in_rating: order_by
   ibc_tx_in_rating_diff: order_by
   ibc_tx_in_weight: order_by
   ibc_tx_out: order_by
   ibc_tx_out_diff: order_by
+  ibc_tx_out_failed: order_by
   ibc_tx_out_rating: order_by
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   total_active_addresses: order_by
   total_active_addresses_diff: order_by
   total_active_addresses_rating: order_by
   total_active_addresses_rating_diff: order_by
+  total_active_addresses_weight: order_by
   total_coin_turnover_amount: order_by
   total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
@@ -5508,26 +6435,35 @@ input zones_stats_on_conflict {
 
 # ordering options when selecting data from "zones_stats"
 input zones_stats_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
+  channels_cnt_open: order_by
   channels_num: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
   chart: order_by
   ibc_percent: order_by
   ibc_tx_failed: order_by
   ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
+  ibc_tx_in_failed: order_by
   ibc_tx_in_rating: order_by
   ibc_tx_in_rating_diff: order_by
   ibc_tx_in_weight: order_by
   ibc_tx_out: order_by
   ibc_tx_out_diff: order_by
+  ibc_tx_out_failed: order_by
   ibc_tx_out_rating: order_by
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   total_active_addresses: order_by
   total_active_addresses_diff: order_by
   total_active_addresses_rating: order_by
   total_active_addresses_rating_diff: order_by
+  total_active_addresses_weight: order_by
   total_coin_turnover_amount: order_by
   total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
@@ -5557,7 +6493,22 @@ input zones_stats_prepend_input {
 # select columns of table "zones_stats"
 enum zones_stats_select_column {
   # column name
+  channels_cnt_active_period
+
+  # column name
+  channels_cnt_active_period_diff
+
+  # column name
+  channels_cnt_open
+
+  # column name
   channels_num
+
+  # column name
+  channels_percent_active_period
+
+  # column name
+  channels_percent_active_period_diff
 
   # column name
   chart
@@ -5578,6 +6529,9 @@ enum zones_stats_select_column {
   ibc_tx_in_diff
 
   # column name
+  ibc_tx_in_failed
+
+  # column name
   ibc_tx_in_rating
 
   # column name
@@ -5593,6 +6547,9 @@ enum zones_stats_select_column {
   ibc_tx_out_diff
 
   # column name
+  ibc_tx_out_failed
+
+  # column name
   ibc_tx_out_rating
 
   # column name
@@ -5600,6 +6557,9 @@ enum zones_stats_select_column {
 
   # column name
   ibc_tx_out_weight
+
+  # column name
+  relations_cnt_open
 
   # column name
   timeframe
@@ -5615,6 +6575,9 @@ enum zones_stats_select_column {
 
   # column name
   total_active_addresses_rating_diff
+
+  # column name
+  total_active_addresses_weight
 
   # column name
   total_coin_turnover_amount
@@ -5658,26 +6621,35 @@ enum zones_stats_select_column {
 
 # input type for updating data in table "zones_stats"
 input zones_stats_set_input {
+  channels_cnt_active_period: Int
+  channels_cnt_active_period_diff: Int
+  channels_cnt_open: Int
   channels_num: Int
+  channels_percent_active_period: Int
+  channels_percent_active_period_diff: Int
   chart: jsonb
-  ibc_percent: Int
+  ibc_percent: numeric
   ibc_tx_failed: Int
   ibc_tx_failed_diff: Int
   ibc_tx_in: Int
   ibc_tx_in_diff: Int
+  ibc_tx_in_failed: Int
   ibc_tx_in_rating: Int
   ibc_tx_in_rating_diff: Int
   ibc_tx_in_weight: numeric
   ibc_tx_out: Int
   ibc_tx_out_diff: Int
+  ibc_tx_out_failed: Int
   ibc_tx_out_rating: Int
   ibc_tx_out_rating_diff: Int
   ibc_tx_out_weight: numeric
+  relations_cnt_open: Int
   timeframe: Int
   total_active_addresses: Int
   total_active_addresses_diff: Int
   total_active_addresses_rating: Int
   total_active_addresses_rating_diff: Int
+  total_active_addresses_weight: numeric
   total_coin_turnover_amount: numeric
   total_coin_turnover_amount_diff: numeric
   total_ibc_txs: Int
@@ -5695,25 +6667,34 @@ input zones_stats_set_input {
 
 # aggregate stddev on columns
 type zones_stats_stddev_fields {
+  channels_cnt_active_period: Float
+  channels_cnt_active_period_diff: Float
+  channels_cnt_open: Float
   channels_num: Float
+  channels_percent_active_period: Float
+  channels_percent_active_period_diff: Float
   ibc_percent: Float
   ibc_tx_failed: Float
   ibc_tx_failed_diff: Float
   ibc_tx_in: Float
   ibc_tx_in_diff: Float
+  ibc_tx_in_failed: Float
   ibc_tx_in_rating: Float
   ibc_tx_in_rating_diff: Float
   ibc_tx_in_weight: Float
   ibc_tx_out: Float
   ibc_tx_out_diff: Float
+  ibc_tx_out_failed: Float
   ibc_tx_out_rating: Float
   ibc_tx_out_rating_diff: Float
   ibc_tx_out_weight: Float
+  relations_cnt_open: Float
   timeframe: Float
   total_active_addresses: Float
   total_active_addresses_diff: Float
   total_active_addresses_rating: Float
   total_active_addresses_rating_diff: Float
+  total_active_addresses_weight: Float
   total_coin_turnover_amount: Float
   total_coin_turnover_amount_diff: Float
   total_ibc_txs: Float
@@ -5730,25 +6711,34 @@ type zones_stats_stddev_fields {
 
 # order by stddev() on columns of table "zones_stats"
 input zones_stats_stddev_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
+  channels_cnt_open: order_by
   channels_num: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
   ibc_percent: order_by
   ibc_tx_failed: order_by
   ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
+  ibc_tx_in_failed: order_by
   ibc_tx_in_rating: order_by
   ibc_tx_in_rating_diff: order_by
   ibc_tx_in_weight: order_by
   ibc_tx_out: order_by
   ibc_tx_out_diff: order_by
+  ibc_tx_out_failed: order_by
   ibc_tx_out_rating: order_by
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   total_active_addresses: order_by
   total_active_addresses_diff: order_by
   total_active_addresses_rating: order_by
   total_active_addresses_rating_diff: order_by
+  total_active_addresses_weight: order_by
   total_coin_turnover_amount: order_by
   total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
@@ -5765,25 +6755,34 @@ input zones_stats_stddev_order_by {
 
 # aggregate stddev_pop on columns
 type zones_stats_stddev_pop_fields {
+  channels_cnt_active_period: Float
+  channels_cnt_active_period_diff: Float
+  channels_cnt_open: Float
   channels_num: Float
+  channels_percent_active_period: Float
+  channels_percent_active_period_diff: Float
   ibc_percent: Float
   ibc_tx_failed: Float
   ibc_tx_failed_diff: Float
   ibc_tx_in: Float
   ibc_tx_in_diff: Float
+  ibc_tx_in_failed: Float
   ibc_tx_in_rating: Float
   ibc_tx_in_rating_diff: Float
   ibc_tx_in_weight: Float
   ibc_tx_out: Float
   ibc_tx_out_diff: Float
+  ibc_tx_out_failed: Float
   ibc_tx_out_rating: Float
   ibc_tx_out_rating_diff: Float
   ibc_tx_out_weight: Float
+  relations_cnt_open: Float
   timeframe: Float
   total_active_addresses: Float
   total_active_addresses_diff: Float
   total_active_addresses_rating: Float
   total_active_addresses_rating_diff: Float
+  total_active_addresses_weight: Float
   total_coin_turnover_amount: Float
   total_coin_turnover_amount_diff: Float
   total_ibc_txs: Float
@@ -5800,25 +6799,34 @@ type zones_stats_stddev_pop_fields {
 
 # order by stddev_pop() on columns of table "zones_stats"
 input zones_stats_stddev_pop_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
+  channels_cnt_open: order_by
   channels_num: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
   ibc_percent: order_by
   ibc_tx_failed: order_by
   ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
+  ibc_tx_in_failed: order_by
   ibc_tx_in_rating: order_by
   ibc_tx_in_rating_diff: order_by
   ibc_tx_in_weight: order_by
   ibc_tx_out: order_by
   ibc_tx_out_diff: order_by
+  ibc_tx_out_failed: order_by
   ibc_tx_out_rating: order_by
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   total_active_addresses: order_by
   total_active_addresses_diff: order_by
   total_active_addresses_rating: order_by
   total_active_addresses_rating_diff: order_by
+  total_active_addresses_weight: order_by
   total_coin_turnover_amount: order_by
   total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
@@ -5835,25 +6843,34 @@ input zones_stats_stddev_pop_order_by {
 
 # aggregate stddev_samp on columns
 type zones_stats_stddev_samp_fields {
+  channels_cnt_active_period: Float
+  channels_cnt_active_period_diff: Float
+  channels_cnt_open: Float
   channels_num: Float
+  channels_percent_active_period: Float
+  channels_percent_active_period_diff: Float
   ibc_percent: Float
   ibc_tx_failed: Float
   ibc_tx_failed_diff: Float
   ibc_tx_in: Float
   ibc_tx_in_diff: Float
+  ibc_tx_in_failed: Float
   ibc_tx_in_rating: Float
   ibc_tx_in_rating_diff: Float
   ibc_tx_in_weight: Float
   ibc_tx_out: Float
   ibc_tx_out_diff: Float
+  ibc_tx_out_failed: Float
   ibc_tx_out_rating: Float
   ibc_tx_out_rating_diff: Float
   ibc_tx_out_weight: Float
+  relations_cnt_open: Float
   timeframe: Float
   total_active_addresses: Float
   total_active_addresses_diff: Float
   total_active_addresses_rating: Float
   total_active_addresses_rating_diff: Float
+  total_active_addresses_weight: Float
   total_coin_turnover_amount: Float
   total_coin_turnover_amount_diff: Float
   total_ibc_txs: Float
@@ -5870,25 +6887,34 @@ type zones_stats_stddev_samp_fields {
 
 # order by stddev_samp() on columns of table "zones_stats"
 input zones_stats_stddev_samp_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
+  channels_cnt_open: order_by
   channels_num: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
   ibc_percent: order_by
   ibc_tx_failed: order_by
   ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
+  ibc_tx_in_failed: order_by
   ibc_tx_in_rating: order_by
   ibc_tx_in_rating_diff: order_by
   ibc_tx_in_weight: order_by
   ibc_tx_out: order_by
   ibc_tx_out_diff: order_by
+  ibc_tx_out_failed: order_by
   ibc_tx_out_rating: order_by
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   total_active_addresses: order_by
   total_active_addresses_diff: order_by
   total_active_addresses_rating: order_by
   total_active_addresses_rating_diff: order_by
+  total_active_addresses_weight: order_by
   total_coin_turnover_amount: order_by
   total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
@@ -5905,25 +6931,34 @@ input zones_stats_stddev_samp_order_by {
 
 # aggregate sum on columns
 type zones_stats_sum_fields {
+  channels_cnt_active_period: Int
+  channels_cnt_active_period_diff: Int
+  channels_cnt_open: Int
   channels_num: Int
-  ibc_percent: Int
+  channels_percent_active_period: Int
+  channels_percent_active_period_diff: Int
+  ibc_percent: numeric
   ibc_tx_failed: Int
   ibc_tx_failed_diff: Int
   ibc_tx_in: Int
   ibc_tx_in_diff: Int
+  ibc_tx_in_failed: Int
   ibc_tx_in_rating: Int
   ibc_tx_in_rating_diff: Int
   ibc_tx_in_weight: numeric
   ibc_tx_out: Int
   ibc_tx_out_diff: Int
+  ibc_tx_out_failed: Int
   ibc_tx_out_rating: Int
   ibc_tx_out_rating_diff: Int
   ibc_tx_out_weight: numeric
+  relations_cnt_open: Int
   timeframe: Int
   total_active_addresses: Int
   total_active_addresses_diff: Int
   total_active_addresses_rating: Int
   total_active_addresses_rating_diff: Int
+  total_active_addresses_weight: numeric
   total_coin_turnover_amount: numeric
   total_coin_turnover_amount_diff: numeric
   total_ibc_txs: Int
@@ -5940,25 +6975,34 @@ type zones_stats_sum_fields {
 
 # order by sum() on columns of table "zones_stats"
 input zones_stats_sum_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
+  channels_cnt_open: order_by
   channels_num: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
   ibc_percent: order_by
   ibc_tx_failed: order_by
   ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
+  ibc_tx_in_failed: order_by
   ibc_tx_in_rating: order_by
   ibc_tx_in_rating_diff: order_by
   ibc_tx_in_weight: order_by
   ibc_tx_out: order_by
   ibc_tx_out_diff: order_by
+  ibc_tx_out_failed: order_by
   ibc_tx_out_rating: order_by
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   total_active_addresses: order_by
   total_active_addresses_diff: order_by
   total_active_addresses_rating: order_by
   total_active_addresses_rating_diff: order_by
+  total_active_addresses_weight: order_by
   total_coin_turnover_amount: order_by
   total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
@@ -5976,7 +7020,22 @@ input zones_stats_sum_order_by {
 # update columns of table "zones_stats"
 enum zones_stats_update_column {
   # column name
+  channels_cnt_active_period
+
+  # column name
+  channels_cnt_active_period_diff
+
+  # column name
+  channels_cnt_open
+
+  # column name
   channels_num
+
+  # column name
+  channels_percent_active_period
+
+  # column name
+  channels_percent_active_period_diff
 
   # column name
   chart
@@ -5997,6 +7056,9 @@ enum zones_stats_update_column {
   ibc_tx_in_diff
 
   # column name
+  ibc_tx_in_failed
+
+  # column name
   ibc_tx_in_rating
 
   # column name
@@ -6012,6 +7074,9 @@ enum zones_stats_update_column {
   ibc_tx_out_diff
 
   # column name
+  ibc_tx_out_failed
+
+  # column name
   ibc_tx_out_rating
 
   # column name
@@ -6019,6 +7084,9 @@ enum zones_stats_update_column {
 
   # column name
   ibc_tx_out_weight
+
+  # column name
+  relations_cnt_open
 
   # column name
   timeframe
@@ -6034,6 +7102,9 @@ enum zones_stats_update_column {
 
   # column name
   total_active_addresses_rating_diff
+
+  # column name
+  total_active_addresses_weight
 
   # column name
   total_coin_turnover_amount
@@ -6077,25 +7148,34 @@ enum zones_stats_update_column {
 
 # aggregate var_pop on columns
 type zones_stats_var_pop_fields {
+  channels_cnt_active_period: Float
+  channels_cnt_active_period_diff: Float
+  channels_cnt_open: Float
   channels_num: Float
+  channels_percent_active_period: Float
+  channels_percent_active_period_diff: Float
   ibc_percent: Float
   ibc_tx_failed: Float
   ibc_tx_failed_diff: Float
   ibc_tx_in: Float
   ibc_tx_in_diff: Float
+  ibc_tx_in_failed: Float
   ibc_tx_in_rating: Float
   ibc_tx_in_rating_diff: Float
   ibc_tx_in_weight: Float
   ibc_tx_out: Float
   ibc_tx_out_diff: Float
+  ibc_tx_out_failed: Float
   ibc_tx_out_rating: Float
   ibc_tx_out_rating_diff: Float
   ibc_tx_out_weight: Float
+  relations_cnt_open: Float
   timeframe: Float
   total_active_addresses: Float
   total_active_addresses_diff: Float
   total_active_addresses_rating: Float
   total_active_addresses_rating_diff: Float
+  total_active_addresses_weight: Float
   total_coin_turnover_amount: Float
   total_coin_turnover_amount_diff: Float
   total_ibc_txs: Float
@@ -6112,25 +7192,34 @@ type zones_stats_var_pop_fields {
 
 # order by var_pop() on columns of table "zones_stats"
 input zones_stats_var_pop_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
+  channels_cnt_open: order_by
   channels_num: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
   ibc_percent: order_by
   ibc_tx_failed: order_by
   ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
+  ibc_tx_in_failed: order_by
   ibc_tx_in_rating: order_by
   ibc_tx_in_rating_diff: order_by
   ibc_tx_in_weight: order_by
   ibc_tx_out: order_by
   ibc_tx_out_diff: order_by
+  ibc_tx_out_failed: order_by
   ibc_tx_out_rating: order_by
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   total_active_addresses: order_by
   total_active_addresses_diff: order_by
   total_active_addresses_rating: order_by
   total_active_addresses_rating_diff: order_by
+  total_active_addresses_weight: order_by
   total_coin_turnover_amount: order_by
   total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
@@ -6147,25 +7236,34 @@ input zones_stats_var_pop_order_by {
 
 # aggregate var_samp on columns
 type zones_stats_var_samp_fields {
+  channels_cnt_active_period: Float
+  channels_cnt_active_period_diff: Float
+  channels_cnt_open: Float
   channels_num: Float
+  channels_percent_active_period: Float
+  channels_percent_active_period_diff: Float
   ibc_percent: Float
   ibc_tx_failed: Float
   ibc_tx_failed_diff: Float
   ibc_tx_in: Float
   ibc_tx_in_diff: Float
+  ibc_tx_in_failed: Float
   ibc_tx_in_rating: Float
   ibc_tx_in_rating_diff: Float
   ibc_tx_in_weight: Float
   ibc_tx_out: Float
   ibc_tx_out_diff: Float
+  ibc_tx_out_failed: Float
   ibc_tx_out_rating: Float
   ibc_tx_out_rating_diff: Float
   ibc_tx_out_weight: Float
+  relations_cnt_open: Float
   timeframe: Float
   total_active_addresses: Float
   total_active_addresses_diff: Float
   total_active_addresses_rating: Float
   total_active_addresses_rating_diff: Float
+  total_active_addresses_weight: Float
   total_coin_turnover_amount: Float
   total_coin_turnover_amount_diff: Float
   total_ibc_txs: Float
@@ -6182,25 +7280,34 @@ type zones_stats_var_samp_fields {
 
 # order by var_samp() on columns of table "zones_stats"
 input zones_stats_var_samp_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
+  channels_cnt_open: order_by
   channels_num: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
   ibc_percent: order_by
   ibc_tx_failed: order_by
   ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
+  ibc_tx_in_failed: order_by
   ibc_tx_in_rating: order_by
   ibc_tx_in_rating_diff: order_by
   ibc_tx_in_weight: order_by
   ibc_tx_out: order_by
   ibc_tx_out_diff: order_by
+  ibc_tx_out_failed: order_by
   ibc_tx_out_rating: order_by
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   total_active_addresses: order_by
   total_active_addresses_diff: order_by
   total_active_addresses_rating: order_by
   total_active_addresses_rating_diff: order_by
+  total_active_addresses_weight: order_by
   total_coin_turnover_amount: order_by
   total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by
@@ -6217,25 +7324,34 @@ input zones_stats_var_samp_order_by {
 
 # aggregate variance on columns
 type zones_stats_variance_fields {
+  channels_cnt_active_period: Float
+  channels_cnt_active_period_diff: Float
+  channels_cnt_open: Float
   channels_num: Float
+  channels_percent_active_period: Float
+  channels_percent_active_period_diff: Float
   ibc_percent: Float
   ibc_tx_failed: Float
   ibc_tx_failed_diff: Float
   ibc_tx_in: Float
   ibc_tx_in_diff: Float
+  ibc_tx_in_failed: Float
   ibc_tx_in_rating: Float
   ibc_tx_in_rating_diff: Float
   ibc_tx_in_weight: Float
   ibc_tx_out: Float
   ibc_tx_out_diff: Float
+  ibc_tx_out_failed: Float
   ibc_tx_out_rating: Float
   ibc_tx_out_rating_diff: Float
   ibc_tx_out_weight: Float
+  relations_cnt_open: Float
   timeframe: Float
   total_active_addresses: Float
   total_active_addresses_diff: Float
   total_active_addresses_rating: Float
   total_active_addresses_rating_diff: Float
+  total_active_addresses_weight: Float
   total_coin_turnover_amount: Float
   total_coin_turnover_amount_diff: Float
   total_ibc_txs: Float
@@ -6252,25 +7368,34 @@ type zones_stats_variance_fields {
 
 # order by variance() on columns of table "zones_stats"
 input zones_stats_variance_order_by {
+  channels_cnt_active_period: order_by
+  channels_cnt_active_period_diff: order_by
+  channels_cnt_open: order_by
   channels_num: order_by
+  channels_percent_active_period: order_by
+  channels_percent_active_period_diff: order_by
   ibc_percent: order_by
   ibc_tx_failed: order_by
   ibc_tx_failed_diff: order_by
   ibc_tx_in: order_by
   ibc_tx_in_diff: order_by
+  ibc_tx_in_failed: order_by
   ibc_tx_in_rating: order_by
   ibc_tx_in_rating_diff: order_by
   ibc_tx_in_weight: order_by
   ibc_tx_out: order_by
   ibc_tx_out_diff: order_by
+  ibc_tx_out_failed: order_by
   ibc_tx_out_rating: order_by
   ibc_tx_out_rating_diff: order_by
   ibc_tx_out_weight: order_by
+  relations_cnt_open: order_by
   timeframe: order_by
   total_active_addresses: order_by
   total_active_addresses_diff: order_by
   total_active_addresses_rating: order_by
   total_active_addresses_rating_diff: order_by
+  total_active_addresses_weight: order_by
   total_coin_turnover_amount: order_by
   total_coin_turnover_amount_diff: order_by
   total_ibc_txs: order_by

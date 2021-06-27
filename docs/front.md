@@ -49,4 +49,6 @@ Rating table consist of 8 columns:
 * MAU/WAU/DAU - monthly/weekly/daily active users(addresses)
 * IBC TXs activity chart
 
+## Channels
 
+![front_channels](img/front_channels.png)

@@ -27,8 +27,8 @@ Map of Zones docs is a project documentation static site. Used static site gener
 
 4) **GraphQL schema to markdown** - install library via: `npm install graphql-markdown --save-dev` then transform graphql to markdown: `graphql-markdown ./path/to/schema.graphql > schema.md` source: [github.com/exogen/graphql-markdown](https://github.com/exogen/graphql-markdown)
 
-
+5) **Schematic images** - each image (eg architecture) is stored as a `jpg` or `png` image, but besides that there is an `xml` of that image unloaded from `drawio` in google drive. For further work, you can import `xml` schemes into `drawio` on google drive, re-create the schemes there and then export the new version of the scheme to `png` and `xml`.
 
 ## Deploy
 
-Just push your changes to github. On changes in the master branch, github actions will automatically prepare the build. If the build is successful, the new version of the static site will be deployed.
+Just push your changes to github. On changes in the master branch, github actions will automatically prepare the build. If the build is successful, the new version of the static site will be located in the gh-pages branch and deployed automatically.

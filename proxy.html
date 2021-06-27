@@ -105,6 +105,12 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="proxy.html">Proxy</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#add-new-node-to-proxy-server">Add new node to Proxy server</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-proxy-from-kubernetes">Using proxy from kubernetes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#check-logs-to-access-data-from-node">Check logs to access data from node:</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -149,14 +155,15 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="add-new-node-to-proxy-server">Add new node to Proxy server</h1>
+                <h1 id="proxy">Proxy</h1>
+<h2 id="add-new-node-to-proxy-server">Add new node to Proxy server</h2>
 <p>Add a parameter after the list of available nodes:</p>
 <pre><code class="language-squid">acl k8 src &lt;ip address node&gt;/32
 </code></pre>
 <p>And reconfigure squid:</p>
 <pre><code class="language-squid">  squid -k reconfigure
 </code></pre>
-<h1 id="using-proxy-from-kubernetes">Using proxy from kubernetes</h1>
+<h2 id="using-proxy-from-kubernetes">Using proxy from kubernetes</h2>
 <p>Add enviroment to container</p>
 <pre><code class="language-kubernetes">   env:
     - name: http_proxy
@@ -164,7 +171,7 @@
     - name: https_proxy
       value: http://46.101.95.106:9999
 </code></pre>
-<h1 id="check-logs-to-access-data-from-node">Check logs to access data from node:</h1>
+<h2 id="check-logs-to-access-data-from-node">Check logs to access data from node:</h2>
 <p>tail /var/log/squid/access.log</p>
               
             </div>

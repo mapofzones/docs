@@ -1,4 +1,6 @@
-# Add new node to Proxy server
+# Proxy
+
+## Add new node to Proxy server
 
 Add a parameter after the list of available nodes:
 ```squid
@@ -8,7 +10,7 @@ And reconfigure squid:
 ```squid
   squid -k reconfigure
 ```
-# Using proxy from kubernetes
+## Using proxy from kubernetes
 
 Add enviroment to container
 
@@ -19,5 +21,5 @@ Add enviroment to container
     - name: https_proxy
       value: http://46.101.95.106:9999
 ```
-# Check logs to access data from node:
+## Check logs to access data from node:
   tail /var/log/squid/access.log
